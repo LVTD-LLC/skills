@@ -65,6 +65,12 @@ For Hermes or another agent runtime, let the CLI prompt for the agent target or 
 
 ```bash
 npx skills add LVTD-LLC/skills --skill django-htmx
+
+# Hermes Agent
+npx skills add LVTD-LLC/skills --skill django-htmx -g -a hermes-agent
+
+# Another supported agent identifier
+npx skills add LVTD-LLC/skills --skill django-htmx -a <agent-id>
 ```
 
 The required contract is intentionally small:
@@ -83,5 +89,5 @@ npx skills add . --skill django-htmx
 ## Bulk Install
 
 ```bash
-npx skills add LVTD-LLC/skills --skill '*'
+npx skills add LVTD-LLC/skills --all
 ```
