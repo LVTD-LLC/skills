@@ -64,13 +64,14 @@ Use project scope instead of `-g` when you want the skill committed with a proje
 For Hermes or another agent runtime, let the CLI prompt for the agent target or pass the relevant `--agent` value:
 
 ```bash
+# Let the CLI prompt for the target agent
 npx skills add LVTD-LLC/skills --skill django-htmx
 
 # Hermes Agent
-npx skills add LVTD-LLC/skills --skill django-htmx -g -a hermes-agent
+npx skills add LVTD-LLC/skills --skill django-htmx -g --agent hermes-agent
 
 # Another supported agent identifier
-npx skills add LVTD-LLC/skills --skill django-htmx -a <agent-id>
+npx skills add LVTD-LLC/skills --skill django-htmx --agent <agent-name>
 ```
 
 The required contract is intentionally small:
@@ -87,6 +88,8 @@ npx skills add . --skill django-htmx
 ```
 
 ## Bulk Install
+
+Use `--all` to install every skill to every selected agent without shell-specific wildcard quoting.
 
 ```bash
 npx skills add LVTD-LLC/skills --all
