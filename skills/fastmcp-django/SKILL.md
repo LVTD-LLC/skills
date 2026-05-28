@@ -238,6 +238,16 @@ def create_mcp(
                 )
                 transaction.on_commit(lambda: order.enqueue_cancellation_email())
                 return {"id": order.pk, "status": order.status}
+        except PermissionDenied:
+            return {
+                "error": "forbidden",
+                "message": "Not allowed to cancel this order",
+            }
+        except ValueError:
+            return {
+                "error": "invalid_state",
+                "message": "Order cannot be cancelled",
+            }
         finally:
             close_old_connections()
 
