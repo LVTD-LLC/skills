@@ -1,29 +1,44 @@
 # Installation
 
-LVTD skills are plain folders that contain a `SKILL.md` file. Most agents can use them by copying a skill folder into the agent's configured skills directory.
+LVTD skills are plain folders that contain a `SKILL.md` file. Use the `skills` CLI to install them from GitHub, a direct skill URL, any git URL, or a local checkout.
 
-## Install With The Helper
+## Install With The Skills CLI
 
 ```bash
-git clone https://github.com/LVTD-LLC/skills.git
-cd skills
-npm run install-skill -- <skill-name> <target-skill-directory>
+npx skills add LVTD-LLC/skills --skill <skill-name>
 ```
 
 Example:
 
 ```bash
-npm run install-skill -- django-htmx ~/.codex/skills
+npx skills add LVTD-LLC/skills --skill django-htmx
 ```
 
-The command copies `skills/django-htmx` into `~/.codex/skills/django-htmx`.
+The command installs `django-htmx` from the `LVTD-LLC/skills` repository. The CLI will prompt for the target agent and scope if they are not provided.
+
+## Source Formats
+
+```bash
+# GitHub shorthand
+npx skills add LVTD-LLC/skills --skill django-htmx
+
+# Full GitHub URL
+npx skills add https://github.com/LVTD-LLC/skills --skill django-htmx
+
+# Direct path to a skill in the repository
+npx skills add https://github.com/LVTD-LLC/skills/tree/main/skills/django-htmx
+
+# Any git URL
+npx skills add git@github.com:LVTD-LLC/skills.git --skill django-htmx
+
+# Local checkout
+npx skills add . --skill django-htmx
+```
 
 ## Codex
 
 ```bash
-git clone https://github.com/LVTD-LLC/skills.git
-cd skills
-npm run install-skill -- django-htmx ~/.codex/skills
+npx skills add LVTD-LLC/skills --skill django-htmx -g -a codex
 ```
 
 Restart Codex or start a new session if your runtime only discovers skills at launch.
@@ -31,39 +46,32 @@ Restart Codex or start a new session if your runtime only discovers skills at la
 ## Claude Code
 
 ```bash
-git clone https://github.com/LVTD-LLC/skills.git
-cd skills
-npm run install-skill -- django-htmx ~/.claude/skills
+npx skills add LVTD-LLC/skills --skill django-htmx -g -a claude-code
 ```
 
 If your Claude Code setup uses project-local skills, install into that project's skill directory instead.
 
 ## OpenClaw
 
-Workspace-level skills usually live under:
-
 ```bash
-~/.openclaw/workspace/skills
+npx skills add LVTD-LLC/skills --skill django-htmx -g -a openclaw
 ```
 
-Install one:
-
-```bash
-git clone https://github.com/LVTD-LLC/skills.git
-cd skills
-npm run install-skill -- django-htmx ~/.openclaw/workspace/skills
-```
-
-Agent-local OpenClaw installs can use the same command with the relevant agent skill directory.
+Use project scope instead of `-g` when you want the skill committed with a project.
 
 ## Hermes And Other Agents
 
-For Hermes or another agent runtime, install into the directory that runtime scans for skills:
+For Hermes or another agent runtime, let the CLI prompt for the agent target or pass the relevant `--agent` value:
 
 ```bash
-git clone https://github.com/LVTD-LLC/skills.git
-cd skills
-npm run install-skill -- django-htmx /path/to/agent/skills
+# Let the CLI prompt for the target agent
+npx skills add LVTD-LLC/skills --skill django-htmx
+
+# Hermes Agent
+npx skills add LVTD-LLC/skills --skill django-htmx -g --agent hermes-agent
+
+# Another supported agent identifier
+npx skills add LVTD-LLC/skills --skill django-htmx --agent <agent-name>
 ```
 
 The required contract is intentionally small:
@@ -72,18 +80,17 @@ The required contract is intentionally small:
 - Each skill folder must contain a `SKILL.md`.
 - The `SKILL.md` frontmatter should include `name` and `description`.
 
-## Manual Install
+## Local Development
 
 ```bash
-mkdir -p ~/.codex/skills
-cp -R skills/django-htmx ~/.codex/skills/django-htmx
+# Install one skill from the current checkout
+npx skills add . --skill django-htmx
 ```
 
 ## Bulk Install
 
-```bash
-for skill in skills/*; do
-  npm run install-skill -- "$(basename "$skill")" ~/.codex/skills
-done
-```
+Use `--all` to install every skill to every selected agent without shell-specific wildcard quoting.
 
+```bash
+npx skills add LVTD-LLC/skills --all
+```

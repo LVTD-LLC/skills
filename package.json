@@ -6,7 +6,6 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build-registry.mjs",
-    "install-skill": "node scripts/install-skill.mjs",
     "test": "node tests/validate-skills.mjs",
     "validate": "node scripts/validate-skills.mjs"
   },
@@ -14,4 +13,3 @@
     "node": ">=20"
   }
 }
-
