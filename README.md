@@ -23,7 +23,6 @@ docs/
   installation.md
 scripts/
   build-registry.mjs
-  install-skill.mjs
   validate-skills.mjs
 tests/
   validate-skills.mjs
@@ -31,28 +30,26 @@ tests/
 
 ## Install A Skill
 
-Use the helper script to copy one skill into an agent's skill directory:
+Use the `skills` CLI to install from this repository:
 
 ```bash
-git clone https://github.com/LVTD-LLC/skills.git
-cd skills
-npm run install-skill -- django-htmx ~/.codex/skills
+npx skills add LVTD-LLC/skills --skill django-htmx
 ```
 
 Common targets:
 
 ```bash
-# Codex
-npm run install-skill -- django-htmx ~/.codex/skills
+# Codex global skills
+npx skills add LVTD-LLC/skills --skill django-htmx -g -a codex
 
-# Claude Code
-npm run install-skill -- django-htmx ~/.claude/skills
+# Claude Code global skills
+npx skills add LVTD-LLC/skills --skill django-htmx -g -a claude-code
 
-# OpenClaw workspace skills
-npm run install-skill -- django-htmx ~/.openclaw/workspace/skills
+# OpenClaw global skills
+npx skills add LVTD-LLC/skills --skill django-htmx -g -a openclaw
 
-# Hermes or another agent with a skill folder
-npm run install-skill -- django-htmx /path/to/agent/skills
+# Install from a local checkout
+npx skills add . --skill django-htmx
 ```
 
 More details are in [`docs/installation.md`](docs/installation.md).
@@ -81,4 +78,3 @@ CI validates every push and pull request. The publish workflow validates the cat
 git tag v0.1.0
 git push origin v0.1.0
 ```
-
