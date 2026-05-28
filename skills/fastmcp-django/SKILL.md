@@ -216,6 +216,11 @@ def create_mcp(
             return _order_summary(order_id=order_id, actor_id=actor_id)
         except ResourceNotFound:
             return {"error": "not_found", "message": "Order not found"}
+        except PermissionDenied:
+            return {
+                "error": "forbidden",
+                "message": "Not allowed to view this order",
+            }
         finally:
             close_old_connections()
 
