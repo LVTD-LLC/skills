@@ -74,6 +74,48 @@ if __name__ == "__main__":
 This shape also works well with the FastMCP CLI because the file fully prepares
 Django when loaded by `fastmcp list`, `fastmcp call`, or an MCP inspector.
 
+## HTTP Sidecar Pattern
+
+Use a sidecar when Django is still deployed through WSGI, when MCP needs
+separate scaling, or when you want a clear operational boundary. The sidecar is
+a separate process that initializes Django, imports the same MCP server object,
+and serves Streamable HTTP.
+
+```python
+# mcp_http_server.py
+import os
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
+
+import django
+
+django.setup()
+
+from apps.core.mcp import mcp
+
+if __name__ == "__main__":
+    mcp.run(
+        transport="http",
+        host="127.0.0.1",
+        port=8765,
+        path="/mcp",
+    )
+```
+
+Run the Django web process and MCP process independently:
+
+```text
+web: gunicorn project.wsgi:application
+mcp: python mcp_http_server.py
+```
+
+Point the reverse proxy or internal client at the sidecar's `/mcp` endpoint.
+Keep the sidecar on a private interface unless it has production-grade TLS,
+auth, rate limits, logging, and monitoring. Give it the same settings module,
+database URL, cache/broker settings, secrets, and migrations as the web process.
+Do not try to mount FastMCP inside WSGI middleware; use ASGI mounting only when
+the combined process is actually served by an ASGI server.
+
 ## ASGI Mount Pattern
 
 For a Django app already served by ASGI, make FastMCP a sibling ASGI app and
@@ -130,6 +172,10 @@ from fastmcp.dependencies import Depends
 from pydantic import Field
 
 
+class ResourceNotFound(Exception):
+    """Safe not-found error for MCP clients."""
+
+
 def get_current_actor_id() -> int:
     """Return the authenticated Django user ID from trusted MCP auth context."""
     raise PermissionDenied("Authentication is required")
@@ -138,7 +184,11 @@ def get_current_actor_id() -> int:
 def _order_summary(order_id: int, actor_id: int) -> dict:
     from apps.orders.models import Order
 
-    order = Order.objects.select_related("customer").get(pk=order_id)
+    try:
+        order = Order.objects.select_related("customer").get(pk=order_id)
+    except Order.DoesNotExist as exc:
+        raise ResourceNotFound("Order not found") from exc
+
     if not order.can_be_viewed_by_id(actor_id):
         raise PermissionDenied("Not allowed to view this order")
 
@@ -164,6 +214,8 @@ def create_mcp(
         close_old_connections()
         try:
             return _order_summary(order_id=order_id, actor_id=actor_id)
+        except ResourceNotFound:
+            return {"error": "not_found", "message": "Order not found"}
         finally:
             close_old_connections()
 
@@ -277,7 +329,15 @@ Rules for tool contracts:
 
 ## Testing
 
-Use in-memory FastMCP clients for most tests.
+Use in-memory FastMCP clients for most tests. Async tests require
+`pytest-asyncio` or an equivalent async pytest plugin. Either set
+`asyncio_mode = "auto"` in pytest configuration or mark async tests explicitly
+with `@pytest.mark.asyncio`.
+
+```toml
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+```
 
 ```python
 import pytest
@@ -286,6 +346,7 @@ from fastmcp import Client
 from apps.core.mcp import create_mcp
 
 
+@pytest.mark.asyncio
 @pytest.mark.django_db
 async def test_get_order_summary(order, user):
     mcp = create_mcp(actor_id_dependency=lambda: user.pk)
