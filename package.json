@@ -1,0 +1,17 @@
+{
+  "name": "@lvtd/skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Reusable agent skills for LVTD projects and Django SaaS workflows.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-registry.mjs",
+    "install-skill": "node scripts/install-skill.mjs",
+    "test": "node tests/validate-skills.mjs",
+    "validate": "node scripts/validate-skills.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+
