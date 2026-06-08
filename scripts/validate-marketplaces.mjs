@@ -68,7 +68,7 @@ if (codexMarketplace) {
   assertEqual(codexMarketplace.name, MARKETPLACE_NAME, "Codex marketplace name", errors);
   assertEqual(
     codexMarketplace.interface?.displayName,
-    "LVTD Skills",
+    "Django SaaS Skills",
     "Codex marketplace displayName",
     errors,
   );
@@ -82,7 +82,7 @@ assertEqual(codexEntries.length, skills.length, "Codex marketplace plugin count"
 
 for (const skill of skills) {
   const metadata = metadataForSkill(skill);
-  const pluginName = `lvtd-${skill.name}`;
+  const pluginName = skill.name;
   const pluginDir = path.join(marketplaceDir, "plugins", pluginName);
   const copiedSkillPath = path.join(pluginDir, "skills", skill.name, "SKILL.md");
   const claudeManifestPath = path.join(pluginDir, ".claude-plugin", "plugin.json");
@@ -112,7 +112,7 @@ for (const skill of skills) {
     assertEqual(claudeManifest.name, pluginName, `${pluginName} Claude manifest name`, errors);
     assertEqual(claudeManifest.version, metadata.version, `${pluginName} Claude manifest version`, errors);
     assertEqual(claudeManifest.skills, "./skills/", `${pluginName} Claude skills path`, errors);
-    assertEqual(claudeManifest.displayName, `LVTD ${metadata.displayName}`, `${pluginName} Claude displayName`, errors);
+    assertEqual(claudeManifest.displayName, metadata.displayName, `${pluginName} Claude displayName`, errors);
   }
 
   const codexManifest = await readJson(codexManifestPath, errors);
@@ -122,7 +122,7 @@ for (const skill of skills) {
     assertEqual(codexManifest.skills, "./skills/", `${pluginName} Codex skills path`, errors);
     assertEqual(
       codexManifest.interface?.displayName,
-      `LVTD ${metadata.displayName}`,
+      metadata.displayName,
       `${pluginName} Codex displayName`,
       errors,
     );

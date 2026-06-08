@@ -3,13 +3,13 @@
   "owner": {
     "name": "LVTD"
   },
-  "description": "LVTD's portable Agent Skills packaged for Claude Code.",
+  "description": "Portable Agent Skills for Django SaaS and agent-first development, packaged for Claude Code.",
   "version": "0.1.0",
   "plugins": [
     {
-      "name": "lvtd-alpinejs-django",
-      "displayName": "LVTD Alpine.js Django",
-      "source": "./plugins/lvtd-alpinejs-django",
+      "name": "alpinejs-django",
+      "displayName": "Alpine.js Django",
+      "source": "./plugins/alpinejs-django",
       "description": "Alpine.js Django workflow guidance for web development.",
       "author": {
         "name": "LVTD"
@@ -33,9 +33,9 @@
       ]
     },
     {
-      "name": "lvtd-cookiecutter",
-      "displayName": "LVTD Cookiecutter",
-      "source": "./plugins/lvtd-cookiecutter",
+      "name": "cookiecutter",
+      "displayName": "Cookiecutter",
+      "source": "./plugins/cookiecutter",
       "description": "Cookiecutter workflow guidance for developer tooling.",
       "author": {
         "name": "LVTD"
@@ -58,9 +58,9 @@
       ]
     },
     {
-      "name": "lvtd-django-htmx",
-      "displayName": "LVTD Django HTMX",
-      "source": "./plugins/lvtd-django-htmx",
+      "name": "django-htmx",
+      "displayName": "Django HTMX",
+      "source": "./plugins/django-htmx",
       "description": "Django HTMX workflow guidance for web development.",
       "author": {
         "name": "LVTD"
@@ -82,9 +82,9 @@
       ]
     },
     {
-      "name": "lvtd-django-q2",
-      "displayName": "LVTD Django Q2",
-      "source": "./plugins/lvtd-django-q2",
+      "name": "django-q2",
+      "displayName": "Django Q2",
+      "source": "./plugins/django-q2",
       "description": "Django Q2 workflow guidance for background jobs.",
       "author": {
         "name": "LVTD"
@@ -107,9 +107,9 @@
       ]
     },
     {
-      "name": "lvtd-fastmcp-django",
-      "displayName": "LVTD FastMCP Django",
-      "source": "./plugins/lvtd-fastmcp-django",
+      "name": "fastmcp-django",
+      "displayName": "FastMCP Django",
+      "source": "./plugins/fastmcp-django",
       "description": "FastMCP Django workflow guidance for mcp servers.",
       "author": {
         "name": "LVTD"

@@ -80,9 +80,9 @@ description: Build and review HTMX interactions in Django server-rendered projec
 license: MIT
 compatibility: Designed for Codex, Claude Code, OpenClaw, and Agent Skills compatible clients.
 metadata:
-  lvtd.category: Web Development
-  lvtd.tags: django,htmx,server-rendered-ui
-  lvtd.version: "0.1.0"
+  category: Web Development
+  tags: django,htmx,server-rendered-ui
+  version: "0.1.0"
 ---
 ```
 
@@ -104,9 +104,9 @@ argues for individual installable units.
 Recommended distribution model:
 
 - One generated marketplace plugin per skill for granular install:
-  `lvtd-django-htmx`, `lvtd-cookiecutter`, etc.
+  `django-htmx`, `cookiecutter`, etc.
 - Optional curated packs for convenience:
-  `lvtd-django-pack`, `lvtd-template-pack`, `lvtd-all`.
+  `django-pack`, `template-pack`, `all-skills`.
 - Keep packs generated from the same skill source, not hand-maintained copies.
 
 Tradeoff:
@@ -199,13 +199,13 @@ Recommended Claude output:
 
 ```text
 .claude-plugin/marketplace.json
-plugins/lvtd-django-htmx/
+plugins/django-htmx/
   .claude-plugin/plugin.json
   skills/django-htmx/SKILL.md
 ```
 
 Use a Git-backed marketplace repo where possible. Relative plugin paths such as
-`./plugins/lvtd-django-htmx` resolve relative to the marketplace root when the
+`./plugins/django-htmx` resolve relative to the marketplace root when the
 marketplace is added from Git.
 
 Because this repository publishes `.claude-plugin/marketplace.json` at the root,
@@ -216,7 +216,7 @@ Installation flow:
 
 ```bash
 /plugin marketplace add LVTD-LLC/skills
-/plugin install lvtd-django-htmx@lvtd-skills
+/plugin install django-htmx@lvtd-skills
 /reload-plugins
 ```
 
@@ -230,7 +230,7 @@ Recommended Codex output:
 
 ```text
 .agents/plugins/marketplace.json
-plugins/lvtd-django-htmx/
+plugins/django-htmx/
   .codex-plugin/plugin.json
   skills/django-htmx/SKILL.md
 ```
@@ -272,7 +272,7 @@ Expand `dist/registry.json` into a proper marketplace API surface:
 ```json
 {
   "schemaVersion": 2,
-  "name": "LVTD Skills",
+  "name": "Django SaaS Skills",
   "repository": "https://github.com/LVTD-LLC/skills",
   "generatedAt": "2026-06-08T00:00:00.000Z",
   "skills": [
@@ -288,8 +288,8 @@ Expand `dist/registry.json` into a proper marketplace API surface:
       "entrypoint": "skills/django-htmx/SKILL.md",
       "sha256": "...",
       "hosts": {
-        "codex": { "plugin": "lvtd-django-htmx" },
-        "claudeCode": { "plugin": "lvtd-django-htmx" },
+        "codex": { "plugin": "django-htmx" },
+        "claudeCode": { "plugin": "django-htmx" },
         "openclaw": { "slug": "django-htmx" }
       }
     }
@@ -309,7 +309,7 @@ That registry can drive:
 
 ### Phase 1: Normalize and Enrich Skills
 
-- Add `license`, `compatibility`, and `metadata.lvtd.*` fields to each skill.
+- Add `license`, `compatibility`, and marketplace `metadata` fields to each skill.
 - Replace custom frontmatter parsing with a YAML parser.
 - Validate Agent Skills naming rules, max description length, and optional
   metadata.

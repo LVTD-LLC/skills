@@ -113,10 +113,10 @@ export function normalizeTags(rawTags) {
 
 export function metadataForSkill(skill) {
   const metadata = skill.fields.metadata ?? {};
-  const displayName = metadata["lvtd.displayName"] || skill.name;
-  const category = metadata["lvtd.category"] || "Development";
-  const version = metadata["lvtd.version"] || "0.1.0";
-  const tags = normalizeTags(metadata["lvtd.tags"]);
+  const displayName = metadata.displayName || metadata["lvtd.displayName"] || skill.name;
+  const category = metadata.category || metadata["lvtd.category"] || "Development";
+  const version = metadata.version || metadata["lvtd.version"] || "0.1.0";
+  const tags = normalizeTags(metadata.tags || metadata["lvtd.tags"]);
 
   return {
     displayName,

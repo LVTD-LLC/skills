@@ -57,7 +57,7 @@ const loadedSkills = await loadSkills();
 for (const skill of loadedSkills) {
   const metadata = metadataForSkill(skill);
   const { files, sha256 } = await hashSkillDirectory(skill.path);
-  const pluginName = `lvtd-${skill.name}`;
+  const pluginName = skill.name;
 
   skills.push({
     name: skill.name,
@@ -87,7 +87,7 @@ for (const skill of loadedSkills) {
 
 const registry = {
   schemaVersion: 2,
-  name: "LVTD Skills",
+  name: "Django SaaS Skills",
   repository: "https://github.com/LVTD-LLC/skills",
   generatedAt: new Date().toISOString(),
   skills,

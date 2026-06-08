@@ -4,7 +4,7 @@ import { loadSkills, marketplaceVersionForSkills, metadataForSkill, root } from 
 import { validateSkills } from "./validate-skills.mjs";
 
 const MARKETPLACE_NAME = "lvtd-skills";
-const MARKETPLACE_DISPLAY_NAME = "LVTD Skills";
+const MARKETPLACE_DISPLAY_NAME = "Django SaaS Skills";
 const REPOSITORY_URL = "https://github.com/LVTD-LLC/skills";
 const AUTHOR = {
   name: "LVTD",
@@ -15,7 +15,7 @@ const marketplaceDir = root;
 const pluginsDir = path.join(marketplaceDir, "plugins");
 
 function pluginNameForSkill(skillName) {
-  return `lvtd-${skillName}`;
+  return skillName;
 }
 
 function buildDefaultPrompt(skill, pluginName) {
@@ -23,7 +23,7 @@ function buildDefaultPrompt(skill, pluginName) {
 }
 
 function buildLongDescription(skill, metadata) {
-  return `${skill.fields.description} Packaged as an LVTD marketplace skill for Codex and Claude Code. Category: ${metadata.category}.`;
+  return `${skill.fields.description} Packaged as a marketplace skill for Codex and Claude Code. Category: ${metadata.category}.`;
 }
 
 function buildShortDescription(skill, metadata) {
@@ -84,13 +84,13 @@ for (const skill of skills) {
 
   await writeJson(path.join(pluginDir, ".claude-plugin", "plugin.json"), {
     ...commonManifest,
-    displayName: `LVTD ${metadata.displayName}`,
+    displayName: metadata.displayName,
   });
 
   await writeJson(path.join(pluginDir, ".codex-plugin", "plugin.json"), {
     ...commonManifest,
     interface: {
-      displayName: `LVTD ${metadata.displayName}`,
+      displayName: metadata.displayName,
       shortDescription,
       longDescription,
       developerName: "LVTD",
@@ -104,7 +104,7 @@ for (const skill of skills) {
 
   claudePlugins.push({
     name: pluginName,
-    displayName: `LVTD ${metadata.displayName}`,
+    displayName: metadata.displayName,
     source: `./plugins/${pluginName}`,
     description: shortDescription,
     author: {
@@ -137,7 +137,7 @@ const claudeMarketplace = {
   owner: {
     name: AUTHOR.name,
   },
-  description: "LVTD's portable Agent Skills packaged for Claude Code.",
+  description: "Portable Agent Skills for Django SaaS and agent-first development, packaged for Claude Code.",
   version: marketplaceVersion,
   plugins: claudePlugins,
 };

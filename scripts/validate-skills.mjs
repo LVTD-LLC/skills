@@ -4,6 +4,10 @@ import { listSkillNames, metadataForSkill, parseFrontmatter, skillsDir } from ".
 
 const SEMVER_RE = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
 
+function metadataValue(metadata, key) {
+  return metadata[key] ?? metadata[`lvtd.${key}`];
+}
+
 export async function validateSkills() {
   const names = await listSkillNames();
   const errors = [];
@@ -41,20 +45,20 @@ export async function validateSkills() {
 
     const rawMetadata = fields.metadata ?? {};
     const metadata = metadataForSkill({ name, fields });
-    if (!rawMetadata["lvtd.version"] || !SEMVER_RE.test(metadata.version)) {
-      errors.push(`${skillPath} metadata.lvtd.version must be semver`);
+    if (!metadataValue(rawMetadata, "version") || !SEMVER_RE.test(metadata.version)) {
+      errors.push(`${skillPath} metadata.version must be semver`);
     }
 
-    if (!rawMetadata["lvtd.displayName"]) {
-      errors.push(`${skillPath} must include metadata.lvtd.displayName`);
+    if (!metadataValue(rawMetadata, "displayName")) {
+      errors.push(`${skillPath} must include metadata.displayName`);
     }
 
-    if (!rawMetadata["lvtd.category"]) {
-      errors.push(`${skillPath} must include metadata.lvtd.category`);
+    if (!metadataValue(rawMetadata, "category")) {
+      errors.push(`${skillPath} must include metadata.category`);
     }
 
-    if (!rawMetadata["lvtd.tags"]) {
-      errors.push(`${skillPath} must include metadata.lvtd.tags`);
+    if (!metadataValue(rawMetadata, "tags")) {
+      errors.push(`${skillPath} must include metadata.tags`);
     }
 
     if (!markdown.match(/\n#\s+\S/)) {

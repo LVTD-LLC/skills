@@ -64,27 +64,27 @@ Add the marketplace in Claude Code:
 
 ```text
 /plugin marketplace add LVTD-LLC/skills
-/plugin install lvtd-django-htmx@lvtd-skills
+/plugin install django-htmx@lvtd-skills
 /reload-plugins
 ```
 
-Claude Code exposes the skill as `/lvtd-django-htmx:django-htmx`.
+Claude Code exposes the skill as `/django-htmx:django-htmx`.
 
 Add the marketplace in Codex:
 
 ```bash
 codex plugin marketplace add LVTD-LLC/skills
-codex plugin add lvtd-django-htmx@lvtd-skills
+codex plugin add django-htmx@lvtd-skills
 ```
 
-Codex exposes the skill as `$lvtd-django-htmx:django-htmx`.
+Codex exposes the skill as `$django-htmx:django-htmx`.
 
 This repository ships the marketplace files directly:
 
 ```text
 .claude-plugin/marketplace.json
 .agents/plugins/marketplace.json
-plugins/lvtd-<skill-name>/
+plugins/<skill-name>/
 ```
 
 Refresh generated marketplace artifacts during development:
@@ -95,11 +95,11 @@ npm run build
 
 Generated plugin names:
 
-- `lvtd-alpinejs-django`
-- `lvtd-cookiecutter`
-- `lvtd-django-htmx`
-- `lvtd-django-q2`
-- `lvtd-fastmcp-django`
+- `alpinejs-django`
+- `cookiecutter`
+- `django-htmx`
+- `django-q2`
+- `fastmcp-django`
 
 ## Marketplace Strategy
 
