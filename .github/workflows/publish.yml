@@ -27,9 +27,13 @@ jobs:
       - name: Build registry
         run: npm run build
 
+      - name: Validate marketplace artifacts
+        run: npm run validate:marketplaces
+
       - name: Package catalog
         run: |
           tar -czf dist/lvtd-skills.tar.gz skills README.md docs package.json
+          tar -czf dist/lvtd-marketplace.tar.gz .claude-plugin .agents plugins
 
       - name: Upload artifact
         uses: actions/upload-artifact@v7
@@ -44,3 +48,4 @@ jobs:
           files: |
             dist/registry.json
             dist/lvtd-skills.tar.gz
+            dist/lvtd-marketplace.tar.gz

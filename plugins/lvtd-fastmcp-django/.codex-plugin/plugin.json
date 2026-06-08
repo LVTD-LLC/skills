@@ -1,0 +1,36 @@
+{
+  "name": "lvtd-fastmcp-django",
+  "version": "0.1.0",
+  "description": "FastMCP Django workflow guidance for mcp servers.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "fastmcp-django",
+    "fastmcp",
+    "django",
+    "mcp",
+    "asgi"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "LVTD FastMCP Django",
+    "shortDescription": "FastMCP Django workflow guidance for mcp servers.",
+    "longDescription": "Use when adding, changing, deploying, testing, or debugging FastMCP MCP servers in existing Django apps, including ASGI mounting, stdio or sidecar servers, Django ORM access from MCP tools, auth and permissions, Streamable HTTP deployment, and MCP client tests. Packaged as an LVTD marketplace skill for Codex and Claude Code. Category: MCP Servers.",
+    "developerName": "LVTD",
+    "category": "MCP Servers",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use $lvtd-fastmcp-django:fastmcp-django when working on fastmcp django tasks."
+    ],
+    "screenshots": []
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "lvtd-skills",
+  "interface": {
+    "displayName": "LVTD Skills"
+  },
+  "plugins": [
+    {
+      "name": "lvtd-alpinejs-django",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lvtd-alpinejs-django"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Web Development"
+    },
+    {
+      "name": "lvtd-cookiecutter",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lvtd-cookiecutter"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tooling"
+    },
+    {
+      "name": "lvtd-django-htmx",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lvtd-django-htmx"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Web Development"
+    },
+    {
+      "name": "lvtd-django-q2",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lvtd-django-q2"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Background Jobs"
+    },
+    {
+      "name": "lvtd-fastmcp-django",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lvtd-fastmcp-django"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "MCP Servers"
+    }
+  ]
+}
