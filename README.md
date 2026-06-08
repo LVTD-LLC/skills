@@ -25,7 +25,6 @@ docs/
 scripts/
   build-marketplaces.mjs
   build-registry.mjs
-  install-skill.mjs
   skill-utils.mjs
   validate-marketplaces.mjs
   validate-skills.mjs

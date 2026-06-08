@@ -28,8 +28,8 @@ The repo is already close to the right base shape:
 - `scripts/validate-skills.mjs` checks names, descriptions, frontmatter, and
   headings.
 - `scripts/build-registry.mjs` emits `dist/registry.json`.
-- `scripts/install-skill.mjs` supports direct folder copy into tool-specific
-  skill directories.
+- The `skills` CLI can install individual skills from GitHub, a direct skill
+  URL, any git URL, or a local checkout.
 - CI validates skills and builds the registry.
 
 Main gaps before this becomes a real marketplace:
