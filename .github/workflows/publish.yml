@@ -27,6 +27,9 @@ jobs:
       - name: Build registry
         run: npm run build
 
+      - name: Validate marketplace artifacts
+        run: npm run validate:marketplaces
+
       - name: Package catalog
         run: |
           tar -czf dist/lvtd-skills.tar.gz skills README.md docs package.json

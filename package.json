@@ -10,6 +10,7 @@
     "build:marketplaces": "node scripts/build-marketplaces.mjs",
     "install-skill": "node scripts/install-skill.mjs",
     "test": "node tests/validate-skills.mjs",
+    "validate:marketplaces": "node scripts/validate-marketplaces.mjs",
     "validate": "node scripts/validate-skills.mjs"
   },
   "engines": {

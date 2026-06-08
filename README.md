@@ -27,6 +27,7 @@ scripts/
   build-registry.mjs
   install-skill.mjs
   skill-utils.mjs
+  validate-marketplaces.mjs
   validate-skills.mjs
 tests/
   validate-skills.mjs
@@ -123,6 +124,12 @@ npm run build
 
 The registry is written to `dist/registry.json`, and marketplace artifacts are
 written to `dist/marketplace`.
+
+Validate generated marketplace artifacts:
+
+```bash
+npm run validate:marketplaces
+```
 
 ## Publishing
 

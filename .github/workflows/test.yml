@@ -23,3 +23,6 @@ jobs:
 
       - name: Build registry
         run: npm run build
+
+      - name: Validate marketplace artifacts
+        run: npm run validate:marketplaces
