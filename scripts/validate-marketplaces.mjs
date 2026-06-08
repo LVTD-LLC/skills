@@ -5,13 +5,14 @@ import {
   listFilesRecursive,
   MARKETPLACE_DISPLAY_NAME,
   MARKETPLACE_NAME,
-  metadataForSkill,
   root,
 } from "./skill-utils.mjs";
 import {
   claudeManifestForSkill,
+  claudeMarketplaceEntryForSkill,
   claudeMarketplaceForSkills,
   codexManifestForSkill,
+  codexMarketplaceEntryForSkill,
   codexMarketplaceForSkills,
   pluginNameForSkill,
 } from "./marketplace-utils.mjs";
@@ -45,22 +46,6 @@ function assertDeepEqual(actual, expected, label, errors) {
   if (JSON.stringify(actual) !== JSON.stringify(expected)) {
     errors.push(`${label} must match generated output; run npm run build`);
   }
-}
-
-function assertArray(value, label, errors) {
-  if (!Array.isArray(value)) {
-    errors.push(`${label} must be an array`);
-    return [];
-  }
-  return value;
-}
-
-function findEntry(entries, name, label, errors) {
-  const entry = entries.find((candidate) => candidate?.name === name);
-  if (!entry) {
-    errors.push(`${label} is missing ${name}`);
-  }
-  return entry;
 }
 
 async function listPluginDirectories(pluginsDir, errors) {
@@ -103,83 +88,68 @@ const codexMarketplacePath = path.join(marketplaceDir, ".agents", "plugins", "ma
 const claudeMarketplace = await readJson(claudeMarketplacePath, errors);
 const codexMarketplace = await readJson(codexMarketplacePath, errors);
 const expectedPluginNames = skills.map((skill) => pluginNameForSkill(skill.name));
+const expectedClaudeMarketplace = claudeMarketplaceForSkills(skills);
+const expectedCodexMarketplace = codexMarketplaceForSkills(skills);
+
+assertEqual(expectedClaudeMarketplace.name, MARKETPLACE_NAME, "Generated Claude marketplace name", errors);
+assertEqual(expectedCodexMarketplace.name, MARKETPLACE_NAME, "Generated Codex marketplace name", errors);
+assertEqual(
+  expectedCodexMarketplace.interface?.displayName,
+  MARKETPLACE_DISPLAY_NAME,
+  "Generated Codex marketplace displayName",
+  errors,
+);
 
 if (claudeMarketplace) {
-  assertEqual(claudeMarketplace.name, MARKETPLACE_NAME, "Claude marketplace name", errors);
-  assertDeepEqual(claudeMarketplace, claudeMarketplaceForSkills(skills), "Claude marketplace", errors);
+  assertDeepEqual(claudeMarketplace, expectedClaudeMarketplace, "Claude marketplace", errors);
 }
 
 if (codexMarketplace) {
-  assertEqual(codexMarketplace.name, MARKETPLACE_NAME, "Codex marketplace name", errors);
-  assertEqual(
-    codexMarketplace.interface?.displayName,
-    MARKETPLACE_DISPLAY_NAME,
-    "Codex marketplace displayName",
-    errors,
-  );
-  assertDeepEqual(codexMarketplace, codexMarketplaceForSkills(skills), "Codex marketplace", errors);
+  assertDeepEqual(codexMarketplace, expectedCodexMarketplace, "Codex marketplace", errors);
 }
-
-const claudeEntries = claudeMarketplace
-  ? assertArray(claudeMarketplace.plugins, "Claude marketplace plugins", errors)
-  : [];
-const codexEntries = codexMarketplace
-  ? assertArray(codexMarketplace.plugins, "Codex marketplace plugins", errors)
-  : [];
-
-assertEqual(claudeEntries.length, skills.length, "Claude marketplace plugin count", errors);
-assertEqual(codexEntries.length, skills.length, "Codex marketplace plugin count", errors);
 
 const pluginDirs = await listPluginDirectories(path.join(marketplaceDir, "plugins"), errors);
 assertDeepEqual(pluginDirs, expectedPluginNames, "Generated plugin directory list", errors);
 
 for (const skill of skills) {
-  const metadata = metadataForSkill(skill);
   const pluginName = pluginNameForSkill(skill.name);
   const pluginDir = path.join(marketplaceDir, "plugins", pluginName);
   const copiedSkillDir = path.join(pluginDir, "skills", skill.name);
   const claudeManifestPath = path.join(pluginDir, ".claude-plugin", "plugin.json");
   const codexManifestPath = path.join(pluginDir, ".codex-plugin", "plugin.json");
+  const expectedClaudeEntry = claudeMarketplaceEntryForSkill(skill);
+  const expectedCodexEntry = codexMarketplaceEntryForSkill(skill);
+  const expectedClaudeManifest = claudeManifestForSkill(skill);
+  const expectedCodexManifest = codexManifestForSkill(skill);
 
   await assertCopiedSkillMatchesSource(skill, copiedSkillDir, pluginName, errors);
 
-  const claudeEntry = findEntry(claudeEntries, pluginName, "Claude marketplace", errors);
-  if (claudeEntry) {
-    assertEqual(claudeEntry.source, `./plugins/${pluginName}`, `${pluginName} Claude source`, errors);
-    assertEqual(claudeEntry.category, metadata.category, `${pluginName} Claude category`, errors);
-    assertEqual(
-      claudeEntry.displayName,
-      metadata.displayName,
-      `${pluginName} Claude displayName`,
-      errors,
-    );
-  }
-
-  const codexEntry = findEntry(codexEntries, pluginName, "Codex marketplace", errors);
-  if (codexEntry) {
-    assertEqual(codexEntry.source?.source, "local", `${pluginName} Codex source type`, errors);
-    assertEqual(
-      codexEntry.source?.path,
-      `./plugins/${pluginName}`,
-      `${pluginName} Codex source path`,
-      errors,
-    );
-    assertEqual(codexEntry.category, metadata.category, `${pluginName} Codex category`, errors);
-  }
+  assertEqual(expectedClaudeEntry.source, `./plugins/${pluginName}`, `${pluginName} Claude source`, errors);
+  assertEqual(expectedCodexEntry.source?.source, "local", `${pluginName} Codex source type`, errors);
+  assertEqual(
+    expectedCodexEntry.source?.path,
+    `./plugins/${pluginName}`,
+    `${pluginName} Codex source path`,
+    errors,
+  );
 
   const claudeManifest = await readJson(claudeManifestPath, errors);
   if (claudeManifest) {
-    assertEqual(claudeManifest.name, pluginName, `${pluginName} Claude manifest name`, errors);
     assertEqual(
-      claudeManifest.version,
-      metadata.version,
-      `${pluginName} Claude manifest version`,
+      expectedClaudeManifest.name,
+      pluginName,
+      `${pluginName} generated Claude manifest name`,
       errors,
     );
-    assertEqual(claudeManifest.skills, "./skills/", `${pluginName} Claude skills path`, errors);
+    assertEqual(
+      expectedClaudeManifest.skills,
+      "./skills/",
+      `${pluginName} generated Claude skills path`,
+      errors,
+    );
     assertDeepEqual(
       claudeManifest,
-      claudeManifestForSkill(skill),
+      expectedClaudeManifest,
       `${pluginName} Claude manifest`,
       errors,
     );
@@ -187,23 +157,21 @@ for (const skill of skills) {
 
   const codexManifest = await readJson(codexManifestPath, errors);
   if (codexManifest) {
-    assertEqual(codexManifest.name, pluginName, `${pluginName} Codex manifest name`, errors);
     assertEqual(
-      codexManifest.version,
-      metadata.version,
-      `${pluginName} Codex manifest version`,
+      expectedCodexManifest.name,
+      pluginName,
+      `${pluginName} generated Codex manifest name`,
       errors,
     );
-    assertEqual(codexManifest.skills, "./skills/", `${pluginName} Codex skills path`, errors);
     assertEqual(
-      codexManifest.interface?.category,
-      metadata.category,
-      `${pluginName} Codex interface category`,
+      expectedCodexManifest.skills,
+      "./skills/",
+      `${pluginName} generated Codex skills path`,
       errors,
     );
     assertDeepEqual(
       codexManifest,
-      codexManifestForSkill(skill),
+      expectedCodexManifest,
       `${pluginName} Codex manifest`,
       errors,
     );

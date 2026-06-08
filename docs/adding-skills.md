@@ -45,6 +45,7 @@ Rules enforced by validation:
 - `metadata.version` must be `MAJOR.MINOR.PATCH` semver.
 - `metadata.displayName`, `metadata.category`, and `metadata.tags` are required.
 - Tags must be lowercase hyphen-case and cannot be duplicated.
+- `metadata.tags` can be a comma-separated string or a YAML list.
 - Display names should omit the `LVTD` prefix.
 - `SKILL.md` must include a top-level Markdown heading.
 - `SKILL.md` must use LF line endings.

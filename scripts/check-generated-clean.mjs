@@ -11,14 +11,22 @@ if (paths.length === 0) {
 }
 
 let stdout = "";
+let stderr = "";
 
 try {
-  ({ stdout } = await execFileAsync("git", ["status", "--porcelain", "--", ...paths], {
+  ({ stdout, stderr } = await execFileAsync("git", ["status", "--porcelain", "--", ...paths], {
     cwd: root,
   }));
 } catch (error) {
   console.error(`Unable to check generated artifacts with git: ${error.message}`);
+  if (error.stderr?.trim()) {
+    console.error(error.stderr.trim());
+  }
   process.exit(1);
+}
+
+if (stderr.trim()) {
+  console.error(stderr.trim());
 }
 
 if (stdout.trim()) {
