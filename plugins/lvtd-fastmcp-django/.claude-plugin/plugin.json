@@ -1,7 +1,7 @@
 {
-  "name": "django-q2",
+  "name": "lvtd-fastmcp-django",
   "version": "0.1.0",
-  "description": "Django Q2 workflow guidance for background jobs.",
+  "description": "FastMCP Django workflow guidance for mcp servers.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -10,11 +10,12 @@
   "repository": "https://github.com/LVTD-LLC/skills",
   "license": "MIT",
   "keywords": [
-    "django-q2",
+    "fastmcp-django",
+    "fastmcp",
     "django",
-    "background-jobs",
-    "redis"
+    "mcp",
+    "asgi"
   ],
   "skills": "./skills/",
-  "displayName": "Django Q2"
+  "displayName": "FastMCP Django"
 }

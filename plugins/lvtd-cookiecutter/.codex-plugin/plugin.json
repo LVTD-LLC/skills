@@ -1,5 +1,5 @@
 {
-  "name": "cookiecutter",
+  "name": "lvtd-cookiecutter",
   "version": "0.1.0",
   "description": "Cookiecutter workflow guidance for developer tooling.",
   "author": {
@@ -28,7 +28,7 @@
     ],
     "websiteURL": "https://github.com/LVTD-LLC/skills",
     "defaultPrompt": [
-      "Use $cookiecutter:cookiecutter when working on cookiecutter tasks."
+      "Use the Cookiecutter skill when working on cookiecutter tasks."
     ],
     "screenshots": []
   }

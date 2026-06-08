@@ -1,7 +1,7 @@
 {
-  "name": "cookiecutter",
+  "name": "lvtd-django-q2",
   "version": "0.1.0",
-  "description": "Cookiecutter workflow guidance for developer tooling.",
+  "description": "Django Q2 workflow guidance for background jobs.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -10,11 +10,11 @@
   "repository": "https://github.com/LVTD-LLC/skills",
   "license": "MIT",
   "keywords": [
-    "cookiecutter",
-    "templates",
-    "jinja",
-    "scaffolding"
+    "django-q2",
+    "django",
+    "background-jobs",
+    "redis"
   ],
   "skills": "./skills/",
-  "displayName": "Cookiecutter"
+  "displayName": "Django Q2"
 }

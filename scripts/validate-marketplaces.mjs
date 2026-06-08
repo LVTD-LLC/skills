@@ -82,7 +82,7 @@ assertEqual(codexEntries.length, skills.length, "Codex marketplace plugin count"
 
 for (const skill of skills) {
   const metadata = metadataForSkill(skill);
-  const pluginName = skill.name;
+  const pluginName = `lvtd-${skill.name}`;
   const pluginDir = path.join(marketplaceDir, "plugins", pluginName);
   const copiedSkillPath = path.join(pluginDir, "skills", skill.name, "SKILL.md");
   const claudeManifestPath = path.join(pluginDir, ".claude-plugin", "plugin.json");

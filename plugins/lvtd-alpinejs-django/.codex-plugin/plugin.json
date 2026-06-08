@@ -1,5 +1,5 @@
 {
-  "name": "alpinejs-django",
+  "name": "lvtd-alpinejs-django",
   "version": "0.1.0",
   "description": "Alpine.js Django workflow guidance for web development.",
   "author": {
@@ -29,7 +29,7 @@
     ],
     "websiteURL": "https://github.com/LVTD-LLC/skills",
     "defaultPrompt": [
-      "Use $alpinejs-django:alpinejs-django when working on alpinejs django tasks."
+      "Use the Alpine.js Django skill when working on alpinejs django tasks."
     ],
     "screenshots": []
   }

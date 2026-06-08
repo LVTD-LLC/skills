@@ -1,7 +1,7 @@
 {
-  "name": "alpinejs-django",
+  "name": "lvtd-cookiecutter",
   "version": "0.1.0",
-  "description": "Alpine.js Django workflow guidance for web development.",
+  "description": "Cookiecutter workflow guidance for developer tooling.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -10,12 +10,11 @@
   "repository": "https://github.com/LVTD-LLC/skills",
   "license": "MIT",
   "keywords": [
-    "alpinejs-django",
-    "alpinejs",
-    "django",
-    "frontend",
-    "htmx"
+    "cookiecutter",
+    "templates",
+    "jinja",
+    "scaffolding"
   ],
   "skills": "./skills/",
-  "displayName": "Alpine.js Django"
+  "displayName": "Cookiecutter"
 }

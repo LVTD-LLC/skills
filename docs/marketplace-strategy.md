@@ -104,15 +104,17 @@ argues for individual installable units.
 Recommended distribution model:
 
 - One generated marketplace plugin per skill for granular install:
-  `django-htmx`, `cookiecutter`, etc.
+  `lvtd-django-htmx`, `lvtd-cookiecutter`, etc.
 - Optional curated packs for convenience:
-  `django-pack`, `template-pack`, `all-skills`.
+  `lvtd-django-pack`, `lvtd-template-pack`, `lvtd-all`.
 - Keep packs generated from the same skill source, not hand-maintained copies.
 
 Tradeoff:
 
 - Individual plugins maximize user choice and clearer updates.
 - Packs reduce install friction for teams that want a complete baseline.
+- Namespaced plugin IDs avoid collisions across marketplaces; display names can
+  stay clean and omit organization branding.
 
 ### 4. Version Skills Independently
 
@@ -199,13 +201,13 @@ Recommended Claude output:
 
 ```text
 .claude-plugin/marketplace.json
-plugins/django-htmx/
+plugins/lvtd-django-htmx/
   .claude-plugin/plugin.json
   skills/django-htmx/SKILL.md
 ```
 
 Use a Git-backed marketplace repo where possible. Relative plugin paths such as
-`./plugins/django-htmx` resolve relative to the marketplace root when the
+`./plugins/lvtd-django-htmx` resolve relative to the marketplace root when the
 marketplace is added from Git.
 
 Because this repository publishes `.claude-plugin/marketplace.json` at the root,
@@ -216,7 +218,7 @@ Installation flow:
 
 ```bash
 /plugin marketplace add LVTD-LLC/skills
-/plugin install django-htmx@lvtd-skills
+/plugin install lvtd-django-htmx@lvtd-skills
 /reload-plugins
 ```
 
@@ -230,7 +232,7 @@ Recommended Codex output:
 
 ```text
 .agents/plugins/marketplace.json
-plugins/django-htmx/
+plugins/lvtd-django-htmx/
   .codex-plugin/plugin.json
   skills/django-htmx/SKILL.md
 ```
@@ -288,8 +290,8 @@ Expand `dist/registry.json` into a proper marketplace API surface:
       "entrypoint": "skills/django-htmx/SKILL.md",
       "sha256": "...",
       "hosts": {
-        "codex": { "plugin": "django-htmx" },
-        "claudeCode": { "plugin": "django-htmx" },
+        "codex": { "plugin": "lvtd-django-htmx" },
+        "claudeCode": { "plugin": "lvtd-django-htmx" },
         "openclaw": { "slug": "django-htmx" }
       }
     }

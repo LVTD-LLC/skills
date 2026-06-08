@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "alpinejs-django",
+      "name": "lvtd-alpinejs-django",
       "source": {
         "source": "local",
-        "path": "./plugins/alpinejs-django"
+        "path": "./plugins/lvtd-alpinejs-django"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -17,10 +17,10 @@
       "category": "Web Development"
     },
     {
-      "name": "cookiecutter",
+      "name": "lvtd-cookiecutter",
       "source": {
         "source": "local",
-        "path": "./plugins/cookiecutter"
+        "path": "./plugins/lvtd-cookiecutter"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -29,10 +29,10 @@
       "category": "Developer Tooling"
     },
     {
-      "name": "django-htmx",
+      "name": "lvtd-django-htmx",
       "source": {
         "source": "local",
-        "path": "./plugins/django-htmx"
+        "path": "./plugins/lvtd-django-htmx"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -41,10 +41,10 @@
       "category": "Web Development"
     },
     {
-      "name": "django-q2",
+      "name": "lvtd-django-q2",
       "source": {
         "source": "local",
-        "path": "./plugins/django-q2"
+        "path": "./plugins/lvtd-django-q2"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -53,10 +53,10 @@
       "category": "Background Jobs"
     },
     {
-      "name": "fastmcp-django",
+      "name": "lvtd-fastmcp-django",
       "source": {
         "source": "local",
-        "path": "./plugins/fastmcp-django"
+        "path": "./plugins/lvtd-fastmcp-django"
       },
       "policy": {
         "installation": "AVAILABLE",

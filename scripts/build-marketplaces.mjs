@@ -15,11 +15,11 @@ const marketplaceDir = root;
 const pluginsDir = path.join(marketplaceDir, "plugins");
 
 function pluginNameForSkill(skillName) {
-  return skillName;
+  return `lvtd-${skillName}`;
 }
 
-function buildDefaultPrompt(skill, pluginName) {
-  return `Use $${pluginName}:${skill.name} when working on ${skill.name.replaceAll("-", " ")} tasks.`;
+function buildDefaultPrompt(skill, metadata) {
+  return `Use the ${metadata.displayName} skill when working on ${skill.name.replaceAll("-", " ")} tasks.`;
 }
 
 function buildLongDescription(skill, metadata) {
@@ -97,7 +97,7 @@ for (const skill of skills) {
       category: metadata.category,
       capabilities: ["Interactive", "Read"],
       websiteURL: REPOSITORY_URL,
-      defaultPrompt: [buildDefaultPrompt(skill, pluginName)],
+      defaultPrompt: [buildDefaultPrompt(skill, metadata)],
       screenshots: [],
     },
   });

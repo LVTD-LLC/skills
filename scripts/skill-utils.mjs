@@ -111,12 +111,16 @@ export function normalizeTags(rawTags) {
   return [];
 }
 
+export function metadataValue(metadata, key) {
+  return metadata[key] ?? metadata[`lvtd.${key}`];
+}
+
 export function metadataForSkill(skill) {
   const metadata = skill.fields.metadata ?? {};
-  const displayName = metadata.displayName || metadata["lvtd.displayName"] || skill.name;
-  const category = metadata.category || metadata["lvtd.category"] || "Development";
-  const version = metadata.version || metadata["lvtd.version"] || "0.1.0";
-  const tags = normalizeTags(metadata.tags || metadata["lvtd.tags"]);
+  const displayName = metadataValue(metadata, "displayName") || skill.name;
+  const category = metadataValue(metadata, "category") || "Development";
+  const version = metadataValue(metadata, "version") || "0.1.0";
+  const tags = normalizeTags(metadataValue(metadata, "tags"));
 
   return {
     displayName,

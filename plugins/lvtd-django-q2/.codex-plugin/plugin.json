@@ -1,5 +1,5 @@
 {
-  "name": "django-q2",
+  "name": "lvtd-django-q2",
   "version": "0.1.0",
   "description": "Django Q2 workflow guidance for background jobs.",
   "author": {
@@ -28,7 +28,7 @@
     ],
     "websiteURL": "https://github.com/LVTD-LLC/skills",
     "defaultPrompt": [
-      "Use $django-q2:django-q2 when working on django q2 tasks."
+      "Use the Django Q2 skill when working on django q2 tasks."
     ],
     "screenshots": []
   }

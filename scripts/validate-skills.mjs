@@ -1,12 +1,14 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { listSkillNames, metadataForSkill, parseFrontmatter, skillsDir } from "./skill-utils.mjs";
+import {
+  listSkillNames,
+  metadataForSkill,
+  metadataValue,
+  parseFrontmatter,
+  skillsDir,
+} from "./skill-utils.mjs";
 
 const SEMVER_RE = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
-
-function metadataValue(metadata, key) {
-  return metadata[key] ?? metadata[`lvtd.${key}`];
-}
 
 export async function validateSkills() {
   const names = await listSkillNames();

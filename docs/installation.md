@@ -9,20 +9,20 @@ the repository root.
 
 ```text
 /plugin marketplace add LVTD-LLC/skills
-/plugin install django-htmx@lvtd-skills
+/plugin install lvtd-django-htmx@lvtd-skills
 /reload-plugins
 ```
 
-Claude Code exposes the installed skill as `/django-htmx:django-htmx`.
+Claude Code exposes the installed skill as `/lvtd-django-htmx:django-htmx`.
 
 ## Codex Marketplace
 
 ```bash
 codex plugin marketplace add LVTD-LLC/skills
-codex plugin add django-htmx@lvtd-skills
+codex plugin add lvtd-django-htmx@lvtd-skills
 ```
 
-Codex exposes the installed skill as `$django-htmx:django-htmx`.
+Codex exposes the installed skill as `$lvtd-django-htmx:django-htmx`.
 
 Start a new Codex thread after installing or updating plugins so the newly
 installed skills are available in context.
@@ -34,16 +34,19 @@ This repository ships:
 ```text
 .claude-plugin/marketplace.json
 .agents/plugins/marketplace.json
-plugins/<skill-name>/
+plugins/lvtd-<skill-name>/
 ```
 
 Plugin names:
 
-- `alpinejs-django`
-- `cookiecutter`
-- `django-htmx`
-- `django-q2`
-- `fastmcp-django`
+- `lvtd-alpinejs-django`
+- `lvtd-cookiecutter`
+- `lvtd-django-htmx`
+- `lvtd-django-q2`
+- `lvtd-fastmcp-django`
+
+The plugin IDs remain namespaced to avoid collisions across marketplaces.
+Marketplace display names and prompt text omit the `LVTD` prefix.
 
 ## Install With The Skills CLI
 

@@ -1,5 +1,5 @@
 {
-  "name": "fastmcp-django",
+  "name": "lvtd-fastmcp-django",
   "version": "0.1.0",
   "description": "FastMCP Django workflow guidance for mcp servers.",
   "author": {
@@ -29,7 +29,7 @@
     ],
     "websiteURL": "https://github.com/LVTD-LLC/skills",
     "defaultPrompt": [
-      "Use $fastmcp-django:fastmcp-django when working on fastmcp django tasks."
+      "Use the FastMCP Django skill when working on fastmcp django tasks."
     ],
     "screenshots": []
   }

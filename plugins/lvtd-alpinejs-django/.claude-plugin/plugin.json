@@ -1,7 +1,7 @@
 {
-  "name": "fastmcp-django",
+  "name": "lvtd-alpinejs-django",
   "version": "0.1.0",
-  "description": "FastMCP Django workflow guidance for mcp servers.",
+  "description": "Alpine.js Django workflow guidance for web development.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -10,12 +10,12 @@
   "repository": "https://github.com/LVTD-LLC/skills",
   "license": "MIT",
   "keywords": [
-    "fastmcp-django",
-    "fastmcp",
+    "alpinejs-django",
+    "alpinejs",
     "django",
-    "mcp",
-    "asgi"
+    "frontend",
+    "htmx"
   ],
   "skills": "./skills/",
-  "displayName": "FastMCP Django"
+  "displayName": "Alpine.js Django"
 }

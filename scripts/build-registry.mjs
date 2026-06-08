@@ -57,7 +57,7 @@ const loadedSkills = await loadSkills();
 for (const skill of loadedSkills) {
   const metadata = metadataForSkill(skill);
   const { files, sha256 } = await hashSkillDirectory(skill.path);
-  const pluginName = skill.name;
+  const pluginName = `lvtd-${skill.name}`;
 
   skills.push({
     name: skill.name,
