@@ -49,6 +49,7 @@ export function parseFrontmatter(markdown, filePath = "SKILL.md") {
   const frontmatter = markdown.slice(4, end).trim();
   const fields = {};
   let currentObject = null;
+  let currentArray = null;
 
   for (const line of frontmatter.split("\n")) {
     if (!line.trim()) {
@@ -60,6 +61,17 @@ export function parseFrontmatter(markdown, filePath = "SKILL.md") {
     }
 
     const indent = line.match(/^ */)?.[0].length ?? 0;
+    const trimmed = line.trim();
+
+    if (trimmed.startsWith("- ")) {
+      if (!currentArray || indent <= currentArray.indent) {
+        throw new Error(`${filePath} has a list item outside an array field: ${trimmed}`);
+      }
+
+      currentArray.values.push(parseScalar(trimmed.slice(2)));
+      continue;
+    }
+
     const match = line.trim().match(/^([A-Za-z0-9_.-]+):(?:\s*(.*))?$/);
     if (!match) {
       throw new Error(`${filePath} has unsupported frontmatter syntax: ${line.trim()}`);
@@ -74,11 +86,21 @@ export function parseFrontmatter(markdown, filePath = "SKILL.md") {
         fields[key] = parseScalar(rawValue);
         currentObject = null;
       }
+      currentArray = null;
       continue;
     }
 
     if (currentObject && typeof currentObject === "object" && !Array.isArray(currentObject)) {
-      currentObject[key] = parseScalar(rawValue);
+      if (rawValue.trim() === "") {
+        currentObject[key] = [];
+        currentArray = {
+          indent,
+          values: currentObject[key],
+        };
+      } else {
+        currentObject[key] = parseScalar(rawValue);
+        currentArray = null;
+      }
       continue;
     }
 

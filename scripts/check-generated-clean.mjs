@@ -10,9 +10,16 @@ if (paths.length === 0) {
   process.exit(1);
 }
 
-const { stdout } = await execFileAsync("git", ["status", "--porcelain", "--", ...paths], {
-  cwd: root,
-});
+let stdout = "";
+
+try {
+  ({ stdout } = await execFileAsync("git", ["status", "--porcelain", "--", ...paths], {
+    cwd: root,
+  }));
+} catch (error) {
+  console.error(`Unable to check generated artifacts with git: ${error.message}`);
+  process.exit(1);
+}
 
 if (stdout.trim()) {
   console.error("Generated artifacts are out of sync. Run npm run build and commit the result:");

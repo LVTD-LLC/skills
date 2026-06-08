@@ -87,10 +87,10 @@ async function assertCopiedSkillMatchesSource(skill, copiedSkillPath, pluginName
   }
 
   for (const file of sourceFiles) {
-    const sourceContent = await readFile(path.join(skill.path, file), "utf8");
-    const copiedContent = await readFile(path.join(copiedSkillPath, file), "utf8");
+    const sourceContent = await readFile(path.join(skill.path, file));
+    const copiedContent = await readFile(path.join(copiedSkillPath, file));
 
-    if (sourceContent !== copiedContent) {
+    if (!sourceContent.equals(copiedContent)) {
       errors.push(`${pluginName} copied skill file ${file} must match source; run npm run build`);
     }
   }
@@ -132,12 +132,6 @@ assertEqual(codexEntries.length, skills.length, "Codex marketplace plugin count"
 
 const pluginDirs = await listPluginDirectories(path.join(marketplaceDir, "plugins"), errors);
 assertDeepEqual(pluginDirs, expectedPluginNames, "Generated plugin directory list", errors);
-
-for (const pluginName of pluginDirs) {
-  if (!expectedPluginNames.includes(pluginName)) {
-    errors.push(`${pluginName} does not map to a source skill under skills/`);
-  }
-}
 
 for (const skill of skills) {
   const metadata = metadataForSkill(skill);
