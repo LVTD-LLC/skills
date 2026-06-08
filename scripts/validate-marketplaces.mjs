@@ -1,8 +1,13 @@
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
-import { loadSkills, marketplaceVersionForSkills, metadataForSkill, root } from "./skill-utils.mjs";
-
-const MARKETPLACE_NAME = "lvtd-skills";
+import {
+  loadSkills,
+  MARKETPLACE_DISPLAY_NAME,
+  MARKETPLACE_NAME,
+  marketplaceVersionForSkills,
+  metadataForSkill,
+  root,
+} from "./skill-utils.mjs";
 const marketplaceDir = root;
 
 async function pathExists(filePath) {
@@ -68,7 +73,7 @@ if (codexMarketplace) {
   assertEqual(codexMarketplace.name, MARKETPLACE_NAME, "Codex marketplace name", errors);
   assertEqual(
     codexMarketplace.interface?.displayName,
-    "Django SaaS Skills",
+    MARKETPLACE_DISPLAY_NAME,
     "Codex marketplace displayName",
     errors,
   );

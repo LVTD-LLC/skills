@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import {
   listSkillNames,
+  metadataKeyLabel,
   metadataForSkill,
   metadataValue,
   parseFrontmatter,
@@ -48,19 +49,21 @@ export async function validateSkills() {
     const rawMetadata = fields.metadata ?? {};
     const metadata = metadataForSkill({ name, fields });
     if (!metadataValue(rawMetadata, "version") || !SEMVER_RE.test(metadata.version)) {
-      errors.push(`${skillPath} metadata.version must be semver`);
+      errors.push(`${skillPath} ${metadataKeyLabel(rawMetadata, "version")} must be semver`);
     }
 
     if (!metadataValue(rawMetadata, "displayName")) {
-      errors.push(`${skillPath} must include metadata.displayName`);
+      errors.push(
+        `${skillPath} must include metadata.displayName or legacy metadata.lvtd.displayName`,
+      );
     }
 
     if (!metadataValue(rawMetadata, "category")) {
-      errors.push(`${skillPath} must include metadata.category`);
+      errors.push(`${skillPath} must include metadata.category or legacy metadata.lvtd.category`);
     }
 
     if (!metadataValue(rawMetadata, "tags")) {
-      errors.push(`${skillPath} must include metadata.tags`);
+      errors.push(`${skillPath} must include metadata.tags or legacy metadata.lvtd.tags`);
     }
 
     if (!markdown.match(/\n#\s+\S/)) {

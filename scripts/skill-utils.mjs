@@ -3,6 +3,8 @@ import path from "node:path";
 
 export const root = new URL("..", import.meta.url).pathname;
 export const skillsDir = path.join(root, "skills");
+export const MARKETPLACE_NAME = "lvtd-skills";
+export const MARKETPLACE_DISPLAY_NAME = "Django SaaS Skills";
 
 function parseScalar(rawValue) {
   const value = rawValue.trim();
@@ -113,6 +115,18 @@ export function normalizeTags(rawTags) {
 
 export function metadataValue(metadata, key) {
   return metadata[key] ?? metadata[`lvtd.${key}`];
+}
+
+export function metadataKeyLabel(metadata, key) {
+  if (Object.hasOwn(metadata, key)) {
+    return `metadata.${key}`;
+  }
+
+  if (Object.hasOwn(metadata, `lvtd.${key}`)) {
+    return `metadata.lvtd.${key}`;
+  }
+
+  return `metadata.${key}`;
 }
 
 export function metadataForSkill(skill) {

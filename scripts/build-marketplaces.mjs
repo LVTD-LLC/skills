@@ -1,10 +1,15 @@
 import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { loadSkills, marketplaceVersionForSkills, metadataForSkill, root } from "./skill-utils.mjs";
+import {
+  loadSkills,
+  MARKETPLACE_DISPLAY_NAME,
+  MARKETPLACE_NAME,
+  marketplaceVersionForSkills,
+  metadataForSkill,
+  root,
+} from "./skill-utils.mjs";
 import { validateSkills } from "./validate-skills.mjs";
 
-const MARKETPLACE_NAME = "lvtd-skills";
-const MARKETPLACE_DISPLAY_NAME = "Django SaaS Skills";
 const REPOSITORY_URL = "https://github.com/LVTD-LLC/skills";
 const AUTHOR = {
   name: "LVTD",
