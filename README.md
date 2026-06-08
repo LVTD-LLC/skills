@@ -23,13 +23,16 @@ skills/
 docs/
   installation.md
 scripts/
+  build-marketplaces.mjs
   build-registry.mjs
+  install-skill.mjs
+  skill-utils.mjs
   validate-skills.mjs
 tests/
   validate-skills.mjs
 ```
 
-## Install A Skill
+## Install A Skill Directly
 
 Use the `skills` CLI to install from this repository:
 
@@ -55,6 +58,55 @@ npx skills add . --skill django-htmx
 
 More details are in [`docs/installation.md`](docs/installation.md).
 
+## Build The Marketplace
+
+Build the registry and generated marketplace artifacts:
+
+```bash
+npm run build
+```
+
+The marketplace root is written to `dist/marketplace` and contains:
+
+```text
+.claude-plugin/marketplace.json
+.agents/plugins/marketplace.json
+plugins/lvtd-<skill-name>/
+```
+
+Install from the generated Claude Code marketplace:
+
+```text
+/plugin marketplace add ./dist/marketplace
+/plugin install lvtd-django-htmx@lvtd-skills
+/reload-plugins
+```
+
+Claude Code exposes the skill as `/lvtd-django-htmx:django-htmx`.
+
+Install from the generated Codex marketplace:
+
+```bash
+codex plugin marketplace add ./dist/marketplace
+codex plugin add lvtd-django-htmx@lvtd-skills
+```
+
+Codex exposes the skill as `$lvtd-django-htmx:django-htmx`.
+
+Generated plugin names:
+
+- `lvtd-alpinejs-django`
+- `lvtd-cookiecutter`
+- `lvtd-django-htmx`
+- `lvtd-django-q2`
+- `lvtd-fastmcp-django`
+
+## Marketplace Strategy
+
+See [`docs/marketplace-strategy.md`](docs/marketplace-strategy.md) for the
+research-backed plan to publish this catalog across Codex, Claude Code,
+OpenClaw, and other Agent Skills-compatible clients.
+
 ## Development
 
 Validate all skills:
@@ -69,7 +121,8 @@ Build the machine-readable registry:
 npm run build
 ```
 
-The registry is written to `dist/registry.json`.
+The registry is written to `dist/registry.json`, and marketplace artifacts are
+written to `dist/marketplace`.
 
 ## Publishing
 

@@ -1,6 +1,12 @@
 ---
 name: django-q2
 description: "Use when adding, changing, testing, or debugging Django Q2 background tasks, scheduled jobs, qcluster workers, Redis broker configuration, or ORM broker fallback in this generated Django SaaS app."
+license: MIT
+compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
+metadata:
+  lvtd.version: "0.1.0"
+  lvtd.category: Background Jobs
+  lvtd.tags: django,django-q2,background-jobs,redis
 ---
 
 # Django Q2 Background Jobs
@@ -183,4 +189,3 @@ When switching to ORM:
 
 - Official docs: https://django-q2.readthedocs.io/en/master/
 - Upstream repo: https://github.com/django-q2/django-q2
-

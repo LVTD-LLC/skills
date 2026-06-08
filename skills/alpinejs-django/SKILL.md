@@ -1,6 +1,13 @@
 ---
 name: alpinejs-django
 description: Use when adding, changing, or debugging Alpine.js behavior in this Django SaaS Starter project, especially in Django templates that may also use HTMX partial updates.
+license: MIT
+compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
+metadata:
+  lvtd.version: "0.1.0"
+  lvtd.displayName: Alpine.js Django
+  lvtd.category: Web Development
+  lvtd.tags: alpinejs,django,frontend,htmx
 ---
 
 # Alpine.js with Django
@@ -193,4 +200,3 @@ explicit:
 - For generated projects, run `npm run build` before relying on static output.
 - Manually verify stateful controls in light and dark mode when changing visible
   UI behavior.
-

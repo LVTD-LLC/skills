@@ -30,6 +30,7 @@ jobs:
       - name: Package catalog
         run: |
           tar -czf dist/lvtd-skills.tar.gz skills README.md docs package.json
+          tar -czf dist/lvtd-marketplace.tar.gz -C dist marketplace
 
       - name: Upload artifact
         uses: actions/upload-artifact@v7
@@ -44,3 +45,4 @@ jobs:
           files: |
             dist/registry.json
             dist/lvtd-skills.tar.gz
+            dist/lvtd-marketplace.tar.gz

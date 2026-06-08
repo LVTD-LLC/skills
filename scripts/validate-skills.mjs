@@ -1,56 +1,8 @@
-import { readdir, readFile, stat } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { listSkillNames, metadataForSkill, parseFrontmatter, skillsDir } from "./skill-utils.mjs";
 
-const root = new URL("..", import.meta.url).pathname;
-const skillsDir = path.join(root, "skills");
-
-function parseFrontmatter(markdown, filePath) {
-  if (!markdown.startsWith("---\n")) {
-    throw new Error(`${filePath} must start with YAML frontmatter`);
-  }
-
-  const end = markdown.indexOf("\n---\n", 4);
-  if (end === -1) {
-    throw new Error(`${filePath} must close YAML frontmatter with ---`);
-  }
-
-  const frontmatter = markdown.slice(4, end).trim();
-  const fields = {};
-
-  for (const line of frontmatter.split("\n")) {
-    const match = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
-    if (!match) {
-      continue;
-    }
-
-    let value = match[2].trim();
-    if (
-      (value.startsWith('"') && value.endsWith('"')) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
-
-    fields[match[1]] = value;
-  }
-
-  return fields;
-}
-
-async function listSkillNames() {
-  const entries = await readdir(skillsDir);
-  const names = [];
-
-  for (const entry of entries) {
-    const entryPath = path.join(skillsDir, entry);
-    const entryStat = await stat(entryPath);
-    if (entryStat.isDirectory()) {
-      names.push(entry);
-    }
-  }
-
-  return names.sort();
-}
+const SEMVER_RE = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
 
 export async function validateSkills() {
   const names = await listSkillNames();
@@ -87,6 +39,20 @@ export async function validateSkills() {
       errors.push(`${skillPath} must include a useful description`);
     }
 
+    const rawMetadata = fields.metadata ?? {};
+    const metadata = metadataForSkill({ name, fields });
+    if (!rawMetadata["lvtd.version"] || !SEMVER_RE.test(metadata.version)) {
+      errors.push(`${skillPath} metadata.lvtd.version must be semver`);
+    }
+
+    if (!rawMetadata["lvtd.category"]) {
+      errors.push(`${skillPath} must include metadata.lvtd.category`);
+    }
+
+    if (!rawMetadata["lvtd.tags"]) {
+      errors.push(`${skillPath} must include metadata.lvtd.tags`);
+    }
+
     if (!markdown.match(/\n#\s+\S/)) {
       errors.push(`${skillPath} must include a top-level heading`);
     }
@@ -109,4 +75,3 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 
   console.log(`Validated ${names.length} skills: ${names.join(", ")}`);
 }
-

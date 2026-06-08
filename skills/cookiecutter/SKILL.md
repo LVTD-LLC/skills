@@ -1,6 +1,12 @@
 ---
 name: cookiecutter
 description: Use when adding, changing, testing, or debugging Cookiecutter templates, including cookiecutter.json variables, Jinja-rendered files, hooks, _copy_without_render, optional feature cleanup, and generated-project validation.
+license: MIT
+compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
+metadata:
+  lvtd.version: "0.1.0"
+  lvtd.category: Developer Tooling
+  lvtd.tags: cookiecutter,templates,jinja,scaffolding
 ---
 
 # Cookiecutter Template Work

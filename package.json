@@ -5,7 +5,10 @@
   "description": "Reusable agent skills for LVTD projects and Django SaaS workflows.",
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-registry.mjs",
+    "build": "node scripts/build-registry.mjs && node scripts/build-marketplaces.mjs",
+    "build:registry": "node scripts/build-registry.mjs",
+    "build:marketplaces": "node scripts/build-marketplaces.mjs",
+    "install-skill": "node scripts/install-skill.mjs",
     "test": "node tests/validate-skills.mjs",
     "validate": "node scripts/validate-skills.mjs"
   },

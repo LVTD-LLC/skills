@@ -1,37 +1,48 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
+import { loadSkills, metadataForSkill, root } from "./skill-utils.mjs";
 import { validateSkills } from "./validate-skills.mjs";
 
-const root = new URL("..", import.meta.url).pathname;
-const skillsDir = path.join(root, "skills");
 const distDir = path.join(root, "dist");
 
-function parseFrontmatter(markdown) {
-  const end = markdown.indexOf("\n---\n", 4);
-  const frontmatter = markdown.slice(4, end).trim();
-  const fields = {};
+async function listFilesRecursive(directory, prefix = "") {
+  const entries = await readdir(directory);
+  const files = [];
 
-  for (const line of frontmatter.split("\n")) {
-    const match = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
-    if (!match) {
-      continue;
+  for (const entry of entries) {
+    const absolutePath = path.join(directory, entry);
+    const relativePath = path.join(prefix, entry).replaceAll(path.sep, "/");
+    const entryStat = await stat(absolutePath);
+
+    if (entryStat.isDirectory()) {
+      files.push(...(await listFilesRecursive(absolutePath, relativePath)));
+    } else {
+      files.push(relativePath);
     }
-
-    let value = match[2].trim();
-    if (
-      (value.startsWith('"') && value.endsWith('"')) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
-
-    fields[match[1]] = value;
   }
 
-  return fields;
+  return files.sort();
 }
 
-const { names, errors } = await validateSkills();
+async function hashSkillDirectory(skillPath) {
+  const hash = createHash("sha256");
+  const files = await listFilesRecursive(skillPath);
+
+  for (const file of files) {
+    hash.update(file);
+    hash.update("\0");
+    hash.update(await readFile(path.join(skillPath, file)));
+    hash.update("\0");
+  }
+
+  return {
+    files,
+    sha256: hash.digest("hex"),
+  };
+}
+
+const { errors } = await validateSkills();
 
 if (errors.length > 0) {
   console.error(errors.join("\n"));
@@ -39,21 +50,41 @@ if (errors.length > 0) {
 }
 
 const skills = [];
+const loadedSkills = await loadSkills();
 
-for (const name of names) {
-  const relativePath = `skills/${name}/SKILL.md`;
-  const markdown = await readFile(path.join(skillsDir, name, "SKILL.md"), "utf8");
-  const fields = parseFrontmatter(markdown);
+for (const skill of loadedSkills) {
+  const metadata = metadataForSkill(skill);
+  const { files, sha256 } = await hashSkillDirectory(skill.path);
+  const pluginName = `lvtd-${skill.name}`;
 
   skills.push({
-    name,
-    description: fields.description,
-    path: relativePath,
+    name: skill.name,
+    displayName: metadata.displayName,
+    description: skill.fields.description,
+    version: metadata.version,
+    license: metadata.license,
+    compatibility: metadata.compatibility,
+    category: metadata.category,
+    tags: metadata.tags,
+    path: skill.relativePath,
+    entrypoint: skill.entrypoint,
+    files,
+    sha256,
+    hosts: {
+      claudeCode: {
+        marketplace: "lvtd-skills",
+        plugin: pluginName,
+      },
+      codex: {
+        marketplace: "lvtd-skills",
+        plugin: pluginName,
+      },
+    },
   });
 }
 
 const registry = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   name: "LVTD Skills",
   repository: "https://github.com/LVTD-LLC/skills",
   generatedAt: new Date().toISOString(),
@@ -64,4 +95,3 @@ await mkdir(distDir, { recursive: true });
 await writeFile(path.join(distDir, "registry.json"), `${JSON.stringify(registry, null, 2)}\n`);
 
 console.log(`Wrote dist/registry.json with ${skills.length} skills`);
-

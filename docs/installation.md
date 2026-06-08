@@ -2,6 +2,61 @@
 
 LVTD skills are plain folders that contain a `SKILL.md` file. Use the `skills` CLI to install them from GitHub, a direct skill URL, any git URL, or a local checkout.
 
+For Claude Code and Codex, this repo can also generate native marketplace
+artifacts.
+
+## Build The Marketplace
+
+```bash
+git clone https://github.com/LVTD-LLC/skills.git
+cd skills
+npm run build
+```
+
+This writes a marketplace root to:
+
+```text
+dist/marketplace
+```
+
+Generated plugin names:
+
+- `lvtd-alpinejs-django`
+- `lvtd-cookiecutter`
+- `lvtd-django-htmx`
+- `lvtd-django-q2`
+- `lvtd-fastmcp-django`
+
+## Claude Code Marketplace
+
+After building:
+
+```text
+/plugin marketplace add ./dist/marketplace
+/plugin install lvtd-django-htmx@lvtd-skills
+/reload-plugins
+```
+
+Claude Code exposes the installed skill as `/lvtd-django-htmx:django-htmx`.
+
+For a Git-backed Claude Code marketplace, publish the contents of
+`dist/marketplace` at the marketplace repository root so
+`.claude-plugin/marketplace.json` is at the top level.
+
+## Codex Marketplace
+
+After building:
+
+```bash
+codex plugin marketplace add ./dist/marketplace
+codex plugin add lvtd-django-htmx@lvtd-skills
+```
+
+Codex exposes the installed skill as `$lvtd-django-htmx:django-htmx`.
+
+Start a new Codex thread after installing or updating plugins so the newly
+installed skills are available in context.
+
 ## Install With The Skills CLI
 
 ```bash
@@ -37,6 +92,8 @@ npx skills add . --skill django-htmx
 
 ## Codex
 
+Direct skill install:
+
 ```bash
 npx skills add LVTD-LLC/skills --skill django-htmx -g -a codex
 ```
@@ -44,6 +101,8 @@ npx skills add LVTD-LLC/skills --skill django-htmx -g -a codex
 Restart Codex or start a new session if your runtime only discovers skills at launch.
 
 ## Claude Code
+
+Direct skill install:
 
 ```bash
 npx skills add LVTD-LLC/skills --skill django-htmx -g -a claude-code

@@ -1,6 +1,12 @@
 ---
 name: django-htmx
 description: Build and review HTMX interactions in Django server-rendered projects, especially generated django-saas-starter apps. Use when adding hx attributes, partial template responses, request.htmx branching, django-htmx response headers, forms, swaps, triggers, redirects, polling, boosted links or forms, or coordinating HTMX with Alpine.js local state.
+license: MIT
+compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
+metadata:
+  lvtd.version: "0.1.0"
+  lvtd.category: Web Development
+  lvtd.tags: django,htmx,server-rendered-ui
 ---
 
 # Django HTMX
@@ -224,4 +230,3 @@ def test_profile_panel_htmx_renders_partial(client, user):
 - HTMX repository: https://github.com/bigskysoftware/htmx
 - django-htmx middleware: https://django-htmx.readthedocs.io/en/latest/middleware.html
 - django-htmx HTTP helpers: https://django-htmx.readthedocs.io/en/latest/http.html
-
