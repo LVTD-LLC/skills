@@ -1,6 +1,6 @@
 import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { loadSkills, metadataForSkill, root } from "./skill-utils.mjs";
+import { loadSkills, marketplaceVersionForSkills, metadataForSkill, root } from "./skill-utils.mjs";
 import { validateSkills } from "./validate-skills.mjs";
 
 const MARKETPLACE_NAME = "lvtd-skills";
@@ -33,13 +33,6 @@ function buildShortDescription(skill, metadata) {
     return description;
   }
   return `${metadata.displayName} workflow guidance for ${metadata.category.toLowerCase()}.`;
-}
-
-function marketplaceVersionForSkills(skills) {
-  return skills
-    .map((skill) => metadataForSkill(skill).version)
-    .sort((left, right) => left.localeCompare(right, undefined, { numeric: true }))
-    .at(-1);
 }
 
 async function writeJson(filePath, payload) {

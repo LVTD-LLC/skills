@@ -1,6 +1,6 @@
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
-import { loadSkills, metadataForSkill, root } from "./skill-utils.mjs";
+import { loadSkills, marketplaceVersionForSkills, metadataForSkill, root } from "./skill-utils.mjs";
 
 const MARKETPLACE_NAME = "lvtd-skills";
 const marketplaceDir = path.join(root, "dist", "marketplace");
@@ -53,10 +53,7 @@ function findEntry(entries, name, label, errors) {
 
 const errors = [];
 const skills = await loadSkills();
-const marketplaceVersion = skills
-  .map((skill) => metadataForSkill(skill).version)
-  .sort((left, right) => left.localeCompare(right, undefined, { numeric: true }))
-  .at(-1);
+const marketplaceVersion = marketplaceVersionForSkills(skills);
 const claudeMarketplacePath = path.join(marketplaceDir, ".claude-plugin", "marketplace.json");
 const codexMarketplacePath = path.join(marketplaceDir, ".agents", "plugins", "marketplace.json");
 const claudeMarketplace = await readJson(claudeMarketplacePath, errors);

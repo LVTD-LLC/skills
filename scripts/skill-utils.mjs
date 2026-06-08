@@ -130,6 +130,13 @@ export function metadataForSkill(skill) {
   };
 }
 
+export function marketplaceVersionForSkills(skills) {
+  return skills
+    .map((skill) => metadataForSkill(skill).version)
+    .sort((left, right) => left.localeCompare(right, undefined, { numeric: true }))
+    .at(-1);
+}
+
 export async function loadSkills() {
   const names = await listSkillNames();
   const skills = [];
