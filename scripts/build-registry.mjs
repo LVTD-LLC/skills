@@ -1,7 +1,8 @@
-import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import path from "node:path";
 import {
+  listFilesRecursive,
   loadSkills,
   MARKETPLACE_DISPLAY_NAME,
   MARKETPLACE_NAME,
@@ -11,25 +12,6 @@ import {
 import { validateSkills } from "./validate-skills.mjs";
 
 const distDir = path.join(root, "dist");
-
-async function listFilesRecursive(directory, prefix = "") {
-  const entries = await readdir(directory);
-  const files = [];
-
-  for (const entry of entries) {
-    const absolutePath = path.join(directory, entry);
-    const relativePath = path.join(prefix, entry).replaceAll(path.sep, "/");
-    const entryStat = await stat(absolutePath);
-
-    if (entryStat.isDirectory()) {
-      files.push(...(await listFilesRecursive(absolutePath, relativePath)));
-    } else {
-      files.push(relativePath);
-    }
-  }
-
-  return files.sort();
-}
 
 async function hashSkillDirectory(skillPath) {
   const hash = createHash("sha256");

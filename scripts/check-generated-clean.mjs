@@ -1,0 +1,23 @@
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+import { root } from "./skill-utils.mjs";
+
+const execFileAsync = promisify(execFile);
+const paths = process.argv.slice(2);
+
+if (paths.length === 0) {
+  console.error("Pass at least one generated path to check.");
+  process.exit(1);
+}
+
+const { stdout } = await execFileAsync("git", ["status", "--porcelain", "--", ...paths], {
+  cwd: root,
+});
+
+if (stdout.trim()) {
+  console.error("Generated artifacts are out of sync. Run npm run build and commit the result:");
+  console.error(stdout.trim());
+  process.exit(1);
+}
+
+console.log(`Generated artifacts are up to date: ${paths.join(", ")}`);

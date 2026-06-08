@@ -22,25 +22,32 @@ CLI of their preferred tool.
 
 ## Current Repo Assessment
 
-The repo is already close to the right base shape:
+The repo now has the right base shape for a generated marketplace:
 
 - Each skill is a folder under `skills/` with a `SKILL.md`.
-- `scripts/validate-skills.mjs` checks names, descriptions, frontmatter, and
-  headings.
+- `scripts/validate-skills.mjs` checks names, descriptions, frontmatter,
+  metadata, headings, line endings, and executable script files.
 - `scripts/build-registry.mjs` emits `dist/registry.json`.
+- `scripts/build-marketplaces.mjs` emits Claude Code and Codex marketplace
+  adapters from shared marketplace helper functions.
+- `scripts/validate-marketplaces.mjs` verifies generated manifests, marketplace
+  entries, plugin directories, and copied skill files against the canonical
+  `skills/` source.
+- `npm run check` rebuilds and validates the catalog, then fails if committed
+  marketplace artifacts are stale.
 - The `skills` CLI can install individual skills from GitHub, a direct skill
   URL, any git URL, or a local checkout.
-- CI validates skills and builds the registry.
+- CI runs the same `npm run check` command used locally.
 
-Main gaps before this becomes a real marketplace:
+Remaining gaps before this becomes a mature marketplace:
 
-- The registry lacks per-skill version, license, tags, category, compatibility,
-  file list, checksum, and source commit.
-- Frontmatter parsing is custom regex logic instead of YAML parsing.
-- There are no generated Claude Code, Codex, or OpenClaw marketplace artifacts.
-- There is no per-host validation in CI.
-- There is no supply-chain metadata, signing, or security review process for
-  scripts, hooks, MCP servers, or app-backed capabilities.
+- The registry does not include source commit metadata yet.
+- Frontmatter parsing is intentionally strict custom parsing instead of a full
+  YAML parser.
+- CI does not yet run native host validators such as Claude, Codex, or OpenClaw
+  plugin validation CLIs.
+- There are no prompt fixtures or behavioral smoke tests per skill yet.
+- There is no supply-chain signing or provenance process for release artifacts.
 
 ## Best Practices
 

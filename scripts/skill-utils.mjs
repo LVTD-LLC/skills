@@ -1,7 +1,8 @@
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-export const root = new URL("..", import.meta.url).pathname;
+export const root = fileURLToPath(new URL("..", import.meta.url));
 export const skillsDir = path.join(root, "skills");
 export const MARKETPLACE_NAME = "lvtd-skills";
 export const MARKETPLACE_DISPLAY_NAME = "LVTD Skills";
@@ -54,10 +55,14 @@ export function parseFrontmatter(markdown, filePath = "SKILL.md") {
       continue;
     }
 
+    if (line.trim().startsWith("#")) {
+      continue;
+    }
+
     const indent = line.match(/^ */)?.[0].length ?? 0;
     const match = line.trim().match(/^([A-Za-z0-9_.-]+):(?:\s*(.*))?$/);
     if (!match) {
-      continue;
+      throw new Error(`${filePath} has unsupported frontmatter syntax: ${line.trim()}`);
     }
 
     const [, key, rawValue = ""] = match;
@@ -96,6 +101,25 @@ export async function listSkillNames() {
   }
 
   return names.sort();
+}
+
+export async function listFilesRecursive(directory, prefix = "") {
+  const entries = await readdir(directory);
+  const files = [];
+
+  for (const entry of entries) {
+    const absolutePath = path.join(directory, entry);
+    const relativePath = path.join(prefix, entry).replaceAll(path.sep, "/");
+    const entryStat = await stat(absolutePath);
+
+    if (entryStat.isDirectory()) {
+      files.push(...(await listFilesRecursive(absolutePath, relativePath)));
+    } else {
+      files.push(relativePath);
+    }
+  }
+
+  return files.sort();
 }
 
 export function normalizeTags(rawTags) {

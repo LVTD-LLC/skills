@@ -21,14 +21,8 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Validate skills
-        run: npm test
-
-      - name: Build registry
-        run: npm run build
-
-      - name: Validate marketplace artifacts
-        run: npm run validate:marketplaces
+      - name: Check catalog
+        run: npm run check
 
       - name: Package catalog
         run: |
