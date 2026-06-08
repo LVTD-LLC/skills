@@ -42,11 +42,13 @@ async function hashSkillDirectory(skillPath) {
   };
 }
 
-const { errors } = await validateSkills();
+if (!process.argv.includes("--skip-validation")) {
+  const { errors } = await validateSkills();
 
-if (errors.length > 0) {
-  console.error(errors.join("\n"));
-  process.exit(1);
+  if (errors.length > 0) {
+    console.error(errors.join("\n"));
+    process.exit(1);
+  }
 }
 
 const skills = [];

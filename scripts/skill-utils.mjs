@@ -72,7 +72,10 @@ export function parseFrontmatter(markdown, filePath = "SKILL.md") {
 
     if (currentObject && typeof currentObject === "object" && !Array.isArray(currentObject)) {
       currentObject[key] = parseScalar(rawValue);
+      continue;
     }
+
+    throw new Error(`${filePath} has an indented frontmatter field outside a mapping: ${key}`);
   }
 
   return fields;
