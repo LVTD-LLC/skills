@@ -2,53 +2,23 @@
 
 LVTD skills are plain folders that contain a `SKILL.md` file. Use the `skills` CLI to install them from GitHub, a direct skill URL, any git URL, or a local checkout.
 
-For Claude Code and Codex, this repo can also generate native marketplace
-artifacts.
-
-## Build The Marketplace
-
-```bash
-git clone https://github.com/LVTD-LLC/skills.git
-cd skills
-npm run build
-```
-
-This writes a marketplace root to:
-
-```text
-dist/marketplace
-```
-
-Generated plugin names:
-
-- `lvtd-alpinejs-django`
-- `lvtd-cookiecutter`
-- `lvtd-django-htmx`
-- `lvtd-django-q2`
-- `lvtd-fastmcp-django`
+For Claude Code and Codex, this repo also ships native marketplace artifacts at
+the repository root.
 
 ## Claude Code Marketplace
 
-After building:
-
 ```text
-/plugin marketplace add ./dist/marketplace
+/plugin marketplace add LVTD-LLC/skills
 /plugin install lvtd-django-htmx@lvtd-skills
 /reload-plugins
 ```
 
 Claude Code exposes the installed skill as `/lvtd-django-htmx:django-htmx`.
 
-For a Git-backed Claude Code marketplace, publish the contents of
-`dist/marketplace` at the marketplace repository root so
-`.claude-plugin/marketplace.json` is at the top level.
-
 ## Codex Marketplace
 
-After building:
-
 ```bash
-codex plugin marketplace add ./dist/marketplace
+codex plugin marketplace add LVTD-LLC/skills
 codex plugin add lvtd-django-htmx@lvtd-skills
 ```
 
@@ -56,6 +26,24 @@ Codex exposes the installed skill as `$lvtd-django-htmx:django-htmx`.
 
 Start a new Codex thread after installing or updating plugins so the newly
 installed skills are available in context.
+
+## Marketplace Contents
+
+This repository ships:
+
+```text
+.claude-plugin/marketplace.json
+.agents/plugins/marketplace.json
+plugins/lvtd-<skill-name>/
+```
+
+Plugin names:
+
+- `lvtd-alpinejs-django`
+- `lvtd-cookiecutter`
+- `lvtd-django-htmx`
+- `lvtd-django-q2`
+- `lvtd-fastmcp-django`
 
 ## Install With The Skills CLI
 

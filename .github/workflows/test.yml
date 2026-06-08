@@ -26,3 +26,6 @@ jobs:
 
       - name: Validate marketplace artifacts
         run: npm run validate:marketplaces
+
+      - name: Check generated marketplace artifacts are committed
+        run: test -z "$(git status --porcelain -- .claude-plugin .agents plugins)"

@@ -58,15 +58,28 @@ npx skills add . --skill django-htmx
 
 More details are in [`docs/installation.md`](docs/installation.md).
 
-## Build The Marketplace
+## Marketplace Install
 
-Build the registry and generated marketplace artifacts:
+Add the marketplace in Claude Code:
 
-```bash
-npm run build
+```text
+/plugin marketplace add LVTD-LLC/skills
+/plugin install lvtd-django-htmx@lvtd-skills
+/reload-plugins
 ```
 
-The marketplace root is written to `dist/marketplace` and contains:
+Claude Code exposes the skill as `/lvtd-django-htmx:django-htmx`.
+
+Add the marketplace in Codex:
+
+```bash
+codex plugin marketplace add LVTD-LLC/skills
+codex plugin add lvtd-django-htmx@lvtd-skills
+```
+
+Codex exposes the skill as `$lvtd-django-htmx:django-htmx`.
+
+This repository ships the marketplace files directly:
 
 ```text
 .claude-plugin/marketplace.json
@@ -74,24 +87,11 @@ The marketplace root is written to `dist/marketplace` and contains:
 plugins/lvtd-<skill-name>/
 ```
 
-Install from the generated Claude Code marketplace:
-
-```text
-/plugin marketplace add ./dist/marketplace
-/plugin install lvtd-django-htmx@lvtd-skills
-/reload-plugins
-```
-
-Claude Code exposes the skill as `/lvtd-django-htmx:django-htmx`.
-
-Install from the generated Codex marketplace:
+Refresh generated marketplace artifacts during development:
 
 ```bash
-codex plugin marketplace add ./dist/marketplace
-codex plugin add lvtd-django-htmx@lvtd-skills
+npm run build
 ```
-
-Codex exposes the skill as `$lvtd-django-htmx:django-htmx`.
 
 Generated plugin names:
 
@@ -115,14 +115,14 @@ Validate all skills:
 npm test
 ```
 
-Build the machine-readable registry:
+Build the machine-readable registry and refresh committed marketplace artifacts:
 
 ```bash
 npm run build
 ```
 
-The registry is written to `dist/registry.json`, and marketplace artifacts are
-written to `dist/marketplace`.
+The registry is written to `dist/registry.json`. Marketplace artifacts are
+written to `.claude-plugin/`, `.agents/plugins/`, and `plugins/`.
 
 Validate generated marketplace artifacts:
 

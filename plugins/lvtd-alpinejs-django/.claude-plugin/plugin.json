@@ -1,0 +1,21 @@
+{
+  "name": "lvtd-alpinejs-django",
+  "version": "0.1.0",
+  "description": "Alpine.js Django workflow guidance for web development.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "alpinejs-django",
+    "alpinejs",
+    "django",
+    "frontend",
+    "htmx"
+  ],
+  "skills": "./skills/",
+  "displayName": "LVTD Alpine.js Django"
+}

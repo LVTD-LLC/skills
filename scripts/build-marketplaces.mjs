@@ -11,8 +11,7 @@ const AUTHOR = {
   url: "https://github.com/LVTD-LLC",
 };
 
-const distDir = path.join(root, "dist");
-const marketplaceDir = path.join(distDir, "marketplace");
+const marketplaceDir = root;
 const pluginsDir = path.join(marketplaceDir, "plugins");
 
 function pluginNameForSkill(skillName) {
@@ -53,7 +52,9 @@ const marketplaceVersion = marketplaceVersionForSkills(skills);
 const claudePlugins = [];
 const codexPlugins = [];
 
-await rm(marketplaceDir, { recursive: true, force: true });
+await rm(path.join(marketplaceDir, ".claude-plugin"), { recursive: true, force: true });
+await rm(path.join(marketplaceDir, ".agents"), { recursive: true, force: true });
+await rm(pluginsDir, { recursive: true, force: true });
 await mkdir(pluginsDir, { recursive: true });
 
 for (const skill of skills) {

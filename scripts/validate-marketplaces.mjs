@@ -3,7 +3,7 @@ import path from "node:path";
 import { loadSkills, marketplaceVersionForSkills, metadataForSkill, root } from "./skill-utils.mjs";
 
 const MARKETPLACE_NAME = "lvtd-skills";
-const marketplaceDir = path.join(root, "dist", "marketplace");
+const marketplaceDir = root;
 
 async function pathExists(filePath) {
   try {

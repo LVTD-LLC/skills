@@ -1,0 +1,136 @@
+{
+  "name": "lvtd-skills",
+  "owner": {
+    "name": "LVTD"
+  },
+  "description": "LVTD's portable Agent Skills packaged for Claude Code.",
+  "version": "0.1.0",
+  "plugins": [
+    {
+      "name": "lvtd-alpinejs-django",
+      "displayName": "LVTD Alpine.js Django",
+      "source": "./plugins/lvtd-alpinejs-django",
+      "description": "Alpine.js Django workflow guidance for web development.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "Web Development",
+      "tags": [
+        "alpinejs",
+        "django",
+        "frontend",
+        "htmx"
+      ],
+      "keywords": [
+        "alpinejs-django",
+        "alpinejs",
+        "django",
+        "frontend",
+        "htmx"
+      ]
+    },
+    {
+      "name": "lvtd-cookiecutter",
+      "displayName": "LVTD Cookiecutter",
+      "source": "./plugins/lvtd-cookiecutter",
+      "description": "Cookiecutter workflow guidance for developer tooling.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "Developer Tooling",
+      "tags": [
+        "cookiecutter",
+        "templates",
+        "jinja",
+        "scaffolding"
+      ],
+      "keywords": [
+        "cookiecutter",
+        "templates",
+        "jinja",
+        "scaffolding"
+      ]
+    },
+    {
+      "name": "lvtd-django-htmx",
+      "displayName": "LVTD Django HTMX",
+      "source": "./plugins/lvtd-django-htmx",
+      "description": "Django HTMX workflow guidance for web development.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "Web Development",
+      "tags": [
+        "django",
+        "htmx",
+        "server-rendered-ui"
+      ],
+      "keywords": [
+        "django-htmx",
+        "django",
+        "htmx",
+        "server-rendered-ui"
+      ]
+    },
+    {
+      "name": "lvtd-django-q2",
+      "displayName": "LVTD Django Q2",
+      "source": "./plugins/lvtd-django-q2",
+      "description": "Django Q2 workflow guidance for background jobs.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "Background Jobs",
+      "tags": [
+        "django",
+        "django-q2",
+        "background-jobs",
+        "redis"
+      ],
+      "keywords": [
+        "django-q2",
+        "django",
+        "background-jobs",
+        "redis"
+      ]
+    },
+    {
+      "name": "lvtd-fastmcp-django",
+      "displayName": "LVTD FastMCP Django",
+      "source": "./plugins/lvtd-fastmcp-django",
+      "description": "FastMCP Django workflow guidance for mcp servers.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "MCP Servers",
+      "tags": [
+        "fastmcp",
+        "django",
+        "mcp",
+        "asgi"
+      ],
+      "keywords": [
+        "fastmcp-django",
+        "fastmcp",
+        "django",
+        "mcp",
+        "asgi"
+      ]
+    }
+  ]
+}
