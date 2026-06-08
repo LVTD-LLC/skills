@@ -1,8 +1,13 @@
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
-import { loadSkills, marketplaceVersionForSkills, metadataForSkill, root } from "./skill-utils.mjs";
-
-const MARKETPLACE_NAME = "lvtd-skills";
+import {
+  loadSkills,
+  MARKETPLACE_DISPLAY_NAME,
+  MARKETPLACE_NAME,
+  marketplaceVersionForSkills,
+  metadataForSkill,
+  root,
+} from "./skill-utils.mjs";
 const marketplaceDir = root;
 
 async function pathExists(filePath) {
@@ -68,7 +73,7 @@ if (codexMarketplace) {
   assertEqual(codexMarketplace.name, MARKETPLACE_NAME, "Codex marketplace name", errors);
   assertEqual(
     codexMarketplace.interface?.displayName,
-    "LVTD Skills",
+    MARKETPLACE_DISPLAY_NAME,
     "Codex marketplace displayName",
     errors,
   );
@@ -112,7 +117,7 @@ for (const skill of skills) {
     assertEqual(claudeManifest.name, pluginName, `${pluginName} Claude manifest name`, errors);
     assertEqual(claudeManifest.version, metadata.version, `${pluginName} Claude manifest version`, errors);
     assertEqual(claudeManifest.skills, "./skills/", `${pluginName} Claude skills path`, errors);
-    assertEqual(claudeManifest.displayName, `LVTD ${metadata.displayName}`, `${pluginName} Claude displayName`, errors);
+    assertEqual(claudeManifest.displayName, metadata.displayName, `${pluginName} Claude displayName`, errors);
   }
 
   const codexManifest = await readJson(codexManifestPath, errors);
@@ -122,7 +127,7 @@ for (const skill of skills) {
     assertEqual(codexManifest.skills, "./skills/", `${pluginName} Codex skills path`, errors);
     assertEqual(
       codexManifest.interface?.displayName,
-      `LVTD ${metadata.displayName}`,
+      metadata.displayName,
       `${pluginName} Codex displayName`,
       errors,
     );

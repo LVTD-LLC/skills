@@ -80,9 +80,9 @@ description: Build and review HTMX interactions in Django server-rendered projec
 license: MIT
 compatibility: Designed for Codex, Claude Code, OpenClaw, and Agent Skills compatible clients.
 metadata:
-  lvtd.category: Web Development
-  lvtd.tags: django,htmx,server-rendered-ui
-  lvtd.version: "0.1.0"
+  category: Web Development
+  tags: django,htmx,server-rendered-ui
+  version: "0.1.0"
 ---
 ```
 
@@ -113,6 +113,8 @@ Tradeoff:
 
 - Individual plugins maximize user choice and clearer updates.
 - Packs reduce install friction for teams that want a complete baseline.
+- Namespaced plugin IDs avoid collisions across marketplaces; display names can
+  stay clean and omit organization branding.
 
 ### 4. Version Skills Independently
 
@@ -309,7 +311,7 @@ That registry can drive:
 
 ### Phase 1: Normalize and Enrich Skills
 
-- Add `license`, `compatibility`, and `metadata.lvtd.*` fields to each skill.
+- Add `license`, `compatibility`, and marketplace `metadata` fields to each skill.
 - Replace custom frontmatter parsing with a YAML parser.
 - Validate Agent Skills naming rules, max description length, and optional
   metadata.

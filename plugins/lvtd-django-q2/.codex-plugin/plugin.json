@@ -17,9 +17,9 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "LVTD Django Q2",
+    "displayName": "Django Q2",
     "shortDescription": "Django Q2 workflow guidance for background jobs.",
-    "longDescription": "Use when adding, changing, testing, or debugging Django Q2 background tasks, scheduled jobs, qcluster workers, Redis broker configuration, or ORM broker fallback in this generated Django SaaS app. Packaged as an LVTD marketplace skill for Codex and Claude Code. Category: Background Jobs.",
+    "longDescription": "Use when adding, changing, testing, or debugging Django Q2 background tasks, scheduled jobs, qcluster workers, Redis broker configuration, or ORM broker fallback in this generated Django SaaS app. Packaged as a marketplace skill for Codex and Claude Code. Category: Background Jobs.",
     "developerName": "LVTD",
     "category": "Background Jobs",
     "capabilities": [
@@ -28,7 +28,7 @@
     ],
     "websiteURL": "https://github.com/LVTD-LLC/skills",
     "defaultPrompt": [
-      "Use $lvtd-django-q2:django-q2 when working on django q2 tasks."
+      "Use the Django Q2 skill when working on django q2 tasks."
     ],
     "screenshots": []
   }

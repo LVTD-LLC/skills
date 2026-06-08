@@ -4,10 +4,10 @@ description: Use when adding, changing, or debugging Alpine.js behavior in this 
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  lvtd.version: "0.1.0"
-  lvtd.displayName: Alpine.js Django
-  lvtd.category: Web Development
-  lvtd.tags: alpinejs,django,frontend,htmx
+  version: "0.1.0"
+  displayName: Alpine.js Django
+  category: Web Development
+  tags: alpinejs,django,frontend,htmx
 ---
 
 # Alpine.js with Django

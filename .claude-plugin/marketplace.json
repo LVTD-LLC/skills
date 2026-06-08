@@ -3,12 +3,12 @@
   "owner": {
     "name": "LVTD"
   },
-  "description": "LVTD's portable Agent Skills packaged for Claude Code.",
+  "description": "Portable Agent Skills for Django SaaS and agent-first development, packaged for Claude Code.",
   "version": "0.1.0",
   "plugins": [
     {
       "name": "lvtd-alpinejs-django",
-      "displayName": "LVTD Alpine.js Django",
+      "displayName": "Alpine.js Django",
       "source": "./plugins/lvtd-alpinejs-django",
       "description": "Alpine.js Django workflow guidance for web development.",
       "author": {
@@ -34,7 +34,7 @@
     },
     {
       "name": "lvtd-cookiecutter",
-      "displayName": "LVTD Cookiecutter",
+      "displayName": "Cookiecutter",
       "source": "./plugins/lvtd-cookiecutter",
       "description": "Cookiecutter workflow guidance for developer tooling.",
       "author": {
@@ -59,7 +59,7 @@
     },
     {
       "name": "lvtd-django-htmx",
-      "displayName": "LVTD Django HTMX",
+      "displayName": "Django HTMX",
       "source": "./plugins/lvtd-django-htmx",
       "description": "Django HTMX workflow guidance for web development.",
       "author": {
@@ -83,7 +83,7 @@
     },
     {
       "name": "lvtd-django-q2",
-      "displayName": "LVTD Django Q2",
+      "displayName": "Django Q2",
       "source": "./plugins/lvtd-django-q2",
       "description": "Django Q2 workflow guidance for background jobs.",
       "author": {
@@ -108,7 +108,7 @@
     },
     {
       "name": "lvtd-fastmcp-django",
-      "displayName": "LVTD FastMCP Django",
+      "displayName": "FastMCP Django",
       "source": "./plugins/lvtd-fastmcp-django",
       "description": "FastMCP Django workflow guidance for mcp servers.",
       "author": {

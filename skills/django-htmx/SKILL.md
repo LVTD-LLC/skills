@@ -4,10 +4,10 @@ description: Build and review HTMX interactions in Django server-rendered projec
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  lvtd.version: "0.1.0"
-  lvtd.displayName: Django HTMX
-  lvtd.category: Web Development
-  lvtd.tags: django,htmx,server-rendered-ui
+  version: "0.1.0"
+  displayName: Django HTMX
+  category: Web Development
+  tags: django,htmx,server-rendered-ui
 ---
 
 # Django HTMX

@@ -3,6 +3,8 @@ import path from "node:path";
 
 export const root = new URL("..", import.meta.url).pathname;
 export const skillsDir = path.join(root, "skills");
+export const MARKETPLACE_NAME = "lvtd-skills";
+export const MARKETPLACE_DISPLAY_NAME = "LVTD Skills";
 
 function parseScalar(rawValue) {
   const value = rawValue.trim();
@@ -111,12 +113,28 @@ export function normalizeTags(rawTags) {
   return [];
 }
 
+export function metadataValue(metadata, key) {
+  return metadata[key] ?? metadata[`lvtd.${key}`];
+}
+
+export function metadataKeyLabel(metadata, key) {
+  if (Object.hasOwn(metadata, key)) {
+    return `metadata.${key}`;
+  }
+
+  if (Object.hasOwn(metadata, `lvtd.${key}`)) {
+    return `metadata.lvtd.${key}`;
+  }
+
+  return `metadata.${key}`;
+}
+
 export function metadataForSkill(skill) {
   const metadata = skill.fields.metadata ?? {};
-  const displayName = metadata["lvtd.displayName"] || skill.name;
-  const category = metadata["lvtd.category"] || "Development";
-  const version = metadata["lvtd.version"] || "0.1.0";
-  const tags = normalizeTags(metadata["lvtd.tags"]);
+  const displayName = metadataValue(metadata, "displayName") || skill.name;
+  const category = metadataValue(metadata, "category") || "Development";
+  const version = metadataValue(metadata, "version") || "0.1.0";
+  const tags = normalizeTags(metadataValue(metadata, "tags"));
 
   return {
     displayName,

@@ -4,10 +4,10 @@ description: "Use when adding, changing, testing, or debugging Django Q2 backgro
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  lvtd.version: "0.1.0"
-  lvtd.displayName: Django Q2
-  lvtd.category: Background Jobs
-  lvtd.tags: django,django-q2,background-jobs,redis
+  version: "0.1.0"
+  displayName: Django Q2
+  category: Background Jobs
+  tags: django,django-q2,background-jobs,redis
 ---
 
 # Django Q2 Background Jobs

@@ -1,7 +1,13 @@
 import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import path from "node:path";
-import { loadSkills, metadataForSkill, root } from "./skill-utils.mjs";
+import {
+  loadSkills,
+  MARKETPLACE_DISPLAY_NAME,
+  MARKETPLACE_NAME,
+  metadataForSkill,
+  root,
+} from "./skill-utils.mjs";
 import { validateSkills } from "./validate-skills.mjs";
 
 const distDir = path.join(root, "dist");
@@ -74,11 +80,11 @@ for (const skill of loadedSkills) {
     sha256,
     hosts: {
       claudeCode: {
-        marketplace: "lvtd-skills",
+        marketplace: MARKETPLACE_NAME,
         plugin: pluginName,
       },
       codex: {
-        marketplace: "lvtd-skills",
+        marketplace: MARKETPLACE_NAME,
         plugin: pluginName,
       },
     },
@@ -87,7 +93,7 @@ for (const skill of loadedSkills) {
 
 const registry = {
   schemaVersion: 2,
-  name: "LVTD Skills",
+  name: MARKETPLACE_DISPLAY_NAME,
   repository: "https://github.com/LVTD-LLC/skills",
   generatedAt: new Date().toISOString(),
   skills,

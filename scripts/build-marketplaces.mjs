@@ -1,10 +1,15 @@
 import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { loadSkills, marketplaceVersionForSkills, metadataForSkill, root } from "./skill-utils.mjs";
+import {
+  loadSkills,
+  MARKETPLACE_DISPLAY_NAME,
+  MARKETPLACE_NAME,
+  marketplaceVersionForSkills,
+  metadataForSkill,
+  root,
+} from "./skill-utils.mjs";
 import { validateSkills } from "./validate-skills.mjs";
 
-const MARKETPLACE_NAME = "lvtd-skills";
-const MARKETPLACE_DISPLAY_NAME = "LVTD Skills";
 const REPOSITORY_URL = "https://github.com/LVTD-LLC/skills";
 const AUTHOR = {
   name: "LVTD",
@@ -18,12 +23,12 @@ function pluginNameForSkill(skillName) {
   return `lvtd-${skillName}`;
 }
 
-function buildDefaultPrompt(skill, pluginName) {
-  return `Use $${pluginName}:${skill.name} when working on ${skill.name.replaceAll("-", " ")} tasks.`;
+function buildDefaultPrompt(skill, metadata) {
+  return `Use the ${metadata.displayName} skill when working on ${skill.name.replaceAll("-", " ")} tasks.`;
 }
 
 function buildLongDescription(skill, metadata) {
-  return `${skill.fields.description} Packaged as an LVTD marketplace skill for Codex and Claude Code. Category: ${metadata.category}.`;
+  return `${skill.fields.description} Packaged as a marketplace skill for Codex and Claude Code. Category: ${metadata.category}.`;
 }
 
 function buildShortDescription(skill, metadata) {
@@ -84,27 +89,27 @@ for (const skill of skills) {
 
   await writeJson(path.join(pluginDir, ".claude-plugin", "plugin.json"), {
     ...commonManifest,
-    displayName: `LVTD ${metadata.displayName}`,
+    displayName: metadata.displayName,
   });
 
   await writeJson(path.join(pluginDir, ".codex-plugin", "plugin.json"), {
     ...commonManifest,
     interface: {
-      displayName: `LVTD ${metadata.displayName}`,
+      displayName: metadata.displayName,
       shortDescription,
       longDescription,
       developerName: "LVTD",
       category: metadata.category,
       capabilities: ["Interactive", "Read"],
       websiteURL: REPOSITORY_URL,
-      defaultPrompt: [buildDefaultPrompt(skill, pluginName)],
+      defaultPrompt: [buildDefaultPrompt(skill, metadata)],
       screenshots: [],
     },
   });
 
   claudePlugins.push({
     name: pluginName,
-    displayName: `LVTD ${metadata.displayName}`,
+    displayName: metadata.displayName,
     source: `./plugins/${pluginName}`,
     description: shortDescription,
     author: {
@@ -137,7 +142,7 @@ const claudeMarketplace = {
   owner: {
     name: AUTHOR.name,
   },
-  description: "LVTD's portable Agent Skills packaged for Claude Code.",
+  description: "Portable Agent Skills for Django SaaS and agent-first development, packaged for Claude Code.",
   version: marketplaceVersion,
   plugins: claudePlugins,
 };

@@ -4,10 +4,10 @@ description: Use when adding, changing, testing, or debugging Cookiecutter templ
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  lvtd.version: "0.1.0"
-  lvtd.displayName: Cookiecutter
-  lvtd.category: Developer Tooling
-  lvtd.tags: cookiecutter,templates,jinja,scaffolding
+  version: "0.1.0"
+  displayName: Cookiecutter
+  category: Developer Tooling
+  tags: cookiecutter,templates,jinja,scaffolding
 ---
 
 # Cookiecutter Template Work

@@ -37,13 +37,16 @@ This repository ships:
 plugins/lvtd-<skill-name>/
 ```
 
-Plugin names:
+Plugin IDs:
 
 - `lvtd-alpinejs-django`
 - `lvtd-cookiecutter`
 - `lvtd-django-htmx`
 - `lvtd-django-q2`
 - `lvtd-fastmcp-django`
+
+The plugin IDs remain namespaced to avoid collisions across marketplaces.
+Displayed skill names and prompt text omit the `LVTD` prefix.
 
 ## Install With The Skills CLI
 

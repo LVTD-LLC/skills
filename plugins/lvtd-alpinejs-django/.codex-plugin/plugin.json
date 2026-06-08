@@ -18,9 +18,9 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "LVTD Alpine.js Django",
+    "displayName": "Alpine.js Django",
     "shortDescription": "Alpine.js Django workflow guidance for web development.",
-    "longDescription": "Use when adding, changing, or debugging Alpine.js behavior in this Django SaaS Starter project, especially in Django templates that may also use HTMX partial updates. Packaged as an LVTD marketplace skill for Codex and Claude Code. Category: Web Development.",
+    "longDescription": "Use when adding, changing, or debugging Alpine.js behavior in this Django SaaS Starter project, especially in Django templates that may also use HTMX partial updates. Packaged as a marketplace skill for Codex and Claude Code. Category: Web Development.",
     "developerName": "LVTD",
     "category": "Web Development",
     "capabilities": [
@@ -29,7 +29,7 @@
     ],
     "websiteURL": "https://github.com/LVTD-LLC/skills",
     "defaultPrompt": [
-      "Use $lvtd-alpinejs-django:alpinejs-django when working on alpinejs django tasks."
+      "Use the Alpine.js Django skill when working on alpinejs django tasks."
     ],
     "screenshots": []
   }

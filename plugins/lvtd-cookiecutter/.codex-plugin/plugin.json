@@ -17,9 +17,9 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "LVTD Cookiecutter",
+    "displayName": "Cookiecutter",
     "shortDescription": "Cookiecutter workflow guidance for developer tooling.",
-    "longDescription": "Use when adding, changing, testing, or debugging Cookiecutter templates, including cookiecutter.json variables, Jinja-rendered files, hooks, _copy_without_render, optional feature cleanup, and generated-project validation. Packaged as an LVTD marketplace skill for Codex and Claude Code. Category: Developer Tooling.",
+    "longDescription": "Use when adding, changing, testing, or debugging Cookiecutter templates, including cookiecutter.json variables, Jinja-rendered files, hooks, _copy_without_render, optional feature cleanup, and generated-project validation. Packaged as a marketplace skill for Codex and Claude Code. Category: Developer Tooling.",
     "developerName": "LVTD",
     "category": "Developer Tooling",
     "capabilities": [
@@ -28,7 +28,7 @@
     ],
     "websiteURL": "https://github.com/LVTD-LLC/skills",
     "defaultPrompt": [
-      "Use $lvtd-cookiecutter:cookiecutter when working on cookiecutter tasks."
+      "Use the Cookiecutter skill when working on cookiecutter tasks."
     ],
     "screenshots": []
   }

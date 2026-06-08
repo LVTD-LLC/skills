@@ -1,6 +1,13 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { listSkillNames, metadataForSkill, parseFrontmatter, skillsDir } from "./skill-utils.mjs";
+import {
+  listSkillNames,
+  metadataKeyLabel,
+  metadataForSkill,
+  metadataValue,
+  parseFrontmatter,
+  skillsDir,
+} from "./skill-utils.mjs";
 
 const SEMVER_RE = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
 
@@ -41,20 +48,22 @@ export async function validateSkills() {
 
     const rawMetadata = fields.metadata ?? {};
     const metadata = metadataForSkill({ name, fields });
-    if (!rawMetadata["lvtd.version"] || !SEMVER_RE.test(metadata.version)) {
-      errors.push(`${skillPath} metadata.lvtd.version must be semver`);
+    if (!metadataValue(rawMetadata, "version") || !SEMVER_RE.test(metadata.version)) {
+      errors.push(`${skillPath} ${metadataKeyLabel(rawMetadata, "version")} must be semver`);
     }
 
-    if (!rawMetadata["lvtd.displayName"]) {
-      errors.push(`${skillPath} must include metadata.lvtd.displayName`);
+    if (!metadataValue(rawMetadata, "displayName")) {
+      errors.push(
+        `${skillPath} must include metadata.displayName or legacy metadata.lvtd.displayName`,
+      );
     }
 
-    if (!rawMetadata["lvtd.category"]) {
-      errors.push(`${skillPath} must include metadata.lvtd.category`);
+    if (!metadataValue(rawMetadata, "category")) {
+      errors.push(`${skillPath} must include metadata.category or legacy metadata.lvtd.category`);
     }
 
-    if (!rawMetadata["lvtd.tags"]) {
-      errors.push(`${skillPath} must include metadata.lvtd.tags`);
+    if (!metadataValue(rawMetadata, "tags")) {
+      errors.push(`${skillPath} must include metadata.tags or legacy metadata.lvtd.tags`);
     }
 
     if (!markdown.match(/\n#\s+\S/)) {

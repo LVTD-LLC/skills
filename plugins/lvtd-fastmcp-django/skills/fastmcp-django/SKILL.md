@@ -4,10 +4,10 @@ description: Use when adding, changing, deploying, testing, or debugging FastMCP
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  lvtd.version: "0.1.0"
-  lvtd.displayName: FastMCP Django
-  lvtd.category: MCP Servers
-  lvtd.tags: fastmcp,django,mcp,asgi
+  version: "0.1.0"
+  displayName: FastMCP Django
+  category: MCP Servers
+  tags: fastmcp,django,mcp,asgi
 ---
 
 # FastMCP with Django

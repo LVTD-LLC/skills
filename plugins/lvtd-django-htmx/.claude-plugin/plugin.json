@@ -16,5 +16,5 @@
     "server-rendered-ui"
   ],
   "skills": "./skills/",
-  "displayName": "LVTD Django HTMX"
+  "displayName": "Django HTMX"
 }

@@ -17,5 +17,5 @@
     "asgi"
   ],
   "skills": "./skills/",
-  "displayName": "LVTD FastMCP Django"
+  "displayName": "FastMCP Django"
 }
