@@ -1,7 +1,8 @@
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-export const root = new URL("..", import.meta.url).pathname;
+export const root = fileURLToPath(new URL("..", import.meta.url));
 export const skillsDir = path.join(root, "skills");
 export const MARKETPLACE_NAME = "lvtd-skills";
 export const MARKETPLACE_DISPLAY_NAME = "LVTD Skills";
@@ -48,16 +49,32 @@ export function parseFrontmatter(markdown, filePath = "SKILL.md") {
   const frontmatter = markdown.slice(4, end).trim();
   const fields = {};
   let currentObject = null;
+  let currentArray = null;
 
   for (const line of frontmatter.split("\n")) {
     if (!line.trim()) {
       continue;
     }
 
+    if (line.trim().startsWith("#")) {
+      continue;
+    }
+
     const indent = line.match(/^ */)?.[0].length ?? 0;
+    const trimmed = line.trim();
+
+    if (trimmed.startsWith("- ")) {
+      if (!currentArray || indent <= currentArray.indent) {
+        throw new Error(`${filePath} has a list item outside an array field: ${trimmed}`);
+      }
+
+      currentArray.values.push(parseScalar(trimmed.slice(2)));
+      continue;
+    }
+
     const match = line.trim().match(/^([A-Za-z0-9_.-]+):(?:\s*(.*))?$/);
     if (!match) {
-      continue;
+      throw new Error(`${filePath} has unsupported frontmatter syntax: ${line.trim()}`);
     }
 
     const [, key, rawValue = ""] = match;
@@ -69,11 +86,21 @@ export function parseFrontmatter(markdown, filePath = "SKILL.md") {
         fields[key] = parseScalar(rawValue);
         currentObject = null;
       }
+      currentArray = null;
       continue;
     }
 
     if (currentObject && typeof currentObject === "object" && !Array.isArray(currentObject)) {
-      currentObject[key] = parseScalar(rawValue);
+      if (rawValue.trim() === "") {
+        currentObject[key] = [];
+        currentArray = {
+          indent,
+          values: currentObject[key],
+        };
+      } else {
+        currentObject[key] = parseScalar(rawValue);
+        currentArray = null;
+      }
       continue;
     }
 
@@ -96,6 +123,25 @@ export async function listSkillNames() {
   }
 
   return names.sort();
+}
+
+export async function listFilesRecursive(directory, prefix = "") {
+  const entries = await readdir(directory);
+  const files = [];
+
+  for (const entry of entries) {
+    const absolutePath = path.join(directory, entry);
+    const relativePath = path.join(prefix, entry).replaceAll(path.sep, "/");
+    const entryStat = await stat(absolutePath);
+
+    if (entryStat.isDirectory()) {
+      files.push(...(await listFilesRecursive(absolutePath, relativePath)));
+    } else {
+      files.push(relativePath);
+    }
+  }
+
+  return files.sort();
 }
 
 export function normalizeTags(rawTags) {

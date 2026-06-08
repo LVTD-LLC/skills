@@ -112,10 +112,12 @@ OpenClaw, and other Agent Skills-compatible clients.
 
 ## Development
 
-Validate all skills:
+New skills should follow [`docs/adding-skills.md`](docs/adding-skills.md).
+
+Validate source skills only:
 
 ```bash
-npm test
+npm run validate
 ```
 
 Build the machine-readable registry and refresh committed marketplace artifacts:
@@ -131,6 +133,12 @@ Validate generated marketplace artifacts:
 
 ```bash
 npm run validate:marketplaces
+```
+
+Run the full local/CI check before opening a PR:
+
+```bash
+npm run check
 ```
 
 ## Publishing

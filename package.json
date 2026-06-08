@@ -8,7 +8,8 @@
     "build": "node scripts/validate-skills.mjs && node scripts/build-registry.mjs --skip-validation && node scripts/build-marketplaces.mjs --skip-validation",
     "build:registry": "node scripts/build-registry.mjs",
     "build:marketplaces": "node scripts/build-marketplaces.mjs",
-    "test": "node tests/validate-skills.mjs",
+    "check": "npm run build && npm run validate:marketplaces && node scripts/check-generated-clean.mjs .claude-plugin .agents plugins",
+    "test": "npm run check",
     "validate:marketplaces": "node scripts/validate-marketplaces.mjs",
     "validate": "node scripts/validate-skills.mjs"
   },
