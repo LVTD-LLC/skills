@@ -5,6 +5,7 @@ license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
   lvtd.version: "0.1.0"
+  lvtd.displayName: Cookiecutter
   lvtd.category: Developer Tooling
   lvtd.tags: cookiecutter,templates,jinja,scaffolding
 ---

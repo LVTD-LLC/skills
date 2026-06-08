@@ -45,6 +45,10 @@ export async function validateSkills() {
       errors.push(`${skillPath} metadata.lvtd.version must be semver`);
     }
 
+    if (!rawMetadata["lvtd.displayName"]) {
+      errors.push(`${skillPath} must include metadata.lvtd.displayName`);
+    }
+
     if (!rawMetadata["lvtd.category"]) {
       errors.push(`${skillPath} must include metadata.lvtd.category`);
     }

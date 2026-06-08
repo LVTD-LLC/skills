@@ -93,24 +93,6 @@ export async function listSkillNames() {
   return names.sort();
 }
 
-export function displayNameForSkill(name) {
-  return name
-    .split("-")
-    .map((part) => {
-      if (part.toLowerCase() === "htmx") {
-        return "HTMX";
-      }
-      if (part.toLowerCase() === "q2") {
-        return "Q2";
-      }
-      if (part.toLowerCase() === "js") {
-        return "JS";
-      }
-      return `${part.slice(0, 1).toUpperCase()}${part.slice(1)}`;
-    })
-    .join(" ");
-}
-
 export function normalizeTags(rawTags) {
   if (Array.isArray(rawTags)) {
     return rawTags.map((tag) => String(tag).trim()).filter(Boolean);
@@ -128,7 +110,7 @@ export function normalizeTags(rawTags) {
 
 export function metadataForSkill(skill) {
   const metadata = skill.fields.metadata ?? {};
-  const displayName = metadata["lvtd.displayName"] || displayNameForSkill(skill.name);
+  const displayName = metadata["lvtd.displayName"] || skill.name;
   const category = metadata["lvtd.category"] || "Development";
   const version = metadata["lvtd.version"] || "0.1.0";
   const tags = normalizeTags(metadata["lvtd.tags"]);

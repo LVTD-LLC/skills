@@ -29,6 +29,12 @@ function assertEqual(actual, expected, label, errors) {
   }
 }
 
+function assertDeepEqual(actual, expected, label, errors) {
+  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+    errors.push(`${label} must be ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`);
+  }
+}
+
 function assertArray(value, label, errors) {
   if (!Array.isArray(value)) {
     errors.push(`${label} must be an array`);
@@ -47,6 +53,10 @@ function findEntry(entries, name, label, errors) {
 
 const errors = [];
 const skills = await loadSkills();
+const marketplaceVersion = skills
+  .map((skill) => metadataForSkill(skill).version)
+  .sort((left, right) => left.localeCompare(right, undefined, { numeric: true }))
+  .at(-1);
 const claudeMarketplacePath = path.join(marketplaceDir, ".claude-plugin", "marketplace.json");
 const codexMarketplacePath = path.join(marketplaceDir, ".agents", "plugins", "marketplace.json");
 const claudeMarketplace = await readJson(claudeMarketplacePath, errors);
@@ -54,6 +64,7 @@ const codexMarketplace = await readJson(codexMarketplacePath, errors);
 
 if (claudeMarketplace) {
   assertEqual(claudeMarketplace.name, MARKETPLACE_NAME, "Claude marketplace name", errors);
+  assertEqual(claudeMarketplace.version, marketplaceVersion, "Claude marketplace version", errors);
 }
 
 if (codexMarketplace) {
@@ -95,7 +106,7 @@ for (const skill of skills) {
     assertEqual(codexEntry.source?.source, "local", `${pluginName} Codex source type`, errors);
     assertEqual(codexEntry.source?.path, `./plugins/${pluginName}`, `${pluginName} Codex source path`, errors);
     assertEqual(codexEntry.policy?.installation, "AVAILABLE", `${pluginName} Codex installation policy`, errors);
-    assertEqual(codexEntry.policy?.authentication, "ON_INSTALL", `${pluginName} Codex authentication policy`, errors);
+    assertEqual(codexEntry.policy?.authentication, "ON_USE", `${pluginName} Codex authentication policy`, errors);
     assertEqual(codexEntry.category, metadata.category, `${pluginName} Codex category`, errors);
   }
 
@@ -122,6 +133,12 @@ for (const skill of skills) {
       codexManifest.interface?.category,
       metadata.category,
       `${pluginName} Codex interface category`,
+      errors,
+    );
+    assertDeepEqual(
+      codexManifest.interface?.capabilities,
+      ["Interactive", "Read"],
+      `${pluginName} Codex capabilities`,
       errors,
     );
   }

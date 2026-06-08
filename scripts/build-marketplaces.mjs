@@ -35,47 +35,16 @@ function buildShortDescription(skill, metadata) {
   return `${metadata.displayName} workflow guidance for ${metadata.category.toLowerCase()}.`;
 }
 
+function marketplaceVersionForSkills(skills) {
+  return skills
+    .map((skill) => metadataForSkill(skill).version)
+    .sort((left, right) => left.localeCompare(right, undefined, { numeric: true }))
+    .at(-1);
+}
+
 async function writeJson(filePath, payload) {
   await mkdir(path.dirname(filePath), { recursive: true });
   await writeFile(filePath, `${JSON.stringify(payload, null, 2)}\n`);
-}
-
-function validateMarketplaceShape({ claudeMarketplace, codexMarketplace, pluginNames }) {
-  const errors = [];
-
-  if (claudeMarketplace.name !== MARKETPLACE_NAME) {
-    errors.push("Claude marketplace name is invalid");
-  }
-
-  if (!Array.isArray(claudeMarketplace.plugins)) {
-    errors.push("Claude marketplace plugins must be an array");
-  }
-
-  if (codexMarketplace.name !== MARKETPLACE_NAME) {
-    errors.push("Codex marketplace name is invalid");
-  }
-
-  if (!Array.isArray(codexMarketplace.plugins)) {
-    errors.push("Codex marketplace plugins must be an array");
-  }
-
-  for (const pluginName of pluginNames) {
-    const claudeEntry = claudeMarketplace.plugins.find((entry) => entry.name === pluginName);
-    if (!claudeEntry) {
-      errors.push(`Claude marketplace is missing ${pluginName}`);
-    } else if (claudeEntry.source !== `./plugins/${pluginName}`) {
-      errors.push(`Claude marketplace source is invalid for ${pluginName}`);
-    }
-
-    const codexEntry = codexMarketplace.plugins.find((entry) => entry.name === pluginName);
-    if (!codexEntry) {
-      errors.push(`Codex marketplace is missing ${pluginName}`);
-    } else if (codexEntry.source?.path !== `./plugins/${pluginName}`) {
-      errors.push(`Codex marketplace source path is invalid for ${pluginName}`);
-    }
-  }
-
-  return errors;
 }
 
 const { errors } = await validateSkills();
@@ -85,7 +54,7 @@ if (errors.length > 0) {
 }
 
 const skills = await loadSkills();
-const pluginNames = [];
+const marketplaceVersion = marketplaceVersionForSkills(skills);
 const claudePlugins = [];
 const codexPlugins = [];
 
@@ -101,7 +70,6 @@ for (const skill of skills) {
   const longDescription = buildLongDescription(skill, metadata);
   const keywords = [...new Set([skill.name, ...metadata.tags])];
 
-  pluginNames.push(pluginName);
   await mkdir(path.join(pluginDir, ".claude-plugin"), { recursive: true });
   await mkdir(path.join(pluginDir, ".codex-plugin"), { recursive: true });
   await cp(skill.path, skillDestination, { recursive: true });
@@ -131,7 +99,7 @@ for (const skill of skills) {
       longDescription,
       developerName: "LVTD",
       category: metadata.category,
-      capabilities: ["Interactive", "Read", "Write"],
+      capabilities: ["Interactive", "Read"],
       websiteURL: REPOSITORY_URL,
       defaultPrompt: [buildDefaultPrompt(skill, pluginName)],
       screenshots: [],
@@ -162,7 +130,7 @@ for (const skill of skills) {
     },
     policy: {
       installation: "AVAILABLE",
-      authentication: "ON_INSTALL",
+      authentication: "ON_USE",
     },
     category: metadata.category,
   });
@@ -174,7 +142,7 @@ const claudeMarketplace = {
     name: AUTHOR.name,
   },
   description: "LVTD's portable Agent Skills packaged for Claude Code.",
-  version: "0.1.0",
+  version: marketplaceVersion,
   plugins: claudePlugins,
 };
 
@@ -186,21 +154,10 @@ const codexMarketplace = {
   plugins: codexPlugins,
 };
 
-const marketplaceErrors = validateMarketplaceShape({
-  claudeMarketplace,
-  codexMarketplace,
-  pluginNames,
-});
-
-if (marketplaceErrors.length > 0) {
-  console.error(marketplaceErrors.join("\n"));
-  process.exit(1);
-}
-
 await writeJson(path.join(marketplaceDir, ".claude-plugin", "marketplace.json"), claudeMarketplace);
 await writeJson(
   path.join(marketplaceDir, ".agents", "plugins", "marketplace.json"),
   codexMarketplace,
 );
 
-console.log(`Wrote ${MARKETPLACE_NAME} marketplace with ${pluginNames.length} plugins`);
+console.log(`Wrote ${MARKETPLACE_NAME} marketplace with ${skills.length} plugins`);
