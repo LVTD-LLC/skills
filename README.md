@@ -93,7 +93,7 @@ Refresh generated marketplace artifacts during development:
 npm run build
 ```
 
-Generated plugin names:
+Generated plugin IDs:
 
 - `lvtd-alpinejs-django`
 - `lvtd-cookiecutter`
@@ -101,8 +101,8 @@ Generated plugin names:
 - `lvtd-django-q2`
 - `lvtd-fastmcp-django`
 
-The `lvtd-` plugin ID prefix is kept for install namespace safety. Marketplace
-display names and prompt text omit that prefix.
+The `lvtd-` plugin ID prefix is kept for install namespace safety. Displayed
+skill names and prompt text omit that prefix.
 
 ## Marketplace Strategy
 

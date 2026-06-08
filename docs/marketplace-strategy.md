@@ -274,7 +274,7 @@ Expand `dist/registry.json` into a proper marketplace API surface:
 ```json
 {
   "schemaVersion": 2,
-  "name": "Django SaaS Skills",
+  "name": "LVTD Skills",
   "repository": "https://github.com/LVTD-LLC/skills",
   "generatedAt": "2026-06-08T00:00:00.000Z",
   "skills": [

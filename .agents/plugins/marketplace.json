@@ -1,7 +1,7 @@
 {
   "name": "lvtd-skills",
   "interface": {
-    "displayName": "Django SaaS Skills"
+    "displayName": "LVTD Skills"
   },
   "plugins": [
     {

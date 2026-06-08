@@ -4,7 +4,7 @@ import path from "node:path";
 export const root = new URL("..", import.meta.url).pathname;
 export const skillsDir = path.join(root, "skills");
 export const MARKETPLACE_NAME = "lvtd-skills";
-export const MARKETPLACE_DISPLAY_NAME = "Django SaaS Skills";
+export const MARKETPLACE_DISPLAY_NAME = "LVTD Skills";
 
 function parseScalar(rawValue) {
   const value = rawValue.trim();
