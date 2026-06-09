@@ -1,4 +1,4 @@
-import { lstat, readdir, readFile, readlink, stat } from "node:fs/promises";
+import { lstat, readdir, readFile, readlink } from "node:fs/promises";
 import path from "node:path";
 import {
   loadSkills,
@@ -18,7 +18,7 @@ const marketplaceDir = root;
 
 async function pathExists(filePath) {
   try {
-    await stat(filePath);
+    await lstat(filePath);
     return true;
   } catch {
     return false;
