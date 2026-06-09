@@ -31,7 +31,7 @@ The repo now has the right base shape for a generated marketplace:
 - `scripts/build-marketplaces.mjs` emits Claude Code and Codex marketplace
   adapters from shared marketplace helper functions.
 - `scripts/validate-marketplaces.mjs` verifies generated manifests, marketplace
-  entries, plugin directories, and copied skill files against the canonical
+  entries, plugin directories, and symlinked skill folders against the canonical
   `skills/` source.
 - `npm run check` rebuilds and validates the catalog, then fails if committed
   marketplace artifacts are stale.
@@ -330,6 +330,8 @@ That registry can drive:
 - Generate Claude Code marketplace artifacts at `.claude-plugin/` and
   `plugins/`.
 - Generate Codex marketplace artifacts at `.agents/plugins/` and `plugins/`.
+- Link plugin skill folders back to canonical `skills/<skill-name>/` folders
+  instead of copying skill files into each host adapter.
 - Generate OpenClaw publish plan.
 - Commit the generated root marketplace artifacts so Git-backed installs work
   directly.
@@ -356,7 +358,7 @@ That registry can drive:
 - Static site reads `dist/registry.json`.
 - Users filter by host, category, tag, and capability.
 - Each skill page shows install commands for Codex, Claude Code, OpenClaw, and
-  direct folder copy.
+  direct skill installation.
 - Include trust metadata: version, release tag, hash, license, last scan, and
   whether the skill bundles scripts or external tool requirements.
 

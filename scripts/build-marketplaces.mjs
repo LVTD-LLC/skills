@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, rm, symlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { loadSkills, MARKETPLACE_NAME, root } from "./skill-utils.mjs";
 import {
@@ -36,11 +36,14 @@ await mkdir(pluginsDir, { recursive: true });
 for (const skill of skills) {
   const pluginName = pluginNameForSkill(skill.name);
   const pluginDir = path.join(pluginsDir, pluginName);
+  const pluginSkillsDir = path.join(pluginDir, "skills");
   const skillDestination = path.join(pluginDir, "skills", skill.name);
+  const skillLinkTarget = path.relative(pluginSkillsDir, skill.path).replaceAll(path.sep, "/");
 
   await mkdir(path.join(pluginDir, ".claude-plugin"), { recursive: true });
   await mkdir(path.join(pluginDir, ".codex-plugin"), { recursive: true });
-  await cp(skill.path, skillDestination, { recursive: true });
+  await mkdir(pluginSkillsDir, { recursive: true });
+  await symlink(skillLinkTarget, skillDestination, "dir");
 
   await writeJson(
     path.join(pluginDir, ".claude-plugin", "plugin.json"),

@@ -27,7 +27,7 @@ jobs:
       - name: Package catalog
         run: |
           tar -czf dist/lvtd-skills.tar.gz skills README.md docs package.json
-          tar -czf dist/lvtd-marketplace.tar.gz .claude-plugin .agents plugins
+          tar -czf dist/lvtd-marketplace.tar.gz .claude-plugin .agents plugins skills
 
       - name: Upload artifact
         uses: actions/upload-artifact@v7

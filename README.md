@@ -87,6 +87,10 @@ This repository ships the marketplace files directly:
 plugins/lvtd-<skill-name>/
 ```
 
+The plugin skill folders are symlinks back to `skills/<skill-name>/`, so each
+skill has one canonical source file tree while Claude Code, Codex, OpenClaw,
+and the `skills` CLI can use host-specific adapters.
+
 Refresh generated marketplace artifacts during development:
 
 ```bash
