@@ -17,6 +17,18 @@
       "category": "Web Development"
     },
     {
+      "name": "lvtd-book-toc-lab",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lvtd-book-toc-lab"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Writing"
+    },
+    {
       "name": "lvtd-cookiecutter",
       "source": {
         "source": "local",

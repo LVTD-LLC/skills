@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Created the initial LVTD skills catalog.
+- Added `book-toc-lab` for designing and validating useful nonfiction book tables of contents before drafting.
 - Added `alpinejs-django`, `django-htmx`, and `django-q2`.
 - Added validation, registry generation, install instructions, CI, and publish workflow scaffolding.
 - Added `cookiecutter` for Cookiecutter template development workflows.
