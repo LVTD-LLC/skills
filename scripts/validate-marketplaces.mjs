@@ -1,8 +1,7 @@
-import { readdir, readFile, stat } from "node:fs/promises";
+import { lstat, readdir, readFile, readlink } from "node:fs/promises";
 import path from "node:path";
 import {
   loadSkills,
-  listFilesRecursive,
   MARKETPLACE_DISPLAY_NAME,
   MARKETPLACE_NAME,
   metadataForSkill,
@@ -19,7 +18,7 @@ const marketplaceDir = root;
 
 async function pathExists(filePath) {
   try {
-    await stat(filePath);
+    await lstat(filePath);
     return true;
   } catch {
     return false;
@@ -75,26 +74,44 @@ async function listPluginDirectories(pluginsDir, errors) {
   }
 }
 
-async function assertCopiedSkillMatchesSource(skill, copiedSkillPath, pluginName, errors) {
-  if (!(await pathExists(copiedSkillPath))) {
-    errors.push(`${pluginName} must include copied skill ${skill.name}`);
+async function listDirectoryEntryNames(directory, label, errors) {
+  try {
+    const entries = await readdir(directory, { withFileTypes: true });
+    return entries.map((entry) => entry.name).sort();
+  } catch (error) {
+    errors.push(`${label} must be readable: ${error.message}`);
+    return [];
+  }
+}
+
+async function assertSkillSymlinkToSource(skill, linkedSkillPath, pluginName, errors) {
+  if (!(await pathExists(linkedSkillPath))) {
+    errors.push(`${pluginName} must link skill ${skill.name} to ${skill.relativePath}`);
     return;
   }
 
-  const sourceFiles = await listFilesRecursive(skill.path);
-  const copiedFiles = await listFilesRecursive(copiedSkillPath);
-  if (JSON.stringify(copiedFiles) !== JSON.stringify(sourceFiles)) {
-    errors.push(`${pluginName} copied skill file list must match source; run npm run build`);
+  let entryStat;
+  try {
+    entryStat = await lstat(linkedSkillPath);
+  } catch (error) {
+    errors.push(`${pluginName} skill link ${linkedSkillPath} must be readable: ${error.message}`);
     return;
   }
 
-  for (const file of sourceFiles) {
-    const sourceContent = await readFile(path.join(skill.path, file));
-    const copiedContent = await readFile(path.join(copiedSkillPath, file));
+  if (!entryStat.isSymbolicLink()) {
+    errors.push(`${pluginName} skill ${skill.name} must be a symlink to ${skill.relativePath}; run npm run build`);
+    return;
+  }
 
-    if (!sourceContent.equals(copiedContent)) {
-      errors.push(`${pluginName} copied skill file ${file} must match source; run npm run build`);
-    }
+  const expectedTarget = path
+    .relative(path.dirname(linkedSkillPath), skill.path)
+    .replaceAll(path.sep, "/");
+  const actualTarget = (await readlink(linkedSkillPath)).replaceAll(path.sep, "/");
+
+  if (actualTarget !== expectedTarget) {
+    errors.push(
+      `${pluginName} skill ${skill.name} symlink must target ${expectedTarget}, got ${actualTarget}; run npm run build`,
+    );
   }
 }
 
@@ -153,13 +170,20 @@ for (const skill of skills) {
   const metadata = metadataForSkill(skill);
   const pluginName = pluginNameForSkill(skill.name);
   const pluginDir = path.join(marketplaceDir, "plugins", pluginName);
-  const copiedSkillDir = path.join(pluginDir, "skills", skill.name);
+  const pluginSkillsDir = path.join(pluginDir, "skills");
+  const linkedSkillDir = path.join(pluginSkillsDir, skill.name);
   const claudeManifestPath = path.join(pluginDir, ".claude-plugin", "plugin.json");
   const codexManifestPath = path.join(pluginDir, ".codex-plugin", "plugin.json");
   const expectedClaudeManifest = claudeManifestForSkill(skill);
   const expectedCodexManifest = codexManifestForSkill(skill);
 
-  await assertCopiedSkillMatchesSource(skill, copiedSkillDir, pluginName, errors);
+  const pluginSkillEntries = await listDirectoryEntryNames(
+    pluginSkillsDir,
+    `${pluginName} skills directory`,
+    errors,
+  );
+  assertDeepEqual(pluginSkillEntries, [skill.name], `${pluginName} skills directory`, errors);
+  await assertSkillSymlinkToSource(skill, linkedSkillDir, pluginName, errors);
 
   if (claudeMarketplaceMatches) {
     const claudeEntry = findEntry(claudeEntries, pluginName, "Claude marketplace", errors);

@@ -12,3 +12,4 @@
 - Expanded registry output with per-skill version, license, category, tags, host plugin names, files, and content hashes.
 - Added CI validation for generated marketplace artifacts.
 - Removed LVTD branding from generated marketplace plugin display titles and default prompt text.
+- Switched generated marketplace plugins to symlink canonical `skills/` folders instead of copying skill files.
