@@ -8,6 +8,9 @@ import {
   root,
 } from "./skill-utils.mjs";
 import {
+  APP_ICON_FILE,
+  ASSET_DIR,
+  APP_ICON_PATH,
   claudeManifestForSkill,
   claudeMarketplaceForSkills,
   codexManifestForSkill,
@@ -115,6 +118,14 @@ async function assertSkillSymlinkToSource(skill, linkedSkillPath, pluginName, er
   }
 }
 
+async function assertAppIconExists(baseDir, label, errors) {
+  const iconPath = path.join(baseDir, ASSET_DIR, APP_ICON_FILE);
+
+  if (!(await pathExists(iconPath))) {
+    errors.push(`${label} must include ${APP_ICON_PATH}; run npm run build`);
+  }
+}
+
 const errors = [];
 const skills = await loadSkills();
 const claudeMarketplacePath = path.join(marketplaceDir, ".claude-plugin", "marketplace.json");
@@ -154,8 +165,16 @@ if (codexMarketplace) {
       "Codex marketplace displayName",
       errors,
     );
+    assertEqual(
+      codexMarketplace.interface?.logo,
+      APP_ICON_PATH,
+      "Codex marketplace logo",
+      errors,
+    );
   }
 }
+
+await assertAppIconExists(path.join(marketplaceDir, ".agents", "plugins"), "Codex marketplace", errors);
 
 const pluginDirs = await listPluginDirectories(path.join(marketplaceDir, "plugins"), errors);
 assertDeepEqual(pluginDirs, expectedPluginNames, "Generated plugin directory list", errors);
@@ -184,6 +203,7 @@ for (const skill of skills) {
   );
   assertDeepEqual(pluginSkillEntries, [skill.name], `${pluginName} skills directory`, errors);
   await assertSkillSymlinkToSource(skill, linkedSkillDir, pluginName, errors);
+  await assertAppIconExists(pluginDir, pluginName, errors);
 
   if (claudeMarketplaceMatches) {
     const claudeEntry = findEntry(claudeEntries, pluginName, "Claude marketplace", errors);
@@ -248,6 +268,18 @@ for (const skill of skills) {
         codexManifest.interface?.category,
         metadata.category,
         `${pluginName} Codex interface category`,
+        errors,
+      );
+      assertEqual(
+        codexManifest.interface?.logo,
+        APP_ICON_PATH,
+        `${pluginName} Codex logo`,
+        errors,
+      );
+      assertEqual(
+        codexManifest.interface?.composerIcon,
+        APP_ICON_PATH,
+        `${pluginName} Codex composerIcon`,
         errors,
       );
     }

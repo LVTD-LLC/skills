@@ -32,6 +32,9 @@
     "defaultPrompt": [
       "Use the Book TOC Lab skill when working on book toc lab tasks."
     ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
     "screenshots": []
   }
 }

@@ -31,6 +31,9 @@
     "defaultPrompt": [
       "Use the FastMCP Django skill when working on fastmcp django tasks."
     ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
     "screenshots": []
   }
 }

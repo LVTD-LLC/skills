@@ -30,6 +30,9 @@
     "defaultPrompt": [
       "Use the Django HTMX skill when working on django htmx tasks."
     ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
     "screenshots": []
   }
 }

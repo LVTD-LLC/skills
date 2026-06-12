@@ -6,6 +6,10 @@ import {
 } from "./skill-utils.mjs";
 
 export const REPOSITORY_URL = "https://github.com/LVTD-LLC/skills";
+export const BRAND_COLOR = "#FF4057";
+export const ASSET_DIR = "assets";
+export const APP_ICON_FILE = "app-icon.png";
+export const APP_ICON_PATH = `./${ASSET_DIR}/${APP_ICON_FILE}`;
 export const AUTHOR = {
   name: "LVTD",
   url: "https://github.com/LVTD-LLC",
@@ -70,6 +74,9 @@ export function codexManifestForSkill(skill, metadata = metadataForSkill(skill))
       capabilities: ["Interactive", "Read"],
       websiteURL: REPOSITORY_URL,
       defaultPrompt: [buildDefaultPrompt(skill, metadata)],
+      brandColor: BRAND_COLOR,
+      composerIcon: APP_ICON_PATH,
+      logo: APP_ICON_PATH,
       screenshots: [],
     },
   };
@@ -130,6 +137,8 @@ export function codexMarketplaceForSkills(skills) {
     name: MARKETPLACE_NAME,
     interface: {
       displayName: MARKETPLACE_DISPLAY_NAME,
+      brandColor: BRAND_COLOR,
+      logo: APP_ICON_PATH,
     },
     plugins: skills.map((skill) => codexMarketplaceEntryForSkill(skill)),
   };

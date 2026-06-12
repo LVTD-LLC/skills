@@ -1,7 +1,9 @@
 {
   "name": "lvtd-skills",
   "interface": {
-    "displayName": "LVTD Skills"
+    "displayName": "LVTD Skills",
+    "brandColor": "#FF4057",
+    "logo": "./assets/app-icon.png"
   },
   "plugins": [
     {

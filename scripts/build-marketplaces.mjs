@@ -1,7 +1,9 @@
-import { mkdir, rm, symlink, writeFile } from "node:fs/promises";
+import { cp, mkdir, rm, symlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { loadSkills, MARKETPLACE_NAME, root } from "./skill-utils.mjs";
 import {
+  APP_ICON_FILE,
+  ASSET_DIR,
   claudeManifestForSkill,
   claudeMarketplaceForSkills,
   codexManifestForSkill,
@@ -12,10 +14,17 @@ import { validateSkills } from "./validate-skills.mjs";
 
 const marketplaceDir = root;
 const pluginsDir = path.join(marketplaceDir, "plugins");
+const sourceAssetPath = path.join(marketplaceDir, ASSET_DIR, APP_ICON_FILE);
 
 async function writeJson(filePath, payload) {
   await mkdir(path.dirname(filePath), { recursive: true });
   await writeFile(filePath, `${JSON.stringify(payload, null, 2)}\n`);
+}
+
+async function copyAppIcon(destinationDir) {
+  const destination = path.join(destinationDir, ASSET_DIR, APP_ICON_FILE);
+  await mkdir(path.dirname(destination), { recursive: true });
+  await cp(sourceAssetPath, destination);
 }
 
 if (!process.argv.includes("--skip-validation")) {
@@ -44,6 +53,7 @@ for (const skill of skills) {
   await mkdir(path.join(pluginDir, ".codex-plugin"), { recursive: true });
   await mkdir(pluginSkillsDir, { recursive: true });
   await symlink(skillLinkTarget, skillDestination, "dir");
+  await copyAppIcon(pluginDir);
 
   await writeJson(
     path.join(pluginDir, ".claude-plugin", "plugin.json"),
@@ -60,5 +70,6 @@ await writeJson(
   path.join(marketplaceDir, ".agents", "plugins", "marketplace.json"),
   codexMarketplaceForSkills(skills),
 );
+await copyAppIcon(path.join(marketplaceDir, ".agents", "plugins"));
 
 console.log(`Wrote ${MARKETPLACE_NAME} marketplace with ${skills.length} plugins`);

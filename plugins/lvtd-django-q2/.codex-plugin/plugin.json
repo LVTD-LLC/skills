@@ -30,6 +30,9 @@
     "defaultPrompt": [
       "Use the Django Q2 skill when working on django q2 tasks."
     ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
     "screenshots": []
   }
 }

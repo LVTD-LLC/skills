@@ -31,6 +31,9 @@
     "defaultPrompt": [
       "Use the Alpine.js Django skill when working on alpinejs django tasks."
     ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
     "screenshots": []
   }
 }

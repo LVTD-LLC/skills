@@ -1,3 +1,5 @@
+<img src="assets/app-icon.png" alt="LVTD fire heart logo" width="96" height="96">
+
 # LVTD Skills
 
 Reusable agent skills for LVTD projects, Django SaaS workflows, and agent-first software development.
