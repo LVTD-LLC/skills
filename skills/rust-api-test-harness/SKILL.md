@@ -159,7 +159,7 @@ cargo workflow applies:
 path/to/rust-api-test-harness/scripts/check-rust-service.sh
 ```
 
-The script runs:
+By default, the script runs:
 
 ```bash
 cargo fmt --all --check
@@ -167,8 +167,10 @@ cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-features
 ```
 
-Set `RUST_API_TEST_HARNESS_SKIP_CLIPPY=1` to skip the clippy step when the
-project configures linting separately in CI.
+Set `RUST_API_TEST_HARNESS_SKIP_CLIPPY=1` to skip only the clippy step. The
+script still runs formatting and tests. Use this escape hatch when the project
+configures linting separately in CI or when `--all-targets --all-features` is
+known to be inappropriate for the local preflight.
 
 If the project does not use all features in CI, mirror the repository's existing
 CI commands instead and explain the deviation.
