@@ -54,5 +54,8 @@ calibredb list --with-library /mnt/calibre --search "title:django or tags:django
 
 # ID pipeline pattern
 ids=$(calibredb search --with-library /mnt/calibre "title:django")
-calibredb list --with-library /mnt/calibre --search "id:${ids}" --fields id,title,authors
+id_filter=$(python3 -c 'import sys; print(" or ".join(f"id:{book_id.strip()}" for book_id in sys.stdin.read().split(",") if book_id.strip()))' <<< "$ids")
+if [ -n "$id_filter" ]; then
+  calibredb list --with-library /mnt/calibre --search "$id_filter" --fields id,title,authors
+fi
 ```

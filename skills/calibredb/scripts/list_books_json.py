@@ -5,6 +5,22 @@ import subprocess
 import sys
 
 
+class CalibreDBError(RuntimeError):
+    pass
+
+
+def summarize_process_error(stderr: str, stdout: str, returncode: int) -> str:
+    output = stderr.strip() or stdout.strip()
+    if not output:
+        return f"exit code {returncode}"
+
+    lines = [line.strip() for line in output.splitlines() if line.strip()]
+    if any(line.startswith("Traceback ") for line in lines):
+        return lines[-1]
+
+    return output
+
+
 def run_calibredb(library: str, search: str | None, limit: int | None, fields: str) -> list[dict]:
     cmd = [
         "calibredb",
@@ -20,8 +36,19 @@ def run_calibredb(library: str, search: str | None, limit: int | None, fields: s
     if limit is not None:
         cmd += ["--limit", str(limit)]
 
-    out = subprocess.check_output(cmd, text=True)
-    return json.loads(out)
+    try:
+        result = subprocess.run(cmd, capture_output=True, check=True, text=True)
+    except FileNotFoundError as exc:
+        raise CalibreDBError("calibredb executable was not found on PATH") from exc
+    except subprocess.CalledProcessError as exc:
+        detail = summarize_process_error(exc.stderr, exc.stdout, exc.returncode)
+        raise CalibreDBError(f"calibredb list failed: {detail}") from exc
+
+    try:
+        return json.loads(result.stdout)
+    except json.JSONDecodeError as exc:
+        excerpt = result.stdout.strip()[:500] or "<empty output>"
+        raise CalibreDBError(f"calibredb returned invalid JSON: {exc}; output: {excerpt}") from exc
 
 
 def main() -> int:
@@ -36,7 +63,12 @@ def main() -> int:
     )
 
     args = parser.parse_args()
-    rows = run_calibredb(args.library, args.search, args.limit, args.fields)
+    try:
+        rows = run_calibredb(args.library, args.search, args.limit, args.fields)
+    except CalibreDBError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
+
     json.dump(rows, sys.stdout, ensure_ascii=False, indent=2)
     sys.stdout.write("\n")
     return 0
