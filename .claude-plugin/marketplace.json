@@ -187,6 +187,36 @@
         "mcp",
         "asgi"
       ]
+    },
+    {
+      "name": "lvtd-make-product-viral",
+      "displayName": "Make Product Viral",
+      "source": "./plugins/lvtd-make-product-viral",
+      "description": "Make Product Viral workflow guidance for marketing.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "Marketing",
+      "tags": [
+        "marketing",
+        "launch",
+        "cro",
+        "pricing",
+        "copywriting",
+        "shareability"
+      ],
+      "keywords": [
+        "make-product-viral",
+        "marketing",
+        "launch",
+        "cro",
+        "pricing",
+        "copywriting",
+        "shareability"
+      ]
     }
   ]
 }
