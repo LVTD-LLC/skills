@@ -3,6 +3,7 @@ import argparse
 import json
 import subprocess
 import sys
+from typing import Optional
 
 
 class CalibreDBError(RuntimeError):
@@ -21,7 +22,7 @@ def summarize_process_error(stderr: str, stdout: str, returncode: int) -> str:
     return output
 
 
-def run_calibredb(library: str, search: str | None, limit: int | None, fields: str) -> list[dict]:
+def run_calibredb(library: str, search: Optional[str], limit: Optional[int], fields: str) -> list[dict]:
     cmd = [
         "calibredb",
         "list",
