@@ -220,12 +220,3 @@ proof, pricing structure, and specific UI/content changes over abstract advice.
   it.
 - Do not let "viral" override usefulness. A product that spreads but disappoints
   users creates the wrong kind of attention.
-
-## Related Skills
-
-- Use `copywriting` for a full landing page copy rewrite.
-- Use `cro` for conversion diagnostics beyond shareability.
-- Use `pricing` for deeper packaging and monetization work.
-- Use `launch` for launch sequencing and channel strategy.
-- Use `free-tools` when the viral asset should be a useful tool rather than a
-  sales page.
