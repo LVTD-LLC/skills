@@ -77,7 +77,7 @@ pub async fn spawn_axum_app() -> TestApp {
         .expect("failed to bind random port");
     let port = listener.local_addr().unwrap().port();
     let server = axum::serve(listener, router(test_state().await));
-    let server_handle = tokio::spawn(server);
+    let server_handle = tokio::spawn(async move { server.await });
 
     TestApp {
         address: format!("http://127.0.0.1:{port}"),
