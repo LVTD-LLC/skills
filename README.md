@@ -11,6 +11,7 @@ This repository is intentionally simple: every skill lives in `skills/<skill-nam
 | Skill | Use when |
 | --- | --- |
 | [`alpinejs-django`](skills/alpinejs-django/SKILL.md) | Adding, changing, or debugging Alpine.js behavior in Django templates, especially when HTMX partial swaps are also present. |
+| [`calibredb`](skills/calibredb/SKILL.md) | Managing and querying Calibre libraries with the calibredb CLI, including metadata, formats, exports, checks, and full-text search. |
 | [`cookiecutter`](skills/cookiecutter/SKILL.md) | Adding, changing, testing, or debugging Cookiecutter templates, including Jinja rendering, hooks, option cleanup, and generated-project validation. |
 | [`django-htmx`](skills/django-htmx/SKILL.md) | Building and reviewing HTMX interactions in Django server-rendered apps, including partial responses, headers, swaps, triggers, forms, and tests. |
 | [`django-q2`](skills/django-q2/SKILL.md) | Adding, changing, testing, or debugging Django Q2 background jobs, schedules, workers, and broker configuration. |
@@ -102,6 +103,7 @@ npm run build
 Generated plugin IDs:
 
 - `lvtd-alpinejs-django`
+- `lvtd-calibredb`
 - `lvtd-cookiecutter`
 - `lvtd-django-htmx`
 - `lvtd-django-q2`

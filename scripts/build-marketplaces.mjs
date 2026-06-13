@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, symlink, writeFile } from "node:fs/promises";
+import { cp, mkdir, rm, stat, symlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { loadSkills, MARKETPLACE_NAME, root } from "./skill-utils.mjs";
 import {
@@ -21,10 +21,22 @@ async function writeJson(filePath, payload) {
   await writeFile(filePath, `${JSON.stringify(payload, null, 2)}\n`);
 }
 
-async function copyAppIcon(destinationDir) {
+async function pathExists(filePath) {
+  try {
+    await stat(filePath);
+    return true;
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return false;
+    }
+    throw error;
+  }
+}
+
+async function copyAppIcon(destinationDir, assetPath = sourceAssetPath) {
   const destination = path.join(destinationDir, ASSET_DIR, APP_ICON_FILE);
   await mkdir(path.dirname(destination), { recursive: true });
-  await cp(sourceAssetPath, destination);
+  await cp(assetPath, destination);
 }
 
 if (!process.argv.includes("--skip-validation")) {
@@ -48,12 +60,14 @@ for (const skill of skills) {
   const pluginSkillsDir = path.join(pluginDir, "skills");
   const skillDestination = path.join(pluginDir, "skills", skill.name);
   const skillLinkTarget = path.relative(pluginSkillsDir, skill.path).replaceAll(path.sep, "/");
+  const skillAssetPath = path.join(skill.path, ASSET_DIR, APP_ICON_FILE);
+  const appIconPath = (await pathExists(skillAssetPath)) ? skillAssetPath : sourceAssetPath;
 
   await mkdir(path.join(pluginDir, ".claude-plugin"), { recursive: true });
   await mkdir(path.join(pluginDir, ".codex-plugin"), { recursive: true });
   await mkdir(pluginSkillsDir, { recursive: true });
   await symlink(skillLinkTarget, skillDestination, "dir");
-  await copyAppIcon(pluginDir);
+  await copyAppIcon(pluginDir, appIconPath);
 
   await writeJson(
     path.join(pluginDir, ".claude-plugin", "plugin.json"),
