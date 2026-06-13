@@ -41,7 +41,8 @@ observable behavior rather than reaching through framework internals.
 ## Startup Shape
 
 Prefer a startup function that accepts infrastructure instead of creating it
-inside the handler module.
+inside the handler module. Actix can listen on a synchronous
+`std::net::TcpListener`:
 
 ```rust
 pub fn run(
@@ -61,8 +62,30 @@ pub fn run(
 }
 ```
 
-For Axum, prefer the same boundary: build a `Router` from explicit state, bind a
-`TcpListener` in the test helper, then serve it in a background task.
+For Axum, prefer the same boundary but use Tokio's async listener type:
+
+```rust
+pub fn router(app_state: AppState) -> axum::Router {
+    axum::Router::new()
+        .route("/health_check", axum::routing::get(health_check))
+        .with_state(app_state)
+}
+
+pub async fn spawn_axum_app() -> TestApp {
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0")
+        .await
+        .expect("failed to bind random port");
+    let port = listener.local_addr().unwrap().port();
+    let server = axum::serve(listener, router(test_state().await));
+    let server_handle = tokio::spawn(server);
+
+    TestApp {
+        address: format!("http://127.0.0.1:{port}"),
+        http_client: reqwest::Client::new(),
+        server_handle,
+    }
+}
+```
 
 ## Test Harness Pattern
 
@@ -72,6 +95,7 @@ Use a helper object instead of repeating setup in every test.
 pub struct TestApp {
     pub address: String,
     pub http_client: reqwest::Client,
+    pub server_handle: tokio::task::JoinHandle<std::io::Result<()>>,
 }
 
 pub async fn spawn_app() -> TestApp {
@@ -81,11 +105,12 @@ pub async fn spawn_app() -> TestApp {
 
     let server = my_app::startup::run(listener, test_state().await)
         .expect("failed to start test server");
-    tokio::spawn(server);
+    let server_handle = tokio::spawn(server);
 
     TestApp {
         address: format!("http://127.0.0.1:{port}"),
         http_client: reqwest::Client::new(),
+        server_handle,
     }
 }
 ```
@@ -93,6 +118,11 @@ pub async fn spawn_app() -> TestApp {
 Add small helper methods when a multi-step user journey appears in more than
 one test. Keep the method names behavior-oriented, for example
 `post_subscription`, `login`, `create_newsletter`, or `confirm_subscription`.
+
+Do not discard the `JoinHandle` returned by `tokio::spawn`. Keep it in the test
+fixture so tests can detect an unexpectedly finished server task and abort it
+during teardown instead of hiding server-side panics behind later
+connection-refused errors.
 
 ## Assertions
 
@@ -136,6 +166,9 @@ cargo fmt --all --check
 cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-features
 ```
+
+Set `RUST_API_TEST_HARNESS_SKIP_CLIPPY=1` to skip the clippy step when the
+project configures linting separately in CI.
 
 If the project does not use all features in CI, mirror the repository's existing
 CI commands instead and explain the deviation.
