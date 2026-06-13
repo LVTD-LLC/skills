@@ -46,16 +46,18 @@ Source baseline: <https://manual.calibre-ebook.com/generated/en/calibredb.html>
 ## Practical command snippets
 
 ```bash
+export CALIBRE_LIBRARY="/path/to/Calibre Library"
+
 # JSON list
-calibredb list --with-library /mnt/calibre --fields id,title,authors,tags,formats --for-machine
+calibredb list --with-library "$CALIBRE_LIBRARY" --fields id,title,authors,tags,formats --for-machine
 
 # Filter by tag/title/author
-calibredb list --with-library /mnt/calibre --search "title:django or tags:django"
+calibredb list --with-library "$CALIBRE_LIBRARY" --search "title:python or tags:python"
 
 # ID pipeline pattern
-ids=$(calibredb search --with-library /mnt/calibre "title:django")
+ids=$(calibredb search --with-library "$CALIBRE_LIBRARY" "title:python")
 id_filter=$(python3 -c 'import sys; print(" or ".join(f"id:{book_id.strip()}" for book_id in sys.stdin.read().split(",") if book_id.strip()))' <<< "$ids")
 if [ -n "$id_filter" ]; then
-  calibredb list --with-library /mnt/calibre --search "$id_filter" --fields id,title,authors
+  calibredb list --with-library "$CALIBRE_LIBRARY" --search "$id_filter" --fields id,title,authors
 fi
 ```

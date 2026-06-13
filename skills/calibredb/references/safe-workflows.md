@@ -11,9 +11,10 @@
 Example:
 
 ```bash
-calibredb list --with-library /mnt/calibre --fields id,title,authors,formats --limit 50 --for-machine
-calibredb search --with-library /mnt/calibre "title:django"
-calibredb show_metadata --with-library /mnt/calibre 123
+export CALIBRE_LIBRARY="/path/to/Calibre Library"
+calibredb list --with-library "$CALIBRE_LIBRARY" --fields id,title,authors,formats --limit 50 --for-machine
+calibredb search --with-library "$CALIBRE_LIBRARY" "title:python"
+calibredb show_metadata --with-library "$CALIBRE_LIBRARY" 123
 ```
 
 ## 2) Metadata cleanup flow

@@ -14,10 +14,13 @@ metadata:
 
 Use this skill for all command-line operations on Calibre libraries.
 
-## Defaults
+## Library path
 
-- Default library path in this environment: `/mnt/calibre`.
-- Prefer explicit path in every command: `--with-library /mnt/calibre`.
+- Calibre library locations are user-specific. Identify the target library path
+  or Content server URL before running commands.
+- Prefer explicit path in every command: `--with-library "$CALIBRE_LIBRARY"`.
+- If the user has not provided a library path, ask for it or inspect the local
+  environment for an existing Calibre library before proceeding.
 - For machine-readable outputs, use `--for-machine` or JSON-capable subcommands.
 
 ## Safety model
@@ -53,19 +56,20 @@ Start with read-only operations, then escalate only when needed.
 ### 1) List books
 
 ```bash
-calibredb list --with-library /mnt/calibre --fields id,title,authors,formats --limit 20
+export CALIBRE_LIBRARY="/path/to/Calibre Library"
+calibredb list --with-library "$CALIBRE_LIBRARY" --fields id,title,authors,formats --limit 20
 ```
 
 Machine output:
 
 ```bash
-calibredb list --with-library /mnt/calibre --fields id,title,authors,tags,formats --for-machine
+calibredb list --with-library "$CALIBRE_LIBRARY" --fields id,title,authors,tags,formats --for-machine
 ```
 
 ### 2) Search and get IDs
 
 ```bash
-calibredb search --with-library /mnt/calibre "title:django"
+calibredb search --with-library "$CALIBRE_LIBRARY" "title:python"
 ```
 
 Use IDs in follow-up commands.
@@ -73,34 +77,34 @@ Use IDs in follow-up commands.
 ### 3) Show metadata
 
 ```bash
-calibredb show_metadata --with-library /mnt/calibre 123
+calibredb show_metadata --with-library "$CALIBRE_LIBRARY" 123
 ```
 
 As OPF:
 
 ```bash
-calibredb show_metadata --with-library /mnt/calibre --as-opf 123
+calibredb show_metadata --with-library "$CALIBRE_LIBRARY" --as-opf 123
 ```
 
 ### 4) Update metadata fields
 
 ```bash
-calibredb set_metadata --with-library /mnt/calibre 123 \
-  --field title:"Django 5 By Example" \
-  --field tags:"django,python,web"
+calibredb set_metadata --with-library "$CALIBRE_LIBRARY" 123 \
+  --field title:"Example Book" \
+  --field tags:"python,reference"
 ```
 
 ### 5) Add/export books
 
 ```bash
-calibredb add --with-library /mnt/calibre "/path/to/book.epub"
-calibredb export --with-library /mnt/calibre 123 --to-dir "/tmp/export"
+calibredb add --with-library "$CALIBRE_LIBRARY" "/path/to/book.epub"
+calibredb export --with-library "$CALIBRE_LIBRARY" 123 --to-dir "/tmp/export"
 ```
 
 ### 6) Library health check
 
 ```bash
-calibredb check_library --with-library /mnt/calibre
+calibredb check_library --with-library "$CALIBRE_LIBRARY"
 ```
 
 ## Content server usage
@@ -122,4 +126,3 @@ from shell history, logs, and task transcripts.
 
 - Command matrix + options: `references/command-matrix.md`
 - Safe operational playbooks: `references/safe-workflows.md`
-- Django-book focused workflow: `references/django-research-workflow.md`

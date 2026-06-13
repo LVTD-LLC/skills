@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import os
 import subprocess
 import sys
 from typing import Optional
@@ -54,7 +55,11 @@ def run_calibredb(library: str, search: Optional[str], limit: Optional[int], fie
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="List Calibre books as JSON via calibredb list --for-machine")
-    parser.add_argument("--library", default="/mnt/calibre", help="Calibre library path or content-server URL")
+    parser.add_argument(
+        "--library",
+        default=os.environ.get("CALIBRE_LIBRARY"),
+        help="Calibre library path or content-server URL. Defaults to CALIBRE_LIBRARY.",
+    )
     parser.add_argument("--search", default=None, help="Calibre search expression")
     parser.add_argument("--limit", type=int, default=None, help="Max rows")
     parser.add_argument(
@@ -64,6 +69,9 @@ def main() -> int:
     )
 
     args = parser.parse_args()
+    if not args.library:
+        parser.error("provide --library or set CALIBRE_LIBRARY")
+
     try:
         rows = run_calibredb(args.library, args.search, args.limit, args.fields)
     except CalibreDBError as exc:
