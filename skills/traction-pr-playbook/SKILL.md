@@ -68,6 +68,11 @@ converted lines 903-1232 and 3323-3334.
 - Tracking:
 - Success threshold:
 - Kill threshold:
+
+## Decision Rules
+- Double down if:
+- Iterate if:
+- Kill if:
 ```
 
 ## Quality Bar

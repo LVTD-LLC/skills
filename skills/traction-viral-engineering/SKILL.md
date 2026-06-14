@@ -1,6 +1,6 @@
 ---
 name: traction-viral-engineering
-description: Plan viral marketing and engineering-as-marketing traction experiments from Traction. Use when designing referral loops, viral coefficients, free tools, calculators, microsites, widgets, or product-led assets that acquire customers.
+description: Plan viral marketing and engineering-as-marketing traction experiments from Traction. Use when designing referral loops, viral coefficients, engineered acquisition tools, calculators, microsites, widgets, or product-led assets that acquire customers; use make-product-viral instead for landing-page audits, shareability reviews, pricing-page polish, or social-preview optimization.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
@@ -15,6 +15,10 @@ metadata:
 Use this skill for growth loops and useful engineered assets: referral systems,
 viral sharing, free tools, calculators, widgets, microsites, and product-led
 lead magnets.
+
+For landing-page audits, pricing-page polish, social previews, or broad
+shareability reviews, use `make-product-viral` instead. This skill is for
+designing measurable traction experiments around loops and engineered assets.
 
 ## Source Traceability
 

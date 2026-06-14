@@ -13,7 +13,9 @@ Justin Mares. During authoring, the Calibre EPUB was converted to
 | Bullseye middle ring | Chapter 3, The Middle Ring: What's Probable | 585-606 |
 | Bullseye inner ring | Chapter 3, The Inner Ring: What's Working | 607-628 |
 | Why Bullseye exists | Chapter 3, Why Use Bullseye? | 629-650 |
+| Traction goal and Critical Path context | Chapter 5, Defining Your Traction Goal / Critical Path | 787-840 |
 | Bias against channels | Chapter 5, Overcoming Your Traction Biases | 841-892 |
+| Chapter 5 target checklist | Chapter 5, Targets | 893-902 |
 
 ## Nineteen Traction Channels
 
