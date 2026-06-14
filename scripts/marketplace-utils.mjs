@@ -21,8 +21,9 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     displayName: "Rust",
     category: "Coding",
     taskLabel: "Rust",
-    description: "Rust workflow guidance for API testing and backend service development.",
-    tags: ["rust", "api-testing", "backend"],
+    description:
+      "Rust workflow guidance for production backend services, including testing, persistence, observability, security, idempotency, and deployment.",
+    tags: ["rust", "backend", "api-testing", "sqlx", "observability", "security", "deployment"],
     matches: (skill) => hasSkillTag(skill, "rust") || skill.name.startsWith("rust-"),
   },
   {
