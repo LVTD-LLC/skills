@@ -1,6 +1,6 @@
 ---
 name: book-toc-lab
-description: Design and pressure-test useful nonfiction book tables of contents before drafting. Use when planning, outlining, scoping, restructuring, or validating a practical book, guide, manual, course-like book, or other reader-outcome-focused long-form nonfiction.
+description: Design and pressure-test useful nonfiction book promises, scopes, recommendation loops, and takeaway-first tables of contents before drafting. Use when planning, outlining, scoping, restructuring, validating, or testing a practical book, guide, manual, course-like book, or other reader-outcome-focused long-form nonfiction.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
@@ -14,15 +14,27 @@ metadata:
 
 ## Baseline
 
-Treat a useful nonfiction book as a problem-solving product for a specific reader. The table of contents is the product design, not a decorative outline. Build and test the TOC before drafting so the manuscript has a clear promise, strong scope, and useful progression.
+Treat a useful nonfiction book as a problem-solving product for a specific reader. The table of contents is the product design, not a decorative outline. Build and test the promise, scope, recommendation loop, and TOC before drafting so the manuscript has a clear job and a useful progression.
 
-Use this skill to produce or improve a TOC that answers:
+Use this skill to produce or improve a book plan that answers:
 
 - Who is this book for?
 - What painful or valuable problem does it help them solve?
 - What should be different for the reader after each chapter?
 - What does the book deliberately leave out?
-- Why would a satisfied reader recommend it to someone specific?
+- Why would a satisfied reader recommend it to a specific person in a specific situation?
+
+## Reference Routing
+
+Load only the files needed for the task:
+
+| Need | Read |
+|------|------|
+| Core model, DEEP, promise, scope, recommendation loop | `references/core/knowledge.md` |
+| Concrete planning and validation rules | `references/core/rules.md` |
+| Before/after examples for scope and TOC titles | `references/core/examples.md` |
+| Quick planning and review checklist | `references/core/checklist.md` |
+| Step-by-step TOC validation with readers | `workflows/validate-toc.md` |
 
 ## Workflow
 
@@ -49,7 +61,18 @@ Define both sides of the scope:
 
 Prefer a narrow book that fully solves one reader problem over a broad book that surveys many topics without changing the reader's life.
 
-### 3. Draft A Takeaway-First TOC
+### 3. Check Recommendability
+
+Write the recommendation story:
+
+- What situation makes the reader complain, search, ask for help, or give advice?
+- Who hears that problem and naturally recommends this book?
+- Why is this book the obvious solution for that person, not merely one option among many?
+- What outcome would make the reader confident enough to recommend it?
+
+If the story is weak, adjust the reader, promise, or scope before drafting.
+
+### 4. Draft A Takeaway-First TOC
 
 Create chapters as reader takeaways, not clever titles. For each chapter, capture:
 
@@ -66,7 +89,7 @@ Use this table while designing:
 Chapter | Reader problem | Takeaway | Reader output | Why now? | Risk if missing
 ```
 
-### 4. Shape The Reader Journey
+### 5. Shape The Reader Journey
 
 Order chapters by reader progress, not author knowledge. A strong sequence usually moves through:
 
@@ -78,7 +101,7 @@ Order chapters by reader progress, not author knowledge. A strong sequence usual
 
 Avoid front-loading background that the reader does not need yet. Put value early enough that the reader feels progress in the first chapter.
 
-### 5. Pressure-Test The TOC
+### 6. Pressure-Test The TOC
 
 Run these checks before drafting:
 
@@ -92,7 +115,7 @@ Run these checks before drafting:
 
 Revise until each chapter earns its place.
 
-### 6. Test Before Drafting
+### 7. Test Before Drafting
 
 When practical, validate the TOC with real or simulated readers before writing full chapters:
 
@@ -109,10 +132,11 @@ Treat negative feedback as design data. Update the TOC before turning it into pr
 When asked to create or improve a TOC, return:
 
 1. Book brief: reader, problem, promise, scope, out-of-scope.
-2. Recommended TOC with chapter-level reader problems and takeaways.
-3. Reader journey notes explaining the order.
-4. Risk list: missing prerequisites, vague chapters, likely confusion, likely boredom.
-5. Validation plan: 3-7 concrete ways to test the TOC before drafting.
+2. Recommendation story: trigger, recommender, recommended reader, why this book.
+3. Recommended TOC with chapter-level reader problems and takeaways.
+4. Reader journey notes explaining the order.
+5. Risk list: missing prerequisites, vague chapters, likely confusion, likely boredom.
+6. Validation plan: 3-7 concrete ways to test the TOC before drafting.
 
 ## Quality Bar
 

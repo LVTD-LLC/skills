@@ -1,7 +1,7 @@
 {
   "name": "nonfiction-book-writing",
   "version": "0.1.0",
-  "description": "Nonfiction book writing guidance for planning and pressure-testing useful TOCs.",
+  "description": "Nonfiction book writing guidance for planning, editing, beta reading, launching, and publishing useful books.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -14,9 +14,26 @@
     "writing",
     "books",
     "nonfiction",
-    "toc",
+    "editing",
+    "launch",
+    "publishing",
+    "beta-reader-feedback",
+    "book-sales-optimization",
+    "book-seed-marketing",
     "book-toc-lab",
-    "outlining"
+    "reader-experience-edit",
+    "self-publishing-production",
+    "beta-readers",
+    "feedback",
+    "marketing",
+    "sales",
+    "pricing",
+    "audience",
+    "outlining",
+    "toc",
+    "reader-experience",
+    "self-publishing",
+    "production"
   ],
   "skills": "./skills/",
   "displayName": "Nonfiction Book Writing"

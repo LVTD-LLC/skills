@@ -1,7 +1,7 @@
 {
   "name": "nonfiction-book-writing",
   "version": "0.1.0",
-  "description": "Nonfiction book writing guidance for planning and pressure-testing useful TOCs.",
+  "description": "Nonfiction book writing guidance for planning, editing, beta reading, launching, and publishing useful books.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -14,15 +14,32 @@
     "writing",
     "books",
     "nonfiction",
-    "toc",
+    "editing",
+    "launch",
+    "publishing",
+    "beta-reader-feedback",
+    "book-sales-optimization",
+    "book-seed-marketing",
     "book-toc-lab",
-    "outlining"
+    "reader-experience-edit",
+    "self-publishing-production",
+    "beta-readers",
+    "feedback",
+    "marketing",
+    "sales",
+    "pricing",
+    "audience",
+    "outlining",
+    "toc",
+    "reader-experience",
+    "self-publishing",
+    "production"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Nonfiction Book Writing",
-    "shortDescription": "Nonfiction book writing guidance for planning and pressure-testing useful TOCs.",
-    "longDescription": "Nonfiction book writing guidance for planning and pressure-testing useful TOCs. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Book TOC Lab. Category: Writing.",
+    "shortDescription": "Nonfiction book writing guidance for planning, editing, beta reading, launching, and publishing useful books.",
+    "longDescription": "Nonfiction book writing guidance for planning, editing, beta reading, launching, and publishing useful books. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Beta Reader Feedback, Book Sales Optimization, Book Seed Marketing, Book TOC Lab, Reader Experience Edit, Self-Publishing Production. Category: Writing.",
     "developerName": "LVTD",
     "category": "Writing",
     "capabilities": [
@@ -31,7 +48,7 @@
     ],
     "websiteURL": "https://github.com/LVTD-LLC/skills",
     "defaultPrompt": [
-      "Use the Nonfiction Book Writing plugin when working on nonfiction book writing tasks. It includes the Book TOC Lab skill."
+      "Use the Nonfiction Book Writing plugin when working on nonfiction book writing tasks. It includes the Beta Reader Feedback, Book Sales Optimization, Book Seed Marketing, Book TOC Lab, Reader Experience Edit, and Self-Publishing Production skills."
     ],
     "brandColor": "#FF4057",
     "composerIcon": "./assets/app-icon.png",
