@@ -1,0 +1,23 @@
+{
+  "name": "make-product-viral",
+  "version": "0.1.0",
+  "description": "Make Product Viral workflow guidance for marketing.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "make-product-viral",
+    "marketing",
+    "launch",
+    "cro",
+    "pricing",
+    "copywriting",
+    "shareability"
+  ],
+  "skills": "./skills/",
+  "displayName": "Make Product Viral"
+}

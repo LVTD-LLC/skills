@@ -9,6 +9,7 @@ import {
   metadataForSkill,
   root,
 } from "./skill-utils.mjs";
+import { pluginNameForSkill } from "./marketplace-utils.mjs";
 import { validateSkills } from "./validate-skills.mjs";
 
 const distDir = path.join(root, "dist");
@@ -45,7 +46,7 @@ const loadedSkills = await loadSkills();
 for (const skill of loadedSkills) {
   const metadata = metadataForSkill(skill);
   const { files, sha256 } = await hashSkillDirectory(skill.path);
-  const pluginName = `lvtd-${skill.name}`;
+  const pluginName = pluginNameForSkill(skill.name);
 
   skills.push({
     name: skill.name,

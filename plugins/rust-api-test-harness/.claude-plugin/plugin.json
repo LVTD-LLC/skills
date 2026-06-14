@@ -1,0 +1,21 @@
+{
+  "name": "rust-api-test-harness",
+  "version": "0.1.0",
+  "description": "Rust API Test Harness workflow guidance for developer tooling.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "rust-api-test-harness",
+    "rust",
+    "api-testing",
+    "integration-tests",
+    "backend"
+  ],
+  "skills": "./skills/",
+  "displayName": "Rust API Test Harness"
+}

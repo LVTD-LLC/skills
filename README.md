@@ -17,6 +17,7 @@ This repository is intentionally simple: every skill lives in `skills/<skill-nam
 | [`django-q2`](skills/django-q2/SKILL.md) | Adding, changing, testing, or debugging Django Q2 background jobs, schedules, workers, and broker configuration. |
 | [`fastmcp-django`](skills/fastmcp-django/SKILL.md) | Adding, changing, deploying, testing, or debugging FastMCP MCP servers in existing Django apps, including ASGI mounting, ORM access, auth, and Streamable HTTP deployment. |
 | [`make-product-viral`](skills/make-product-viral/SKILL.md) | Making a product, landing page, pricing page, launch page, free tool, or social preview easier to understand, buy, remember, and share. |
+| [`rust-api-test-harness`](skills/rust-api-test-harness/SKILL.md) | Adding, changing, testing, or debugging Rust HTTP APIs with black-box integration tests, random-port app startup, state isolation, mocks, and CI-ready cargo checks. |
 
 ## Repository Layout
 
@@ -68,27 +69,27 @@ Add the marketplace in Claude Code:
 
 ```text
 /plugin marketplace add LVTD-LLC/skills
-/plugin install lvtd-django-htmx@lvtd-skills
+/plugin install django-htmx@lvtd-skills
 /reload-plugins
 ```
 
-Claude Code exposes the skill as `/lvtd-django-htmx:django-htmx`.
+Claude Code exposes the skill as `/django-htmx:django-htmx`.
 
 Add the marketplace in Codex:
 
 ```bash
 codex plugin marketplace add LVTD-LLC/skills
-codex plugin add lvtd-django-htmx@lvtd-skills
+codex plugin add django-htmx@lvtd-skills
 ```
 
-Codex exposes the skill as `$lvtd-django-htmx:django-htmx`.
+Codex exposes the skill as `$django-htmx:django-htmx`.
 
 This repository ships the marketplace files directly:
 
 ```text
 .claude-plugin/marketplace.json
 .agents/plugins/marketplace.json
-plugins/lvtd-<skill-name>/
+plugins/<skill-name>/
 ```
 
 The plugin skill folders are symlinks back to `skills/<skill-name>/`, so each
@@ -103,16 +104,17 @@ npm run build
 
 Generated plugin IDs:
 
-- `lvtd-alpinejs-django`
-- `lvtd-calibredb`
-- `lvtd-cookiecutter`
-- `lvtd-django-htmx`
-- `lvtd-django-q2`
-- `lvtd-fastmcp-django`
-- `lvtd-make-product-viral`
+- `alpinejs-django`
+- `book-toc-lab`
+- `calibredb`
+- `cookiecutter`
+- `django-htmx`
+- `django-q2`
+- `fastmcp-django`
+- `make-product-viral`
+- `rust-api-test-harness`
 
-The `lvtd-` plugin ID prefix is kept for install namespace safety. Displayed
-skill names and prompt text omit that prefix.
+Generated plugin IDs match the canonical skill directory names.
 
 ## Marketplace Strategy
 

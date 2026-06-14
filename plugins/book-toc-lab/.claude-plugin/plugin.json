@@ -1,0 +1,22 @@
+{
+  "name": "book-toc-lab",
+  "version": "0.1.0",
+  "description": "Book TOC Lab workflow guidance for writing.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "book-toc-lab",
+    "writing",
+    "books",
+    "nonfiction",
+    "outlining",
+    "toc"
+  ],
+  "skills": "./skills/",
+  "displayName": "Book TOC Lab"
+}
