@@ -1,7 +1,7 @@
 {
   "name": "django-htmx",
   "version": "0.1.0",
-  "description": "Django HTMX workflow guidance for web development.",
+  "description": "Django HTMX workflow guidance for Django.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"

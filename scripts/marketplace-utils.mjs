@@ -32,7 +32,12 @@ export function buildShortDescription(skill, metadata = metadataForSkill(skill))
   if (description.length <= 128) {
     return description;
   }
-  return `${metadata.displayName} workflow guidance for ${metadata.category.toLowerCase()}.`;
+
+  const categoryLabel = ["Django", "Rust"].includes(metadata.category)
+    ? metadata.category
+    : metadata.category.toLowerCase();
+
+  return `${metadata.displayName} workflow guidance for ${categoryLabel}.`;
 }
 
 export function keywordsForSkill(skill, metadata = metadataForSkill(skill)) {

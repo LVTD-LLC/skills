@@ -6,7 +6,7 @@ compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
   version: "0.1.0"
   displayName: Rust API Test Harness
-  category: Developer Tooling
+  category: Rust
   tags: rust,api-testing,integration-tests,backend
 ---
 

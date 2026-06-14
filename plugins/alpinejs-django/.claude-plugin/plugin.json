@@ -1,7 +1,7 @@
 {
   "name": "alpinejs-django",
   "version": "0.1.0",
-  "description": "Alpine.js Django workflow guidance for web development.",
+  "description": "Alpine.js Django workflow guidance for Django.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"

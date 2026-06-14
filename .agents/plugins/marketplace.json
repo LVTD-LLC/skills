@@ -16,7 +16,7 @@
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       },
-      "category": "Web Development"
+      "category": "Django"
     },
     {
       "name": "book-toc-lab",
@@ -64,7 +64,7 @@
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       },
-      "category": "Web Development"
+      "category": "Django"
     },
     {
       "name": "django-q2",
@@ -76,7 +76,7 @@
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       },
-      "category": "Background Jobs"
+      "category": "Django"
     },
     {
       "name": "fastmcp-django",
@@ -88,7 +88,7 @@
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       },
-      "category": "MCP Servers"
+      "category": "Django"
     },
     {
       "name": "make-product-viral",
@@ -112,7 +112,7 @@
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       },
-      "category": "Developer Tooling"
+      "category": "Rust"
     }
   ]
 }

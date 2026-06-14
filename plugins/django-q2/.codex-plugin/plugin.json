@@ -1,7 +1,7 @@
 {
   "name": "django-q2",
   "version": "0.1.0",
-  "description": "Django Q2 workflow guidance for background jobs.",
+  "description": "Django Q2 workflow guidance for Django.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -18,10 +18,10 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Django Q2",
-    "shortDescription": "Django Q2 workflow guidance for background jobs.",
-    "longDescription": "Use when adding, changing, testing, or debugging Django Q2 background tasks, scheduled jobs, qcluster workers, Redis broker configuration, or ORM broker fallback in this generated Django SaaS app. Packaged as a marketplace skill for Codex and Claude Code. Category: Background Jobs.",
+    "shortDescription": "Django Q2 workflow guidance for Django.",
+    "longDescription": "Use when adding, changing, testing, or debugging Django Q2 background tasks, scheduled jobs, qcluster workers, Redis broker configuration, or ORM broker fallback in this generated Django SaaS app. Packaged as a marketplace skill for Codex and Claude Code. Category: Django.",
     "developerName": "LVTD",
-    "category": "Background Jobs",
+    "category": "Django",
     "capabilities": [
       "Interactive",
       "Read"
