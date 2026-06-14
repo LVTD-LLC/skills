@@ -119,6 +119,52 @@
         "jinja",
         "scaffolding"
       ]
+    },
+    {
+      "name": "seo",
+      "displayName": "SEO",
+      "source": "./plugins/seo",
+      "description": "SEO workflow guidance for product-led strategy, opportunity research, personas, technical triage, and roadmap planning.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "Marketing",
+      "tags": [
+        "seo",
+        "organic-growth",
+        "content-strategy",
+        "technical-seo",
+        "planning"
+      ],
+      "keywords": [
+        "seo",
+        "organic-growth",
+        "content-strategy",
+        "technical-seo",
+        "planning",
+        "product-led-seo-strategy",
+        "seo-opportunity-research",
+        "seo-persona-intent-mapping",
+        "seo-roadmap-prioritization",
+        "technical-seo-triage",
+        "product-led-growth",
+        "marketing",
+        "research",
+        "competitive-research",
+        "blue-ocean",
+        "personas",
+        "search-intent",
+        "conversion",
+        "roadmap",
+        "prioritization",
+        "product-management",
+        "search-console",
+        "indexing",
+        "crawling"
+      ]
     }
   ]
 }

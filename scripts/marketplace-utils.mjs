@@ -53,6 +53,16 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     tags: ["cookiecutter", "templates", "jinja", "scaffolding"],
     matches: (skill) => skill.name === "cookiecutter" || hasSkillTag(skill, "cookiecutter"),
   },
+  {
+    name: "seo",
+    displayName: "SEO",
+    category: "Marketing",
+    taskLabel: "SEO",
+    description:
+      "SEO workflow guidance for product-led strategy, opportunity research, personas, technical triage, and roadmap planning.",
+    tags: ["seo", "organic-growth", "content-strategy", "technical-seo", "planning"],
+    matches: (skill) => hasSkillTag(skill, "seo") || skill.name.includes("seo"),
+  },
 ];
 
 function hasSkillTag(skill, tag) {

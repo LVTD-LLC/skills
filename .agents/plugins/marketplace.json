@@ -53,6 +53,18 @@
         "authentication": "ON_USE"
       },
       "category": "Coding"
+    },
+    {
+      "name": "seo",
+      "source": {
+        "source": "local",
+        "path": "./plugins/seo"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Marketing"
     }
   ]
 }
