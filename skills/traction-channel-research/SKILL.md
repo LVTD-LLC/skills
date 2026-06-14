@@ -70,6 +70,8 @@ in `../traction-bullseye/references/source-map.md`.
 1. [Channel + strategy] - [why test this]
 2. [Channel + strategy] - [why test this]
 3. [Channel + strategy] - [why test this]
+4. [Optional channel + strategy] - [why test this]
+5. [Optional channel + strategy] - [why test this]
 
 ## Bias Check
 - Channels the team may be overvaluing:

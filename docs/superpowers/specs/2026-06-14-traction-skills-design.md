@@ -10,10 +10,9 @@ channel-specific playbooks.
 ## Source
 
 - Book: Traction: How Any Startup Can Achieve Explosive Customer Growth
-- Local source used for analysis: Calibre ID 2 EPUB, converted to
-  `tmp/book-analysis/traction/traction.txt`
 - Extraction approach: paraphrase operational ideas with chapter and line-range
-  traceability. Do not copy long passages into the skills.
+  traceability. Do not copy long passages into the skills or commit extraction
+  artifacts from the book.
 
 ## Skill Shape
 
