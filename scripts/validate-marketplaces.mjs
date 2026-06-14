@@ -133,8 +133,8 @@ const claudeMarketplace = await readJson(claudeMarketplacePath, errors);
 const codexMarketplace = await readJson(codexMarketplacePath, errors);
 const plugins = marketplacePluginsForSkills(skills);
 const expectedPluginNames = plugins.map((plugin) => plugin.name).sort();
-const expectedClaudeMarketplace = claudeMarketplaceForSkills(skills);
-const expectedCodexMarketplace = codexMarketplaceForSkills(skills);
+const expectedClaudeMarketplace = claudeMarketplaceForSkills(skills, plugins);
+const expectedCodexMarketplace = codexMarketplaceForSkills(skills, plugins);
 let claudeMarketplaceMatches = false;
 let codexMarketplaceMatches = false;
 

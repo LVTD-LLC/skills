@@ -9,7 +9,7 @@ import {
   metadataForSkill,
   root,
 } from "./skill-utils.mjs";
-import { marketplacePluginBySkillName } from "./marketplace-utils.mjs";
+import { marketplacePluginBySkillName, marketplacePluginsForSkills } from "./marketplace-utils.mjs";
 import { validateSkills } from "./validate-skills.mjs";
 
 const distDir = path.join(root, "dist");
@@ -42,7 +42,8 @@ if (!process.argv.includes("--skip-validation")) {
 
 const skills = [];
 const loadedSkills = await loadSkills();
-const pluginBySkillName = marketplacePluginBySkillName(loadedSkills);
+const plugins = marketplacePluginsForSkills(loadedSkills);
+const pluginBySkillName = marketplacePluginBySkillName(loadedSkills, plugins);
 
 for (const skill of loadedSkills) {
   const metadata = metadataForSkill(skill);

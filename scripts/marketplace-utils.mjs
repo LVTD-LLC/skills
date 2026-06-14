@@ -23,7 +23,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "Rust",
     description: "Rust workflow guidance for API testing and backend service development.",
     tags: ["rust", "api-testing", "backend"],
-    includes: (skill) => hasSkillTag(skill, "rust") || skill.name.startsWith("rust-"),
+    matches: (skill) => hasSkillTag(skill, "rust") || skill.name.startsWith("rust-"),
   },
   {
     name: "django",
@@ -33,7 +33,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     description:
       "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior.",
     tags: ["django", "htmx", "alpinejs", "background-jobs", "mcp"],
-    includes: (skill) => hasSkillTag(skill, "django") || skill.name.includes("django"),
+    matches: (skill) => hasSkillTag(skill, "django") || skill.name.includes("django"),
   },
   {
     name: "nonfiction-book-writing",
@@ -42,7 +42,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "nonfiction book writing",
     description: "Nonfiction book writing guidance for planning and pressure-testing useful TOCs.",
     tags: ["writing", "books", "nonfiction", "toc"],
-    includes: (skill) => hasSkillTag(skill, "toc") && hasSkillTag(skill, "nonfiction"),
+    matches: (skill) => hasSkillTag(skill, "toc") && hasSkillTag(skill, "nonfiction"),
   },
   {
     name: "cookiecutter",
@@ -51,7 +51,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "Cookiecutter",
     description: "Cookiecutter template development workflow guidance.",
     tags: ["cookiecutter", "templates", "jinja", "scaffolding"],
-    includes: (skill) => skill.name === "cookiecutter" || hasSkillTag(skill, "cookiecutter"),
+    matches: (skill) => skill.name === "cookiecutter" || hasSkillTag(skill, "cookiecutter"),
   },
 ];
 
@@ -93,7 +93,7 @@ export function marketplacePluginsForSkills(skills) {
   const assignedSkillNames = new Map();
 
   return MARKETPLACE_PLUGIN_GROUPS.map((group) => {
-    const pluginSkills = skills.filter((skill) => group.includes(skill));
+    const pluginSkills = skills.filter((skill) => group.matches(skill));
 
     for (const skill of pluginSkills) {
       const previousGroup = assignedSkillNames.get(skill.name);
@@ -114,8 +114,7 @@ export function marketplacePluginsForSkills(skills) {
   }).filter((plugin) => plugin.skills.length > 0);
 }
 
-export function marketplacePluginBySkillName(skills) {
-  const plugins = marketplacePluginsForSkills(skills);
+export function marketplacePluginBySkillName(skills, plugins = marketplacePluginsForSkills(skills)) {
   const pluginBySkillName = new Map();
 
   for (const plugin of plugins) {
@@ -127,10 +126,14 @@ export function marketplacePluginBySkillName(skills) {
   return pluginBySkillName;
 }
 
-export function unmatchedMarketplaceSkills(skills) {
-  const pluginBySkillName = marketplacePluginBySkillName(skills);
+export function unmatchedMarketplaceSkills(skills, plugins = marketplacePluginsForSkills(skills)) {
+  const pluginBySkillName = marketplacePluginBySkillName(skills, plugins);
 
   return skills.filter((skill) => !pluginBySkillName.has(skill.name));
+}
+
+function skillsForMarketplacePlugins(plugins) {
+  return plugins.flatMap((plugin) => plugin.skills);
 }
 
 export function buildDefaultPrompt(plugin) {
@@ -230,9 +233,7 @@ export function codexMarketplaceEntryForPlugin(plugin) {
   };
 }
 
-export function claudeMarketplaceForSkills(skills) {
-  const plugins = marketplacePluginsForSkills(skills);
-
+export function claudeMarketplaceForSkills(skills, plugins = marketplacePluginsForSkills(skills)) {
   return {
     name: MARKETPLACE_NAME,
     owner: {
@@ -240,14 +241,12 @@ export function claudeMarketplaceForSkills(skills) {
     },
     description:
       "Portable Agent Skills for coding and writing workflows, packaged for Claude Code.",
-    version: marketplaceVersionForSkills(skills),
+    version: marketplaceVersionForSkills(skillsForMarketplacePlugins(plugins)),
     plugins: plugins.map((plugin) => claudeMarketplaceEntryForPlugin(plugin)),
   };
 }
 
-export function codexMarketplaceForSkills(skills) {
-  const plugins = marketplacePluginsForSkills(skills);
-
+export function codexMarketplaceForSkills(skills, plugins = marketplacePluginsForSkills(skills)) {
   return {
     name: MARKETPLACE_NAME,
     interface: {

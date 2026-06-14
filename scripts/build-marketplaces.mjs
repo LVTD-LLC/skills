@@ -40,6 +40,20 @@ async function copyAppIcon(destinationDir, assetPath = sourceAssetPath) {
   await cp(assetPath, destination);
 }
 
+async function appIconPathForPlugin(plugin) {
+  const sortedSkills = [...plugin.skills].sort((left, right) => left.name.localeCompare(right.name));
+
+  for (const skill of sortedSkills) {
+    const skillAssetPath = path.join(skill.path, ASSET_DIR, APP_ICON_FILE);
+
+    if (await pathExists(skillAssetPath)) {
+      return skillAssetPath;
+    }
+  }
+
+  return sourceAssetPath;
+}
+
 if (!process.argv.includes("--skip-validation")) {
   const { errors } = await validateSkills();
   if (errors.length > 0) {
@@ -50,7 +64,7 @@ if (!process.argv.includes("--skip-validation")) {
 
 const skills = await loadSkills();
 const plugins = marketplacePluginsForSkills(skills);
-const unmatchedSkills = unmatchedMarketplaceSkills(skills);
+const unmatchedSkills = unmatchedMarketplaceSkills(skills, plugins);
 
 if (unmatchedSkills.length > 0) {
   console.warn(
@@ -66,7 +80,7 @@ await mkdir(pluginsDir, { recursive: true });
 for (const plugin of plugins) {
   const pluginDir = path.join(pluginsDir, plugin.name);
   const pluginSkillsDir = path.join(pluginDir, "skills");
-  let appIconPath = sourceAssetPath;
+  const appIconPath = await appIconPathForPlugin(plugin);
 
   await mkdir(path.join(pluginDir, ".claude-plugin"), { recursive: true });
   await mkdir(path.join(pluginDir, ".codex-plugin"), { recursive: true });
@@ -75,11 +89,6 @@ for (const plugin of plugins) {
   for (const skill of plugin.skills) {
     const skillDestination = path.join(pluginSkillsDir, skill.name);
     const skillLinkTarget = path.relative(pluginSkillsDir, skill.path).replaceAll(path.sep, "/");
-    const skillAssetPath = path.join(skill.path, ASSET_DIR, APP_ICON_FILE);
-
-    if (appIconPath === sourceAssetPath && (await pathExists(skillAssetPath))) {
-      appIconPath = skillAssetPath;
-    }
 
     await symlink(skillLinkTarget, skillDestination, "dir");
   }
@@ -95,11 +104,11 @@ for (const plugin of plugins) {
 
 await writeJson(
   path.join(marketplaceDir, ".claude-plugin", "marketplace.json"),
-  claudeMarketplaceForSkills(skills),
+  claudeMarketplaceForSkills(skills, plugins),
 );
 await writeJson(
   path.join(marketplaceDir, ".agents", "plugins", "marketplace.json"),
-  codexMarketplaceForSkills(skills),
+  codexMarketplaceForSkills(skills, plugins),
 );
 await copyAppIcon(path.join(marketplaceDir, ".agents", "plugins"));
 
