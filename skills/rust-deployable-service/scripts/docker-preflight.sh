@@ -20,7 +20,7 @@ docker build -f "$DOCKERFILE" -t "$IMAGE" "$CONTEXT"
 
 if [ -n "${RUST_DEPLOY_SMOKE_COMMAND:-}" ]; then
   echo "==> docker run smoke command"
-  docker run --rm "$IMAGE" sh -lc "$RUST_DEPLOY_SMOKE_COMMAND"
+  docker run --rm "$IMAGE" sh -c "$RUST_DEPLOY_SMOKE_COMMAND"
 else
   echo "==> skipping smoke run; set RUST_DEPLOY_SMOKE_COMMAND to run one"
 fi

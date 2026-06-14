@@ -15,6 +15,13 @@ echo "==> cargo fmt"
 cargo fmt --all --check
 
 if command -v sqlx >/dev/null 2>&1 && [ -d migrations ]; then
+  if [ -d .sqlx ] || [ -n "${DATABASE_URL:-}" ]; then
+    echo "==> cargo sqlx prepare --check"
+    cargo sqlx prepare --check --workspace
+  else
+    echo "==> skipping cargo sqlx prepare --check; .sqlx/ and DATABASE_URL are not available"
+  fi
+
   if [ -n "${DATABASE_URL:-}" ]; then
     echo "==> sqlx migrate info"
     sqlx migrate info

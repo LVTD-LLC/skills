@@ -72,8 +72,10 @@ path/to/rust-sqlx-postgres-service/scripts/sqlx-preflight.sh
 ```
 
 The script is conservative: it checks formatting and tests, inspects SQLx
-migration state when the CLI and `DATABASE_URL` are available, and only applies
-migrations when `RUST_SQLX_PREFLIGHT_RUN_MIGRATIONS=1` is set.
+migration state when the CLI and `DATABASE_URL` are available, verifies SQLx
+offline metadata with `cargo sqlx prepare --check` when `.sqlx/` or
+`DATABASE_URL` is available, and only applies migrations when
+`RUST_SQLX_PREFLIGHT_RUN_MIGRATIONS=1` is set.
 
 If the repository has a different CI command, use that command and explain why.
 
