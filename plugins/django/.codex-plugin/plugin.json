@@ -16,12 +16,30 @@
     "background-jobs",
     "mcp",
     "alpinejs-django",
+    "django-ci-test-optimization",
     "django-htmx",
     "django-q2",
+    "django-targeted-mocking",
+    "django-test-data",
+    "django-test-parallelization",
+    "django-test-performance",
+    "django-test-profiling",
     "fastmcp-django",
     "frontend",
+    "testing",
+    "ci",
+    "pytest",
+    "github-actions",
     "server-rendered-ui",
     "redis",
+    "mocking",
+    "http",
+    "test-data",
+    "factories",
+    "parallelization",
+    "xdist",
+    "performance",
+    "profiling",
     "fastmcp",
     "asgi"
   ],
@@ -29,7 +47,7 @@
   "interface": {
     "displayName": "Django",
     "shortDescription": "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior.",
-    "longDescription": "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Alpine.js Django, Django HTMX, Django Q2, FastMCP Django. Category: Coding.",
+    "longDescription": "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Alpine.js Django, Django CI Test Optimization, Django HTMX, Django Q2, Django Targeted Mocking, Django Test Data, Django Test Parallelization, Django Test Performance, Django Test Profiling, FastMCP Django. Category: Coding.",
     "developerName": "LVTD",
     "category": "Coding",
     "capabilities": [
@@ -38,7 +56,7 @@
     ],
     "websiteURL": "https://github.com/LVTD-LLC/skills",
     "defaultPrompt": [
-      "Use the Django plugin when working on Django tasks. It includes the Alpine.js Django, Django HTMX, Django Q2, and FastMCP Django skills."
+      "Use the Django plugin when working on Django tasks. It includes the Alpine.js Django, Django CI Test Optimization, Django HTMX, Django Q2, Django Targeted Mocking, Django Test Data, Django Test Parallelization, Django Test Performance, Django Test Profiling, and FastMCP Django skills."
     ],
     "brandColor": "#FF4057",
     "composerIcon": "./assets/app-icon.png",
