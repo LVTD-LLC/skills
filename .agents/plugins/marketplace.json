@@ -91,6 +91,18 @@
       "category": "MCP Servers"
     },
     {
+      "name": "make-product-viral",
+      "source": {
+        "source": "local",
+        "path": "./plugins/make-product-viral"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Marketing"
+    },
+    {
       "name": "rust-api-test-harness",
       "source": {
         "source": "local",
