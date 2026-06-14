@@ -7,40 +7,40 @@
   },
   "plugins": [
     {
-      "name": "alpinejs-django",
+      "name": "rust",
       "source": {
         "source": "local",
-        "path": "./plugins/alpinejs-django"
+        "path": "./plugins/rust"
       },
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       },
-      "category": "Django"
+      "category": "Coding"
     },
     {
-      "name": "book-toc-lab",
+      "name": "django",
       "source": {
         "source": "local",
-        "path": "./plugins/book-toc-lab"
+        "path": "./plugins/django"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Coding"
+    },
+    {
+      "name": "nonfiction-book-writing",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nonfiction-book-writing"
       },
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       },
       "category": "Writing"
-    },
-    {
-      "name": "calibredb",
-      "source": {
-        "source": "local",
-        "path": "./plugins/calibredb"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Knowledge Management"
     },
     {
       "name": "cookiecutter",
@@ -52,67 +52,7 @@
         "installation": "AVAILABLE",
         "authentication": "ON_USE"
       },
-      "category": "Developer Tooling"
-    },
-    {
-      "name": "django-htmx",
-      "source": {
-        "source": "local",
-        "path": "./plugins/django-htmx"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Django"
-    },
-    {
-      "name": "django-q2",
-      "source": {
-        "source": "local",
-        "path": "./plugins/django-q2"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Django"
-    },
-    {
-      "name": "fastmcp-django",
-      "source": {
-        "source": "local",
-        "path": "./plugins/fastmcp-django"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Django"
-    },
-    {
-      "name": "make-product-viral",
-      "source": {
-        "source": "local",
-        "path": "./plugins/make-product-viral"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Marketing"
-    },
-    {
-      "name": "rust-api-test-harness",
-      "source": {
-        "source": "local",
-        "path": "./plugins/rust-api-test-harness"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Rust"
+      "category": "Coding"
     }
   ]
 }

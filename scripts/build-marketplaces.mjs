@@ -4,11 +4,12 @@ import { loadSkills, MARKETPLACE_NAME, root } from "./skill-utils.mjs";
 import {
   APP_ICON_FILE,
   ASSET_DIR,
-  claudeManifestForSkill,
+  claudeManifestForPlugin,
   claudeMarketplaceForSkills,
-  codexManifestForSkill,
+  codexManifestForPlugin,
   codexMarketplaceForSkills,
-  pluginNameForSkill,
+  marketplacePluginsForSkills,
+  unmatchedMarketplaceSkills,
 } from "./marketplace-utils.mjs";
 import { validateSkills } from "./validate-skills.mjs";
 
@@ -39,6 +40,20 @@ async function copyAppIcon(destinationDir, assetPath = sourceAssetPath) {
   await cp(assetPath, destination);
 }
 
+async function appIconPathForPlugin(plugin) {
+  const sortedSkills = [...plugin.skills].sort((left, right) => left.name.localeCompare(right.name));
+
+  for (const skill of sortedSkills) {
+    const skillAssetPath = path.join(skill.path, ASSET_DIR, APP_ICON_FILE);
+
+    if (await pathExists(skillAssetPath)) {
+      return skillAssetPath;
+    }
+  }
+
+  return sourceAssetPath;
+}
+
 if (!process.argv.includes("--skip-validation")) {
   const { errors } = await validateSkills();
   if (errors.length > 0) {
@@ -48,42 +63,53 @@ if (!process.argv.includes("--skip-validation")) {
 }
 
 const skills = await loadSkills();
+const plugins = marketplacePluginsForSkills(skills);
+const unmatchedSkills = unmatchedMarketplaceSkills(skills, plugins);
+
+if (unmatchedSkills.length > 0) {
+  console.warn(
+    `Skipping marketplace plugin generation for unmatched skills: ${unmatchedSkills.map((skill) => skill.name).join(", ")}. Direct skill installs still work; update MARKETPLACE_PLUGIN_GROUPS to publish them in generated marketplace plugins.`,
+  );
+}
 
 await rm(path.join(marketplaceDir, ".claude-plugin"), { recursive: true, force: true });
 await rm(path.join(marketplaceDir, ".agents"), { recursive: true, force: true });
 await rm(pluginsDir, { recursive: true, force: true });
 await mkdir(pluginsDir, { recursive: true });
 
-for (const skill of skills) {
-  const pluginName = pluginNameForSkill(skill.name);
-  const pluginDir = path.join(pluginsDir, pluginName);
+for (const plugin of plugins) {
+  const pluginDir = path.join(pluginsDir, plugin.name);
   const pluginSkillsDir = path.join(pluginDir, "skills");
-  const skillDestination = path.join(pluginDir, "skills", skill.name);
-  const skillLinkTarget = path.relative(pluginSkillsDir, skill.path).replaceAll(path.sep, "/");
-  const skillAssetPath = path.join(skill.path, ASSET_DIR, APP_ICON_FILE);
-  const appIconPath = (await pathExists(skillAssetPath)) ? skillAssetPath : sourceAssetPath;
+  const appIconPath = await appIconPathForPlugin(plugin);
 
   await mkdir(path.join(pluginDir, ".claude-plugin"), { recursive: true });
   await mkdir(path.join(pluginDir, ".codex-plugin"), { recursive: true });
   await mkdir(pluginSkillsDir, { recursive: true });
-  await symlink(skillLinkTarget, skillDestination, "dir");
+
+  for (const skill of plugin.skills) {
+    const skillDestination = path.join(pluginSkillsDir, skill.name);
+    const skillLinkTarget = path.relative(pluginSkillsDir, skill.path).replaceAll(path.sep, "/");
+
+    await symlink(skillLinkTarget, skillDestination, "dir");
+  }
+
   await copyAppIcon(pluginDir, appIconPath);
 
   await writeJson(
     path.join(pluginDir, ".claude-plugin", "plugin.json"),
-    claudeManifestForSkill(skill),
+    claudeManifestForPlugin(plugin),
   );
-  await writeJson(path.join(pluginDir, ".codex-plugin", "plugin.json"), codexManifestForSkill(skill));
+  await writeJson(path.join(pluginDir, ".codex-plugin", "plugin.json"), codexManifestForPlugin(plugin));
 }
 
 await writeJson(
   path.join(marketplaceDir, ".claude-plugin", "marketplace.json"),
-  claudeMarketplaceForSkills(skills),
+  claudeMarketplaceForSkills(skills, plugins),
 );
 await writeJson(
   path.join(marketplaceDir, ".agents", "plugins", "marketplace.json"),
-  codexMarketplaceForSkills(skills),
+  codexMarketplaceForSkills(skills, plugins),
 );
 await copyAppIcon(path.join(marketplaceDir, ".agents", "plugins"));
 
-console.log(`Wrote ${MARKETPLACE_NAME} marketplace with ${skills.length} plugins`);
+console.log(`Wrote ${MARKETPLACE_NAME} marketplace with ${plugins.length} plugins`);

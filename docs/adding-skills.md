@@ -22,7 +22,8 @@ they make the skill easier to use or keep the main instructions concise.
 ## Frontmatter Contract
 
 Use lowercase hyphen-case for `name`, and make it match the directory name.
-The marketplace plugin ID is generated as `<skill-name>`.
+Marketplace plugin IDs are generated from the grouping rules in
+`scripts/marketplace-utils.mjs`.
 
 ```yaml
 ---
@@ -84,7 +85,7 @@ The build regenerates:
 - `dist/registry.json`
 - `.claude-plugin/marketplace.json`
 - `.agents/plugins/marketplace.json`
-- `plugins/<skill-name>/`
+- `plugins/<plugin-name>/`
 
 `dist/` is ignored. Marketplace artifacts under `.claude-plugin/`, `.agents/`,
 and `plugins/` are committed so marketplace installs work directly from GitHub.
@@ -104,6 +105,8 @@ committed generated marketplace artifacts are stale.
 ## PR Checklist
 
 - Source skill is added or updated under `skills/<skill-name>/`.
+- Marketplace grouping rules are updated when the skill should ship in a
+  generated plugin.
 - Generated marketplace artifacts are regenerated with `npm run build`.
 - `npm run check` passes.
 - Any workflow changes are reflected in this guide and `AGENTS.md`.

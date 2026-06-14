@@ -4,18 +4,17 @@ import {
   loadSkills,
   MARKETPLACE_DISPLAY_NAME,
   MARKETPLACE_NAME,
-  metadataForSkill,
   root,
 } from "./skill-utils.mjs";
 import {
   APP_ICON_FILE,
   ASSET_DIR,
   APP_ICON_PATH,
-  claudeManifestForSkill,
+  claudeManifestForPlugin,
   claudeMarketplaceForSkills,
-  codexManifestForSkill,
+  codexManifestForPlugin,
   codexMarketplaceForSkills,
-  pluginNameForSkill,
+  marketplacePluginsForSkills,
 } from "./marketplace-utils.mjs";
 const marketplaceDir = root;
 
@@ -132,9 +131,10 @@ const claudeMarketplacePath = path.join(marketplaceDir, ".claude-plugin", "marke
 const codexMarketplacePath = path.join(marketplaceDir, ".agents", "plugins", "marketplace.json");
 const claudeMarketplace = await readJson(claudeMarketplacePath, errors);
 const codexMarketplace = await readJson(codexMarketplacePath, errors);
-const expectedPluginNames = skills.map((skill) => pluginNameForSkill(skill.name));
-const expectedClaudeMarketplace = claudeMarketplaceForSkills(skills);
-const expectedCodexMarketplace = codexMarketplaceForSkills(skills);
+const plugins = marketplacePluginsForSkills(skills);
+const expectedPluginNames = plugins.map((plugin) => plugin.name).sort();
+const expectedClaudeMarketplace = claudeMarketplaceForSkills(skills, plugins);
+const expectedCodexMarketplace = codexMarketplaceForSkills(skills, plugins);
 let claudeMarketplaceMatches = false;
 let codexMarketplaceMatches = false;
 
@@ -185,31 +185,34 @@ const codexEntries = codexMarketplaceMatches
   ? assertArray(codexMarketplace.plugins, "Codex marketplace plugins", errors)
   : [];
 
-for (const skill of skills) {
-  const metadata = metadataForSkill(skill);
-  const pluginName = pluginNameForSkill(skill.name);
+for (const plugin of plugins) {
+  const pluginName = plugin.name;
   const pluginDir = path.join(marketplaceDir, "plugins", pluginName);
   const pluginSkillsDir = path.join(pluginDir, "skills");
-  const linkedSkillDir = path.join(pluginSkillsDir, skill.name);
   const claudeManifestPath = path.join(pluginDir, ".claude-plugin", "plugin.json");
   const codexManifestPath = path.join(pluginDir, ".codex-plugin", "plugin.json");
-  const expectedClaudeManifest = claudeManifestForSkill(skill);
-  const expectedCodexManifest = codexManifestForSkill(skill);
+  const expectedClaudeManifest = claudeManifestForPlugin(plugin);
+  const expectedCodexManifest = codexManifestForPlugin(plugin);
+  const expectedSkillEntries = plugin.skills.map((skill) => skill.name).sort();
 
   const pluginSkillEntries = await listDirectoryEntryNames(
     pluginSkillsDir,
     `${pluginName} skills directory`,
     errors,
   );
-  assertDeepEqual(pluginSkillEntries, [skill.name], `${pluginName} skills directory`, errors);
-  await assertSkillSymlinkToSource(skill, linkedSkillDir, pluginName, errors);
+  assertDeepEqual(pluginSkillEntries, expectedSkillEntries, `${pluginName} skills directory`, errors);
+
+  for (const skill of plugin.skills) {
+    await assertSkillSymlinkToSource(skill, path.join(pluginSkillsDir, skill.name), pluginName, errors);
+  }
+
   await assertAppIconExists(pluginDir, pluginName, errors);
 
   if (claudeMarketplaceMatches) {
     const claudeEntry = findEntry(claudeEntries, pluginName, "Claude marketplace", errors);
     if (claudeEntry) {
       assertEqual(claudeEntry.source, `./plugins/${pluginName}`, `${pluginName} Claude source`, errors);
-      assertEqual(claudeEntry.category, metadata.category, `${pluginName} Claude category`, errors);
+      assertEqual(claudeEntry.category, plugin.category, `${pluginName} Claude category`, errors);
     }
   }
 
@@ -223,7 +226,7 @@ for (const skill of skills) {
         `${pluginName} Codex source path`,
         errors,
       );
-      assertEqual(codexEntry.category, metadata.category, `${pluginName} Codex category`, errors);
+      assertEqual(codexEntry.category, plugin.category, `${pluginName} Codex category`, errors);
     }
   }
 
@@ -239,7 +242,7 @@ for (const skill of skills) {
       assertEqual(claudeManifest.name, pluginName, `${pluginName} Claude manifest name`, errors);
       assertEqual(
         claudeManifest.version,
-        metadata.version,
+        expectedClaudeManifest.version,
         `${pluginName} Claude manifest version`,
         errors,
       );
@@ -259,14 +262,14 @@ for (const skill of skills) {
       assertEqual(codexManifest.name, pluginName, `${pluginName} Codex manifest name`, errors);
       assertEqual(
         codexManifest.version,
-        metadata.version,
+        expectedCodexManifest.version,
         `${pluginName} Codex manifest version`,
         errors,
       );
       assertEqual(codexManifest.skills, "./skills/", `${pluginName} Codex skills path`, errors);
       assertEqual(
         codexManifest.interface?.category,
-        metadata.category,
+        plugin.category,
         `${pluginName} Codex interface category`,
         errors,
       );
@@ -291,4 +294,6 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log(`Validated generated marketplaces for ${skills.length} skills`);
+console.log(
+  `Validated generated marketplaces for ${plugins.length} plugins containing ${plugins.flatMap((plugin) => plugin.skills).length} skills`,
+);

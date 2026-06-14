@@ -103,25 +103,27 @@ Then generate host-specific metadata:
 Avoid hardcoding Claude-only or Codex-only fields in every skill unless the
 field is harmless for other clients.
 
-### 3. Offer Individual Skills and Curated Packs
+### 3. Offer Individual Skills and Grouped Marketplace Plugins
 
-The user's desired behavior is "select skills from those marketplaces." That
-argues for individual installable units.
+The source catalog remains one directory per skill, so direct installs can stay
+granular. Marketplace installs should use grouped plugins when related skills
+are normally useful together.
 
 Recommended distribution model:
 
-- One generated marketplace plugin per skill for granular install:
-  `django-htmx`, `cookiecutter`, etc.
-- Optional curated packs for convenience:
-  `django-pack`, `template-pack`, `skills-all`.
-- Keep packs generated from the same skill source, not hand-maintained copies.
+- Direct skills CLI installs use canonical skill names such as `django-htmx`.
+- Generated marketplace plugins group related skills, such as `django`, `rust`,
+  `nonfiction-book-writing`, and `cookiecutter`.
+- Keep grouped plugins generated from the same skill source, not hand-maintained
+  copies.
 
 Tradeoff:
 
-- Individual plugins maximize user choice and clearer updates.
-- Packs reduce install friction for teams that want a complete baseline.
-- Plugin IDs match canonical skill names so install names and source folders stay
-  predictable.
+- Direct installs maximize user choice and clearer updates.
+- Grouped marketplace plugins reduce install friction for teams that want a
+  complete baseline.
+- Plugin IDs no longer need to match canonical skill names; skill namespaces
+  make the bundled skill explicit after install.
 
 ### 4. Version Skills Independently
 
@@ -149,7 +151,7 @@ root so Git-backed installs work directly:
 plugins/<plugin-name>/
   .claude-plugin/plugin.json
   .codex-plugin/plugin.json
-  skills/<skill-name>/SKILL.md
+  skills/<skill-name>/
 dist/
   registry.json
 ```
@@ -208,14 +210,15 @@ Recommended Claude output:
 
 ```text
 .claude-plugin/marketplace.json
-plugins/django-htmx/
+plugins/django/
   .claude-plugin/plugin.json
   skills/django-htmx/SKILL.md
+  skills/django-q2/SKILL.md
 ```
 
 Use a Git-backed marketplace repo where possible. Relative plugin paths such as
-`./plugins/django-htmx` resolve relative to the marketplace root when the
-marketplace is added from Git.
+`./plugins/django` resolve relative to the marketplace root when the marketplace
+is added from Git.
 
 Because this repository publishes `.claude-plugin/marketplace.json` at the root,
 `/plugin marketplace add LVTD-LLC/skills` can work directly without cloning and
@@ -225,7 +228,7 @@ Installation flow:
 
 ```bash
 /plugin marketplace add LVTD-LLC/skills
-/plugin install django-htmx@lvtd-skills
+/plugin install django@lvtd-skills
 /reload-plugins
 ```
 
@@ -239,9 +242,10 @@ Recommended Codex output:
 
 ```text
 .agents/plugins/marketplace.json
-plugins/django-htmx/
+plugins/django/
   .codex-plugin/plugin.json
   skills/django-htmx/SKILL.md
+  skills/django-q2/SKILL.md
 ```
 
 Codex marketplace entries should include installation policy, authentication
@@ -297,8 +301,8 @@ Expand `dist/registry.json` into a proper marketplace API surface:
       "entrypoint": "skills/django-htmx/SKILL.md",
       "sha256": "...",
       "hosts": {
-        "codex": { "plugin": "django-htmx" },
-        "claudeCode": { "plugin": "django-htmx" },
+        "codex": { "plugin": "django" },
+        "claudeCode": { "plugin": "django" },
         "openclaw": { "slug": "django-htmx" }
       }
     }
