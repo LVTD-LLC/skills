@@ -7,9 +7,9 @@
   "version": "0.1.0",
   "plugins": [
     {
-      "name": "lvtd-alpinejs-django",
+      "name": "alpinejs-django",
       "displayName": "Alpine.js Django",
-      "source": "./plugins/lvtd-alpinejs-django",
+      "source": "./plugins/alpinejs-django",
       "description": "Alpine.js Django workflow guidance for web development.",
       "author": {
         "name": "LVTD"
@@ -33,9 +33,9 @@
       ]
     },
     {
-      "name": "lvtd-book-toc-lab",
+      "name": "book-toc-lab",
       "displayName": "Book TOC Lab",
-      "source": "./plugins/lvtd-book-toc-lab",
+      "source": "./plugins/book-toc-lab",
       "description": "Book TOC Lab workflow guidance for writing.",
       "author": {
         "name": "LVTD"
@@ -61,9 +61,9 @@
       ]
     },
     {
-      "name": "lvtd-calibredb",
+      "name": "calibredb",
       "displayName": "CalibreDB",
-      "source": "./plugins/lvtd-calibredb",
+      "source": "./plugins/calibredb",
       "description": "CalibreDB workflow guidance for knowledge management.",
       "author": {
         "name": "LVTD"
@@ -89,9 +89,9 @@
       ]
     },
     {
-      "name": "lvtd-cookiecutter",
+      "name": "cookiecutter",
       "displayName": "Cookiecutter",
-      "source": "./plugins/lvtd-cookiecutter",
+      "source": "./plugins/cookiecutter",
       "description": "Cookiecutter workflow guidance for developer tooling.",
       "author": {
         "name": "LVTD"
@@ -114,9 +114,9 @@
       ]
     },
     {
-      "name": "lvtd-django-htmx",
+      "name": "django-htmx",
       "displayName": "Django HTMX",
-      "source": "./plugins/lvtd-django-htmx",
+      "source": "./plugins/django-htmx",
       "description": "Django HTMX workflow guidance for web development.",
       "author": {
         "name": "LVTD"
@@ -138,9 +138,9 @@
       ]
     },
     {
-      "name": "lvtd-django-q2",
+      "name": "django-q2",
       "displayName": "Django Q2",
-      "source": "./plugins/lvtd-django-q2",
+      "source": "./plugins/django-q2",
       "description": "Django Q2 workflow guidance for background jobs.",
       "author": {
         "name": "LVTD"
@@ -163,9 +163,9 @@
       ]
     },
     {
-      "name": "lvtd-fastmcp-django",
+      "name": "fastmcp-django",
       "displayName": "FastMCP Django",
-      "source": "./plugins/lvtd-fastmcp-django",
+      "source": "./plugins/fastmcp-django",
       "description": "FastMCP Django workflow guidance for mcp servers.",
       "author": {
         "name": "LVTD"
@@ -189,9 +189,9 @@
       ]
     },
     {
-      "name": "lvtd-rust-api-test-harness",
+      "name": "rust-api-test-harness",
       "displayName": "Rust API Test Harness",
-      "source": "./plugins/lvtd-rust-api-test-harness",
+      "source": "./plugins/rust-api-test-harness",
       "description": "Rust API Test Harness workflow guidance for developer tooling.",
       "author": {
         "name": "LVTD"
