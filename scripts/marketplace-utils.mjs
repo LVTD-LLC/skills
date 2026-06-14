@@ -16,7 +16,7 @@ export const AUTHOR = {
 };
 
 export function pluginNameForSkill(skillName) {
-  return `lvtd-${skillName}`;
+  return skillName;
 }
 
 export function buildDefaultPrompt(skill, metadata = metadataForSkill(skill)) {

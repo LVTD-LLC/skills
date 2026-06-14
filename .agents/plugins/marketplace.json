@@ -7,10 +7,10 @@
   },
   "plugins": [
     {
-      "name": "lvtd-alpinejs-django",
+      "name": "alpinejs-django",
       "source": {
         "source": "local",
-        "path": "./plugins/lvtd-alpinejs-django"
+        "path": "./plugins/alpinejs-django"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -19,10 +19,10 @@
       "category": "Web Development"
     },
     {
-      "name": "lvtd-book-toc-lab",
+      "name": "book-toc-lab",
       "source": {
         "source": "local",
-        "path": "./plugins/lvtd-book-toc-lab"
+        "path": "./plugins/book-toc-lab"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -31,10 +31,10 @@
       "category": "Writing"
     },
     {
-      "name": "lvtd-calibredb",
+      "name": "calibredb",
       "source": {
         "source": "local",
-        "path": "./plugins/lvtd-calibredb"
+        "path": "./plugins/calibredb"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -43,10 +43,10 @@
       "category": "Knowledge Management"
     },
     {
-      "name": "lvtd-cookiecutter",
+      "name": "cookiecutter",
       "source": {
         "source": "local",
-        "path": "./plugins/lvtd-cookiecutter"
+        "path": "./plugins/cookiecutter"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -55,10 +55,10 @@
       "category": "Developer Tooling"
     },
     {
-      "name": "lvtd-django-htmx",
+      "name": "django-htmx",
       "source": {
         "source": "local",
-        "path": "./plugins/lvtd-django-htmx"
+        "path": "./plugins/django-htmx"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -67,10 +67,10 @@
       "category": "Web Development"
     },
     {
-      "name": "lvtd-django-q2",
+      "name": "django-q2",
       "source": {
         "source": "local",
-        "path": "./plugins/lvtd-django-q2"
+        "path": "./plugins/django-q2"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -79,10 +79,10 @@
       "category": "Background Jobs"
     },
     {
-      "name": "lvtd-fastmcp-django",
+      "name": "fastmcp-django",
       "source": {
         "source": "local",
-        "path": "./plugins/lvtd-fastmcp-django"
+        "path": "./plugins/fastmcp-django"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -91,10 +91,10 @@
       "category": "MCP Servers"
     },
     {
-      "name": "lvtd-rust-api-test-harness",
+      "name": "rust-api-test-harness",
       "source": {
         "source": "local",
-        "path": "./plugins/lvtd-rust-api-test-harness"
+        "path": "./plugins/rust-api-test-harness"
       },
       "policy": {
         "installation": "AVAILABLE",

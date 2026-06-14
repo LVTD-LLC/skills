@@ -22,7 +22,7 @@ they make the skill easier to use or keep the main instructions concise.
 ## Frontmatter Contract
 
 Use lowercase hyphen-case for `name`, and make it match the directory name.
-The marketplace plugin ID is generated as `lvtd-<skill-name>`.
+The marketplace plugin ID is generated as `<skill-name>`.
 
 ```yaml
 ---
@@ -84,7 +84,7 @@ The build regenerates:
 - `dist/registry.json`
 - `.claude-plugin/marketplace.json`
 - `.agents/plugins/marketplace.json`
-- `plugins/lvtd-<skill-name>/`
+- `plugins/<skill-name>/`
 
 `dist/` is ignored. Marketplace artifacts under `.claude-plugin/`, `.agents/`,
 and `plugins/` are committed so marketplace installs work directly from GitHub.
