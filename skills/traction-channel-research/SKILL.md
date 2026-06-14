@@ -19,13 +19,19 @@ channel ideas.
 ## Source Traceability
 
 Primary source: Traction, chapters 1, 3, and 5. Authoring notes: converted
-lines 238-393, 555-674, and 787-902.
+lines 238-393, 555-674, and 787-902. The canonical channel list also appears
+in `../traction-bullseye/references/source-map.md`.
 
 ## Research Workflow
 
 1. Define the product, target customer, business model, ACV or price point, and
    current growth stage.
-2. List all 19 channels, even if some look unlikely.
+2. List all 19 channels, even if some look unlikely:
+   targeting blogs, publicity, unconventional PR, search engine marketing,
+   social and display ads, offline ads, search engine optimization, content
+   marketing, email marketing, viral marketing, engineering as marketing,
+   business development, sales, affiliate programs, existing platforms, trade
+   shows, offline events, speaking engagements, and community building.
 3. For each channel, research comparable companies, adjacent markets, failed
    examples, and underused tactics.
 4. Separate channel from strategy. "SEO" is a channel; "comparison pages for

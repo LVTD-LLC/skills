@@ -55,6 +55,28 @@ as an assumption.
 Generate at least one plausible strategy for each traction channel before
 ranking anything. This counters default bias toward familiar channels.
 
+Use this full channel list:
+
+1. Targeting blogs
+2. Publicity
+3. Unconventional PR
+4. Search engine marketing
+5. Social and display ads
+6. Offline ads
+7. Search engine optimization
+8. Content marketing
+9. Email marketing
+10. Viral marketing
+11. Engineering as marketing
+12. Business development
+13. Sales
+14. Affiliate programs
+15. Existing platforms
+16. Trade shows
+17. Offline events
+18. Speaking engagements
+19. Community building
+
 For each channel, write:
 
 - One specific strategy.
