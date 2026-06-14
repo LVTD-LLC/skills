@@ -1,7 +1,7 @@
 {
   "name": "make-product-viral",
   "version": "0.1.0",
-  "description": "Make Product Viral workflow guidance for marketing.",
+  "description": "Make Product Viral workflow guidance for Marketing.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -21,7 +21,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Make Product Viral",
-    "shortDescription": "Make Product Viral workflow guidance for marketing.",
+    "shortDescription": "Make Product Viral workflow guidance for Marketing.",
     "longDescription": "Make a product, landing page, pricing page, launch page, free tool, or social preview easier to understand, buy, remember, and share using Marc Lou-inspired viral product patterns. Packaged as a marketplace skill for Codex and Claude Code. Category: Marketing.",
     "developerName": "LVTD",
     "category": "Marketing",

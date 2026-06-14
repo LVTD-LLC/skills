@@ -1,7 +1,7 @@
 {
   "name": "book-toc-lab",
   "version": "0.1.0",
-  "description": "Book TOC Lab workflow guidance for writing.",
+  "description": "Book TOC Lab workflow guidance for Writing.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -20,7 +20,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Book TOC Lab",
-    "shortDescription": "Book TOC Lab workflow guidance for writing.",
+    "shortDescription": "Book TOC Lab workflow guidance for Writing.",
     "longDescription": "Design and pressure-test useful nonfiction book tables of contents before drafting. Use when planning, outlining, scoping, restructuring, or validating a practical book, guide, manual, course-like book, or other reader-outcome-focused long-form nonfiction. Packaged as a marketplace skill for Codex and Claude Code. Category: Writing.",
     "developerName": "LVTD",
     "category": "Writing",

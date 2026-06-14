@@ -36,7 +36,7 @@
       "name": "book-toc-lab",
       "displayName": "Book TOC Lab",
       "source": "./plugins/book-toc-lab",
-      "description": "Book TOC Lab workflow guidance for writing.",
+      "description": "Book TOC Lab workflow guidance for Writing.",
       "author": {
         "name": "LVTD"
       },
@@ -64,7 +64,7 @@
       "name": "calibredb",
       "displayName": "CalibreDB",
       "source": "./plugins/calibredb",
-      "description": "CalibreDB workflow guidance for knowledge management.",
+      "description": "CalibreDB workflow guidance for Knowledge Management.",
       "author": {
         "name": "LVTD"
       },
@@ -92,7 +92,7 @@
       "name": "cookiecutter",
       "displayName": "Cookiecutter",
       "source": "./plugins/cookiecutter",
-      "description": "Cookiecutter workflow guidance for developer tooling.",
+      "description": "Cookiecutter workflow guidance for Developer Tooling.",
       "author": {
         "name": "LVTD"
       },
@@ -192,7 +192,7 @@
       "name": "make-product-viral",
       "displayName": "Make Product Viral",
       "source": "./plugins/make-product-viral",
-      "description": "Make Product Viral workflow guidance for marketing.",
+      "description": "Make Product Viral workflow guidance for Marketing.",
       "author": {
         "name": "LVTD"
       },

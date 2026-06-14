@@ -33,11 +33,7 @@ export function buildShortDescription(skill, metadata = metadataForSkill(skill))
     return description;
   }
 
-  const categoryLabel = ["Django", "Rust"].includes(metadata.category)
-    ? metadata.category
-    : metadata.category.toLowerCase();
-
-  return `${metadata.displayName} workflow guidance for ${categoryLabel}.`;
+  return `${metadata.displayName} workflow guidance for ${metadata.category}.`;
 }
 
 export function keywordsForSkill(skill, metadata = metadataForSkill(skill)) {
