@@ -60,9 +60,9 @@ converted lines 1863-1996 and 3347-3348.
 - Customer quality check:
 
 ## Decision Rules
-- Continue:
-- Improve:
-- Stop:
+- Double down:
+- Iterate:
+- Kill:
 ```
 
 ## Quality Bar

@@ -72,9 +72,9 @@ converted lines 1233-1627 and 3335-3340.
 - Customer quality check:
 
 ## Decision Rules
-- Scale:
+- Double down:
 - Iterate:
-- Stop:
+- Kill:
 ```
 
 ## Quality Bar

@@ -67,9 +67,9 @@ converted lines 1997-2286 and 3349-3352.
 - Retention/referral prompt:
 
 ## Decision Rules
-- Build further:
+- Double down:
 - Iterate:
-- Stop:
+- Kill:
 ```
 
 ## Quality Bar

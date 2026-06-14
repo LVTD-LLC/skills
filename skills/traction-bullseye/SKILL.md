@@ -134,8 +134,8 @@ Use this structure:
 - Constraints:
 
 ## Outer Ring
-| Channel | Strategy | Why It Could Work | Key Assumption |
-|---------|----------|-------------------|----------------|
+| Channel | Strategy | Why It Could Work | Evidence Needed | Key Assumption |
+|---------|----------|-------------------|-----------------|----------------|
 
 ## Middle Ring
 | Rank | Channel | Test | Budget/Time | Success Signal |

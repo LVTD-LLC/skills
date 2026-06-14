@@ -64,9 +64,9 @@ converted lines 2287-2703 and 3353-3358.
 |--------|--------|
 
 ## Decision Rules
-- Continue:
+- Double down:
 - Iterate:
-- Stop:
+- Kill:
 ```
 
 ## Quality Bar
