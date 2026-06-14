@@ -6,7 +6,7 @@ compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
   version: "0.1.0"
   displayName: Django Q2
-  category: Background Jobs
+  category: Django
   tags: django,django-q2,background-jobs,redis
 ---
 

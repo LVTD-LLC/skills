@@ -10,14 +10,14 @@
       "name": "alpinejs-django",
       "displayName": "Alpine.js Django",
       "source": "./plugins/alpinejs-django",
-      "description": "Alpine.js Django workflow guidance for web development.",
+      "description": "Alpine.js Django workflow guidance for Django.",
       "author": {
         "name": "LVTD"
       },
       "homepage": "https://github.com/LVTD-LLC/skills",
       "repository": "https://github.com/LVTD-LLC/skills",
       "license": "MIT",
-      "category": "Web Development",
+      "category": "Django",
       "tags": [
         "alpinejs",
         "django",
@@ -36,7 +36,7 @@
       "name": "book-toc-lab",
       "displayName": "Book TOC Lab",
       "source": "./plugins/book-toc-lab",
-      "description": "Book TOC Lab workflow guidance for writing.",
+      "description": "Book TOC Lab workflow guidance for Writing.",
       "author": {
         "name": "LVTD"
       },
@@ -64,7 +64,7 @@
       "name": "calibredb",
       "displayName": "CalibreDB",
       "source": "./plugins/calibredb",
-      "description": "CalibreDB workflow guidance for knowledge management.",
+      "description": "CalibreDB workflow guidance for Knowledge Management.",
       "author": {
         "name": "LVTD"
       },
@@ -92,7 +92,7 @@
       "name": "cookiecutter",
       "displayName": "Cookiecutter",
       "source": "./plugins/cookiecutter",
-      "description": "Cookiecutter workflow guidance for developer tooling.",
+      "description": "Cookiecutter workflow guidance for Developer Tooling.",
       "author": {
         "name": "LVTD"
       },
@@ -117,14 +117,14 @@
       "name": "django-htmx",
       "displayName": "Django HTMX",
       "source": "./plugins/django-htmx",
-      "description": "Django HTMX workflow guidance for web development.",
+      "description": "Django HTMX workflow guidance for Django.",
       "author": {
         "name": "LVTD"
       },
       "homepage": "https://github.com/LVTD-LLC/skills",
       "repository": "https://github.com/LVTD-LLC/skills",
       "license": "MIT",
-      "category": "Web Development",
+      "category": "Django",
       "tags": [
         "django",
         "htmx",
@@ -141,14 +141,14 @@
       "name": "django-q2",
       "displayName": "Django Q2",
       "source": "./plugins/django-q2",
-      "description": "Django Q2 workflow guidance for background jobs.",
+      "description": "Django Q2 workflow guidance for Django.",
       "author": {
         "name": "LVTD"
       },
       "homepage": "https://github.com/LVTD-LLC/skills",
       "repository": "https://github.com/LVTD-LLC/skills",
       "license": "MIT",
-      "category": "Background Jobs",
+      "category": "Django",
       "tags": [
         "django",
         "django-q2",
@@ -166,14 +166,14 @@
       "name": "fastmcp-django",
       "displayName": "FastMCP Django",
       "source": "./plugins/fastmcp-django",
-      "description": "FastMCP Django workflow guidance for mcp servers.",
+      "description": "FastMCP Django workflow guidance for Django.",
       "author": {
         "name": "LVTD"
       },
       "homepage": "https://github.com/LVTD-LLC/skills",
       "repository": "https://github.com/LVTD-LLC/skills",
       "license": "MIT",
-      "category": "MCP Servers",
+      "category": "Django",
       "tags": [
         "fastmcp",
         "django",
@@ -192,7 +192,7 @@
       "name": "make-product-viral",
       "displayName": "Make Product Viral",
       "source": "./plugins/make-product-viral",
-      "description": "Make Product Viral workflow guidance for marketing.",
+      "description": "Make Product Viral workflow guidance for Marketing.",
       "author": {
         "name": "LVTD"
       },
@@ -222,14 +222,14 @@
       "name": "rust-api-test-harness",
       "displayName": "Rust API Test Harness",
       "source": "./plugins/rust-api-test-harness",
-      "description": "Rust API Test Harness workflow guidance for developer tooling.",
+      "description": "Rust API Test Harness workflow guidance for Rust.",
       "author": {
         "name": "LVTD"
       },
       "homepage": "https://github.com/LVTD-LLC/skills",
       "repository": "https://github.com/LVTD-LLC/skills",
       "license": "MIT",
-      "category": "Developer Tooling",
+      "category": "Rust",
       "tags": [
         "rust",
         "api-testing",

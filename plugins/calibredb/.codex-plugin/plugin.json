@@ -1,7 +1,7 @@
 {
   "name": "calibredb",
   "version": "0.1.0",
-  "description": "CalibreDB workflow guidance for knowledge management.",
+  "description": "CalibreDB workflow guidance for Knowledge Management.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -20,7 +20,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "CalibreDB",
-    "shortDescription": "CalibreDB workflow guidance for knowledge management.",
+    "shortDescription": "CalibreDB workflow guidance for Knowledge Management.",
     "longDescription": "Manage and query Calibre libraries with the calibredb CLI (local paths or Calibre Content server URLs). Use when listing books, searching/filtering library records, reading/updating metadata, adding/removing formats, exporting books, maintaining custom columns, running library checks, managing FTS indexing/search, or creating catalogs/backups from a Calibre library. Packaged as a marketplace skill for Codex and Claude Code. Category: Knowledge Management.",
     "developerName": "LVTD",
     "category": "Knowledge Management",

@@ -1,7 +1,7 @@
 {
   "name": "django-q2",
   "version": "0.1.0",
-  "description": "Django Q2 workflow guidance for background jobs.",
+  "description": "Django Q2 workflow guidance for Django.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"

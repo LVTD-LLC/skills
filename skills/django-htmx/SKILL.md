@@ -6,7 +6,7 @@ compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
   version: "0.1.0"
   displayName: Django HTMX
-  category: Web Development
+  category: Django
   tags: django,htmx,server-rendered-ui
 ---
 

@@ -1,7 +1,7 @@
 {
   "name": "rust-api-test-harness",
   "version": "0.1.0",
-  "description": "Rust API Test Harness workflow guidance for developer tooling.",
+  "description": "Rust API Test Harness workflow guidance for Rust.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"

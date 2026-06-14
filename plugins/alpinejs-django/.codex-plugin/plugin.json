@@ -1,7 +1,7 @@
 {
   "name": "alpinejs-django",
   "version": "0.1.0",
-  "description": "Alpine.js Django workflow guidance for web development.",
+  "description": "Alpine.js Django workflow guidance for Django.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -19,10 +19,10 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Alpine.js Django",
-    "shortDescription": "Alpine.js Django workflow guidance for web development.",
-    "longDescription": "Use when adding, changing, or debugging Alpine.js behavior in this Django SaaS Starter project, especially in Django templates that may also use HTMX partial updates. Packaged as a marketplace skill for Codex and Claude Code. Category: Web Development.",
+    "shortDescription": "Alpine.js Django workflow guidance for Django.",
+    "longDescription": "Use when adding, changing, or debugging Alpine.js behavior in this Django SaaS Starter project, especially in Django templates that may also use HTMX partial updates. Packaged as a marketplace skill for Codex and Claude Code. Category: Django.",
     "developerName": "LVTD",
-    "category": "Web Development",
+    "category": "Django",
     "capabilities": [
       "Interactive",
       "Read"
