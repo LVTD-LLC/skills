@@ -1,7 +1,7 @@
 {
   "name": "rust",
   "version": "0.1.0",
-  "description": "Rust workflow guidance for API testing and backend service development.",
+  "description": "Rust workflow guidance for production backend services, including testing, persistence, observability, security, idempotency, and deployment.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -11,16 +11,44 @@
   "license": "MIT",
   "keywords": [
     "rust",
-    "api-testing",
     "backend",
+    "api-testing",
+    "sqlx",
+    "observability",
+    "security",
+    "deployment",
     "rust-api-test-harness",
-    "integration-tests"
+    "rust-deployable-service",
+    "rust-domain-boundaries",
+    "rust-error-observability",
+    "rust-idempotent-workflows",
+    "rust-service-security",
+    "rust-sqlx-postgres-service",
+    "integration-tests",
+    "docker",
+    "configuration",
+    "domain-modeling",
+    "newtypes",
+    "validation",
+    "property-testing",
+    "error-handling",
+    "tracing",
+    "idempotency",
+    "retries",
+    "background-jobs",
+    "concurrency",
+    "authentication",
+    "sessions",
+    "passwords",
+    "postgres",
+    "migrations",
+    "persistence"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Rust",
-    "shortDescription": "Rust workflow guidance for API testing and backend service development.",
-    "longDescription": "Rust workflow guidance for API testing and backend service development. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Rust API Test Harness. Category: Coding.",
+    "shortDescription": "Rust workflow guidance for production backend services, including testing, persistence, observability, security, idempotency, and deployment.",
+    "longDescription": "Rust workflow guidance for production backend services, including testing, persistence, observability, security, idempotency, and deployment. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Rust API Test Harness, Rust Deployable Service, Rust Domain Boundaries, Rust Error Observability, Rust Idempotent Workflows, Rust Service Security, Rust SQLx Postgres Service. Category: Coding.",
     "developerName": "LVTD",
     "category": "Coding",
     "capabilities": [
@@ -29,7 +57,7 @@
     ],
     "websiteURL": "https://github.com/LVTD-LLC/skills",
     "defaultPrompt": [
-      "Use the Rust plugin when working on Rust tasks. It includes the Rust API Test Harness skill."
+      "Use the Rust plugin when working on Rust tasks. It includes the Rust API Test Harness, Rust Deployable Service, Rust Domain Boundaries, Rust Error Observability, Rust Idempotent Workflows, Rust Service Security, and Rust SQLx Postgres Service skills."
     ],
     "brandColor": "#FF4057",
     "composerIcon": "./assets/app-icon.png",

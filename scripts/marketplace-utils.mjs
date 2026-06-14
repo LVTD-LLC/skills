@@ -21,8 +21,9 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     displayName: "Rust",
     category: "Coding",
     taskLabel: "Rust",
-    description: "Rust workflow guidance for API testing and backend service development.",
-    tags: ["rust", "api-testing", "backend"],
+    description:
+      "Rust workflow guidance for production backend services, including testing, persistence, observability, security, idempotency, and deployment.",
+    tags: ["rust", "backend", "api-testing", "sqlx", "observability", "security", "deployment"],
     matches: (skill) => hasSkillTag(skill, "rust") || skill.name.startsWith("rust-"),
   },
   {
@@ -32,7 +33,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "Django",
     description:
       "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior.",
-    tags: ["django", "htmx", "alpinejs", "background-jobs", "mcp"],
+    tags: ["django", "htmx", "alpinejs", "background-jobs", "mcp", "testing", "ci", "pytest"],
     matches: (skill) => hasSkillTag(skill, "django") || skill.name.includes("django"),
   },
   {
@@ -62,6 +63,16 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     description: "Cookiecutter template development workflow guidance.",
     tags: ["cookiecutter", "templates", "jinja", "scaffolding"],
     matches: (skill) => skill.name === "cookiecutter" || hasSkillTag(skill, "cookiecutter"),
+  },
+  {
+    name: "seo",
+    displayName: "SEO",
+    category: "Marketing",
+    taskLabel: "SEO",
+    description:
+      "SEO workflow guidance for product-led strategy, opportunity research, personas, technical triage, and roadmap planning.",
+    tags: ["seo", "organic-growth", "content-strategy", "technical-seo", "planning"],
+    matches: (skill) => hasSkillTag(skill, "seo"),
   },
 ];
 

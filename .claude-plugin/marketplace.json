@@ -10,7 +10,7 @@
       "name": "rust",
       "displayName": "Rust",
       "source": "./plugins/rust",
-      "description": "Rust workflow guidance for API testing and backend service development.",
+      "description": "Rust workflow guidance for production backend services, including testing, persistence, observability, security, idempotency, and deployment.",
       "author": {
         "name": "LVTD"
       },
@@ -20,15 +20,47 @@
       "category": "Coding",
       "tags": [
         "rust",
+        "backend",
         "api-testing",
-        "backend"
+        "sqlx",
+        "observability",
+        "security",
+        "deployment"
       ],
       "keywords": [
         "rust",
-        "api-testing",
         "backend",
+        "api-testing",
+        "sqlx",
+        "observability",
+        "security",
+        "deployment",
         "rust-api-test-harness",
-        "integration-tests"
+        "rust-deployable-service",
+        "rust-domain-boundaries",
+        "rust-error-observability",
+        "rust-idempotent-workflows",
+        "rust-service-security",
+        "rust-sqlx-postgres-service",
+        "integration-tests",
+        "docker",
+        "configuration",
+        "domain-modeling",
+        "newtypes",
+        "validation",
+        "property-testing",
+        "error-handling",
+        "tracing",
+        "idempotency",
+        "retries",
+        "background-jobs",
+        "concurrency",
+        "authentication",
+        "sessions",
+        "passwords",
+        "postgres",
+        "migrations",
+        "persistence"
       ]
     },
     {
@@ -48,7 +80,10 @@
         "htmx",
         "alpinejs",
         "background-jobs",
-        "mcp"
+        "mcp",
+        "testing",
+        "ci",
+        "pytest"
       ],
       "keywords": [
         "django",
@@ -56,13 +91,31 @@
         "alpinejs",
         "background-jobs",
         "mcp",
+        "testing",
+        "ci",
+        "pytest",
         "alpinejs-django",
+        "django-ci-test-optimization",
         "django-htmx",
         "django-q2",
+        "django-targeted-mocking",
+        "django-test-data",
+        "django-test-parallelization",
+        "django-test-performance",
+        "django-test-profiling",
         "fastmcp-django",
         "frontend",
+        "github-actions",
         "server-rendered-ui",
         "redis",
+        "mocking",
+        "http",
+        "test-data",
+        "factories",
+        "parallelization",
+        "xdist",
+        "performance",
+        "profiling",
         "fastmcp",
         "asgi"
       ]
@@ -184,6 +237,52 @@
         "templates",
         "jinja",
         "scaffolding"
+      ]
+    },
+    {
+      "name": "seo",
+      "displayName": "SEO",
+      "source": "./plugins/seo",
+      "description": "SEO workflow guidance for product-led strategy, opportunity research, personas, technical triage, and roadmap planning.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "Marketing",
+      "tags": [
+        "seo",
+        "organic-growth",
+        "content-strategy",
+        "technical-seo",
+        "planning"
+      ],
+      "keywords": [
+        "seo",
+        "organic-growth",
+        "content-strategy",
+        "technical-seo",
+        "planning",
+        "product-led-seo-strategy",
+        "seo-opportunity-research",
+        "seo-persona-intent-mapping",
+        "seo-roadmap-prioritization",
+        "technical-seo-triage",
+        "product-led-growth",
+        "marketing",
+        "research",
+        "competitive-research",
+        "blue-ocean",
+        "personas",
+        "search-intent",
+        "conversion",
+        "roadmap",
+        "prioritization",
+        "product-management",
+        "search-console",
+        "indexing",
+        "crawling"
       ]
     }
   ]

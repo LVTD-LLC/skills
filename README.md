@@ -18,6 +18,12 @@ This repository is intentionally simple: every skill lives in `skills/<skill-nam
 | [`fastmcp-django`](skills/fastmcp-django/SKILL.md) | Adding, changing, deploying, testing, or debugging FastMCP MCP servers in existing Django apps, including ASGI mounting, ORM access, auth, and Streamable HTTP deployment. |
 | [`make-product-viral`](skills/make-product-viral/SKILL.md) | Making a product, landing page, pricing page, launch page, free tool, or social preview easier to understand, buy, remember, and share. |
 | [`rust-api-test-harness`](skills/rust-api-test-harness/SKILL.md) | Adding, changing, testing, or debugging Rust HTTP APIs with black-box integration tests, random-port app startup, state isolation, mocks, and CI-ready cargo checks. |
+| [`rust-deployable-service`](skills/rust-deployable-service/SKILL.md) | Preparing, containerizing, configuring, testing, or reviewing Rust services for deployment, including Docker, runtime config, secrets, health checks, SQLx offline builds, and startup validation. |
+| [`rust-domain-boundaries`](skills/rust-domain-boundaries/SKILL.md) | Modeling, validating, refactoring, or reviewing Rust service domain boundaries with newtypes, parse-don't-validate constructors, request DTO boundaries, and property tests. |
+| [`rust-error-observability`](skills/rust-error-observability/SKILL.md) | Adding, changing, debugging, or reviewing Rust service error handling and observability, including typed errors, HTTP response adapters, tracing spans, and redaction. |
+| [`rust-idempotent-workflows`](skills/rust-idempotent-workflows/SKILL.md) | Designing, implementing, testing, or debugging Rust service workflows that must survive retries, duplicate requests, crashes, concurrency, queues, and side effects. |
+| [`rust-service-security`](skills/rust-service-security/SKILL.md) | Adding, changing, testing, or reviewing security-sensitive Rust web service behavior, including login, password hashing, session cookies, route protection, and auth middleware. |
+| [`rust-sqlx-postgres-service`](skills/rust-sqlx-postgres-service/SKILL.md) | Adding, changing, testing, or reviewing Postgres persistence in Rust services using SQLx migrations, compile-time checked queries, pools, transactions, and integration tests. |
 
 ## Repository Layout
 
