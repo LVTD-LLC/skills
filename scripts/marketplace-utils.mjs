@@ -45,6 +45,16 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => hasSkillTag(skill, "toc") && hasSkillTag(skill, "nonfiction"),
   },
   {
+    name: "traction",
+    displayName: "Traction",
+    category: "Marketing",
+    taskLabel: "startup traction and growth marketing",
+    description:
+      "Traction and Bullseye workflow guidance for choosing, testing, and reviewing startup growth channels.",
+    tags: ["traction", "growth", "marketing", "startups", "bullseye"],
+    matches: (skill) => hasSkillTag(skill, "traction") || skill.name.startsWith("traction-"),
+  },
+  {
     name: "cookiecutter",
     displayName: "Cookiecutter",
     category: "Coding",

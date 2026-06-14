@@ -43,6 +43,18 @@
       "category": "Writing"
     },
     {
+      "name": "traction",
+      "source": {
+        "source": "local",
+        "path": "./plugins/traction"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Marketing"
+    },
+    {
       "name": "cookiecutter",
       "source": {
         "source": "local",
