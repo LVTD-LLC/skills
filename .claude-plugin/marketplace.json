@@ -48,7 +48,10 @@
         "htmx",
         "alpinejs",
         "background-jobs",
-        "mcp"
+        "mcp",
+        "testing",
+        "ci",
+        "pytest"
       ],
       "keywords": [
         "django",
@@ -56,6 +59,9 @@
         "alpinejs",
         "background-jobs",
         "mcp",
+        "testing",
+        "ci",
+        "pytest",
         "alpinejs-django",
         "django-ci-test-optimization",
         "django-htmx",
@@ -67,9 +73,6 @@
         "django-test-profiling",
         "fastmcp-django",
         "frontend",
-        "testing",
-        "ci",
-        "pytest",
         "github-actions",
         "server-rendered-ui",
         "redis",

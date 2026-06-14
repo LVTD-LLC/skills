@@ -21,7 +21,7 @@ Prefer deriving a worker-specific suffix from process or pytest-xdist worker ide
 ```python
 import os
 
-def test_worker_suffix() -> str:
+def parallel_worker_suffix() -> str:
     return os.environ.get("PYTEST_XDIST_WORKER") or str(os.getpid())
 ```
 
@@ -34,7 +34,7 @@ For Django cache backends that support `KEY_FUNCTION`, include a worker suffix i
 ```python
 import os
 
-def test_cache_key(key, key_prefix, version):
+def parallel_cache_key(key, key_prefix, version):
     worker = os.environ.get("PYTEST_XDIST_WORKER") or str(os.getpid())
     return f"{worker}:{key_prefix}:{version}:{key}"
 ```
