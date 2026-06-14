@@ -65,6 +65,11 @@ converted lines 2704-3218 and 3359-3372.
 - Quantitative metrics:
 - Qualitative signals:
 - Revisit date:
+
+## Decision Rules
+- Double down if:
+- Iterate if:
+- Kill if:
 ```
 
 ## Quality Bar
