@@ -113,7 +113,7 @@ Recommended distribution model:
 - One generated marketplace plugin per skill for granular install:
   `django-htmx`, `cookiecutter`, etc.
 - Optional curated packs for convenience:
-  `django-pack`, `template-pack`, `all`.
+  `django-pack`, `template-pack`, `skills-all`.
 - Keep packs generated from the same skill source, not hand-maintained copies.
 
 Tradeoff:

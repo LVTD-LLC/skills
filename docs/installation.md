@@ -46,8 +46,13 @@ Plugin IDs:
 - `django-htmx`
 - `django-q2`
 - `fastmcp-django`
+- `rust-api-test-harness`
 
 Plugin IDs match the canonical skill directory names.
+
+If you installed a previous `lvtd-*` marketplace plugin, uninstall that old
+plugin ID and reinstall the matching canonical skill name. For example, replace
+`lvtd-django-htmx@lvtd-skills` with `django-htmx@lvtd-skills`.
 
 ## Install With The Skills CLI
 
