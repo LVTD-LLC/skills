@@ -44,9 +44,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     description:
       "Nonfiction book writing guidance for planning, editing, beta reading, launching, and publishing useful books.",
     tags: ["writing", "books", "nonfiction", "editing", "launch", "publishing"],
-    matches: (skill) =>
-      hasSkillTag(skill, "books") &&
-      (hasSkillTag(skill, "nonfiction") || hasSkillTag(skill, "self-publishing")),
+    matches: (skill) => hasSkillTag(skill, "books") && hasSkillTag(skill, "nonfiction"),
   },
   {
     name: "cookiecutter",

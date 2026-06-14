@@ -7,7 +7,7 @@ metadata:
   version: "0.1.0"
   displayName: Self-Publishing Production
   category: Writing
-  tags: writing,books,self-publishing,production,publishing
+  tags: writing,books,nonfiction,self-publishing,production,publishing
 ---
 
 # Self-Publishing Production
