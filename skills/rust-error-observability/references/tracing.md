@@ -33,7 +33,7 @@ Look for existing initialization before adding another subscriber. A typical app
 has one setup function used by `main` and tests:
 
 ```rust
-pub fn init_subscriber(name: String, env_filter: String) {
+pub fn init_subscriber(env_filter: String) {
     let env_filter = tracing_subscriber::EnvFilter::try_from_default_env()
         .unwrap_or_else(|_| env_filter.into());
 
