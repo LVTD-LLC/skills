@@ -14,7 +14,7 @@ metadata:
 
 Use this skill to diagnose technical SEO problems by moving from symptoms to search-system stages: discovery, crawling, indexing, ranking, and user outcomes.
 
-This skill is derived from Eli Schwartz's *Product-Led SEO* and uses transformed guidance with source line ranges in the references. Do not copy book prose into user outputs.
+This skill is derived from Eli Schwartz's *Product-Led SEO* and uses transformed guidance with durable book-topic references. Do not copy book prose into user outputs.
 
 ## Quick Start
 

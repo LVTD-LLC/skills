@@ -2,18 +2,18 @@
 
 Core concepts for turning SEO work into roadmap-ready product initiatives.
 
-## Source Anchors
+## Source References
 
-| Source | Lines |
-|--------|-------|
-| SEO at scale and tradeoffs | `/tmp/codex-product-led-seo/product-led-seo.md:6543` |
-| Prioritization roadmap, data, and people | `/tmp/codex-product-led-seo/product-led-seo.md:6610` |
-| Incremental wins | `/tmp/codex-product-led-seo/product-led-seo.md:6768` |
-| SEO as a product function | `/tmp/codex-product-led-seo/product-led-seo.md:6818` |
-| Project management and scoring columns | `/tmp/codex-product-led-seo/product-led-seo.md:6921` |
-| Quarterly and annual planning | `/tmp/codex-product-led-seo/product-led-seo.md:6993` |
-| Multidisciplinary implementation | `/tmp/codex-product-led-seo/product-led-seo.md:7235` |
-| Executive case and forecasting | `/tmp/codex-product-led-seo/product-led-seo.md:7652` |
+| Topic | Durable Reference |
+|-------|-------------------|
+| SEO at scale and tradeoffs | *Product-Led SEO*, SEO at scale and organizational tradeoffs |
+| Prioritization roadmap, data, and people | *Product-Led SEO*, prioritization across roadmap, data, and people constraints |
+| Incremental wins | *Product-Led SEO*, incremental SEO improvements |
+| SEO as a product function | *Product-Led SEO*, treating SEO as product work |
+| Project management and scoring columns | *Product-Led SEO*, project management and SEO scoring models |
+| Quarterly and annual planning | *Product-Led SEO*, quarterly and annual SEO planning |
+| Multidisciplinary implementation | *Product-Led SEO*, cross-functional implementation |
+| Executive case and forecasting | *Product-Led SEO*, executive buy-in and forecasting |
 
 ## Key Concepts
 

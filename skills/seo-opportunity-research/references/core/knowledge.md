@@ -2,16 +2,16 @@
 
 Core concepts for finding organic search opportunities that are useful, defensible, and not obvious from keyword volume alone.
 
-## Source Anchors
+## Source References
 
-| Source | Lines |
-|--------|-------|
-| Strategic SEO and Quora example | `/tmp/codex-product-led-seo/product-led-seo.md:3974` |
-| Blue Ocean and Red Ocean SEO | `/tmp/codex-product-led-seo/product-led-seo.md:4024` |
-| Future Blue Oceans and customer research | `/tmp/codex-product-led-seo/product-led-seo.md:4156` |
-| Query refinements and search features | `/tmp/codex-product-led-seo/product-led-seo.md:4226` |
-| Competitive tracking | `/tmp/codex-product-led-seo/product-led-seo.md:4384` |
-| Compounding and investment timing | `/tmp/codex-product-led-seo/product-led-seo.md:4524` |
+| Topic | Durable Reference |
+|-------|-------------------|
+| Strategic SEO and Quora example | *Product-Led SEO*, strategic SEO and product-led opportunity examples |
+| Blue Ocean and Red Ocean SEO | *Product-Led SEO*, Blue Ocean and Red Ocean SEO concepts |
+| Future Blue Oceans and customer research | *Product-Led SEO*, customer research for emerging search demand |
+| Query refinements and search features | *Product-Led SEO*, query refinements, SERP features, and intent signals |
+| Competitive tracking | *Product-Led SEO*, competitor research and tracking |
+| Compounding and investment timing | *Product-Led SEO*, compounding SEO investment and time-to-signal |
 
 ## Key Concepts
 

@@ -14,7 +14,7 @@ metadata:
 
 Use this skill to find SEO opportunities that come from user needs and product advantages, not just keyword-tool exports. It is especially useful when the best opportunity is under-measured, emerging, long-tail, or hard for competitors to copy.
 
-This skill is derived from Eli Schwartz's *Product-Led SEO* and uses transformed guidance with source line ranges in the references. Do not copy book prose into user outputs.
+This skill is derived from Eli Schwartz's *Product-Led SEO* and uses transformed guidance with durable book-topic references. Do not copy book prose into user outputs.
 
 ## Quick Start
 

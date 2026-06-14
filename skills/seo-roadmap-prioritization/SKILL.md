@@ -14,7 +14,7 @@ metadata:
 
 Use this skill to turn SEO ideas into product-style roadmap items that can compete for resources, survive planning, and ship through cross-functional teams.
 
-This skill is derived from Eli Schwartz's *Product-Led SEO* and uses transformed guidance with source line ranges in the references. Do not copy book prose into user outputs.
+This skill is derived from Eli Schwartz's *Product-Led SEO* and uses transformed guidance with durable book-topic references. Do not copy book prose into user outputs.
 
 ## Quick Start
 

@@ -61,7 +61,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     description:
       "SEO workflow guidance for product-led strategy, opportunity research, personas, technical triage, and roadmap planning.",
     tags: ["seo", "organic-growth", "content-strategy", "technical-seo", "planning"],
-    matches: (skill) => hasSkillTag(skill, "seo") || skill.name.includes("seo"),
+    matches: (skill) => hasSkillTag(skill, "seo"),
   },
 ];
 

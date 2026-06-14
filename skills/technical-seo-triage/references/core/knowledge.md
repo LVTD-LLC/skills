@@ -2,17 +2,17 @@
 
 Core concepts for diagnosing technical SEO issues.
 
-## Source Anchors
+## Source References
 
-| Source | Lines |
-|--------|-------|
-| Discovery, crawling, indexing, ranking | `/tmp/codex-product-led-seo/product-led-seo.md:820` |
-| Algorithm updates and traffic drops | `/tmp/codex-product-led-seo/product-led-seo.md:1013` |
-| Internal linking and link graph | `/tmp/codex-product-led-seo/product-led-seo.md:5158` |
-| Crawl budget | `/tmp/codex-product-led-seo/product-led-seo.md:5400` |
-| Google Search Console | `/tmp/codex-product-led-seo/product-led-seo.md:5509` |
-| Duplicate content | `/tmp/codex-product-led-seo/product-led-seo.md:5680` |
-| Site updates and migrations | `/tmp/codex-product-led-seo/product-led-seo.md:5751` |
+| Topic | Durable Reference |
+|-------|-------------------|
+| Discovery, crawling, indexing, ranking | *Product-Led SEO*, how search engines discover, crawl, index, and rank pages |
+| Algorithm updates and traffic drops | *Product-Led SEO*, algorithm updates and diagnosing traffic changes |
+| Internal linking and link graph | *Product-Led SEO*, internal linking and site architecture |
+| Crawl budget | *Product-Led SEO*, crawl budget and crawler attention |
+| Google Search Console | *Product-Led SEO*, Google Search Console diagnostics |
+| Duplicate content | *Product-Led SEO*, duplicate content and canonicalization |
+| Site updates and migrations | *Product-Led SEO*, site updates, redirects, and migration risk |
 
 ## Key Concepts
 

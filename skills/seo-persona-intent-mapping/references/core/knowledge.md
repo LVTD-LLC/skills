@@ -2,15 +2,15 @@
 
 Core concepts for mapping search behavior to SEO content and product experiences.
 
-## Source Anchors
+## Source References
 
-| Source | Lines |
-|--------|-------|
-| SEO as business metric and funnel assist | `/tmp/codex-product-led-seo/product-led-seo.md:3197` |
-| SEO in the conversion funnel and long tail | `/tmp/codex-product-led-seo/product-led-seo.md:3407` |
-| Reporting and three levels of performance | `/tmp/codex-product-led-seo/product-led-seo.md:3621` |
-| Buyer personas for keyword research | `/tmp/codex-product-led-seo/product-led-seo.md:3754` |
-| Six SEO persona steps | `/tmp/codex-product-led-seo/product-led-seo.md:3808` |
+| Topic | Durable Reference |
+|-------|-------------------|
+| SEO as business metric and funnel assist | *Product-Led SEO*, organic search as a business and funnel contributor |
+| SEO in the conversion funnel and long tail | *Product-Led SEO*, conversion funnel and long-tail search behavior |
+| Reporting and three levels of performance | *Product-Led SEO*, reporting and performance interpretation |
+| Buyer personas for keyword research | *Product-Led SEO*, SEO-specific buyer personas |
+| Six SEO persona steps | *Product-Led SEO*, persona workflow for search planning |
 
 ## Key Concepts
 

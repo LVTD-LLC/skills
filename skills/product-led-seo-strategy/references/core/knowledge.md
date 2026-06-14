@@ -2,16 +2,16 @@
 
 Core concepts for building SEO strategy around product value rather than keyword lists.
 
-## Source Anchors
+## Source References
 
-| Source | Lines |
-|--------|-------|
-| Drops example and product-led framing | `/tmp/codex-product-led-seo/product-led-seo.md:1364` |
-| Keyword-driven vs product-led approach | `/tmp/codex-product-led-seo/product-led-seo.md:1491` |
-| Product-led successes and scalable architecture | `/tmp/codex-product-led-seo/product-led-seo.md:1904` |
-| Content as a business tool | `/tmp/codex-product-led-seo/product-led-seo.md:2072` |
-| Blue Ocean SEO and right questions | `/tmp/codex-product-led-seo/product-led-seo.md:4024` |
-| Multidisciplinary implementation | `/tmp/codex-product-led-seo/product-led-seo.md:7235` |
+| Topic | Durable Reference |
+|-------|-------------------|
+| Drops example and product-led framing | *Product-Led SEO*, product-led strategy framing |
+| Keyword-driven vs product-led approach | *Product-Led SEO*, strategy over keyword-first planning |
+| Product-led successes and scalable architecture | *Product-Led SEO*, scalable product and page architecture examples |
+| Content as a business tool | *Product-Led SEO*, content as a business and user-progress tool |
+| Blue Ocean SEO and right questions | *Product-Led SEO*, Blue Ocean SEO strategy |
+| Multidisciplinary implementation | *Product-Led SEO*, organizational implementation and cross-functional execution |
 
 ## Key Concepts
 

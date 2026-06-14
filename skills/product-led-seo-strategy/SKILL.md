@@ -14,7 +14,7 @@ metadata:
 
 Use this skill to plan SEO from the product outward: who the user is, what they need, what product surface can satisfy that need, how the site architecture scales, and how the work compounds over time.
 
-This skill is derived from Eli Schwartz's *Product-Led SEO* and uses transformed guidance with source line ranges in the references. Do not copy book prose into user outputs.
+This skill is derived from Eli Schwartz's *Product-Led SEO* and uses transformed guidance with durable book-topic references. Do not copy book prose into user outputs.
 
 ## Quick Start
 
