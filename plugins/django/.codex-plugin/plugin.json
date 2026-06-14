@@ -1,0 +1,48 @@
+{
+  "name": "django",
+  "version": "0.1.0",
+  "description": "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "django",
+    "htmx",
+    "alpinejs",
+    "background-jobs",
+    "mcp",
+    "alpinejs-django",
+    "django-htmx",
+    "django-q2",
+    "fastmcp-django",
+    "frontend",
+    "server-rendered-ui",
+    "redis",
+    "fastmcp",
+    "asgi"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Django",
+    "shortDescription": "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior.",
+    "longDescription": "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Alpine.js Django, Django HTMX, Django Q2, FastMCP Django. Category: Coding.",
+    "developerName": "LVTD",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Django plugin when working on Django tasks. It includes the Alpine.js Django, Django HTMX, Django Q2, and FastMCP Django skills."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
+    "screenshots": []
+  }
+}

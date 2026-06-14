@@ -9,7 +9,7 @@ import {
   metadataForSkill,
   root,
 } from "./skill-utils.mjs";
-import { pluginNameForSkill } from "./marketplace-utils.mjs";
+import { marketplacePluginBySkillName } from "./marketplace-utils.mjs";
 import { validateSkills } from "./validate-skills.mjs";
 
 const distDir = path.join(root, "dist");
@@ -42,13 +42,13 @@ if (!process.argv.includes("--skip-validation")) {
 
 const skills = [];
 const loadedSkills = await loadSkills();
+const pluginBySkillName = marketplacePluginBySkillName(loadedSkills);
 
 for (const skill of loadedSkills) {
   const metadata = metadataForSkill(skill);
   const { files, sha256 } = await hashSkillDirectory(skill.path);
-  const pluginName = pluginNameForSkill(skill.name);
-
-  skills.push({
+  const plugin = pluginBySkillName.get(skill.name);
+  const registrySkill = {
     name: skill.name,
     displayName: metadata.displayName,
     description: skill.fields.description,
@@ -61,17 +61,23 @@ for (const skill of loadedSkills) {
     entrypoint: skill.entrypoint,
     files,
     sha256,
-    hosts: {
+    hosts: {},
+  };
+
+  if (plugin) {
+    registrySkill.hosts = {
       claudeCode: {
         marketplace: MARKETPLACE_NAME,
-        plugin: pluginName,
+        plugin: plugin.name,
       },
       codex: {
         marketplace: MARKETPLACE_NAME,
-        plugin: pluginName,
+        plugin: plugin.name,
       },
-    },
-  });
+    };
+  }
+
+  skills.push(registrySkill);
 }
 
 const registry = {

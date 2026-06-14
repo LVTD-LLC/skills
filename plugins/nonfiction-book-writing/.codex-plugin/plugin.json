@@ -1,0 +1,41 @@
+{
+  "name": "nonfiction-book-writing",
+  "version": "0.1.0",
+  "description": "Nonfiction book writing guidance for planning and pressure-testing useful TOCs.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "nonfiction-book-writing",
+    "writing",
+    "books",
+    "nonfiction",
+    "toc",
+    "book-toc-lab",
+    "outlining"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Nonfiction Book Writing",
+    "shortDescription": "Nonfiction book writing guidance for planning and pressure-testing useful TOCs.",
+    "longDescription": "Nonfiction book writing guidance for planning and pressure-testing useful TOCs. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Book TOC Lab. Category: Writing.",
+    "developerName": "LVTD",
+    "category": "Writing",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Nonfiction Book Writing plugin when working on nonfiction book writing tasks. It includes the Book TOC Lab skill."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
+    "screenshots": []
+  }
+}

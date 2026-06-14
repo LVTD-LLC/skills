@@ -1,0 +1,39 @@
+{
+  "name": "rust",
+  "version": "0.1.0",
+  "description": "Rust workflow guidance for API testing and backend service development.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "rust",
+    "api-testing",
+    "backend",
+    "rust-api-test-harness",
+    "integration-tests"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Rust",
+    "shortDescription": "Rust workflow guidance for API testing and backend service development.",
+    "longDescription": "Rust workflow guidance for API testing and backend service development. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Rust API Test Harness. Category: Coding.",
+    "developerName": "LVTD",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Rust plugin when working on Rust tasks. It includes the Rust API Test Harness skill."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
+    "screenshots": []
+  }
+}

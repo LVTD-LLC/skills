@@ -1,0 +1,30 @@
+{
+  "name": "django",
+  "version": "0.1.0",
+  "description": "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "django",
+    "htmx",
+    "alpinejs",
+    "background-jobs",
+    "mcp",
+    "alpinejs-django",
+    "django-htmx",
+    "django-q2",
+    "fastmcp-django",
+    "frontend",
+    "server-rendered-ui",
+    "redis",
+    "fastmcp",
+    "asgi"
+  ],
+  "skills": "./skills/",
+  "displayName": "Django"
+}

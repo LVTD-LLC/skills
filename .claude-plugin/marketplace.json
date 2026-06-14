@@ -3,40 +3,75 @@
   "owner": {
     "name": "LVTD"
   },
-  "description": "Portable Agent Skills for Django SaaS and agent-first development, packaged for Claude Code.",
+  "description": "Portable Agent Skills for coding and writing workflows, packaged for Claude Code.",
   "version": "0.1.0",
   "plugins": [
     {
-      "name": "alpinejs-django",
-      "displayName": "Alpine.js Django",
-      "source": "./plugins/alpinejs-django",
-      "description": "Alpine.js Django workflow guidance for Django.",
+      "name": "rust",
+      "displayName": "Rust",
+      "source": "./plugins/rust",
+      "description": "Rust workflow guidance for API testing and backend service development.",
       "author": {
         "name": "LVTD"
       },
       "homepage": "https://github.com/LVTD-LLC/skills",
       "repository": "https://github.com/LVTD-LLC/skills",
       "license": "MIT",
-      "category": "Django",
+      "category": "Coding",
       "tags": [
-        "alpinejs",
-        "django",
-        "frontend",
-        "htmx"
+        "rust",
+        "api-testing",
+        "backend"
       ],
       "keywords": [
-        "alpinejs-django",
-        "alpinejs",
-        "django",
-        "frontend",
-        "htmx"
+        "rust",
+        "api-testing",
+        "backend",
+        "rust-api-test-harness",
+        "integration-tests"
       ]
     },
     {
-      "name": "book-toc-lab",
-      "displayName": "Book TOC Lab",
-      "source": "./plugins/book-toc-lab",
-      "description": "Book TOC Lab workflow guidance for Writing.",
+      "name": "django",
+      "displayName": "Django",
+      "source": "./plugins/django",
+      "description": "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "Coding",
+      "tags": [
+        "django",
+        "htmx",
+        "alpinejs",
+        "background-jobs",
+        "mcp"
+      ],
+      "keywords": [
+        "django",
+        "htmx",
+        "alpinejs",
+        "background-jobs",
+        "mcp",
+        "alpinejs-django",
+        "django-htmx",
+        "django-q2",
+        "fastmcp-django",
+        "frontend",
+        "server-rendered-ui",
+        "redis",
+        "fastmcp",
+        "asgi"
+      ]
+    },
+    {
+      "name": "nonfiction-book-writing",
+      "displayName": "Nonfiction Book Writing",
+      "source": "./plugins/nonfiction-book-writing",
+      "description": "Nonfiction book writing guidance for planning and pressure-testing useful TOCs.",
       "author": {
         "name": "LVTD"
       },
@@ -48,58 +83,30 @@
         "writing",
         "books",
         "nonfiction",
-        "outlining",
         "toc"
       ],
       "keywords": [
-        "book-toc-lab",
+        "nonfiction-book-writing",
         "writing",
         "books",
         "nonfiction",
-        "outlining",
-        "toc"
-      ]
-    },
-    {
-      "name": "calibredb",
-      "displayName": "CalibreDB",
-      "source": "./plugins/calibredb",
-      "description": "CalibreDB workflow guidance for Knowledge Management.",
-      "author": {
-        "name": "LVTD"
-      },
-      "homepage": "https://github.com/LVTD-LLC/skills",
-      "repository": "https://github.com/LVTD-LLC/skills",
-      "license": "MIT",
-      "category": "Knowledge Management",
-      "tags": [
-        "calibre",
-        "ebooks",
-        "library-management",
-        "metadata",
-        "cli"
-      ],
-      "keywords": [
-        "calibredb",
-        "calibre",
-        "ebooks",
-        "library-management",
-        "metadata",
-        "cli"
+        "toc",
+        "book-toc-lab",
+        "outlining"
       ]
     },
     {
       "name": "cookiecutter",
       "displayName": "Cookiecutter",
       "source": "./plugins/cookiecutter",
-      "description": "Cookiecutter workflow guidance for Developer Tooling.",
+      "description": "Cookiecutter template development workflow guidance.",
       "author": {
         "name": "LVTD"
       },
       "homepage": "https://github.com/LVTD-LLC/skills",
       "repository": "https://github.com/LVTD-LLC/skills",
       "license": "MIT",
-      "category": "Developer Tooling",
+      "category": "Coding",
       "tags": [
         "cookiecutter",
         "templates",
@@ -111,137 +118,6 @@
         "templates",
         "jinja",
         "scaffolding"
-      ]
-    },
-    {
-      "name": "django-htmx",
-      "displayName": "Django HTMX",
-      "source": "./plugins/django-htmx",
-      "description": "Django HTMX workflow guidance for Django.",
-      "author": {
-        "name": "LVTD"
-      },
-      "homepage": "https://github.com/LVTD-LLC/skills",
-      "repository": "https://github.com/LVTD-LLC/skills",
-      "license": "MIT",
-      "category": "Django",
-      "tags": [
-        "django",
-        "htmx",
-        "server-rendered-ui"
-      ],
-      "keywords": [
-        "django-htmx",
-        "django",
-        "htmx",
-        "server-rendered-ui"
-      ]
-    },
-    {
-      "name": "django-q2",
-      "displayName": "Django Q2",
-      "source": "./plugins/django-q2",
-      "description": "Django Q2 workflow guidance for Django.",
-      "author": {
-        "name": "LVTD"
-      },
-      "homepage": "https://github.com/LVTD-LLC/skills",
-      "repository": "https://github.com/LVTD-LLC/skills",
-      "license": "MIT",
-      "category": "Django",
-      "tags": [
-        "django",
-        "django-q2",
-        "background-jobs",
-        "redis"
-      ],
-      "keywords": [
-        "django-q2",
-        "django",
-        "background-jobs",
-        "redis"
-      ]
-    },
-    {
-      "name": "fastmcp-django",
-      "displayName": "FastMCP Django",
-      "source": "./plugins/fastmcp-django",
-      "description": "FastMCP Django workflow guidance for Django.",
-      "author": {
-        "name": "LVTD"
-      },
-      "homepage": "https://github.com/LVTD-LLC/skills",
-      "repository": "https://github.com/LVTD-LLC/skills",
-      "license": "MIT",
-      "category": "Django",
-      "tags": [
-        "fastmcp",
-        "django",
-        "mcp",
-        "asgi"
-      ],
-      "keywords": [
-        "fastmcp-django",
-        "fastmcp",
-        "django",
-        "mcp",
-        "asgi"
-      ]
-    },
-    {
-      "name": "make-product-viral",
-      "displayName": "Make Product Viral",
-      "source": "./plugins/make-product-viral",
-      "description": "Make Product Viral workflow guidance for Marketing.",
-      "author": {
-        "name": "LVTD"
-      },
-      "homepage": "https://github.com/LVTD-LLC/skills",
-      "repository": "https://github.com/LVTD-LLC/skills",
-      "license": "MIT",
-      "category": "Marketing",
-      "tags": [
-        "marketing",
-        "launch",
-        "cro",
-        "pricing",
-        "copywriting",
-        "shareability"
-      ],
-      "keywords": [
-        "make-product-viral",
-        "marketing",
-        "launch",
-        "cro",
-        "pricing",
-        "copywriting",
-        "shareability"
-      ]
-    },
-    {
-      "name": "rust-api-test-harness",
-      "displayName": "Rust API Test Harness",
-      "source": "./plugins/rust-api-test-harness",
-      "description": "Rust API Test Harness workflow guidance for Rust.",
-      "author": {
-        "name": "LVTD"
-      },
-      "homepage": "https://github.com/LVTD-LLC/skills",
-      "repository": "https://github.com/LVTD-LLC/skills",
-      "license": "MIT",
-      "category": "Rust",
-      "tags": [
-        "rust",
-        "api-testing",
-        "integration-tests",
-        "backend"
-      ],
-      "keywords": [
-        "rust-api-test-harness",
-        "rust",
-        "api-testing",
-        "integration-tests",
-        "backend"
       ]
     }
   ]

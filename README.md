@@ -69,27 +69,29 @@ Add the marketplace in Claude Code:
 
 ```text
 /plugin marketplace add LVTD-LLC/skills
-/plugin install django-htmx@lvtd-skills
+/plugin install django@lvtd-skills
 /reload-plugins
 ```
 
-Claude Code exposes the skill as `/django-htmx:django-htmx`.
+Claude Code exposes the bundled skills as `/django:django-htmx`,
+`/django:django-q2`, and the other skills in that plugin.
 
 Add the marketplace in Codex:
 
 ```bash
 codex plugin marketplace add LVTD-LLC/skills
-codex plugin add django-htmx@lvtd-skills
+codex plugin add django@lvtd-skills
 ```
 
-Codex exposes the skill as `$django-htmx:django-htmx`.
+Codex exposes the bundled skills as `$django:django-htmx`,
+`$django:django-q2`, and the other skills in that plugin.
 
 This repository ships the marketplace files directly:
 
 ```text
 .claude-plugin/marketplace.json
 .agents/plugins/marketplace.json
-plugins/<skill-name>/
+plugins/<plugin-name>/
 ```
 
 The plugin skill folders are symlinks back to `skills/<skill-name>/`, so each
@@ -102,19 +104,15 @@ Refresh generated marketplace artifacts during development:
 npm run build
 ```
 
-Generated plugin IDs:
+Generated marketplace plugin IDs:
 
-- `alpinejs-django`
-- `book-toc-lab`
-- `calibredb`
 - `cookiecutter`
-- `django-htmx`
-- `django-q2`
-- `fastmcp-django`
-- `make-product-viral`
-- `rust-api-test-harness`
+- `django`
+- `nonfiction-book-writing`
+- `rust`
 
-Generated plugin IDs match the canonical skill directory names.
+Marketplace plugins group related skills. Direct installs through the `skills`
+CLI still use the canonical skill directory names.
 
 ## Marketplace Strategy
 

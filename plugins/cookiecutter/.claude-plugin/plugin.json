@@ -1,7 +1,7 @@
 {
   "name": "cookiecutter",
   "version": "0.1.0",
-  "description": "Cookiecutter workflow guidance for Developer Tooling.",
+  "description": "Cookiecutter template development workflow guidance.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"

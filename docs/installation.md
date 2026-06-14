@@ -9,20 +9,22 @@ the repository root.
 
 ```text
 /plugin marketplace add LVTD-LLC/skills
-/plugin install django-htmx@lvtd-skills
+/plugin install django@lvtd-skills
 /reload-plugins
 ```
 
-Claude Code exposes the installed skill as `/django-htmx:django-htmx`.
+Claude Code exposes the installed skills under the plugin namespace, for
+example `/django:django-htmx`.
 
 ## Codex Marketplace
 
 ```bash
 codex plugin marketplace add LVTD-LLC/skills
-codex plugin add django-htmx@lvtd-skills
+codex plugin add django@lvtd-skills
 ```
 
-Codex exposes the installed skill as `$django-htmx:django-htmx`.
+Codex exposes the installed skills under the plugin namespace, for example
+`$django:django-htmx`.
 
 Start a new Codex thread after installing or updating plugins so the newly
 installed skills are available in context.
@@ -34,25 +36,22 @@ This repository ships:
 ```text
 .claude-plugin/marketplace.json
 .agents/plugins/marketplace.json
-plugins/<skill-name>/
+plugins/<plugin-name>/
 ```
 
 Plugin IDs:
 
-- `alpinejs-django`
-- `book-toc-lab`
-- `calibredb`
 - `cookiecutter`
-- `django-htmx`
-- `django-q2`
-- `fastmcp-django`
-- `rust-api-test-harness`
+- `django`
+- `nonfiction-book-writing`
+- `rust`
 
-Plugin IDs match the canonical skill directory names.
+Plugin IDs group related source skills. Direct installs through the `skills` CLI
+still use canonical skill directory names such as `django-htmx`.
 
-If you installed a previous `lvtd-*` marketplace plugin, uninstall that old
-plugin ID and reinstall the matching canonical skill name. For example, replace
-`lvtd-django-htmx@lvtd-skills` with `django-htmx@lvtd-skills`.
+If you installed an older per-skill marketplace plugin, uninstall that plugin ID
+and install the matching grouped plugin. For example, replace
+`django-htmx@lvtd-skills` with `django@lvtd-skills`.
 
 ## Install With The Skills CLI
 
