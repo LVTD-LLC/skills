@@ -53,6 +53,15 @@ If you installed an older per-skill marketplace plugin, uninstall that plugin ID
 and install the matching grouped plugin. For example, replace
 `django-htmx@lvtd-skills` with `django@lvtd-skills`.
 
+The previous `calibredb@lvtd-skills` and `make-product-viral@lvtd-skills`
+marketplace plugins are no longer generated. Uninstall those marketplace plugin
+IDs and install the skills directly with the `skills` CLI instead:
+
+```bash
+npx skills add LVTD-LLC/skills --skill calibredb
+npx skills add LVTD-LLC/skills --skill make-product-viral
+```
+
 ## Install With The Skills CLI
 
 ```bash

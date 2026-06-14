@@ -9,6 +9,7 @@ import {
   codexManifestForPlugin,
   codexMarketplaceForSkills,
   marketplacePluginsForSkills,
+  unmatchedMarketplaceSkills,
 } from "./marketplace-utils.mjs";
 import { validateSkills } from "./validate-skills.mjs";
 
@@ -49,6 +50,13 @@ if (!process.argv.includes("--skip-validation")) {
 
 const skills = await loadSkills();
 const plugins = marketplacePluginsForSkills(skills);
+const unmatchedSkills = unmatchedMarketplaceSkills(skills);
+
+if (unmatchedSkills.length > 0) {
+  console.warn(
+    `Skipping marketplace plugin generation for unmatched skills: ${unmatchedSkills.map((skill) => skill.name).join(", ")}. Direct skill installs still work; update MARKETPLACE_PLUGIN_GROUPS to publish them in generated marketplace plugins.`,
+  );
+}
 
 await rm(path.join(marketplaceDir, ".claude-plugin"), { recursive: true, force: true });
 await rm(path.join(marketplaceDir, ".agents"), { recursive: true, force: true });

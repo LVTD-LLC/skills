@@ -78,6 +78,10 @@ function joinDisplayNames(displayNames) {
 function licenseForPlugin(plugin) {
   const licenses = uniqueValues(plugin.skills.map((skill) => metadataForSkill(skill).license));
 
+  if (licenses.length === 0) {
+    return "MIT";
+  }
+
   if (licenses.length === 1) {
     return licenses[0];
   }
@@ -121,6 +125,12 @@ export function marketplacePluginBySkillName(skills) {
   }
 
   return pluginBySkillName;
+}
+
+export function unmatchedMarketplaceSkills(skills) {
+  const pluginBySkillName = marketplacePluginBySkillName(skills);
+
+  return skills.filter((skill) => !pluginBySkillName.has(skill.name));
 }
 
 export function buildDefaultPrompt(plugin) {
