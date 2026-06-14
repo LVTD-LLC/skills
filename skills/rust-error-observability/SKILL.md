@@ -1,6 +1,6 @@
 ---
 name: rust-error-observability
-description: Use when adding, changing, debugging, or reviewing Rust service error handling and observability, especially when separating domain errors from HTTP responses, adding thiserror/anyhow, implementing ResponseError or IntoResponse, adding tracing spans, redacting secrets, or making async failures diagnosable without over-logging.
+description: Use when adding, changing, debugging, or reviewing Rust service error handling and observability, especially when separating domain errors from HTTP responses, adding thiserror/anyhow, implementing ResponseError or IntoResponse, adding tracing spans, redacting secrets, or diagnosing async failures.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
@@ -13,13 +13,13 @@ metadata:
 # Rust Error Observability
 
 Use this skill to make Rust service failures understandable to operators while
-keeping user-facing responses stable and safe. Treat error handling and
-telemetry as one design surface.
+keeping user-facing responses safe. Treat error handling and telemetry as one
+design surface.
 
 ## Core Workflow
 
-1. Inventory current error flows: handler return types, service/repository
-   errors, background worker errors, middleware, logs, and tracing setup.
+1. Inventory error flows: handler return types, service/repository errors,
+   worker errors, middleware, logs, and tracing setup.
 2. Classify each error by purpose:
    - Domain or validation outcome.
    - Recoverable control flow.
@@ -28,25 +28,25 @@ telemetry as one design surface.
 3. Keep domain errors typed. Use `thiserror` for expected branches that callers
    should match on.
 4. Add context at infrastructure boundaries. Use `anyhow` or opaque application
-   errors where callers should not match on every dependency failure.
+   errors when callers should not match every dependency failure.
 5. Map errors to HTTP responses in one place per framework: `ResponseError`,
    Axum `IntoResponse`, or a small adapter function.
-6. Add structured spans before adding more log lines. Include stable fields
-   that help diagnose requests, not raw payloads or secrets.
+6. Add structured spans before more log lines. Include stable diagnostic fields,
+   not raw payloads or secrets.
 7. Ensure errors are logged once. Prefer logging at the outer boundary where
    request context is available.
 8. Test both the public response and the diagnostic path when behavior changed.
 
 ## Error Boundary Rules
 
-- Domain modules return domain errors and do not know about HTTP status codes.
+- Domain modules return domain errors, not HTTP status codes.
 - Repository modules attach query or operation context, but do not log every
-  error locally.
+  error.
 - Handlers convert domain outcomes into response types and let unexpected
   failures become a consistent 500.
 - Background workers log failed job IDs, attempt counts, and next action.
 - Avoid `unwrap`, `expect`, or stringly `map_err` in service paths unless the
-  invariant is proven locally and the panic message is truly useful.
+  invariant is local and the panic message is useful.
 
 Read `references/error-boundaries.md` when choosing between `thiserror`,
 `anyhow`, opaque errors, and framework response adapters.
