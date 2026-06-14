@@ -1,0 +1,39 @@
+{
+  "name": "lvtd-rust-api-test-harness",
+  "version": "0.1.0",
+  "description": "Rust API Test Harness workflow guidance for developer tooling.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "rust-api-test-harness",
+    "rust",
+    "api-testing",
+    "integration-tests",
+    "backend"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Rust API Test Harness",
+    "shortDescription": "Rust API Test Harness workflow guidance for developer tooling.",
+    "longDescription": "Use when adding, changing, testing, or debugging Rust HTTP APIs and services, especially when Codex needs black-box integration tests, random-port app startup, real database test isolation, external HTTP mocks, or CI-ready cargo verification for Actix, Axum, Warp, Rocket, or similar Rust web frameworks. Packaged as a marketplace skill for Codex and Claude Code. Category: Developer Tooling.",
+    "developerName": "LVTD",
+    "category": "Developer Tooling",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Rust API Test Harness skill when working on rust api test harness tasks."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
+    "screenshots": []
+  }
+}

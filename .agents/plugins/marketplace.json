@@ -89,6 +89,18 @@
         "authentication": "ON_USE"
       },
       "category": "MCP Servers"
+    },
+    {
+      "name": "lvtd-rust-api-test-harness",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lvtd-rust-api-test-harness"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tooling"
     }
   ]
 }

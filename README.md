@@ -16,6 +16,7 @@ This repository is intentionally simple: every skill lives in `skills/<skill-nam
 | [`django-htmx`](skills/django-htmx/SKILL.md) | Building and reviewing HTMX interactions in Django server-rendered apps, including partial responses, headers, swaps, triggers, forms, and tests. |
 | [`django-q2`](skills/django-q2/SKILL.md) | Adding, changing, testing, or debugging Django Q2 background jobs, schedules, workers, and broker configuration. |
 | [`fastmcp-django`](skills/fastmcp-django/SKILL.md) | Adding, changing, deploying, testing, or debugging FastMCP MCP servers in existing Django apps, including ASGI mounting, ORM access, auth, and Streamable HTTP deployment. |
+| [`rust-api-test-harness`](skills/rust-api-test-harness/SKILL.md) | Adding, changing, testing, or debugging Rust HTTP APIs with black-box integration tests, random-port app startup, state isolation, mocks, and CI-ready cargo checks. |
 
 ## Repository Layout
 
@@ -108,6 +109,7 @@ Generated plugin IDs:
 - `lvtd-django-htmx`
 - `lvtd-django-q2`
 - `lvtd-fastmcp-django`
+- `lvtd-rust-api-test-harness`
 
 The `lvtd-` plugin ID prefix is kept for install namespace safety. Displayed
 skill names and prompt text omit that prefix.
