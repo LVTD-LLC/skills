@@ -53,7 +53,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     description:
       "Traction and Bullseye workflow guidance for choosing, testing, and reviewing startup growth channels.",
     tags: ["traction", "growth", "marketing", "startups", "bullseye"],
-    matches: (skill) => hasSkillTag(skill, "traction") || skill.name.startsWith("traction-"),
+    matches: (skill) => isTractionSkill(skill),
   },
   {
     name: "cookiecutter",
@@ -72,12 +72,16 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     description:
       "SEO workflow guidance for product-led strategy, opportunity research, personas, technical triage, and roadmap planning.",
     tags: ["seo", "organic-growth", "content-strategy", "technical-seo", "planning"],
-    matches: (skill) => hasSkillTag(skill, "seo"),
+    matches: (skill) => hasSkillTag(skill, "seo") && !isTractionSkill(skill),
   },
 ];
 
 function hasSkillTag(skill, tag) {
   return metadataForSkill(skill).tags.includes(tag);
+}
+
+function isTractionSkill(skill) {
+  return hasSkillTag(skill, "traction") || skill.name.startsWith("traction-");
 }
 
 function uniqueValues(values) {
