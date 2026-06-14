@@ -1,0 +1,40 @@
+{
+  "name": "seo",
+  "version": "0.1.0",
+  "description": "SEO workflow guidance for product-led strategy, opportunity research, personas, technical triage, and roadmap planning.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "seo",
+    "organic-growth",
+    "content-strategy",
+    "technical-seo",
+    "planning",
+    "product-led-seo-strategy",
+    "seo-opportunity-research",
+    "seo-persona-intent-mapping",
+    "seo-roadmap-prioritization",
+    "technical-seo-triage",
+    "product-led-growth",
+    "marketing",
+    "research",
+    "competitive-research",
+    "blue-ocean",
+    "personas",
+    "search-intent",
+    "conversion",
+    "roadmap",
+    "prioritization",
+    "product-management",
+    "search-console",
+    "indexing",
+    "crawling"
+  ],
+  "skills": "./skills/",
+  "displayName": "SEO"
+}
