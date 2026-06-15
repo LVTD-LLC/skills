@@ -1,0 +1,99 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-main
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: ${{ !startsWith(github.event.head_commit.message, 'chore(release):') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+
+      - name: Prepare release commit and tag
+        id: release
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main --tags --force
+          git checkout main
+          git reset --hard origin/main
+
+          while true; do
+            version="$(node -p "require('./package.json').version")"
+
+            while git rev-parse -q --verify "refs/tags/v${version}" >/dev/null; do
+              npm version patch --no-git-tag-version
+              version="$(node -p "require('./package.json').version")"
+            done
+
+            npm run build
+            npm run validate:marketplaces
+
+            git add package.json .claude-plugin .agents plugins
+
+            if ! git diff --cached --quiet; then
+              if git log -1 --format=%s | grep -q '^chore(release):'; then
+                git commit --amend -m "chore(release): v${version}"
+              else
+                git commit -m "chore(release): v${version}"
+              fi
+            fi
+
+            git fetch origin main --tags --force
+            if git rev-parse -q --verify "refs/tags/v${version}" >/dev/null; then
+              npm version patch --no-git-tag-version
+              continue
+            fi
+
+            git tag -a "v${version}" -m "v${version}"
+
+            if git push --atomic origin HEAD:main "v${version}"; then
+              break
+            fi
+
+            git tag -d "v${version}" || true
+            git fetch origin main --tags --force
+            git rebase origin/main
+          done
+
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+      - name: Package catalog
+        run: |
+          tar -czf dist/lvtd-skills.tar.gz skills README.md docs package.json
+          tar -czf dist/lvtd-marketplace.tar.gz .claude-plugin .agents plugins skills
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: skills-catalog
+          path: dist/
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: v${{ steps.release.outputs.version }}
+          files: |
+            dist/registry.json
+            dist/lvtd-skills.tar.gz
+            dist/lvtd-marketplace.tar.gz

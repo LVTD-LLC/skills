@@ -4,7 +4,7 @@
     "name": "LVTD"
   },
   "description": "Portable Agent Skills for coding and writing workflows, packaged for Claude Code.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "plugins": [
     {
       "name": "rust",

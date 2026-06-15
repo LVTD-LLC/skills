@@ -100,9 +100,9 @@ This repository ships the marketplace files directly:
 plugins/<plugin-name>/
 ```
 
-The plugin skill folders are symlinks back to `skills/<skill-name>/`, so each
-skill has one canonical source file tree while Claude Code, Codex, OpenClaw,
-and the `skills` CLI can use host-specific adapters.
+The plugin skill folders are generated copies of `skills/<skill-name>/`, so
+Git-backed marketplace installs have real `SKILL.md` files while the canonical
+source remains under `skills/`. Do not edit generated plugin copies directly.
 
 Refresh generated marketplace artifacts during development:
 
@@ -159,9 +159,14 @@ npm run check
 
 ## Publishing
 
-CI validates every push and pull request. The publish workflow validates the catalog, builds `dist/registry.json`, and uploads a `skills-catalog` artifact. When run on a `v*` tag, it also creates a GitHub release.
+CI validates every push and pull request. Merging to `main` runs the release
+workflow, which chooses the next unused catalog version, rebuilds marketplace
+artifacts, commits any generated release updates, creates a `v*` tag, uploads a
+`skills-catalog` artifact, and publishes a GitHub release.
 
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
+The catalog version in `package.json` is also the generated marketplace plugin
+version, so Codex installs use a new plugin cache path for every release. If you
+need a non-patch release, update `package.json` before merging; otherwise the
+workflow bumps patch automatically when the current version is already tagged.
+
+Manual `v*` tags still run the publish workflow as a fallback.

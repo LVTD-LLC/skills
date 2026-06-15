@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -6,6 +7,9 @@ export const root = fileURLToPath(new URL("..", import.meta.url));
 export const skillsDir = path.join(root, "skills");
 export const MARKETPLACE_NAME = "lvtd-skills";
 export const MARKETPLACE_DISPLAY_NAME = "LVTD Skills";
+export const CATALOG_VERSION = JSON.parse(
+  readFileSync(new URL("../package.json", import.meta.url), "utf8"),
+).version;
 
 function parseScalar(rawValue) {
   const value = rawValue.trim();
@@ -192,13 +196,6 @@ export function metadataForSkill(skill) {
       skill.fields.compatibility ||
       "Agent Skills-compatible clients including Codex and Claude Code",
   };
-}
-
-export function marketplaceVersionForSkills(skills) {
-  return skills
-    .map((skill) => metadataForSkill(skill).version)
-    .sort((left, right) => left.localeCompare(right, undefined, { numeric: true }))
-    .at(-1);
 }
 
 export async function loadSkills() {
