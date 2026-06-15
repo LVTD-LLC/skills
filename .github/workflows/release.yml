@@ -31,7 +31,10 @@ jobs:
         id: version
         run: |
           set -euo pipefail
-          git fetch --tags --force
+          git fetch origin main --tags --force
+          git checkout main
+          git reset --hard origin/main
+
           current_version="$(node -p "require('./package.json').version")"
 
           while git rev-parse -q --verify "refs/tags/v${current_version}" >/dev/null; do
@@ -59,7 +62,6 @@ jobs:
             git commit -m "chore(release): v${version}"
           fi
 
-          git pull --rebase origin main
           git tag -a "v${version}" -m "v${version}"
           git push origin HEAD:main
           git push origin "v${version}"
