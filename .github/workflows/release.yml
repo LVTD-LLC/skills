@@ -27,44 +27,56 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Choose release version
-        id: version
+      - name: Prepare release commit and tag
+        id: release
         run: |
           set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git fetch origin main --tags --force
           git checkout main
           git reset --hard origin/main
 
-          current_version="$(node -p "require('./package.json').version")"
+          while true; do
+            version="$(node -p "require('./package.json').version")"
 
-          while git rev-parse -q --verify "refs/tags/v${current_version}" >/dev/null; do
-            npm version patch --no-git-tag-version
-            current_version="$(node -p "require('./package.json').version")"
+            while git rev-parse -q --verify "refs/tags/v${version}" >/dev/null; do
+              npm version patch --no-git-tag-version
+              version="$(node -p "require('./package.json').version")"
+            done
+
+            npm run build
+            npm run validate:marketplaces
+
+            git add package.json .claude-plugin .agents plugins
+
+            if ! git diff --cached --quiet; then
+              if git log -1 --format=%s | grep -q '^chore(release):'; then
+                git commit --amend -m "chore(release): v${version}"
+              else
+                git commit -m "chore(release): v${version}"
+              fi
+            fi
+
+            git fetch origin main --tags --force
+            if git rev-parse -q --verify "refs/tags/v${version}" >/dev/null; then
+              npm version patch --no-git-tag-version
+              continue
+            fi
+
+            git tag -a "v${version}" -m "v${version}"
+
+            if git push --atomic origin HEAD:main "v${version}"; then
+              break
+            fi
+
+            git tag -d "v${version}" || true
+            git fetch origin main --tags --force
+            git rebase origin/main
           done
 
-          echo "version=${current_version}" >> "$GITHUB_OUTPUT"
-
-      - name: Build generated artifacts
-        run: npm run build
-
-      - name: Validate generated artifacts
-        run: npm run validate:marketplaces
-
-      - name: Commit release artifacts
-        run: |
-          set -euo pipefail
-          version="${{ steps.version.outputs.version }}"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package.json .claude-plugin .agents plugins
-
-          if ! git diff --cached --quiet; then
-            git commit -m "chore(release): v${version}"
-          fi
-
-          git tag -a "v${version}" -m "v${version}"
-          git push origin HEAD:main
-          git push origin "v${version}"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
 
       - name: Package catalog
         run: |
@@ -80,7 +92,7 @@ jobs:
       - name: Publish GitHub release
         uses: softprops/action-gh-release@v3
         with:
-          tag_name: v${{ steps.version.outputs.version }}
+          tag_name: v${{ steps.release.outputs.version }}
           files: |
             dist/registry.json
             dist/lvtd-skills.tar.gz
