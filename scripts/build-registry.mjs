@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import path from "node:path";
 import {
+  CATALOG_VERSION,
   listFilesRecursive,
   loadSkills,
   MARKETPLACE_DISPLAY_NAME,
@@ -84,6 +85,7 @@ for (const skill of loadedSkills) {
 const registry = {
   schemaVersion: 2,
   name: MARKETPLACE_DISPLAY_NAME,
+  version: CATALOG_VERSION,
   repository: "https://github.com/LVTD-LLC/skills",
   generatedAt: new Date().toISOString(),
   skills,

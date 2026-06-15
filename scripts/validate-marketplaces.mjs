@@ -1,4 +1,4 @@
-import { lstat, readdir, readFile, readlink } from "node:fs/promises";
+import { lstat, readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import {
   loadSkills,
@@ -86,33 +86,50 @@ async function listDirectoryEntryNames(directory, label, errors) {
   }
 }
 
-async function assertSkillSymlinkToSource(skill, linkedSkillPath, pluginName, errors) {
-  if (!(await pathExists(linkedSkillPath))) {
-    errors.push(`${pluginName} must link skill ${skill.name} to ${skill.relativePath}`);
+async function assertSkillCopyFromSource(skill, copiedSkillPath, pluginName, errors) {
+  if (!(await pathExists(copiedSkillPath))) {
+    errors.push(`${pluginName} must include copied skill ${skill.name} from ${skill.relativePath}`);
     return;
   }
 
   let entryStat;
   try {
-    entryStat = await lstat(linkedSkillPath);
+    entryStat = await lstat(copiedSkillPath);
   } catch (error) {
-    errors.push(`${pluginName} skill link ${linkedSkillPath} must be readable: ${error.message}`);
+    errors.push(`${pluginName} skill copy ${copiedSkillPath} must be readable: ${error.message}`);
     return;
   }
 
-  if (!entryStat.isSymbolicLink()) {
-    errors.push(`${pluginName} skill ${skill.name} must be a symlink to ${skill.relativePath}; run npm run build`);
-    return;
-  }
-
-  const expectedTarget = path
-    .relative(path.dirname(linkedSkillPath), skill.path)
-    .replaceAll(path.sep, "/");
-  const actualTarget = (await readlink(linkedSkillPath)).replaceAll(path.sep, "/");
-
-  if (actualTarget !== expectedTarget) {
+  if (entryStat.isSymbolicLink()) {
     errors.push(
-      `${pluginName} skill ${skill.name} symlink must target ${expectedTarget}, got ${actualTarget}; run npm run build`,
+      `${pluginName} skill ${skill.name} must be a directory copy, not a symlink; run npm run build`,
+    );
+    return;
+  }
+
+  if (!entryStat.isDirectory()) {
+    errors.push(
+      `${pluginName} skill ${skill.name} must be a directory copy of ${skill.relativePath}; run npm run build`,
+    );
+    return;
+  }
+
+  const sourceSkillFile = path.join(skill.path, "SKILL.md");
+  const copiedSkillFile = path.join(copiedSkillPath, "SKILL.md");
+
+  if (!(await pathExists(copiedSkillFile))) {
+    errors.push(`${pluginName} skill ${skill.name} must include SKILL.md; run npm run build`);
+    return;
+  }
+
+  const [sourceContent, copiedContent] = await Promise.all([
+    readFile(sourceSkillFile, "utf8"),
+    readFile(copiedSkillFile, "utf8"),
+  ]);
+
+  if (copiedContent !== sourceContent) {
+    errors.push(
+      `${pluginName} skill ${skill.name} SKILL.md must match ${skill.relativePath}; run npm run build`,
     );
   }
 }
@@ -203,7 +220,7 @@ for (const plugin of plugins) {
   assertDeepEqual(pluginSkillEntries, expectedSkillEntries, `${pluginName} skills directory`, errors);
 
   for (const skill of plugin.skills) {
-    await assertSkillSymlinkToSource(skill, path.join(pluginSkillsDir, skill.name), pluginName, errors);
+    await assertSkillCopyFromSource(skill, path.join(pluginSkillsDir, skill.name), pluginName, errors);
   }
 
   await assertAppIconExists(pluginDir, pluginName, errors);

@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, stat, symlink, writeFile } from "node:fs/promises";
+import { cp, mkdir, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { loadSkills, MARKETPLACE_NAME, root } from "./skill-utils.mjs";
 import {
@@ -88,9 +88,8 @@ for (const plugin of plugins) {
 
   for (const skill of plugin.skills) {
     const skillDestination = path.join(pluginSkillsDir, skill.name);
-    const skillLinkTarget = path.relative(pluginSkillsDir, skill.path).replaceAll(path.sep, "/");
 
-    await symlink(skillLinkTarget, skillDestination, "dir");
+    await cp(skill.path, skillDestination, { recursive: true });
   }
 
   await copyAppIcon(pluginDir, appIconPath);

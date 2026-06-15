@@ -13,6 +13,7 @@
 - Expanded registry output with per-skill version, license, category, tags, host plugin names, files, and content hashes.
 - Added CI validation for generated marketplace artifacts.
 - Removed LVTD branding from generated marketplace plugin display titles and default prompt text.
-- Switched generated marketplace plugins to symlink canonical `skills/` folders instead of copying skill files.
+- Switched generated marketplace plugins to copied skill folders so Codex plugin caches include real `SKILL.md` files.
 - Added `make-product-viral`, inspired by Marc Lou's viral product principles, for auditing products, landing pages, pricing, and social previews.
 - Grouped generated marketplace plugins into `rust`, `django`, `nonfiction-book-writing`, and `cookiecutter` with `Coding` and `Writing` marketplace categories.
+- Added automated main-branch releases that bump patch versions when needed, tag releases, package artifacts, and publish GitHub releases.

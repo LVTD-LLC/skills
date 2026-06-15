@@ -31,7 +31,7 @@ The repo now has the right base shape for a generated marketplace:
 - `scripts/build-marketplaces.mjs` emits Claude Code and Codex marketplace
   adapters from shared marketplace helper functions.
 - `scripts/validate-marketplaces.mjs` verifies generated manifests, marketplace
-  entries, plugin directories, and symlinked skill folders against the canonical
+  entries, plugin directories, and copied skill folders against the canonical
   `skills/` source.
 - `npm run check` rebuilds and validates the catalog, then fails if committed
   marketplace artifacts are stale.
@@ -135,10 +135,13 @@ Add per-skill versioning:
 - Generated marketplace entries expose that version.
 - Registry records the source commit and content hash for each skill.
 - Release notes can include both repo-level and skill-level changes.
+- Generated marketplace plugin versions should follow the root catalog version
+  in `package.json` so packaging-only fixes invalidate host plugin caches.
 
 For Git-backed marketplaces, pin generated entries to release tags or commit
 SHAs where the host supports it. Claude Code supports pinning plugin sources by
-ref and SHA in marketplace entries.
+ref and SHA in marketplace entries. This repo's `Release` workflow creates the
+tag and GitHub release automatically on `main`.
 
 ### 5. Generate Artifacts, Do Not Hand-Edit Marketplaces
 

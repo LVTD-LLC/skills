@@ -1,7 +1,7 @@
 import {
+  CATALOG_VERSION,
   MARKETPLACE_DISPLAY_NAME,
   MARKETPLACE_NAME,
-  marketplaceVersionForSkills,
   metadataForSkill,
 } from "./skill-utils.mjs";
 
@@ -186,7 +186,7 @@ export function keywordsForPlugin(plugin) {
 export function commonManifestForPlugin(plugin) {
   return {
     name: plugin.name,
-    version: marketplaceVersionForSkills(plugin.skills),
+    version: CATALOG_VERSION,
     description: buildShortDescription(plugin),
     author: AUTHOR,
     homepage: REPOSITORY_URL,
@@ -267,7 +267,7 @@ export function claudeMarketplaceForSkills(skills, plugins = marketplacePluginsF
     },
     description:
       "Portable Agent Skills for coding and writing workflows, packaged for Claude Code.",
-    version: marketplaceVersionForSkills(skillsForMarketplacePlugins(plugins)),
+    version: CATALOG_VERSION,
     plugins: plugins.map((plugin) => claudeMarketplaceEntryForPlugin(plugin)),
   };
 }
