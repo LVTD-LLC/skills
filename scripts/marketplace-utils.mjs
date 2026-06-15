@@ -10,6 +10,7 @@ export const BRAND_COLOR = "#FF4057";
 export const ASSET_DIR = "assets";
 export const APP_ICON_FILE = "app-icon.png";
 export const APP_ICON_PATH = `./${ASSET_DIR}/${APP_ICON_FILE}`;
+export const PLUGIN_ICON_DIR = "plugin-icons";
 export const AUTHOR = {
   name: "LVTD",
   url: "https://github.com/LVTD-LLC",
@@ -23,6 +24,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "Rust",
     description:
       "Rust workflow guidance for production backend services, including testing, persistence, observability, security, idempotency, and deployment.",
+    iconFile: "rust.svg",
     tags: ["rust", "backend", "api-testing", "sqlx", "observability", "security", "deployment"],
     matches: (skill) => hasSkillTag(skill, "rust") || skill.name.startsWith("rust-"),
   },
@@ -33,6 +35,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "Django",
     description:
       "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior.",
+    iconFile: "django.svg",
     tags: ["django", "htmx", "alpinejs", "background-jobs", "mcp", "testing", "ci", "pytest"],
     matches: (skill) => hasSkillTag(skill, "django") || skill.name.includes("django"),
   },
@@ -43,6 +46,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "nonfiction book writing",
     description:
       "Nonfiction book writing guidance for planning, editing, beta reading, launching, and publishing useful books.",
+    iconFile: "nonfiction-book-writing.svg",
     tags: ["writing", "books", "nonfiction", "editing", "launch", "publishing"],
     matches: (skill) => hasSkillTag(skill, "books") && hasSkillTag(skill, "nonfiction"),
   },
@@ -53,6 +57,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "startup traction and growth marketing",
     description:
       "Traction and Bullseye workflow guidance for choosing, testing, and reviewing startup growth channels.",
+    iconFile: "traction.svg",
     tags: ["traction", "growth", "marketing", "startups", "bullseye"],
     matches: (skill) => isTractionSkill(skill),
   },
@@ -62,6 +67,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     category: "Coding",
     taskLabel: "Cookiecutter",
     description: "Cookiecutter template development workflow guidance.",
+    iconFile: "cookiecutter.svg",
     tags: ["cookiecutter", "templates", "jinja", "scaffolding"],
     matches: (skill) => skill.name === "cookiecutter" || hasSkillTag(skill, "cookiecutter"),
   },
@@ -72,6 +78,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "SEO",
     description:
       "SEO workflow guidance for product-led strategy, opportunity research, personas, technical triage, and roadmap planning.",
+    iconFile: "seo.svg",
     tags: ["seo", "organic-growth", "content-strategy", "technical-seo", "planning"],
     matches: (skill) => hasSkillTag(skill, "seo") && !isTractionSkill(skill),
   },
@@ -183,6 +190,14 @@ export function keywordsForPlugin(plugin) {
   ]);
 }
 
+export function pluginIconFile(plugin) {
+  return plugin.iconFile || APP_ICON_FILE;
+}
+
+export function pluginIconPath(plugin) {
+  return `./${ASSET_DIR}/${pluginIconFile(plugin)}`;
+}
+
 export function commonManifestForPlugin(plugin) {
   return {
     name: plugin.name,
@@ -206,6 +221,7 @@ export function claudeManifestForPlugin(plugin) {
 
 export function codexManifestForPlugin(plugin) {
   const shortDescription = buildShortDescription(plugin);
+  const iconPath = pluginIconPath(plugin);
 
   return {
     ...commonManifestForPlugin(plugin),
@@ -219,8 +235,8 @@ export function codexManifestForPlugin(plugin) {
       websiteURL: REPOSITORY_URL,
       defaultPrompt: [buildDefaultPrompt(plugin)],
       brandColor: BRAND_COLOR,
-      composerIcon: APP_ICON_PATH,
-      logo: APP_ICON_PATH,
+      composerIcon: iconPath,
+      logo: iconPath,
       screenshots: [],
     },
   };

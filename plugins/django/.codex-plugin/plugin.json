@@ -59,8 +59,8 @@
       "Use the Django plugin when working on Django tasks. It includes the Alpine.js Django, Django CI Test Optimization, Django HTMX, Django Q2, Django Targeted Mocking, Django Test Data, Django Test Parallelization, Django Test Performance, Django Test Profiling, and FastMCP Django skills."
     ],
     "brandColor": "#FF4057",
-    "composerIcon": "./assets/app-icon.png",
-    "logo": "./assets/app-icon.png",
+    "composerIcon": "./assets/django.svg",
+    "logo": "./assets/django.svg",
     "screenshots": []
   }
 }
