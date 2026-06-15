@@ -26,6 +26,15 @@ codex plugin add django@lvtd-skills
 Codex exposes the installed skills under the plugin namespace, for example
 `$django:django-htmx`.
 
+`codex plugin marketplace upgrade` refreshes the marketplace snapshot. To
+replace the installed plugin cache, remove and add the plugin again:
+
+```bash
+codex plugin marketplace upgrade lvtd-skills
+codex plugin remove django@lvtd-skills
+codex plugin add django@lvtd-skills
+```
+
 Start a new Codex thread after installing or updating plugins so the newly
 installed skills are available in context.
 
@@ -45,6 +54,8 @@ Plugin IDs:
 - `django`
 - `nonfiction-book-writing`
 - `rust`
+- `seo`
+- `traction`
 
 Plugin IDs group related source skills. Direct installs through the `skills` CLI
 still use canonical skill directory names such as `django-htmx`.

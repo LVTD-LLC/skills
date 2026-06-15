@@ -39,8 +39,6 @@ scripts/
   skill-utils.mjs
   validate-marketplaces.mjs
   validate-skills.mjs
-tests/
-  validate-skills.mjs
 ```
 
 ## Install A Skill Directly
@@ -92,6 +90,15 @@ codex plugin add django@lvtd-skills
 Codex exposes the bundled skills as `$django:django-htmx`,
 `$django:django-q2`, and the other skills in that plugin.
 
+To pick up a marketplace update for an already-installed Codex plugin, refresh
+the marketplace snapshot and reinstall the plugin:
+
+```bash
+codex plugin marketplace upgrade lvtd-skills
+codex plugin remove django@lvtd-skills
+codex plugin add django@lvtd-skills
+```
+
 This repository ships the marketplace files directly:
 
 ```text
@@ -116,6 +123,8 @@ Generated marketplace plugin IDs:
 - `django`
 - `nonfiction-book-writing`
 - `rust`
+- `seo`
+- `traction`
 
 Marketplace plugins group related skills. Direct installs through the `skills`
 CLI still use the canonical skill directory names.
@@ -159,14 +168,13 @@ npm run check
 
 ## Publishing
 
-CI validates every push and pull request. Merging to `main` runs the release
-workflow, which chooses the next unused catalog version, rebuilds marketplace
-artifacts, commits any generated release updates, creates a `v*` tag, uploads a
-`skills-catalog` artifact, and publishes a GitHub release.
+CI validates every push and pull request. Publishing is tag-driven:
+
+1. Update the catalog version in `package.json`.
+2. Run `npm run check` and commit the generated marketplace artifacts.
+3. Create and push a matching `v*` tag, for example `v0.1.3`.
 
 The catalog version in `package.json` is also the generated marketplace plugin
-version, so Codex installs use a new plugin cache path for every release. If you
-need a non-patch release, update `package.json` before merging; otherwise the
-workflow bumps patch automatically when the current version is already tagged.
-
-Manual `v*` tags still run the publish workflow as a fallback.
+version, so Codex installs use a new plugin cache path when the version changes.
+The `Publish` workflow packages the registry and marketplace tarballs, then
+publishes them on the GitHub release for pushed `v*` tags.

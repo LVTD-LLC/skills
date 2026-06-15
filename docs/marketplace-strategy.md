@@ -113,7 +113,7 @@ Recommended distribution model:
 
 - Direct skills CLI installs use canonical skill names such as `django-htmx`.
 - Generated marketplace plugins group related skills, such as `django`, `rust`,
-  `nonfiction-book-writing`, and `cookiecutter`.
+  `nonfiction-book-writing`, `cookiecutter`, `seo`, and `traction`.
 - Keep grouped plugins generated from the same skill source, not hand-maintained
   copies.
 
@@ -140,8 +140,8 @@ Add per-skill versioning:
 
 For Git-backed marketplaces, pin generated entries to release tags or commit
 SHAs where the host supports it. Claude Code supports pinning plugin sources by
-ref and SHA in marketplace entries. This repo's `Release` workflow creates the
-tag and GitHub release automatically on `main`.
+ref and SHA in marketplace entries. This repo publishes GitHub releases from
+pushed `v*` tags.
 
 ### 5. Generate Artifacts, Do Not Hand-Edit Marketplaces
 
@@ -337,8 +337,8 @@ That registry can drive:
 - Generate Claude Code marketplace artifacts at `.claude-plugin/` and
   `plugins/`.
 - Generate Codex marketplace artifacts at `.agents/plugins/` and `plugins/`.
-- Link plugin skill folders back to canonical `skills/<skill-name>/` folders
-  instead of copying skill files into each host adapter.
+- Copy plugin skill folders from canonical `skills/<skill-name>/` folders so
+  Git-backed marketplace installs include real `SKILL.md` files.
 - Generate OpenClaw publish plan.
 - Commit the generated root marketplace artifacts so Git-backed installs work
   directly.
