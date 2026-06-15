@@ -51,8 +51,8 @@
       "Use the SEO plugin when working on SEO tasks. It includes the Product-Led SEO Strategy, SEO Opportunity Research, SEO Persona Intent Mapping, SEO Roadmap Prioritization, and Technical SEO Triage skills."
     ],
     "brandColor": "#FF4057",
-    "composerIcon": "./assets/app-icon.png",
-    "logo": "./assets/app-icon.png",
+    "composerIcon": "./assets/seo.svg",
+    "logo": "./assets/seo.svg",
     "screenshots": []
   }
 }

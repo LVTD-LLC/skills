@@ -7,14 +7,15 @@ import {
   root,
 } from "./skill-utils.mjs";
 import {
-  APP_ICON_FILE,
   ASSET_DIR,
   APP_ICON_PATH,
+  PLUGIN_ICON_DIR,
   claudeManifestForPlugin,
   claudeMarketplaceForSkills,
   codexManifestForPlugin,
   codexMarketplaceForSkills,
   marketplacePluginsForSkills,
+  pluginIconPath,
 } from "./marketplace-utils.mjs";
 const marketplaceDir = root;
 
@@ -135,10 +136,41 @@ async function assertSkillCopyFromSource(skill, copiedSkillPath, pluginName, err
 }
 
 async function assertAppIconExists(baseDir, label, errors) {
-  const iconPath = path.join(baseDir, ASSET_DIR, APP_ICON_FILE);
+  await assertAssetExists(baseDir, APP_ICON_PATH, label, errors);
+}
+
+async function assertAssetExists(baseDir, relativeAssetPath, label, errors) {
+  const iconPath = path.join(baseDir, relativeAssetPath.replace(/^\.\//, ""));
 
   if (!(await pathExists(iconPath))) {
-    errors.push(`${label} must include ${APP_ICON_PATH}; run npm run build`);
+    errors.push(`${label} must include ${relativeAssetPath}; run npm run build`);
+    return null;
+  }
+
+  return iconPath;
+}
+
+async function assertPluginIconMatchesSource(plugin, pluginDir, relativeAssetPath, errors) {
+  const copiedIconPath = await assertAssetExists(pluginDir, relativeAssetPath, plugin.name, errors);
+
+  if (!copiedIconPath || !plugin.iconFile) {
+    return;
+  }
+
+  const sourceIconPath = path.join(marketplaceDir, ASSET_DIR, PLUGIN_ICON_DIR, plugin.iconFile);
+
+  if (!(await pathExists(sourceIconPath))) {
+    errors.push(`${plugin.name} source icon ${sourceIconPath} is missing`);
+    return;
+  }
+
+  const [sourceContent, copiedContent] = await Promise.all([
+    readFile(sourceIconPath, "utf8"),
+    readFile(copiedIconPath, "utf8"),
+  ]);
+
+  if (copiedContent !== sourceContent) {
+    errors.push(`${plugin.name} icon must match ${sourceIconPath}; run npm run build`);
   }
 }
 
@@ -211,6 +243,7 @@ for (const plugin of plugins) {
   const expectedClaudeManifest = claudeManifestForPlugin(plugin);
   const expectedCodexManifest = codexManifestForPlugin(plugin);
   const expectedSkillEntries = plugin.skills.map((skill) => skill.name).sort();
+  const expectedPluginIconPath = pluginIconPath(plugin);
 
   const pluginSkillEntries = await listDirectoryEntryNames(
     pluginSkillsDir,
@@ -223,7 +256,7 @@ for (const plugin of plugins) {
     await assertSkillCopyFromSource(skill, path.join(pluginSkillsDir, skill.name), pluginName, errors);
   }
 
-  await assertAppIconExists(pluginDir, pluginName, errors);
+  await assertPluginIconMatchesSource(plugin, pluginDir, expectedPluginIconPath, errors);
 
   if (claudeMarketplaceMatches) {
     const claudeEntry = findEntry(claudeEntries, pluginName, "Claude marketplace", errors);
@@ -292,13 +325,13 @@ for (const plugin of plugins) {
       );
       assertEqual(
         codexManifest.interface?.logo,
-        APP_ICON_PATH,
+        expectedPluginIconPath,
         `${pluginName} Codex logo`,
         errors,
       );
       assertEqual(
         codexManifest.interface?.composerIcon,
-        APP_ICON_PATH,
+        expectedPluginIconPath,
         `${pluginName} Codex composerIcon`,
         errors,
       );

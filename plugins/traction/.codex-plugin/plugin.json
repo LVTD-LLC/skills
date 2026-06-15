@@ -71,8 +71,8 @@
       "Use the Traction plugin when working on startup traction and growth marketing tasks. It includes the Traction Bullseye, Traction Channel Research, Traction Critical Path, Traction Email Marketing, Traction Events Community, Traction Paid Acquisition, Traction Partnership Sales, Traction PR Playbook, Traction Review, Traction SEO Content, Traction Test Planner, and Traction Viral Engineering skills."
     ],
     "brandColor": "#FF4057",
-    "composerIcon": "./assets/app-icon.png",
-    "logo": "./assets/app-icon.png",
+    "composerIcon": "./assets/traction.svg",
+    "logo": "./assets/traction.svg",
     "screenshots": []
   }
 }

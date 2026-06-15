@@ -31,8 +31,8 @@
       "Use the Cookiecutter plugin when working on Cookiecutter tasks. It includes the Cookiecutter skill."
     ],
     "brandColor": "#FF4057",
-    "composerIcon": "./assets/app-icon.png",
-    "logo": "./assets/app-icon.png",
+    "composerIcon": "./assets/cookiecutter.svg",
+    "logo": "./assets/cookiecutter.svg",
     "screenshots": []
   }
 }

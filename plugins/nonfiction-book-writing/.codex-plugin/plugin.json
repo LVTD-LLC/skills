@@ -51,8 +51,8 @@
       "Use the Nonfiction Book Writing plugin when working on nonfiction book writing tasks. It includes the Beta Reader Feedback, Book Sales Optimization, Book Seed Marketing, Book TOC Lab, Reader Experience Edit, and Self-Publishing Production skills."
     ],
     "brandColor": "#FF4057",
-    "composerIcon": "./assets/app-icon.png",
-    "logo": "./assets/app-icon.png",
+    "composerIcon": "./assets/nonfiction-book-writing.svg",
+    "logo": "./assets/nonfiction-book-writing.svg",
     "screenshots": []
   }
 }
