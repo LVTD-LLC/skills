@@ -1,0 +1,4 @@
+interface:
+  display_name: "Broken Link Building"
+  short_description: "Find dead links and recover backlink value."
+  default_prompt: "Use $broken-link-building to plan a broken link building campaign."

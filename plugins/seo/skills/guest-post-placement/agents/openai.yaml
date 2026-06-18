@@ -1,0 +1,4 @@
+interface:
+  display_name: "Guest Post Placement"
+  short_description: "Plan editorial guest post link campaigns."
+  default_prompt: "Use $guest-post-placement to plan this guest post campaign."
