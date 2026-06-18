@@ -44,7 +44,7 @@ from rest_framework.pagination import CursorPagination
 
 class OrderCursorPagination(CursorPagination):
     page_size = 50
-    ordering = ["-created_at", "-id"]
+    ordering = ("-created_at", "-id")
 ```
 
 DRF cursor pagination is a good default for large append-style API result sets. It supports forward/reverse navigation, not arbitrary page numbers. Restrict user ordering fields if using ordering filters with cursor pagination.
