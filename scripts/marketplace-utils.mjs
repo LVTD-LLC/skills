@@ -25,7 +25,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     description:
       "Router guidance for choosing LVTD skills across coding, SEO, writing, product, library, and template workflows.",
     tags: ["skills", "router", "workflow", "agents"],
-    matches: (skill) => skill.name === "lvtd-skills-router" || hasSkillTag(skill, "router"),
+    matches: (skill) => skill.name === "lvtd-skills-router",
   },
   {
     name: "rust",
