@@ -59,8 +59,8 @@ Ask:
 [Starting audience.]
 
 ## Candidate Slices
-| Segment | Problem or Goal | Where To Find Them | Current Behavior | Value | Urgency | Consistency | Reachability | Fit |
-|---------|-----------------|--------------------|------------------|-------|---------|-------------|--------------|-----|
+| Segment | Problem or Goal | Where To Find Them | Current Behavior | Reachability | Value | Urgency | Consistency | Fit |
+|---------|-----------------|--------------------|------------------|--------------|-------|---------|-------------|-----|
 
 ## Recommended Starting Segment
 [One who-where pair.]
