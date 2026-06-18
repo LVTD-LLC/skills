@@ -60,8 +60,8 @@
       "Use the 80/20 Sales Marketing plugin when working on 80/20 sales and marketing tasks. It includes the 80/20 Conversion Message, 80/20 Customer Value RFM, 80/20 Funnel Economics, 80/20 Market Selection, 80/20 Power Curve, 80/20 Time Team Leverage, 80/20 Traffic Strategy, and 80/20 USP Guarantee skills."
     ],
     "brandColor": "#FF4057",
-    "composerIcon": "./assets/app-icon.png",
-    "logo": "./assets/app-icon.png",
+    "composerIcon": "./assets/eighty-twenty.svg",
+    "logo": "./assets/eighty-twenty.svg",
     "screenshots": []
   }
 }

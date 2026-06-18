@@ -78,6 +78,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "80/20 sales and marketing",
     description:
       "80/20 sales and marketing workflow guidance for leverage, market selection, traffic, conversion, offers, funnel economics, customer value, and time or team prioritization.",
+    iconFile: "eighty-twenty.svg",
     tags: ["eighty-twenty", "sales", "marketing", "pareto", "funnels"],
     matches: (skill) =>
       hasSkillTag(skill, "eighty-twenty") || skill.name.startsWith("eighty-twenty-"),
