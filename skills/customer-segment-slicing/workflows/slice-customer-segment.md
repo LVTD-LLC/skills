@@ -10,7 +10,8 @@ Use this workflow to turn a broad audience into a reachable starting segment.
 - [ ] For each subgroup, state the specific problem or goal they share.
 - [ ] Add where to find them this week.
 - [ ] Remove or split groups that are still too broad to locate.
-- [ ] Score each group on reachability, value, urgency, and team fit.
+- [ ] Score each group on reachability, value, urgency, consistency, and team
+  fit.
 - [ ] Choose one who-where pair for the next discovery batch.
 
 ## Scoring
@@ -21,6 +22,7 @@ Use 1-5 scores:
 |-----------|------------------|
 | Reachability | The team can find and contact them quickly. |
 | Value | The problem is tied to money, time, status, or urgency. |
+| Urgency | The group is actively trying to solve the problem now. |
 | Consistency | Members likely share similar needs and constraints. |
 | Fit | The team wants to serve this group and can credibly help. |
 

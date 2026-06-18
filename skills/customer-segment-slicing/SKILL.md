@@ -36,7 +36,8 @@ this MIT repo.
 4. Keep slicing any group that still produces mixed goals or feature requests.
 5. Add where to find each group: communities, events, tools, platforms, job
    titles, search queries, partners, directories, or physical locations.
-6. Score the slices by reachability, expected value, urgency, and founder fit.
+6. Score the slices by reachability, expected value, urgency, consistency, and
+   founder fit.
 7. Pick one starting segment for the next discovery or traction pass.
 
 ## Useful Segment Tests
@@ -58,8 +59,8 @@ Ask:
 [Starting audience.]
 
 ## Candidate Slices
-| Segment | Problem or Goal | Where To Find Them | Current Behavior | Value | Reachability | Fit |
-|---------|-----------------|--------------------|------------------|-------|--------------|-----|
+| Segment | Problem or Goal | Where To Find Them | Current Behavior | Value | Urgency | Consistency | Reachability | Fit |
+|---------|-----------------|--------------------|------------------|-------|---------|-------------|--------------|-----|
 
 ## Recommended Starting Segment
 [One who-where pair.]
