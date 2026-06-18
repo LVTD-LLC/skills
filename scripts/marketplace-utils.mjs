@@ -76,6 +76,22 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => hasSkillTag(skill, "books") && hasSkillTag(skill, "nonfiction"),
   },
   {
+    name: "customer-discovery",
+    displayName: "Customer Discovery",
+    category: "Marketing",
+    taskLabel: "customer discovery and customer interviews",
+    description:
+      "Customer discovery guidance for interview planning, segment slicing, conversation access, commitment validation, and learning synthesis.",
+    tags: [
+      "customer-discovery",
+      "customer-interviews",
+      "validation",
+      "research",
+      "startups",
+    ],
+    matches: (skill) => hasSkillTag(skill, "customer-discovery"),
+  },
+  {
     name: "traction",
     displayName: "Traction",
     category: "Marketing",

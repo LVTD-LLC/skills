@@ -1,0 +1,34 @@
+{
+  "name": "customer-discovery",
+  "version": "0.1.3",
+  "description": "Customer discovery guidance for interview planning, segment slicing, conversation access, commitment validation, and learning synthesis.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "customer-discovery",
+    "customer-interviews",
+    "validation",
+    "research",
+    "startups",
+    "customer-commitment-validation",
+    "customer-conversation-access",
+    "customer-discovery-conversations",
+    "customer-learning-notes",
+    "customer-segment-slicing",
+    "sales",
+    "commitment",
+    "outreach",
+    "interviews",
+    "notes",
+    "synthesis",
+    "segmentation",
+    "positioning"
+  ],
+  "skills": "./skills/",
+  "displayName": "Customer Discovery"
+}
