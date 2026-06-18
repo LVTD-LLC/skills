@@ -65,12 +65,15 @@ Clear ordering when it would add unintended grouping or sorting work.
 ```python
 from django.db import models
 from django.db.models import F
+from django.db.models.functions import Cast
 
 class LineItem(models.Model):
     quantity = models.PositiveIntegerField()
     unit_price_cents = models.PositiveIntegerField()
     total_cents = models.GeneratedField(
-        expression=F("quantity") * F("unit_price_cents"),
+        expression=Cast(F("quantity"), output_field=models.BigIntegerField()) * F(
+            "unit_price_cents"
+        ),
         output_field=models.BigIntegerField(),
         db_persist=True,
     )
