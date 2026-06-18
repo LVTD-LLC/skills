@@ -72,6 +72,17 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => isTractionSkill(skill),
   },
   {
+    name: "eighty-twenty",
+    displayName: "80/20 Sales Marketing",
+    category: "Marketing",
+    taskLabel: "80/20 sales and marketing",
+    description:
+      "80/20 sales and marketing workflow guidance for leverage, market selection, traffic, conversion, offers, funnel economics, customer value, and time or team prioritization.",
+    tags: ["eighty-twenty", "sales", "marketing", "pareto", "funnels"],
+    matches: (skill) =>
+      hasSkillTag(skill, "eighty-twenty") || skill.name.startsWith("eighty-twenty-"),
+  },
+  {
     name: "cookiecutter",
     displayName: "Cookiecutter",
     category: "Coding",
