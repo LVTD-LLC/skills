@@ -18,7 +18,7 @@ This skill is derived from Garrett French and Eric Ward's *Ultimate Guide to Lin
 
 ## Quick Start
 
-1. Load `guidelines.md` to choose the smallest useful reference set.
+1. Use the Contents table below to choose the smallest useful reference set.
 2. Use `workflows/run-link-outreach.md` for a full campaign workflow.
 3. Confirm the prospect has been qualified and the asset fits the audience.
 4. Write specific, honest, low-friction outreach.
@@ -43,7 +43,6 @@ When asked for outreach help, return:
 | Apply outreach rules | `references/core/rules.md` |
 | See subject line and response examples | `references/core/examples.md` |
 | Run outreach workflow | `workflows/run-link-outreach.md` |
-| Route by task | `guidelines.md` |
 
 ## Core Posture
 

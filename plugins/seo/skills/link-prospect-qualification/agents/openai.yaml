@@ -1,4 +1,0 @@
-interface:
-  display_name: "Link Prospect Qualification"
-  short_description: "Score and filter SEO link prospects."
-  default_prompt: "Use $link-prospect-qualification to qualify this link prospect list."

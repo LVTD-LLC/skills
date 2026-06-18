@@ -18,7 +18,7 @@ This skill is derived from Garrett French and Eric Ward's *Ultimate Guide to Lin
 
 ## Quick Start
 
-1. Load `guidelines.md` to choose the smallest useful reference set.
+1. Use the Contents table below to choose the smallest useful reference set.
 2. Use `workflows/qualify-link-prospects.md` for a full qualification pass.
 3. Apply hard reject gates before scoring.
 4. Use automated signals to triage, then manually inspect shortlisted pages.
@@ -42,7 +42,6 @@ When asked to qualify prospects, return:
 | Apply scoring rules | `references/core/rules.md` |
 | See scoring examples | `references/core/examples.md` |
 | Run qualification | `workflows/qualify-link-prospects.md` |
-| Route by task | `guidelines.md` |
 
 ## Core Posture
 

@@ -18,7 +18,7 @@ This skill is derived from Garrett French and Eric Ward's *Ultimate Guide to Lin
 
 ## Quick Start
 
-1. Load `guidelines.md` to choose the smallest useful reference set.
+1. Use the Contents table below to choose the smallest useful reference set.
 2. Use `workflows/plan-linkable-asset.md` for a full asset plan.
 3. Start with the linker audience and the problem their readers need solved.
 4. Audit existing assets before recommending new production.
@@ -44,7 +44,6 @@ When the user asks for linkable asset ideas or an asset audit, return:
 | Apply asset planning rules | `references/core/rules.md` |
 | See asset examples | `references/core/examples.md` |
 | Plan or audit assets | `workflows/plan-linkable-asset.md` |
-| Route by task | `guidelines.md` |
 
 ## Core Posture
 

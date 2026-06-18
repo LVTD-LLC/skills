@@ -1,4 +1,0 @@
-interface:
-  display_name: "Linkable Asset Planning"
-  short_description: "Plan SEO assets that publishers want to cite."
-  default_prompt: "Use $linkable-asset-planning to plan linkable asset ideas."

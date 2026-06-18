@@ -1,4 +1,0 @@
-interface:
-  display_name: "Link Building Strategy"
-  short_description: "Plan sustainable SEO link-building campaigns."
-  default_prompt: "Use $link-building-strategy to design a link-building campaign brief."

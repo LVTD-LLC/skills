@@ -18,7 +18,7 @@ This skill is derived from Garrett French and Eric Ward's *Ultimate Guide to Lin
 
 ## Quick Start
 
-1. Load `guidelines.md` to choose the smallest useful reference set.
+1. Use the Contents table below to choose the smallest useful reference set.
 2. Use `workflows/design-link-building-campaign.md` for a full campaign plan.
 3. Start with the business outcome and target pages, not a generic "get links" goal.
 4. Identify linker-valued audiences and publisher types before choosing a tactic.
@@ -45,7 +45,6 @@ When the user asks for a link-building strategy, return:
 | Apply strategy rules | `references/core/rules.md` |
 | See campaign examples | `references/core/examples.md` |
 | Build a full campaign brief | `workflows/design-link-building-campaign.md` |
-| Route by task | `guidelines.md` |
 
 ## Core Posture
 

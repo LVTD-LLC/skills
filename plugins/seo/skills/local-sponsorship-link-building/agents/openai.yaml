@@ -1,4 +1,0 @@
-interface:
-  display_name: "Local Sponsorship Link Building"
-  short_description: "Plan local sponsorships for SEO links."
-  default_prompt: "Use $local-sponsorship-link-building to plan local sponsorship link opportunities."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Link Outreach Acquisition"
-  short_description: "Draft and manage SEO link outreach."
-  default_prompt: "Use $link-outreach-acquisition to draft this link outreach campaign."

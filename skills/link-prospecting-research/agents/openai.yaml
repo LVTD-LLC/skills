@@ -1,4 +1,0 @@
-interface:
-  display_name: "Link Prospecting Research"
-  short_description: "Research and map SEO link prospects."
-  default_prompt: "Use $link-prospecting-research to build a link prospecting research map."

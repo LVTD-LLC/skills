@@ -18,7 +18,7 @@ This skill is derived from Garrett French and Eric Ward's *Ultimate Guide to Lin
 
 ## Quick Start
 
-1. Load `guidelines.md` to choose the smallest useful reference set.
+1. Use the Contents table below to choose the smallest useful reference set.
 2. Use `workflows/run-broken-link-building.md` for a full campaign.
 3. Start with a strong replacement asset.
 4. Recheck every dead URL before metrics, backlink review, or outreach.
@@ -45,7 +45,6 @@ When asked for broken link building, return:
 | Apply BLB rules | `references/core/rules.md` |
 | See tracking examples | `references/core/examples.md` |
 | Run BLB or salvage workflow | `workflows/run-broken-link-building.md` |
-| Route by task | `guidelines.md` |
 
 ## Core Posture
 

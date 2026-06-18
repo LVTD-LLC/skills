@@ -18,7 +18,7 @@ This skill is derived from Garrett French and Eric Ward's *Ultimate Guide to Lin
 
 ## Quick Start
 
-1. Load `guidelines.md` to choose the smallest useful reference set.
+1. Use the Contents table below to choose the smallest useful reference set.
 2. Use `workflows/plan-local-sponsorship-campaign.md` for a full campaign.
 3. Clarify geography, goals, audience, budget, restrictions, and required benefits before prospecting.
 4. Evaluate sponsorships by local relevance, audience fit, fulfillment reliability, cost, and relationship upside.
@@ -45,7 +45,6 @@ When asked for local sponsorship link building, return:
 | Apply sponsorship rules | `references/core/rules.md` |
 | See query and scoring examples | `references/core/examples.md` |
 | Plan a local sponsorship campaign | `workflows/plan-local-sponsorship-campaign.md` |
-| Route by task | `guidelines.md` |
 
 ## Core Posture
 

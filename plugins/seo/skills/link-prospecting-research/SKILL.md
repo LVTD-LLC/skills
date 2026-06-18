@@ -18,7 +18,7 @@ This skill is derived from Garrett French and Eric Ward's *Ultimate Guide to Lin
 
 ## Quick Start
 
-1. Load `guidelines.md` to choose the smallest useful reference set.
+1. Use the Contents table below to choose the smallest useful reference set.
 2. Use `workflows/research-link-prospects.md` for a full prospecting pass.
 3. Start from available linkable assets and campaign goals.
 4. Build keyword classes, opportunity types, query patterns, competitor backlink angles, list sources, and autocomplete expansions.
@@ -45,7 +45,6 @@ When asked to research prospects, return:
 | Apply research rules | `references/core/rules.md` |
 | Use query pattern examples | `references/core/examples.md` |
 | Run a research pass | `workflows/research-link-prospects.md` |
-| Route by task | `guidelines.md` |
 
 ## Core Posture
 
