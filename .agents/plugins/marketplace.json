@@ -7,6 +7,18 @@
   },
   "plugins": [
     {
+      "name": "router",
+      "source": {
+        "source": "local",
+        "path": "./plugins/router"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "rust",
       "source": {
         "source": "local",

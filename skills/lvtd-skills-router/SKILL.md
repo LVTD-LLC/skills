@@ -1,0 +1,134 @@
+---
+name: lvtd-skills-router
+description: Use when the user is unsure which LVTD skill fits their problem, asks what skill to use, describes a cross-domain workflow, or needs help choosing between Django, Rust, SEO, writing, product, library, or template skills.
+license: MIT
+compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
+metadata:
+  version: "0.1.0"
+  displayName: Skills Router
+  category: Productivity
+  tags: skills,router,workflow,agents
+---
+
+# LVTD Skills Router
+
+Use this skill to choose the smallest useful set of LVTD skills for the user's
+problem. All skills in this catalog can be model-invoked; this router exists to
+reduce selection friction, not to create a separate manual-only command layer.
+
+## Routing Workflow
+
+1. Identify the user's domain, desired outcome, and whether they are asking for
+   advice, implementation, review, or troubleshooting.
+2. Choose one primary skill. Add secondary skills only when they clearly cover a
+   separate concern in the same workflow.
+3. If the user asked which skill to use, answer with the recommendation and why.
+4. If the user asked for work to be done and the matching skill is available,
+   continue by using that skill's workflow.
+5. If the matching skill is not installed in the current client, name the skill
+   and the marketplace plugin that contains it.
+
+## Skill Map
+
+Use these defaults when the user's request is ambiguous:
+
+- `django-htmx`: HTMX interactions, partial templates, request branching,
+  swaps, triggers, redirects, and server-rendered Django UI.
+- `alpinejs-django`: Alpine.js behavior in Django templates, especially local
+  UI state around HTMX swaps.
+- `django-q2`: Django Q2 tasks, schedules, qcluster workers, Redis broker
+  setup, and background job debugging.
+- `django-test-profiling`: finding the slowest Django tests and runtime
+  bottlenecks before optimizing.
+- `django-test-performance`: improving slow Django test suites after the
+  bottlenecks are known or likely.
+- `django-test-data`: cleaning up factories, fixtures, setup methods, and
+  database-heavy test data.
+- `django-test-parallelization`: enabling or debugging Django parallel test
+  execution, pytest-xdist, and shared-resource isolation.
+- `django-ci-test-optimization`: tuning Django test jobs in CI, including
+  caching, splitting, and command design.
+- `django-targeted-mocking`: replacing external services, settings, time,
+  stdin/stdout, or HTTP calls in Django tests without broad fragile mocks.
+- `fastmcp-django`: FastMCP servers inside Django apps, including ASGI mounting,
+  ORM access, auth, and Streamable HTTP deployment.
+- `rust-api-test-harness`: Rust HTTP API test harnesses, black-box integration
+  tests, random-port app startup, real database isolation, and CI cargo checks.
+- `rust-sqlx-postgres-service`: SQLx migrations, compile-time checked queries,
+  pool injection, transactions, and Postgres integration tests.
+- `rust-domain-boundaries`: newtypes, parse-don't-validate constructors,
+  request DTO boundaries, and property tests.
+- `rust-error-observability`: typed errors, HTTP adapters, tracing spans,
+  redaction, and async failure diagnosis.
+- `rust-service-security`: login, password hashing, sessions, route protection,
+  and authentication middleware.
+- `rust-idempotent-workflows`: retry-safe workflows, duplicate requests,
+  queues, side effects, concurrency, and idempotency keys.
+- `rust-deployable-service`: Docker, runtime config, secrets, health checks,
+  SQLx offline builds, and production startup validation.
+- `cookiecutter`: Cookiecutter templates, Jinja rendering, hooks, options,
+  generated project validation, and template cleanup.
+- `seo-opportunity-research`: finding organic growth opportunities from
+  customer demand, search behavior, communities, and competitive gaps.
+- `seo-persona-intent-mapping`: mapping personas, search intent, funnel stage,
+  formats, CTAs, and localization needs into SEO plans.
+- `product-led-seo-strategy`: turning product value, page architecture,
+  taxonomy, and scalable experiences into a product-led SEO strategy.
+- `seo-roadmap-prioritization`: scoring SEO initiatives, sequencing roadmap
+  work, and framing cross-functional SEO asks.
+- `technical-seo-triage`: diagnosing traffic drops, indexing failures,
+  canonicals, redirects, crawlability, and migration risk.
+- `book-toc-lab`: planning or restructuring useful nonfiction books around a
+  promise, scope, reader outcome, and takeaway-first table of contents.
+- `reader-experience-edit`: revising practical nonfiction for usefulness,
+  pacing, front-loaded insight, and beta-readiness.
+- `beta-reader-feedback`: planning beta rounds and turning reader feedback into
+  manuscript revisions.
+- `book-seed-marketing`: choosing first-reader channels and seed marketing for
+  useful nonfiction books.
+- `book-sales-optimization`: improving book product pages, retailer funnels,
+  pricing, formats, reviews, and post-launch sales.
+- `self-publishing-production`: final production sequencing for editing,
+  proofreading, layout, cover, print-on-demand, ISBNs, and launch readiness.
+- `traction-bullseye`: choosing and focusing startup traction channels.
+- `traction-channel-research`: researching comparable growth paths and channel
+  options before Bullseye ranking.
+- `traction-test-planner`: designing cheap, measurable channel tests and
+  success criteria.
+- `traction-review`: reviewing traction experiment results and deciding whether
+  to double down, iterate, or pivot.
+- `traction-critical-path`: setting traction goals and deciding what not to do.
+- `traction-seo-content`, `traction-email-marketing`,
+  `traction-paid-acquisition`, `traction-events-community`,
+  `traction-partnership-sales`, `traction-pr-playbook`, and
+  `traction-viral-engineering`: channel-specific traction test planning.
+- `make-product-viral`: improving a product, landing page, pricing page, launch
+  page, free tool, or social preview for clarity, memorability, and sharing.
+- `calibredb`: managing Calibre libraries through the `calibredb` CLI.
+
+## Marketplace Plugins
+
+- `router`: `lvtd-skills-router`
+- `django`: Django server-rendered UI, jobs, FastMCP, and test optimization
+  skills.
+- `rust`: Rust API testing, persistence, domain, observability, security,
+  idempotency, and deployment skills.
+- `seo`: `seo-opportunity-research`, `seo-persona-intent-mapping`,
+  `product-led-seo-strategy`, `seo-roadmap-prioritization`,
+  `technical-seo-triage`
+- `nonfiction-book-writing`: nonfiction planning, editing, beta feedback,
+  seed marketing, sales optimization, and production skills.
+- `traction`: startup traction, channel research, test planning, and
+  channel-specific growth skills.
+- `cookiecutter`: `cookiecutter`
+
+`calibredb` and `make-product-viral` may be direct-install skills when they are
+not present in a generated marketplace plugin.
+
+## Avoid
+
+- Do not load every candidate skill just to browse. Route from the user's
+  current request first.
+- Do not continue routing once a specific skill clearly fits.
+- Do not force a planning/execution taxonomy onto the catalog. Pick by domain,
+  outcome, and evidence needed for the current request.

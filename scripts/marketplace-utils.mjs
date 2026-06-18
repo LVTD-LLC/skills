@@ -18,6 +18,16 @@ export const AUTHOR = {
 
 const MARKETPLACE_PLUGIN_GROUPS = [
   {
+    name: "router",
+    displayName: "Skill Router",
+    category: "Productivity",
+    taskLabel: "choosing LVTD skills",
+    description:
+      "Router guidance for choosing LVTD skills across coding, SEO, writing, product, library, and template workflows.",
+    tags: ["skills", "router", "workflow", "agents"],
+    matches: (skill) => skill.name === "lvtd-skills-router" || hasSkillTag(skill, "router"),
+  },
+  {
     name: "rust",
     displayName: "Rust",
     category: "Coding",
