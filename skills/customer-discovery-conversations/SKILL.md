@@ -4,7 +4,7 @@ description: Plan and audit customer discovery conversations that produce concre
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.2"
+  version: "0.1.3"
   displayName: Customer Discovery Conversations
   category: Marketing
   tags: customer-discovery,customer-interviews,startups,validation,research

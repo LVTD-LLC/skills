@@ -1,6 +1,6 @@
 {
   "name": "customer-discovery",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Customer discovery guidance for interview planning, segment slicing, conversation access, commitment validation, and learning synthesis.",
   "author": {
     "name": "LVTD",
