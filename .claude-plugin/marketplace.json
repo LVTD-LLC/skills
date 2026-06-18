@@ -7,6 +7,32 @@
   "version": "0.1.2",
   "plugins": [
     {
+      "name": "router",
+      "displayName": "Skill Router",
+      "source": "./plugins/router",
+      "description": "Router guidance for choosing LVTD skills across coding, SEO, writing, product, library, and template workflows.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "Productivity",
+      "tags": [
+        "skills",
+        "router",
+        "workflow",
+        "agents"
+      ],
+      "keywords": [
+        "router",
+        "skills",
+        "workflow",
+        "agents",
+        "lvtd-skills-router"
+      ]
+    },
+    {
       "name": "rust",
       "displayName": "Rust",
       "source": "./plugins/rust",

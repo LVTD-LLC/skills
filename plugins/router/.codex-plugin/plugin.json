@@ -1,0 +1,39 @@
+{
+  "name": "router",
+  "version": "0.1.2",
+  "description": "Router guidance for choosing LVTD skills across coding, SEO, writing, product, library, and template workflows.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "router",
+    "skills",
+    "workflow",
+    "agents",
+    "lvtd-skills-router"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Skill Router",
+    "shortDescription": "Router guidance for choosing LVTD skills across coding, SEO, writing, product, library, and template workflows.",
+    "longDescription": "Router guidance for choosing LVTD skills across coding, SEO, writing, product, library, and template workflows. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Skills Router. Category: Productivity.",
+    "developerName": "LVTD",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Skill Router plugin when working on choosing LVTD skills tasks. It includes the Skills Router skill."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
+    "screenshots": []
+  }
+}
