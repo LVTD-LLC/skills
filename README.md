@@ -43,15 +43,25 @@ points the agent at the smallest useful set of skills.
 | Skill | Use when |
 | --- | --- |
 | [`alpinejs-django`](skills/alpinejs-django/SKILL.md) | Adding, changing, or debugging Alpine.js behavior in Django templates, especially when HTMX partial swaps are also present. |
+| [`beta-reader-feedback`](skills/beta-reader-feedback/SKILL.md) | Planning beta reader rounds and turning real reader feedback into manuscript revisions. |
+| [`book-sales-optimization`](skills/book-sales-optimization/SKILL.md) | Improving useful nonfiction book sales through retailer funnels, descriptions, reviews, pricing, formats, and fan engagement. |
+| [`book-seed-marketing`](skills/book-seed-marketing/SKILL.md) | Planning early-reader marketing channels, digital tours, Amazon PPC, event giveaways, bulk sales, and writing in public. |
 | [`book-toc-lab`](skills/book-toc-lab/SKILL.md) | Designing and pressure-testing useful nonfiction book promises, scopes, reader outcomes, and tables of contents before drafting. |
 | [`calibredb`](skills/calibredb/SKILL.md) | Managing and querying Calibre libraries with the calibredb CLI, including metadata, formats, exports, checks, and full-text search. |
 | [`cookiecutter`](skills/cookiecutter/SKILL.md) | Adding, changing, testing, or debugging Cookiecutter templates, including Jinja rendering, hooks, option cleanup, and generated-project validation. |
+| [`django-ci-test-optimization`](skills/django-ci-test-optimization/SKILL.md) | Optimizing Django and pytest-django test execution in CI with caching, splitting, database reuse, and parallel workers. |
 | [`django-htmx`](skills/django-htmx/SKILL.md) | Building and reviewing HTMX interactions in Django server-rendered apps, including partial responses, headers, swaps, triggers, forms, and tests. |
 | [`django-q2`](skills/django-q2/SKILL.md) | Adding, changing, testing, or debugging Django Q2 background jobs, schedules, workers, and broker configuration. |
+| [`django-targeted-mocking`](skills/django-targeted-mocking/SKILL.md) | Mocking Django test boundaries safely with settings overrides, autospecced mocks, HTTP mocks, time freezing, and IO capture. |
+| [`django-test-data`](skills/django-test-data/SKILL.md) | Designing faster, clearer Django test data with factories, setup methods, fixture cleanup, and integration boundaries. |
+| [`django-test-parallelization`](skills/django-test-parallelization/SKILL.md) | Safely parallelizing Django and pytest-django tests while handling isolation, shared resources, locks, and flakiness. |
+| [`django-test-performance`](skills/django-test-performance/SKILL.md) | Improving slow Django test suites through profiling, test settings, database tuning, parallel execution, and CI changes. |
+| [`django-test-profiling`](skills/django-test-profiling/SKILL.md) | Measuring slow Django test suites with runner timing, pytest durations, cProfile, py-spy, and profiler visualizations. |
 | [`fastmcp-django`](skills/fastmcp-django/SKILL.md) | Adding, changing, deploying, testing, or debugging FastMCP MCP servers in existing Django apps, including ASGI mounting, ORM access, auth, and Streamable HTTP deployment. |
 | [`lvtd-skills-router`](skills/lvtd-skills-router/SKILL.md) | Choosing which LVTD skill or small set of skills fits a user problem across coding, SEO, writing, product, library, and template workflows. |
 | [`make-product-viral`](skills/make-product-viral/SKILL.md) | Making a product, landing page, pricing page, launch page, free tool, or social preview easier to understand, buy, remember, and share. |
 | [`product-led-seo-strategy`](skills/product-led-seo-strategy/SKILL.md) | Creating product-led SEO strategies from product value, search intent, page architecture, taxonomy, and scalable user experiences. |
+| [`reader-experience-edit`](skills/reader-experience-edit/SKILL.md) | Auditing and revising practical nonfiction for reader value, pacing, front-loaded insight, boredom, and beta-readiness. |
 | [`rust-api-test-harness`](skills/rust-api-test-harness/SKILL.md) | Adding, changing, testing, or debugging Rust HTTP APIs with black-box integration tests, random-port app startup, state isolation, mocks, and CI-ready cargo checks. |
 | [`rust-deployable-service`](skills/rust-deployable-service/SKILL.md) | Preparing, containerizing, configuring, testing, or reviewing Rust services for deployment, including Docker, runtime config, secrets, health checks, SQLx offline builds, and startup validation. |
 | [`rust-domain-boundaries`](skills/rust-domain-boundaries/SKILL.md) | Modeling, validating, refactoring, or reviewing Rust service domain boundaries with newtypes, parse-don't-validate constructors, request DTO boundaries, and property tests. |
@@ -59,10 +69,23 @@ points the agent at the smallest useful set of skills.
 | [`rust-idempotent-workflows`](skills/rust-idempotent-workflows/SKILL.md) | Designing, implementing, testing, or debugging Rust service workflows that must survive retries, duplicate requests, crashes, concurrency, queues, and side effects. |
 | [`rust-service-security`](skills/rust-service-security/SKILL.md) | Adding, changing, testing, or reviewing security-sensitive Rust web service behavior, including login, password hashing, session cookies, route protection, and auth middleware. |
 | [`rust-sqlx-postgres-service`](skills/rust-sqlx-postgres-service/SKILL.md) | Adding, changing, testing, or reviewing Postgres persistence in Rust services using SQLx migrations, compile-time checked queries, pools, transactions, and integration tests. |
+| [`self-publishing-production`](skills/self-publishing-production/SKILL.md) | Planning final nonfiction production tasks, including copyediting, proofing, layout, cover files, print-on-demand, ISBNs, and launch readiness. |
 | [`seo-opportunity-research`](skills/seo-opportunity-research/SKILL.md) | Finding product-led and blue-ocean SEO opportunities from customer demand, query behavior, competitive gaps, communities, and product strengths. |
 | [`seo-persona-intent-mapping`](skills/seo-persona-intent-mapping/SKILL.md) | Mapping SEO personas, search intent, funnel stage, content formats, CTAs, device context, and localization needs. |
 | [`seo-roadmap-prioritization`](skills/seo-roadmap-prioritization/SKILL.md) | Prioritizing SEO initiatives as product roadmap work with impact, effort, confidence, resourcing, and business alignment. |
 | [`technical-seo-triage`](skills/technical-seo-triage/SKILL.md) | Diagnosing technical SEO issues around discovery, crawling, indexing, ranking, canonicals, redirects, duplicate content, and migrations. |
+| [`traction-bullseye`](skills/traction-bullseye/SKILL.md) | Applying the Bullseye framework to brainstorm, rank, test, and focus startup traction channels. |
+| [`traction-channel-research`](skills/traction-channel-research/SKILL.md) | Researching and shortlisting acquisition channels before running Bullseye tests. |
+| [`traction-critical-path`](skills/traction-critical-path/SKILL.md) | Setting traction goals and identifying the critical path so teams decide what not to do. |
+| [`traction-email-marketing`](skills/traction-email-marketing/SKILL.md) | Designing email marketing traction tests for acquisition, engagement, retention, revenue, and referrals. |
+| [`traction-events-community`](skills/traction-events-community/SKILL.md) | Planning platform, trade show, offline event, speaking, and community-building traction experiments. |
+| [`traction-paid-acquisition`](skills/traction-paid-acquisition/SKILL.md) | Planning paid acquisition tests across SEM, social/display ads, and offline ads. |
+| [`traction-partnership-sales`](skills/traction-partnership-sales/SKILL.md) | Planning business development, sales, affiliate, outbound, and channel partner traction experiments. |
+| [`traction-pr-playbook`](skills/traction-pr-playbook/SKILL.md) | Planning PR traction experiments, including blog outreach, publicity, launch coverage, and unconventional PR. |
+| [`traction-review`](skills/traction-review/SKILL.md) | Reviewing traction experiment results and deciding whether to double down, iterate, repeat Bullseye, or pivot. |
+| [`traction-seo-content`](skills/traction-seo-content/SKILL.md) | Planning SEO and content marketing traction tests, including organic growth, content calendars, and link-building experiments. |
+| [`traction-test-planner`](skills/traction-test-planner/SKILL.md) | Designing cheap, measurable traction tests with success criteria and growth experiment structure. |
+| [`traction-viral-engineering`](skills/traction-viral-engineering/SKILL.md) | Planning viral marketing and engineering-as-marketing experiments such as referral loops, calculators, tools, and widgets. |
 
 ## Repository Layout
 
