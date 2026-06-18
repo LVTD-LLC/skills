@@ -71,7 +71,7 @@ class LineItem(models.Model):
     unit_price_cents = models.PositiveIntegerField()
     total_cents = models.GeneratedField(
         expression=F("quantity") * F("unit_price_cents"),
-        output_field=models.PositiveIntegerField(),
+        output_field=models.BigIntegerField(),
         db_persist=True,
     )
 ```

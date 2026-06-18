@@ -56,13 +56,21 @@ Do not call `save()` on unmanaged materialized-view models. Keep them read-only 
 ## Refresh Command
 
 ```python
-from django.core.management.base import BaseCommand
+from django.core.management.base import BaseCommand, CommandError
 from django.db import connection
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        with connection.cursor() as cursor:
-            cursor.execute("REFRESH MATERIALIZED VIEW CONCURRENTLY account_order_summary")
+        if connection.in_atomic_block:
+            raise CommandError("Concurrent materialized view refresh cannot run in a transaction.")
+
+        previous_autocommit = connection.get_autocommit()
+        connection.set_autocommit(True)
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("REFRESH MATERIALIZED VIEW CONCURRENTLY account_order_summary")
+        finally:
+            connection.set_autocommit(previous_autocommit)
 ```
 
 Use non-concurrent refresh for initial population or when reads can be blocked during refresh. `CONCURRENTLY` cannot be combined with `WITH NO DATA` and requires at least one unique index using only column names and covering all rows.
