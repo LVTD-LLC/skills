@@ -28,9 +28,13 @@
    ```
 
 3. Put large examples, fixtures, or scripts under the same skill directory.
-4. If a skill includes `scripts/`, make executable script files executable.
-5. Run `npm run check` before finishing.
-6. Commit source skill changes together with regenerated marketplace artifacts.
+4. When a skill uses external source material, attribute the source in the skill
+   package. Include links where stable public URLs exist, and use title/author
+   plus chapter, section, or topic references for books and long-form sources
+   when useful.
+5. If a skill includes `scripts/`, make executable script files executable.
+6. Run `npm run check` before finishing.
+7. Commit source skill changes together with regenerated marketplace artifacts.
 
 ## Validation Commands
 

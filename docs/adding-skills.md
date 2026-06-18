@@ -63,6 +63,24 @@ Prefer deterministic scripts over prose for repeated mechanical checks. Keep
 scripts local to the skill directory and document when the agent should run
 them.
 
+## Source Attribution
+
+When a skill uses external source material, attribute it in the skill package.
+This includes books, articles, posts, talks, libraries, framework docs, public
+repos, plugins, and existing skills.
+
+Keep attribution concise and useful:
+
+- Name the source and author or organization.
+- Link to the source when a stable public URL exists.
+- For books or long-form sources, include title, author, and relevant chapters,
+  sections, or durable topic references when helpful.
+- State that guidance is transformed or paraphrased when the skill derives from
+  copyrighted source material; do not copy long passages into the skill.
+- Put source notes in `SKILL.md` when attribution helps users understand the
+  skill immediately. For larger source maps, put them under `references/` and
+  link to them from `SKILL.md`.
+
 ## Generated Artifacts
 
 Do not edit these paths by hand:
@@ -128,5 +146,6 @@ committed generated marketplace artifacts are stale.
 - Marketplace grouping rules are updated when the skill should ship in a
   generated plugin.
 - Generated marketplace artifacts are regenerated with `npm run build`.
+- Source material is attributed with links where possible.
 - `npm run check` passes.
 - Any workflow changes are reflected in this guide and `AGENTS.md`.
