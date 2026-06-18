@@ -1,6 +1,6 @@
 ---
 name: rust-trait-api-design
-description: Use when designing, refactoring, or reviewing Rust traits, generic APIs, trait bounds, trait objects, associated types, impl Trait, conversion traits, or public crate interfaces.
+description: Design and review Rust trait APIs, generic bounds, dispatch models, and conversion contracts for clear public interfaces. Use when designing, refactoring, or reviewing traits, generics, trait objects, associated types, impl Trait, From/TryFrom, AsRef, Borrow, or crate APIs.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
@@ -74,4 +74,5 @@ Before making a public trait object-safe, check:
 - A trait object was used because lifetimes were confusing, not because runtime
   dispatch is required.
 - `async-trait` is used in a public trait without checking whether native
-  `async fn` in traits or boxed futures fit the dispatch needs better.
+  `async fn` in traits, `trait-variant`, or boxed futures fit the dispatch and
+  `Send` needs better.

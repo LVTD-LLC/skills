@@ -67,6 +67,18 @@
       "category": "Marketing"
     },
     {
+      "name": "eighty-twenty",
+      "source": {
+        "source": "local",
+        "path": "./plugins/eighty-twenty"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Marketing"
+    },
+    {
       "name": "cookiecutter",
       "source": {
         "source": "local",

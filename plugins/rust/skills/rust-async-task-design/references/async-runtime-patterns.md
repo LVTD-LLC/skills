@@ -51,6 +51,7 @@ The block ensures the guard is dropped before suspension.
 
 - Use async filesystem/network APIs when available and appropriate.
 - Use `tokio::task::spawn_blocking` for blocking operations that finish.
+- Use dedicated threads for long-lived or persistent blocking loops.
 - Limit CPU-heavy `spawn_blocking` calls with a semaphore or use Rayon.
 - Do not expect aborting a started `spawn_blocking` task to stop it.
 

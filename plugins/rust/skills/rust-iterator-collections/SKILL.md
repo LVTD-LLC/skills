@@ -1,6 +1,6 @@
 ---
 name: rust-iterator-collections
-description: Use when writing, refactoring, or reviewing Rust iterator pipelines, collection APIs, HashMap Entry usage, collect, FromIterator, Extend, custom iterators, or allocation-heavy loops.
+description: Design and review Rust iterator pipelines and collection code for clear ownership, allocation, ordering, and error behavior. Use when writing, refactoring, or reviewing iterators, HashMap Entry usage, collect, FromIterator, Extend, custom iterators, or allocation-heavy loops.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:

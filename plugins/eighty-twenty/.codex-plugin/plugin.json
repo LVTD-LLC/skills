@@ -1,0 +1,67 @@
+{
+  "name": "eighty-twenty",
+  "version": "0.2.0",
+  "description": "80/20 sales and marketing workflow guidance for leverage, market selection, traffic, conversion, offers, funnel economics, customer value, and time or team prioritization.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "eighty-twenty",
+    "sales",
+    "marketing",
+    "pareto",
+    "funnels",
+    "eighty-twenty-conversion-message",
+    "eighty-twenty-customer-value-rfm",
+    "eighty-twenty-funnel-economics",
+    "eighty-twenty-market-selection",
+    "eighty-twenty-power-curve",
+    "eighty-twenty-time-team-leverage",
+    "eighty-twenty-traffic-strategy",
+    "eighty-twenty-usp-guarantee",
+    "copywriting",
+    "conversion",
+    "qualification",
+    "rfm",
+    "segmentation",
+    "customers",
+    "analytics",
+    "economics",
+    "experiments",
+    "prioritization",
+    "delegation",
+    "hiring",
+    "outsourcing",
+    "productivity",
+    "traffic",
+    "media",
+    "advertising",
+    "positioning",
+    "offers",
+    "guarantees"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "80/20 Sales Marketing",
+    "shortDescription": "80/20 sales and marketing workflow guidance for leverage, market selection, traffic, conversion, offers, funnel economics, customer value, and time or team prioritization.",
+    "longDescription": "80/20 sales and marketing workflow guidance for leverage, market selection, traffic, conversion, offers, funnel economics, customer value, and time or team prioritization. Packaged as a marketplace plugin for Codex and Claude Code. Includes: 80/20 Conversion Message, 80/20 Customer Value RFM, 80/20 Funnel Economics, 80/20 Market Selection, 80/20 Power Curve, 80/20 Time Team Leverage, 80/20 Traffic Strategy, 80/20 USP Guarantee. Category: Marketing.",
+    "developerName": "LVTD",
+    "category": "Marketing",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the 80/20 Sales Marketing plugin when working on 80/20 sales and marketing tasks. It includes the 80/20 Conversion Message, 80/20 Customer Value RFM, 80/20 Funnel Economics, 80/20 Market Selection, 80/20 Power Curve, 80/20 Time Team Leverage, 80/20 Traffic Strategy, and 80/20 USP Guarantee skills."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/eighty-twenty.svg",
+    "logo": "./assets/eighty-twenty.svg",
+    "screenshots": []
+  }
+}

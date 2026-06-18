@@ -1,6 +1,6 @@
 ---
 name: rust-concurrency-primitives
-description: Use when writing, refactoring, or reviewing Rust threads, scoped threads, channels, Arc, Mutex, RwLock, Condvar, atomics, OnceLock, LazyLock, Send, Sync, deadlocks, or shared-state concurrency.
+description: Design and review thread-based Rust concurrency with explicit ownership, sharing, and synchronization choices. Use when writing, refactoring, or reviewing threads, scoped threads, channels, Arc, Mutex, RwLock, Condvar, atomics, OnceLock, LazyLock, Send, Sync, deadlocks, or shared state.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:

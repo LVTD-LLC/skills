@@ -1,6 +1,6 @@
 ---
 name: rust-unsafe-boundaries
-description: Use when writing, refactoring, or reviewing Rust unsafe code, raw pointers, unsafe functions, unsafe traits, MaybeUninit, pointer aliasing, panic safety, Miri checks, or safe abstractions over unsafe internals.
+description: Isolate and review unsafe Rust behind small, documented, testable boundaries with explicit invariants. Use when writing, refactoring, or reviewing unsafe code, raw pointers, unsafe functions, unsafe traits, MaybeUninit, pointer aliasing, panic safety, Miri checks, or safe abstractions over unsafe internals.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:

@@ -78,6 +78,22 @@ Use these defaults when the user's request is ambiguous:
   work, and framing cross-functional SEO asks.
 - `technical-seo-triage`: diagnosing traffic drops, indexing failures,
   canonicals, redirects, crawlability, and migration risk.
+- `link-building-strategy`: designing sustainable link-building campaigns
+  around business outcomes, assets, publisher ecosystems, metrics, and scope.
+- `linkable-asset-planning`: planning or auditing link-worthy assets from
+  market pains, existing strengths, competitor evidence, and linker audiences.
+- `link-prospecting-research`: researching link opportunity types, queries,
+  competitor backlink angles, list sources, and autocomplete seed expansions.
+- `link-prospect-qualification`: scoring link prospects for relevance, trust,
+  editorial quality, authority, outreach fit, spam risk, and asset readiness.
+- `link-outreach-acquisition`: drafting and operating link outreach with
+  personalization, subject lines, response handling, tracking, and guardrails.
+- `broken-link-building`: finding dead-resource opportunities, qualifying
+  dead backlinks, preparing replacement outreach, and salvaging old owned URLs.
+- `guest-post-placement`: planning citation-justified guest post placements,
+  publisher quality checks, pitch titles, and placement tracking.
+- `local-sponsorship-link-building`: planning local sponsorship campaigns for
+  local visibility, relationships, fulfillment, measurement, and links.
 - `book-toc-lab`: planning or restructuring useful nonfiction books around a
   promise, scope, reader outcome, and takeaway-first table of contents.
 - `reader-experience-edit`: revising practical nonfiction for usefulness,
@@ -115,7 +131,11 @@ Use these defaults when the user's request is ambiguous:
   idempotency, and deployment skills.
 - `seo`: `seo-opportunity-research`, `seo-persona-intent-mapping`,
   `product-led-seo-strategy`, `seo-roadmap-prioritization`,
-  `technical-seo-triage`
+  `technical-seo-triage`, `link-building-strategy`,
+  `linkable-asset-planning`, `link-prospecting-research`,
+  `link-prospect-qualification`, `link-outreach-acquisition`,
+  `broken-link-building`, `guest-post-placement`,
+  `local-sponsorship-link-building`
 - `nonfiction-book-writing`: nonfiction planning, editing, beta feedback,
   seed marketing, sales optimization, and production skills.
 - `traction`: startup traction, channel research, test planning, and

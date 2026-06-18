@@ -44,6 +44,9 @@ output types.
 
 - Is downstream implementation allowed? If not, use a sealed trait pattern.
 - Are object-safety requirements intentional and documented?
+- For async methods, have you chosen between private `async fn`, public
+  `fn -> impl Future + Send`, `trait-variant`, or boxed futures based on
+  `Send` and dynamic-dispatch requirements?
 - Are `Send`, `Sync`, and `'static` bounds placed at the storage/spawn boundary
   rather than every trait definition?
 - Are default methods small and expressed in terms of required methods?

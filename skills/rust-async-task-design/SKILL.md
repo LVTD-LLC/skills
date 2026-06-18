@@ -1,6 +1,6 @@
 ---
 name: rust-async-task-design
-description: Use when writing, refactoring, or reviewing Rust async code, futures, async functions, Tokio tasks, spawn, JoinHandle, Send futures, async traits, cancellation, blocking work, or mutexes across await points.
+description: Design and review Rust async code around task ownership, suspension points, cancellation, blocking work, and runtime boundaries. Use when writing, refactoring, or reviewing futures, async functions, Tokio tasks, spawn, JoinHandle, Send futures, async traits, cancellation, or mutexes across await points.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
@@ -51,7 +51,11 @@ shared state in async code, or blocking work.
 
 ## Async Trait Rules
 
-- Native `async fn` in traits is fine for static dispatch and internal traits.
+- Native `async fn` in traits is fine for private traits and static dispatch
+  when callers do not need to add bounds to the returned future.
+- Public traits that need `Send` futures should usually spell the method as
+  `fn name(...) -> impl Future<Output = T> + Send` or use `trait-variant` to
+  offer local and `Send` variants.
 - Public traits that need dynamic dispatch usually need an explicit boxed
   future return type, such as `Pin<Box<dyn Future<Output = T> + Send + '_>>`.
   Use `async-trait` as an ergonomics layer only when the dependency and

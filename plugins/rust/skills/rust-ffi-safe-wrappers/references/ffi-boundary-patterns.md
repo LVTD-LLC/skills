@@ -70,3 +70,16 @@ domain model.
 - Which thread can call it?
 - Can it panic? If yes, catch before returning to C.
 - How is callback deregistration synchronized with `Drop`?
+
+## Exported Rust Symbols
+
+Use Rust 2024 unsafe attributes for exported ABI symbols, and document why the
+symbol name or linker section is sound:
+
+```rust
+// SAFETY: This exported symbol name is unique for this library.
+#[unsafe(no_mangle)]
+pub extern "C" fn library_version() -> core::ffi::c_int {
+    1
+}
+```

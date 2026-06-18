@@ -69,7 +69,7 @@ Do not edit these paths by hand:
 
 ```text
 .claude-plugin/
-.agents/
+.agents/plugins/
 plugins/
 dist/
 ```
@@ -87,8 +87,28 @@ The build regenerates:
 - `.agents/plugins/marketplace.json`
 - `plugins/<plugin-name>/`
 
-`dist/` is ignored. Marketplace artifacts under `.claude-plugin/`, `.agents/`,
-and `plugins/` are committed so marketplace installs work directly from GitHub.
+`dist/` is ignored. Marketplace artifacts under `.claude-plugin/`,
+`.agents/plugins/`, and `plugins/` are committed so marketplace installs work
+directly from GitHub.
+
+## Project-Installed Helper Skills
+
+Project-local helper skills used by agents working in this repository live under
+`.agents/skills/`.
+
+Install or update these copies with the `skills` CLI rather than editing them by
+hand:
+
+```bash
+skills add /path/to/skill --skill <skill-name> --copy -y
+```
+
+The CLI may create `skills-lock.json` for project installs. Do not commit that
+lockfile for local-only sources because it records machine-local source paths;
+remove it before committing unless all lock sources are portable.
+
+Commit `.agents/skills/<skill-name>/` when helper skills change. The marketplace
+build preserves `.agents/skills/` and regenerates only `.agents/plugins/`.
 
 ## Final Check
 

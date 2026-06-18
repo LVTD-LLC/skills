@@ -1,6 +1,6 @@
 ---
 name: rust-ffi-safe-wrappers
-description: Use when writing, refactoring, or reviewing Rust FFI bindings, unsafe extern blocks, C ABI wrappers, repr(C) types, CString, CStr, raw handles, Drop cleanup, bindgen, cbindgen, or panic-safe foreign boundaries.
+description: Design and review Rust FFI boundaries that keep raw declarations isolated behind safe ownership, lifetime, error, and cleanup wrappers. Use when writing, refactoring, or reviewing unsafe extern blocks, C ABI wrappers, repr(C) types, CString, CStr, raw handles, Drop cleanup, bindgen, cbindgen, or panic-safe foreign boundaries.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
@@ -23,8 +23,9 @@ boundary and safe for normal Rust callers.
 2. Verify ABI, type layout, calling convention, ownership, nullability,
    threading, and error conventions against the foreign header or docs.
 3. Use `unsafe extern "C"` blocks for modern Rust, especially Rust 2024 edition
-   code. Mark individual extern items `safe` only when calling them is safe for
-   all Rust inputs.
+   code. Leave safety-conditional items unqualified or explicitly `unsafe`, and
+   mark individual extern items `safe` only when calling them is safe for all
+   Rust inputs.
 4. Use `#[repr(C)]` for structs and enums that cross the ABI boundary. Do not
    expose Rust-only layout types across C.
 5. Use `CString` for owned nul-terminated strings sent to C and `CStr` for
@@ -61,6 +62,7 @@ unsafe extern "C" {
     // pub safe fn library_version() -> core::ffi::c_int;
 }
 
+// SAFETY: This exported symbol name is unique for this library.
 #[unsafe(no_mangle)]
 pub extern "C" fn plugin_version() -> core::ffi::c_int {
     1

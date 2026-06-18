@@ -1,6 +1,6 @@
 ---
 name: rust-ownership-borrowing
-description: Use when writing, refactoring, or reviewing Rust code that hits ownership, move, borrow checker, lifetime, aliasing, Clone, Copy, Rc, Arc, RefCell, or interior mutability problems.
+description: Design and review Rust ownership, borrowing, lifetimes, and interior mutability so data flow matches the domain model. Use when writing, refactoring, or reviewing Rust code that hits move, borrow checker, aliasing, Clone, Copy, Rc, Arc, RefCell, or lifetime problems.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:

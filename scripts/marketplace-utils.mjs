@@ -87,6 +87,18 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => isTractionSkill(skill),
   },
   {
+    name: "eighty-twenty",
+    displayName: "80/20 Sales Marketing",
+    category: "Marketing",
+    taskLabel: "80/20 sales and marketing",
+    description:
+      "80/20 sales and marketing workflow guidance for leverage, market selection, traffic, conversion, offers, funnel economics, customer value, and time or team prioritization.",
+    iconFile: "eighty-twenty.svg",
+    tags: ["eighty-twenty", "sales", "marketing", "pareto", "funnels"],
+    matches: (skill) =>
+      hasSkillTag(skill, "eighty-twenty") || skill.name.startsWith("eighty-twenty-"),
+  },
+  {
     name: "cookiecutter",
     displayName: "Cookiecutter",
     category: "Coding",
@@ -102,9 +114,17 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     category: "Marketing",
     taskLabel: "SEO",
     description:
-      "SEO workflow guidance for product-led strategy, opportunity research, personas, technical triage, and roadmap planning.",
+      "SEO workflow guidance for product-led strategy, opportunity research, technical triage, roadmap planning, and link-building campaigns.",
     iconFile: "seo.svg",
-    tags: ["seo", "organic-growth", "content-strategy", "technical-seo", "planning"],
+    tags: [
+      "seo",
+      "organic-growth",
+      "content-strategy",
+      "technical-seo",
+      "link-building",
+      "outreach",
+      "planning",
+    ],
     matches: (skill) => hasSkillTag(skill, "seo") && !isTractionSkill(skill),
   },
 ];

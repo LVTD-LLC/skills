@@ -50,7 +50,7 @@ impl Job {
 Prefer APIs that prove disjointness to the compiler:
 
 - `slice.split_at_mut(index)` for two mutable slice regions.
-- `HashMap::get_many_mut` when available in the project's MSRV.
+- `HashMap::get_disjoint_mut` when several distinct map values are needed.
 - `Vec::drain`, `retain`, and `dedup_by` for mutation while iterating.
 - `HashMap::entry` for insert-or-update without double lookup.
 
