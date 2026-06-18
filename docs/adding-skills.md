@@ -69,7 +69,7 @@ Do not edit these paths by hand:
 
 ```text
 .claude-plugin/
-.agents/
+.agents/plugins/
 plugins/
 dist/
 ```
@@ -89,6 +89,22 @@ The build regenerates:
 
 `dist/` is ignored. Marketplace artifacts under `.claude-plugin/`, `.agents/`,
 and `plugins/` are committed so marketplace installs work directly from GitHub.
+
+## Project-Installed Helper Skills
+
+Project-local helper skills used by agents working in this repository live under
+`.agents/skills/` and are tracked by `skills-lock.json`.
+
+Install or update these copies with the `skills` CLI rather than editing them by
+hand:
+
+```bash
+skills add /path/to/skill --skill <skill-name> --copy -y
+```
+
+Commit both `.agents/skills/<skill-name>/` and `skills-lock.json` when helper
+skills change. The marketplace build preserves `.agents/skills/` and regenerates
+only `.agents/plugins/`.
 
 ## Final Check
 

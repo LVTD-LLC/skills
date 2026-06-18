@@ -79,7 +79,7 @@ if (unmatchedSkills.length > 0) {
 }
 
 await rm(path.join(marketplaceDir, ".claude-plugin"), { recursive: true, force: true });
-await rm(path.join(marketplaceDir, ".agents"), { recursive: true, force: true });
+await rm(path.join(marketplaceDir, ".agents", "plugins"), { recursive: true, force: true });
 await rm(pluginsDir, { recursive: true, force: true });
 await mkdir(pluginsDir, { recursive: true });
 
