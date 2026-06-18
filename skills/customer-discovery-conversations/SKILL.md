@@ -18,19 +18,9 @@ customers' lives, current behavior, constraints, costs, workarounds, and risks.
 
 ## Source Traceability
 
-Primary source: The Mom Test by Rob Fitzpatrick. Guidance is paraphrased for
-this MIT repo.
-
-- Chapter 1 defines the core question discipline. Authoring notes: converted
-  lines 236-800.
-- Chapter 2 classifies bad data and recovery moves. Authoring notes: converted
-  lines 803-1590.
-- Chapter 3 covers important and scary questions. Authoring notes: converted
-  lines 1593-2173.
-- Chapter 4 covers casual conversation posture. Authoring notes: converted
-  lines 2176-2362.
-- Chapter 8 covers prep, review, and notes. Authoring notes: converted lines
-  3613-4108.
+Primary source: The Mom Test by Rob Fitzpatrick, especially chapters 1-4 and 8.
+Guidance is paraphrased for this MIT repo; authoring notes used converted EPUB
+lines 236-2362 and 3613-4108.
 
 ## Workflow Routing
 
@@ -57,58 +47,46 @@ this MIT repo.
    current costs, workarounds, constraints, and goals.
 8. Capture notes, signals, and follow-up tasks for review.
 
+## Question Rules
+
+- Talk about the customer's life, work, tools, constraints, and recent past.
+- Ask scary questions early enough that the answer can still change the plan.
+- Turn opinions, compliments, and hypotheticals into requests for examples.
+- Ask what already costs them time, money, reputation, or operational pain.
+- Save the pitch until the customer evidence justifies discussing a solution.
+
 ## Good Evidence
 
-Prefer evidence such as:
+Prefer recent examples, current workarounds, money/time/reputation already
+spent, existing tools and budgets, named stakeholders, decision paths, and strong
+emotion backed by a concrete story.
 
-- Recent examples of the problem happening.
-- Current attempts to solve or avoid the problem.
-- Time, money, reputation, or operational cost already spent.
-- Existing tools, people, workflows, budgets, approval paths, and constraints.
-- Specific names, systems, competitors, decision makers, and next steps.
-- Strong emotion backed by a concrete story.
-
-Treat these as weak evidence:
-
-- Compliments about the idea.
-- Opinions about whether the business will work.
-- Promises about future behavior.
-- Generic statements about what someone usually does.
-- Feature requests without the motivation behind them.
+Treat compliments, opinions, future promises, generic claims, and feature
+requests without motivation as weak evidence.
 
 ## Output Format
 
 ```markdown
 # Customer Discovery Plan
 
-## Decision
-[What this evidence should help decide.]
-
-## Segment
-[Who to talk to and why.]
-
-## Risk Questions
-1. [Scary or high-impact question.]
-2. [Scary or high-impact question.]
-3. [Scary or high-impact question.]
+## Context
+- Decision:
+- Segment:
+- Risk questions:
 
 ## Conversation Guide
-| Goal | Ask About | Avoid |
-|------|-----------|-------|
+| Goal | Ask About | Avoid | Follow-Up |
+|------|-----------|-------|-----------|
 
 ## Evidence To Capture
-- Current behavior:
-- Past examples:
-- Workarounds:
-- Costs or budget:
-- Constraints:
-- Strong emotion:
-- Follow-up:
+- Current behavior, past examples, workarounds:
+- Costs, budget, constraints, stakeholders:
+- Strong emotion, follow-up, commitment:
 
 ## Review Criteria
 - What changed in our beliefs?
 - What is still unknown?
-- What are the next 3 questions?
+- What are the next three questions?
 ```
 
 ## Quality Bar

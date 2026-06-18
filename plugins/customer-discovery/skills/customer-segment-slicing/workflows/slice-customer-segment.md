@@ -26,6 +26,11 @@ Use 1-5 scores:
 | Consistency | Members likely share similar needs and constraints. |
 | Fit | The team wants to serve this group and can credibly help. |
 
+## Tie-Breakers
+
+Prefer the slice that is easiest to reach this week, already shows costly
+behavior, and should produce similar evidence across 3-5 conversations.
+
 ## Exit Criteria
 
 The selected segment has a clear access path and should produce consistent

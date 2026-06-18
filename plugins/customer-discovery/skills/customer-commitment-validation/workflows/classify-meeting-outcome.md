@@ -14,6 +14,7 @@ summary of how a customer, investor, partner, or sales meeting ended.
 - [ ] If the outcome is rejection, write what was learned and what assumption it
   changes.
 - [ ] If the outcome is commitment, define owner, deadline, and follow-up.
+- [ ] If the next step has no owner, date, or customer-side effort, downgrade it.
 
 ## Interpretation Hints
 
@@ -24,6 +25,11 @@ summary of how a customer, investor, partner, or sales meeting ended.
 | Trial with no setup cost | Weak until they invest real effort or data. |
 | Paid pilot or deposit | Strong commitment. |
 | Rejection after concrete ask | Useful evidence. |
+
+## Output
+
+Return: classification, evidence, currency given up, what it proves, what it
+does not prove, and the next concrete ask.
 
 ## Exit Criteria
 

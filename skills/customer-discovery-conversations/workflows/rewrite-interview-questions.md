@@ -14,6 +14,11 @@ Use this workflow when a user provides planned customer interview questions.
 - [ ] Remove questions that would still be nice-to-have trivia even if answered.
 - [ ] Keep the guide short enough to use in a natural conversation.
 
+## Output
+
+Return a table with: `Original`, `Issue`, `Rewrite`, and `Follow-up`. If a
+question should be removed, say what decision it fails to inform.
+
 ## Rewrite Patterns
 
 | Weak Question Type | Better Direction |

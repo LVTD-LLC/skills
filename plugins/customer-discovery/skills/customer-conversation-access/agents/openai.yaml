@@ -1,4 +1,4 @@
 interface:
   display_name: "Customer Conversation Access"
-  short_description: "Find and frame customer conversations."
-  default_prompt: "Help me find and frame customer conversations."
+  short_description: "Frame credible customer conversation asks."
+  default_prompt: "Draft a warm intro or meeting request for customer discovery without pitching."

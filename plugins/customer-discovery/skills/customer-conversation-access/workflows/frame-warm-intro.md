@@ -12,6 +12,7 @@ Use this workflow to draft a credible request for a customer conversation.
 - [ ] Explain why this person is unusually helpful.
 - [ ] Make a short, concrete ask.
 - [ ] Keep the request easy to forward.
+- [ ] Remove product claims, decks, demos, and broad "pick your brain" phrasing.
 
 ## Draft Shape
 
@@ -24,8 +25,13 @@ understand [specific unknown].
 You have experience with [reason they can help], so your perspective would help
 us avoid guessing.
 
-Would you be open to a short chat next week?
+Would you be open to a 15-20 minute chat next week?
 ```
+
+## Output
+
+Return the final message plus a one-sentence forwardable intro if someone else
+needs to make the introduction.
 
 ## Exit Criteria
 

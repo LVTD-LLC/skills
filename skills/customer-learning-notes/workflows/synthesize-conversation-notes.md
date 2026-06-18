@@ -21,6 +21,13 @@ Use this workflow after one or more customer conversations.
 - Preserve exact wording only when useful for alignment or positioning.
 - Link feature requests to the motivation behind them.
 - Treat strong emotion as a signal to dig, not as proof by itself.
+- Label confidence as high, medium, or low using the parent skill's confidence
+  rules.
+
+## Output
+
+Return an evidence table, belief updates, decisions, contradictions, and the
+next three questions.
 
 ## Exit Criteria
 

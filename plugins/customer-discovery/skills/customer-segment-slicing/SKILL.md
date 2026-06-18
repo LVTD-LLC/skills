@@ -19,13 +19,9 @@ the team can find them.
 
 ## Source Traceability
 
-Primary source: The Mom Test by Rob Fitzpatrick. Guidance is paraphrased for
-this MIT repo.
-
-- Chapter 7 covers broad-segment failure modes and customer slicing. Authoring
-  notes: converted lines 3318-3610.
-- Chapter 6 covers finding conversations once the segment is reachable.
-  Authoring notes: converted lines 2791-3317.
+Primary source: The Mom Test by Rob Fitzpatrick, especially chapters 6-7.
+Guidance is paraphrased for this MIT repo; authoring notes used converted EPUB
+lines 2791-3610.
 
 ## Slicing Workflow
 
@@ -37,7 +33,7 @@ this MIT repo.
 5. Add where to find each group: communities, events, tools, platforms, job
    titles, search queries, partners, directories, or physical locations.
 6. Score the slices by reachability, expected value, urgency, consistency, and
-   founder fit.
+   team fit.
 7. Pick one starting segment for the next discovery or traction pass.
 
 ## Useful Segment Tests
@@ -49,6 +45,7 @@ Ask:
 - Do they already spend time, money, attention, or reputation on this problem?
 - Would their feedback point toward one product direction rather than many?
 - Are there hidden stakeholders, buyers, users, or partners?
+- Is this slice narrow enough to learn from but valuable enough to matter?
 
 ## Output Format
 

@@ -27,6 +27,12 @@ Use this workflow for a focused set of customer discovery conversations.
 - [ ] Update beliefs, risks, segment confidence, and next steps.
 - [ ] Decide the next three questions or stop if the answer is clear.
 
+## Batch Review Output
+
+Capture: decision, segment, conversations completed, belief changes, strongest
+evidence, contradictions, next three questions, and stop/continue/narrow
+recommendation.
+
 ## Exit Criteria
 
 The team can say what changed, what did not change, and which decision the batch

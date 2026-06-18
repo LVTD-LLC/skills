@@ -18,13 +18,9 @@ become the sole source of customer truth.
 
 ## Source Traceability
 
-Primary source: The Mom Test by Rob Fitzpatrick. Guidance is paraphrased for
-this MIT repo.
-
-- Chapter 8 covers prep, review, team sharing, and note-taking. Authoring notes:
-  converted lines 3613-4108.
-- The conclusion summarizes signs of weak process and note review. Authoring
-  notes: converted lines 4109-4445.
+Primary source: The Mom Test by Rob Fitzpatrick, especially chapter 8 and the
+conclusion. Guidance is paraphrased for this MIT repo; authoring notes used
+converted EPUB lines 3613-4445.
 
 ## Signal Taxonomy
 
@@ -53,6 +49,14 @@ Use these labels when synthesizing notes:
 7. Recommend whether to continue, narrow the segment, ask for commitments, or
    move to building/testing.
 
+## Confidence Levels
+
+| Level | Use When |
+|-------|----------|
+| High | Repeated behavior from a focused segment, with concrete cost or commitment. |
+| Medium | Specific evidence from a few good-fit conversations. |
+| Low | One-off quotes, mixed segments, opinions, or weakly anchored claims. |
+
 ## Output Format
 
 ```markdown
@@ -68,16 +72,10 @@ Use these labels when synthesizing notes:
 |--------|----------|---------|------------|-------------|
 
 ## Belief Updates
-- Stronger:
-- Weaker:
-- New:
-- Rejected:
+- Stronger / weaker / new / rejected:
 
 ## Decisions
-- Product:
-- Segment:
-- Positioning:
-- Sales or access:
+- Product, segment, positioning, sales or access:
 
 ## Next 3 Questions
 1. [Question]

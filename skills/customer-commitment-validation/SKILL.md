@@ -19,13 +19,9 @@ money.
 
 ## Source Traceability
 
-Primary source: The Mom Test by Rob Fitzpatrick. Guidance is paraphrased for
-this MIT repo.
-
-- Chapter 5 defines commitment and advancement. Authoring notes: converted
-  lines 2365-2790.
-- Chapter 8 connects commitments to prep and review. Authoring notes:
-  converted lines 3613-4108.
+Primary source: The Mom Test by Rob Fitzpatrick, especially chapters 5 and 8.
+Guidance is paraphrased for this MIT repo; authoring notes used converted EPUB
+lines 2365-2790 and 3613-4108.
 
 ## Commitment Currencies
 
@@ -37,6 +33,10 @@ this MIT repo.
 
 Compliments, vague "keep me posted" replies, and future-tense buying promises
 are not commitments.
+
+An advancement must move the real-world funnel to a specific next decision or
+action. A next step without an owner, date, or customer-side effort is usually
+weak interest.
 
 ## Review Workflow
 
@@ -71,22 +71,17 @@ are not commitments.
 - Stage:
 
 ## Outcome
-- Classification:
-- Evidence:
-- Currency given up:
+- Classification, evidence, currency given up:
 
 ## Interpretation
-- What this proves:
-- What it does not prove:
-- Risks or missing decision makers:
+- What this proves / does not prove:
+- Risks, missing decision makers, approval path:
 
 ## Next Ask
 [A concrete ask that creates advancement or rejection.]
 
 ## Follow-Up
-- Owner:
-- Deadline:
-- Success criteria:
+- Owner, deadline, success criteria:
 ```
 
 ## Workflow

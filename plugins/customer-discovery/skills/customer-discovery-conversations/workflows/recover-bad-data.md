@@ -23,6 +23,11 @@ claims, future hypotheticals, or feature ideas.
 - [ ] Ask how they cope without it today.
 - [ ] Decide whether it is a buying criterion, a workaround clue, or noise.
 
+## Recovery Output
+
+For each weak signal, record: `Weak signal`, `Why weak`, `Recovery question`,
+and `Usable evidence found`.
+
 ## Exit Criteria
 
 The conversation returns to concrete facts, a real commitment, or a clear

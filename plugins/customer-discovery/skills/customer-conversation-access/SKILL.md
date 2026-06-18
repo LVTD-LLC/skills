@@ -19,15 +19,9 @@ credibly introduce the team.
 
 ## Source Traceability
 
-Primary source: The Mom Test by Rob Fitzpatrick. Guidance is paraphrased for
-this MIT repo.
-
-- Chapter 4 covers casual conversation posture. Authoring notes: converted
-  lines 2176-2362.
-- Chapter 6 covers finding conversations, warm intros, and meeting framing.
-  Authoring notes: converted lines 2791-3317.
-- Chapter 7 connects access to findable customer segments. Authoring notes:
-  converted lines 3318-3610.
+Primary source: The Mom Test by Rob Fitzpatrick, especially chapters 4, 6, and
+7. Guidance is paraphrased for this MIT repo; authoring notes used converted
+EPUB lines 2176-2362 and 2791-3610.
 
 ## Access Paths
 
@@ -48,10 +42,11 @@ When a formal ask is required, include:
 2. Stage: where the team is now.
 3. Weakness: what the team does not understand yet.
 4. Pedestal: why this person can help.
-5. Ask: the specific conversation request.
+5. Ask: the specific, easy-to-forward conversation request.
 
 Keep the framing short. Do not ask for opinions on the idea. Ask for help
-understanding a domain, problem, workflow, or decision process.
+understanding a domain, problem, workflow, or decision process. Prefer a short,
+specific conversation over a broad "pick your brain" request.
 
 ## Output Format
 
