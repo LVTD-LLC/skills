@@ -59,9 +59,9 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     category: "Coding",
     taskLabel: "Django",
     description:
-      "Django workflow guidance for server-rendered UI, jobs, MCP servers, and app behavior.",
+      "Django workflow guidance for database performance, server-rendered UI, jobs, MCP servers, testing, and app behavior.",
     iconFile: "django.svg",
-    tags: ["django", "htmx", "alpinejs", "background-jobs", "mcp", "testing", "ci", "pytest"],
+    tags: ["django", "database", "performance", "orm", "htmx", "alpinejs", "background-jobs", "mcp", "testing", "ci", "pytest"],
     matches: (skill) => hasSkillTag(skill, "django") || skill.name.includes("django"),
   },
   {
