@@ -87,9 +87,17 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     category: "Marketing",
     taskLabel: "SEO",
     description:
-      "SEO workflow guidance for product-led strategy, opportunity research, personas, technical triage, and roadmap planning.",
+      "SEO workflow guidance for product-led strategy, opportunity research, technical triage, roadmap planning, and link-building campaigns.",
     iconFile: "seo.svg",
-    tags: ["seo", "organic-growth", "content-strategy", "technical-seo", "planning"],
+    tags: [
+      "seo",
+      "organic-growth",
+      "content-strategy",
+      "technical-seo",
+      "link-building",
+      "outreach",
+      "planning",
+    ],
     matches: (skill) => hasSkillTag(skill, "seo") && !isTractionSkill(skill),
   },
 ];

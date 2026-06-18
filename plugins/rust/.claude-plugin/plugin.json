@@ -1,6 +1,6 @@
 {
   "name": "rust",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Rust workflow guidance for production backend services, including testing, persistence, observability, security, idempotency, and deployment.",
   "author": {
     "name": "LVTD",
