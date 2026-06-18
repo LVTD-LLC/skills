@@ -39,7 +39,7 @@ Use this skill when Django fetches rows into Python to compute values the databa
    - Use generated fields for same-row deterministic values.
    - Use materialized views or denormalized tables when cross-row aggregate queries are too expensive and can be stale.
 
-See [aggregation-patterns.md](references/aggregation-patterns.md) for current Django expression examples.
+See [aggregation-patterns.md](references/aggregation-patterns.md) for Django expression examples.
 
 ## Safety Notes
 

@@ -37,7 +37,7 @@ Use this skill to add or change indexes only after profiling shows a specific qu
    - Verify the planner uses the index for the target query.
    - Check write-path impact when the indexed table is hot.
 
-See [index-patterns.md](references/index-patterns.md) for Django 6.0-era index examples and migration templates.
+See [index-patterns.md](references/index-patterns.md) for index examples and migration templates.
 
 ## Production Rules
 
