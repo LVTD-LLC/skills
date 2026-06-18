@@ -106,6 +106,19 @@ Use these defaults when the user's request is ambiguous:
   pricing, formats, reviews, and post-launch sales.
 - `self-publishing-production`: final production sequencing for editing,
   proofreading, layout, cover, print-on-demand, ISBNs, and launch readiness.
+- `customer-discovery-conversations`: planning or auditing customer discovery
+  conversations so they produce concrete evidence instead of compliments,
+  opinions, hypotheticals, or feature-request noise.
+- `customer-commitment-validation`: evaluating whether customer, sales,
+  investor, partner, or product meetings created real commitment and
+  advancement.
+- `customer-segment-slicing`: narrowing broad markets, audiences, or personas
+  into specific, reachable who-where customer segments.
+- `customer-conversation-access`: finding and framing customer conversations
+  through warm intros, communities, casual chats, events, advisors, landing-page
+  replies, or meeting requests.
+- `customer-learning-notes`: synthesizing raw customer notes, transcripts, call
+  summaries, or CRM snippets into shared team learning and next questions.
 - `traction-bullseye`: choosing and focusing startup traction channels.
 - `traction-channel-research`: researching comparable growth paths and channel
   options before Bullseye ranking.
@@ -138,6 +151,8 @@ Use these defaults when the user's request is ambiguous:
   `local-sponsorship-link-building`
 - `nonfiction-book-writing`: nonfiction planning, editing, beta feedback,
   seed marketing, sales optimization, and production skills.
+- `customer-discovery`: customer interviews, segment slicing, access,
+  commitment validation, and notes synthesis.
 - `traction`: startup traction, channel research, test planning, and
   channel-specific growth skills.
 - `cookiecutter`: `cookiecutter`
