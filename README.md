@@ -186,6 +186,68 @@ See [`docs/marketplace-strategy.md`](docs/marketplace-strategy.md) for the
 research-backed plan to publish this catalog across Codex, Claude Code,
 OpenClaw, and other Agent Skills-compatible clients.
 
+## Attribution
+
+This catalog is built from transformed, task-oriented guidance rather than
+copied source text. Book-derived skills paraphrase operational ideas, keep
+source traceability in the relevant skill files where useful, and are not
+official material from the authors, libraries, tools, or platforms below.
+
+Primary books and long-form sources:
+
+- *The Mom Test* by Rob Fitzpatrick: customer discovery conversations, segment
+  slicing, conversation access, commitment validation, and learning notes.
+- *Write Useful Books* by Rob Fitzpatrick: useful nonfiction book planning,
+  reader experience, beta feedback, seed marketing, sales optimization, and
+  self-publishing production patterns.
+- *Traction: How Any Startup Can Achieve Explosive Customer Growth* by Gabriel
+  Weinberg and Justin Mares: Bullseye channel selection, traction goals,
+  cheap channel tests, review workflows, and channel-specific playbooks.
+- *80/20 Sales and Marketing* by Perry Marshall: power-law analysis, market
+  selection, traffic strategy, conversion messaging, funnel economics,
+  USP/guarantee work, customer value, and time/team leverage.
+- *Product-Led SEO* by Eli Schwartz: product-led SEO strategy, opportunity
+  research, persona-intent mapping, roadmap prioritization, and technical SEO
+  triage.
+- *Ultimate Guide to Link Building* by Garrett French and Eric Ward:
+  link-building strategy, linkable assets, prospecting, prospect
+  qualification, outreach, broken link building, guest posts, and local
+  sponsorship link building.
+- *Zero to Production in Rust* by Luca Palmieri: Rust HTTP API testing,
+  SQLx/Postgres service boundaries, deployable service patterns, security,
+  observability, domain boundaries, and idempotent workflows.
+- *Programming Rust* by Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall:
+  Rust ownership/borrowing, traits, iterators/collections, concurrency,
+  async task design, unsafe boundaries, and FFI wrappers.
+
+Short-form sources and public posts:
+
+- Marc Lou's ["32 Principles of a Viral Product"](https://x.com/marclou/status/2065385672991752210)
+  post on X inspired `make-product-viral`.
+
+Libraries, tools, and official documentation referenced while authoring skills:
+
+- Agent Skills documentation and best practices, Claude Code skills/plugins and
+  plugin marketplace docs, OpenAI Codex plugin docs, OpenClaw skills/plugins
+  docs, and the `skills` CLI.
+- Django, HTMX, `django-htmx`, Alpine.js, `django-q2`, FastMCP, Cookiecutter,
+  Calibre/`calibredb`, pytest-style Django testing, and related Python web
+  tooling.
+- Rust ecosystem libraries and tools used in guidance and examples, including
+  Actix, Axum, Tokio, SQLx, PostgreSQL, Docker, `tracing`, `thiserror`,
+  `anyhow`, `wiremock`, and Cargo verification workflows.
+
+Skill authoring and review resources:
+
+- Project-installed helper skills: `ebook-analysis`, `skill-from-book`,
+  `skill-creator`, `write-a-skill`, and `pdf`.
+- Compound Engineering plugin workflows, including work execution, session
+  history, review, and shipping guidance.
+- Superpowers plugin workflows for planning, execution, verification, and
+  branch-finishing discipline.
+- Greptile review feedback and the HOL Plugin Scanner were used as review and
+  validation inputs on parts of the catalog.
+
 ## Development
 
 New skills should follow [`docs/adding-skills.md`](docs/adding-skills.md).
