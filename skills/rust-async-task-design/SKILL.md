@@ -52,8 +52,10 @@ shared state in async code, or blocking work.
 ## Async Trait Rules
 
 - Native `async fn` in traits is fine for static dispatch and internal traits.
-- Public traits that need dynamic dispatch usually need boxed futures or the
-  `async-trait` crate; document the allocation and object-safety tradeoff.
+- Public traits that need dynamic dispatch usually need an explicit boxed
+  future return type, such as `Pin<Box<dyn Future<Output = T> + Send + '_>>`.
+  Use `async-trait` as an ergonomics layer only when the dependency and
+  allocation tradeoff are acceptable.
 - Avoid leaking executor-specific types from a trait unless the trait is
   intentionally runtime-specific.
 

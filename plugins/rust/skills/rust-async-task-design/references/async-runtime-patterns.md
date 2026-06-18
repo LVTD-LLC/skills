@@ -45,7 +45,7 @@ The block ensures the guard is dropped before suspension.
 | Lock must cross `.await` | `tokio::sync::Mutex` |
 | IO resource shared by many tasks | Owner task plus channels |
 | Read-mostly config | `Arc<T>` or `ArcSwap` if already used |
-| One-time async setup | runtime-managed initialization, not blocking statics |
+| One-time async setup | `OnceLock<T>` for sync init; `tokio::sync::OnceCell<T>` for async init |
 
 ## Blocking Work
 
