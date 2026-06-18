@@ -19,3 +19,4 @@
 - Added automated main-branch releases that bump patch versions when needed, tag releases, package artifacts, and publish GitHub releases.
 - Added `lvtd-skills-router` and the generated `router` marketplace plugin for choosing skills across the catalog.
 - Added `CONTEXT.md` and workflow-oriented README guidance for common skill-selection paths.
+- Replaced the exhaustive README skill table with a skill-discovery section that points to `lvtd-skills-router`, `skills/`, and the generated registry.
