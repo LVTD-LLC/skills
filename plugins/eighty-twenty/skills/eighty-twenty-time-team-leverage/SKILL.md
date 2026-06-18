@@ -6,7 +6,7 @@ compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
   version: "0.1.0"
   displayName: 80/20 Time Team Leverage
-  category: Productivity
+  category: Marketing
   tags: eighty-twenty,delegation,hiring,outsourcing,productivity
 ---
 
