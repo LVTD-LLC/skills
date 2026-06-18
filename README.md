@@ -20,7 +20,9 @@ points the agent at the smallest useful set of skills.
 - **Rust service work**: use `rust-api-test-harness` for black-box HTTP
   integration tests, then reach for the Rust service skills when the work
   involves SQLx/Postgres, domain boundaries, observability, security,
-  idempotent workflows, or deployment readiness.
+  idempotent workflows, or deployment readiness. For language-level Rust work,
+  use the ownership, trait API, iterator/collection, concurrency, async, unsafe,
+  and FFI skills.
 - **SEO and organic growth**: use `seo-opportunity-research` to find demand,
   `seo-persona-intent-mapping` to clarify audience and intent,
   `product-led-seo-strategy` to shape the strategy, `seo-roadmap-prioritization`
@@ -50,7 +52,9 @@ Skill areas:
 - **Django**: server-rendered UI, HTMX, Alpine.js, background jobs, MCP servers,
   and Django test-suite optimization.
 - **Rust**: HTTP API test harnesses, SQLx/Postgres persistence, domain
-  boundaries, observability, security, idempotent workflows, and deployment.
+  boundaries, observability, security, idempotent workflows, deployment,
+  ownership/borrowing, trait API design, iterators/collections, concurrency,
+  async tasks, unsafe boundaries, and FFI wrappers.
 - **SEO**: opportunity research, persona-intent mapping, product-led strategy,
   roadmap prioritization, and technical SEO triage.
 - **Nonfiction writing**: table-of-contents design, reader experience editing,
