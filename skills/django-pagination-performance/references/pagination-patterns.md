@@ -21,13 +21,15 @@ Watch for:
 ## Keyset Pagination
 
 ```python
+from django.db.models import Q
+
 def order_page(cursor_created_at=None, cursor_id=None, limit=50):
     qs = Order.objects.filter(status="open").order_by("-created_at", "-id")
 
     if cursor_created_at and cursor_id:
         qs = qs.filter(
-            models.Q(created_at__lt=cursor_created_at)
-            | models.Q(created_at=cursor_created_at, id__lt=cursor_id)
+            Q(created_at__lt=cursor_created_at)
+            | Q(created_at=cursor_created_at, id__lt=cursor_id)
         )
 
     return list(qs[:limit])
@@ -42,7 +44,7 @@ from rest_framework.pagination import CursorPagination
 
 class OrderCursorPagination(CursorPagination):
     page_size = 50
-    ordering = "-created_at"
+    ordering = ["-created_at", "-id"]
 ```
 
 DRF cursor pagination is a good default for large append-style API result sets. It supports forward/reverse navigation, not arbitrary page numbers. Restrict user ordering fields if using ordering filters with cursor pagination.
