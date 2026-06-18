@@ -66,4 +66,3 @@ Task is complete when:
 - [ ] Priority prospects have a pitch angle.
 - [ ] Rejections include evidence.
 - [ ] Next handoff to outreach is segmented.
-

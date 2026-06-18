@@ -446,7 +446,7 @@ Ask yourself:
 ## Legend
 
 - [ ] Not started
-- [~] In progress  
+- [~] In progress
 - [x] Completed
 - [-] Skipped/Not needed
 
@@ -495,7 +495,7 @@ Optional files:
 name: [skill-name]
 description: |
   [What this skill provides - 1-2 sentences]
-  
+
   Use this skill when:
   - [Trigger condition 1]
   - [Trigger condition 2]

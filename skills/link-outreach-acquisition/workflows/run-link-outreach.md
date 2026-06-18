@@ -71,4 +71,3 @@ Task is complete when:
 - [ ] Outreach is specific, honest, and audience-relevant.
 - [ ] Tracking fields and response categories are ready.
 - [ ] Pilot or send plan includes opt-out and compliance handling.
-

@@ -2,7 +2,7 @@
 name: skill-from-book
 description: |
   Create Claude skills from book content (markdown files). Transforms long-form book knowledge into structured, context-efficient skill packages with granular reference files, workflows, and use-case guidelines.
-  
+
   Use this skill when:
   - Converting a book (markdown) into a reusable Claude skill
   - Creating knowledge bases from technical books, guides, or documentation
@@ -49,7 +49,7 @@ This skill guides you through converting a book (in markdown format) into a well
    ```bash
    # Count total lines
    wc -l book.md
-   
+
    # Extract headers/TOC - THIS IS ALL YOU NEED
    grep -E "^#{1,3} " book.md
    ```
@@ -327,7 +327,7 @@ Create `guidelines.md` that maps:
    Present a list of potential workflows:
    ```
    Based on the book content, I recommend these workflows:
-   
+
    | Workflow | Purpose | Key Steps |
    |----------|---------|-----------|
    | [name] | [what it does] | [brief step summary] |
@@ -356,7 +356,7 @@ Create `guidelines.md` that maps:
    Add a "Workflows" section at the top of guidelines.md:
    ```markdown
    ## Workflows
-   
+
    | Task | Workflow |
    |------|----------|
    | [task description] | `workflows/[name].md` |

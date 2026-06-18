@@ -72,4 +72,3 @@ Task is complete when:
 - [ ] Referring pages are qualified and still contain the dead link.
 - [ ] Replacement fit is documented.
 - [ ] Outreach notes or redirect map are ready.
-

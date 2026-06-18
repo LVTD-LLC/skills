@@ -153,7 +153,7 @@ Identify which topics reference others:
 ```
 functions-rules.md
   └── requires: naming-rules.md (for function naming)
-  
+
 classes-srp.md
   └── requires: functions-rules.md (for method design)
 ```

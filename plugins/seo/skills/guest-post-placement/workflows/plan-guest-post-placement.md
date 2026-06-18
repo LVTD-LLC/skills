@@ -66,4 +66,3 @@ Task is complete when:
 - [ ] Audience names and title ideas are defined.
 - [ ] Prospect quality rubric and tracking fields are ready.
 - [ ] Outreach can hand off to `link-outreach-acquisition`.
-

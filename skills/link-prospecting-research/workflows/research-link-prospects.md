@@ -71,4 +71,3 @@ Task is complete when:
 - [ ] Query patterns and source evidence are preserved.
 - [ ] Obvious noise and duplicates are removed.
 - [ ] Next qualification checks are clear.
-

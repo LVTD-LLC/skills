@@ -27,12 +27,12 @@ def create_skill_md(skill_name: str, categories: list[str]) -> str:
         f"| {cat} | `references/{cat}/` | [description] |"
         for cat in categories
     )
-    
+
     return f'''---
 name: {skill_name}
 description: |
   [Brief description of what this skill provides]
-  
+
   Use this skill when:
   - [Trigger condition 1]
   - [Trigger condition 2]
@@ -61,7 +61,7 @@ description: |
 
 See `guidelines.md` for:
 - Task-based file selection
-- Code element mapping  
+- Code element mapping
 - Problem/symptom lookup
 - Decision tree for common scenarios
 '''
@@ -70,10 +70,10 @@ See `guidelines.md` for:
 def create_progress_md(skill_name: str, categories: list[str]) -> str:
     """Generate progress.md content."""
     today = datetime.now().strftime("%Y-%m-%d")
-    
+
     category_sections = ""
     total_files = 3  # SKILL.md, progress.md, guidelines.md
-    
+
     for i, cat in enumerate(categories, start=2):
         category_sections += f'''
 ## Phase {i}: {cat.title()}
@@ -84,7 +84,7 @@ Source: [Chapter X, lines N-M]
 - [ ] {cat}/{cat}-examples.md
 '''
         total_files += 2
-    
+
     return f'''# {skill_name.replace("-", " ").title()} - Creation Progress
 
 Created: {today}
@@ -120,17 +120,17 @@ Last Updated: {today}
 
 def create_guidelines_md(skill_name: str, categories: list[str]) -> str:
     """Generate guidelines.md template."""
-    
+
     by_task_rows = "\n".join(
         f"| [Task related to {cat}] | `references/{cat}/{cat}-rules.md` |"
         for cat in categories
     )
-    
+
     by_element_rows = "\n".join(
         f"| [{cat.title()}] | `{cat}/{cat}-rules.md` | `{cat}/{cat}-examples.md` |"
         for cat in categories
     )
-    
+
     file_index = ""
     for cat in categories:
         file_index += f'''
@@ -141,7 +141,7 @@ def create_guidelines_md(skill_name: str, categories: list[str]) -> str:
 | `{cat}-rules.md` | Core rules for {cat} | ~100 |
 | `{cat}-examples.md` | Code examples | ~150 |
 '''
-    
+
     return f'''# {skill_name.replace("-", " ").title()} Guidelines
 
 Quick reference for finding the right knowledge file.
@@ -222,35 +222,35 @@ What are you doing?
 
 def init_skill(skill_name: str, output_path: str, categories: list[str]) -> None:
     """Initialize a new book skill structure."""
-    
+
     base_path = Path(output_path)
-    
+
     # Create directories
     base_path.mkdir(parents=True, exist_ok=True)
     (base_path / "references").mkdir(exist_ok=True)
-    
+
     for cat in categories:
         (base_path / "references" / cat).mkdir(exist_ok=True)
-    
+
     # Create files
     files = {
         "SKILL.md": create_skill_md(skill_name, categories),
         "progress.md": create_progress_md(skill_name, categories),
         "guidelines.md": create_guidelines_md(skill_name, categories),
     }
-    
+
     for filename, content in files.items():
         filepath = base_path / filename
         filepath.write_text(content)
         print(f"Created: {filepath}")
-    
+
     # Create placeholder files in each category
     for cat in categories:
         for suffix in ["rules", "examples"]:
             filepath = base_path / "references" / cat / f"{cat}-{suffix}.md"
             filepath.write_text(f"# {cat.title()} {suffix.title()}\n\nTODO: Extract from book\n")
             print(f"Created: {filepath}")
-    
+
     print(f"\nSkill initialized at: {base_path}")
     print(f"Total files created: {len(files) + len(categories) * 2}")
     print("\nNext steps:")
@@ -268,7 +268,7 @@ def main():
         help="Name of the skill (e.g., clean-code)"
     )
     parser.add_argument(
-        "output_path", 
+        "output_path",
         help="Path where skill will be created"
     )
     parser.add_argument(
@@ -277,11 +277,11 @@ def main():
         default="principles,concepts,examples",
         help="Comma-separated list of categories (default: principles,concepts,examples)"
     )
-    
+
     args = parser.parse_args()
-    
+
     categories = [c.strip() for c in args.categories.split(",")]
-    
+
     init_skill(args.skill_name, args.output_path, categories)
 
 
