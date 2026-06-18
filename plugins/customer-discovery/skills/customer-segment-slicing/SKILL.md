@@ -4,7 +4,7 @@ description: Narrow broad customer categories into specific, reachable who-where
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.1.2"
   displayName: Customer Segment Slicing
   category: Marketing
   tags: customer-discovery,segmentation,startups,positioning,research

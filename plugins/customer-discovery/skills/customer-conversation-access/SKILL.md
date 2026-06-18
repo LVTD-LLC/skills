@@ -4,7 +4,7 @@ description: Find and frame customer conversations through warm intros, communit
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.1.2"
   displayName: Customer Conversation Access
   category: Marketing
   tags: customer-discovery,outreach,startups,interviews,research

@@ -4,7 +4,7 @@ description: Turn customer conversation notes, interview transcripts, call summa
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.1.2"
   displayName: Customer Learning Notes
   category: Marketing
   tags: customer-discovery,research,notes,synthesis,startups

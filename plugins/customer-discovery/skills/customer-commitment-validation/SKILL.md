@@ -4,7 +4,7 @@ description: Evaluate whether customer, sales, investor, partner, or product mee
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.1.2"
   displayName: Customer Commitment Validation
   category: Marketing
   tags: customer-discovery,sales,validation,startups,commitment
