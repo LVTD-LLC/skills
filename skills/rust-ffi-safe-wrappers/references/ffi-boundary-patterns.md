@@ -5,6 +5,8 @@ Use this reference when wrapping C APIs or exporting Rust functions to C.
 ## Private Raw Module
 
 ```rust
+// Rust 2024 edition syntax. Use `extern "C" { ... }` on Rust 2021
+// and earlier, or migrate with `cargo fix --edition`.
 mod raw {
     #[repr(C)]
     pub struct RawHandle {
@@ -12,8 +14,8 @@ mod raw {
     }
 
     unsafe extern "C" {
-        pub unsafe fn lib_open(path: *const core::ffi::c_char) -> *mut RawHandle;
-        pub unsafe fn lib_close(handle: *mut RawHandle);
+        pub fn lib_open(path: *const core::ffi::c_char) -> *mut RawHandle;
+        pub fn lib_close(handle: *mut RawHandle);
     }
 }
 ```

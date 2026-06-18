@@ -55,8 +55,10 @@ bindings.
 
 ```rust
 unsafe extern "C" {
-    pub unsafe fn library_open(path: *const core::ffi::c_char) -> *mut RawHandle;
-    pub unsafe fn library_close(handle: *mut RawHandle);
+    pub fn library_open(path: *const core::ffi::c_char) -> *mut RawHandle;
+    pub fn library_close(handle: *mut RawHandle);
+    // Mark an item `safe` only when calling it is valid for all Rust inputs:
+    // pub safe fn library_version() -> core::ffi::c_int;
 }
 
 #[unsafe(no_mangle)]

@@ -73,5 +73,5 @@ Before making a public trait object-safe, check:
 - A trait has many blanket bounds that only one method needs.
 - A trait object was used because lifetimes were confusing, not because runtime
   dispatch is required.
-- `async_trait` is used in a public trait without checking whether native
+- `async-trait` is used in a public trait without checking whether native
   `async fn` in traits or boxed futures fit the dispatch needs better.
