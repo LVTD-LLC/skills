@@ -1,0 +1,4 @@
+interface:
+  display_name: "Customer Discovery Conversations"
+  short_description: "Plan better customer conversations."
+  default_prompt: "Help me plan customer discovery conversations."

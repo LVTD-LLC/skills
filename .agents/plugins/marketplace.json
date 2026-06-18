@@ -55,6 +55,18 @@
       "category": "Writing"
     },
     {
+      "name": "customer-discovery",
+      "source": {
+        "source": "local",
+        "path": "./plugins/customer-discovery"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Marketing"
+    },
+    {
       "name": "traction",
       "source": {
         "source": "local",

@@ -1,0 +1,52 @@
+{
+  "name": "customer-discovery",
+  "version": "0.1.2",
+  "description": "Customer discovery guidance for interview planning, segment slicing, conversation access, commitment validation, and learning synthesis.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "customer-discovery",
+    "customer-interviews",
+    "validation",
+    "research",
+    "startups",
+    "customer-commitment-validation",
+    "customer-conversation-access",
+    "customer-discovery-conversations",
+    "customer-learning-notes",
+    "customer-segment-slicing",
+    "sales",
+    "commitment",
+    "outreach",
+    "interviews",
+    "notes",
+    "synthesis",
+    "segmentation",
+    "positioning"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Customer Discovery",
+    "shortDescription": "Customer discovery guidance for interview planning, segment slicing, conversation access, commitment validation, and learning synthesis.",
+    "longDescription": "Customer discovery guidance for interview planning, segment slicing, conversation access, commitment validation, and learning synthesis. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Customer Commitment Validation, Customer Conversation Access, Customer Discovery Conversations, Customer Learning Notes, Customer Segment Slicing. Category: Marketing.",
+    "developerName": "LVTD",
+    "category": "Marketing",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Customer Discovery plugin when working on customer discovery and customer interviews tasks. It includes the Customer Commitment Validation, Customer Conversation Access, Customer Discovery Conversations, Customer Learning Notes, and Customer Segment Slicing skills."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
+    "screenshots": []
+  }
+}

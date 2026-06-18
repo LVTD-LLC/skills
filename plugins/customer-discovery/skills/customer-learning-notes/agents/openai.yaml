@@ -1,0 +1,4 @@
+interface:
+  display_name: "Customer Learning Notes"
+  short_description: "Turn customer notes into team learning."
+  default_prompt: "Help me synthesize customer conversation notes."

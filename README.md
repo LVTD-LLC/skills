@@ -29,6 +29,9 @@ points the agent at the smallest useful set of skills.
   reader outcome, and takeaway-first table of contents; use the other
   nonfiction skills for reader experience edits, beta feedback, seed marketing,
   sales optimization, and self-publishing production.
+- **Customer discovery**: use `customer-discovery-conversations` to plan
+  better customer conversations, then use the related skills for segment
+  slicing, conversation access, commitment validation, and notes synthesis.
 - **Startup traction**: use the traction skills to choose channels, research
   comparable growth paths, design cheap tests, review results, and plan
   channel-specific experiments.
@@ -55,6 +58,8 @@ Skill areas:
   roadmap prioritization, and technical SEO triage.
 - **Nonfiction writing**: table-of-contents design, reader experience editing,
   beta feedback, seed marketing, sales optimization, and production.
+- **Customer discovery**: customer interview planning, segment slicing,
+  conversation access, commitment validation, and learning synthesis.
 - **Traction**: Bullseye channel selection, channel research, cheap tests,
   experiment reviews, and channel-specific playbooks.
 - **Utilities**: Cookiecutter template development, Calibre library operations,
@@ -160,6 +165,7 @@ npm run build
 Generated marketplace plugin IDs:
 
 - `cookiecutter`
+- `customer-discovery`
 - `django`
 - `nonfiction-book-writing`
 - `router`
