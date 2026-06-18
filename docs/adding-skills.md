@@ -87,8 +87,9 @@ The build regenerates:
 - `.agents/plugins/marketplace.json`
 - `plugins/<plugin-name>/`
 
-`dist/` is ignored. Marketplace artifacts under `.claude-plugin/`, `.agents/`,
-and `plugins/` are committed so marketplace installs work directly from GitHub.
+`dist/` is ignored. Marketplace artifacts under `.claude-plugin/`,
+`.agents/plugins/`, and `plugins/` are committed so marketplace installs work
+directly from GitHub.
 
 ## Project-Installed Helper Skills
 
