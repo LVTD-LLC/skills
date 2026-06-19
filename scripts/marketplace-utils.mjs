@@ -122,7 +122,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     description:
       "B2B sales workflow guidance for diagnosing pipeline constraints and engineering reach, resonance, timing, and trust.",
     tags: ["b2b-sales", "sales", "pipeline", "outbound", "messaging", "trust"],
-    matches: (skill) => hasSkillTag(skill, "b2b-sales") || skill.name.startsWith("b2b-"),
+    matches: (skill) => hasSkillTag(skill, "b2b-sales"),
   },
   {
     name: "cookiecutter",

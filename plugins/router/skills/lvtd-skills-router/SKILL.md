@@ -1,6 +1,6 @@
 ---
 name: lvtd-skills-router
-description: Use when the user is unsure which LVTD skill fits their problem, asks what skill to use, describes a cross-domain workflow, or needs help choosing between Django, Rust, SEO, writing, product, library, or template skills.
+description: Use when the user is unsure which LVTD skill fits their problem, asks what skill to use, describes a cross-domain workflow, or needs help choosing between Django, Rust, SEO, B2B sales, writing, product, library, or template skills.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
