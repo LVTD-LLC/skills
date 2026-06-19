@@ -114,7 +114,7 @@ Recommended distribution model:
 - Direct skills CLI installs use canonical skill names such as `django-htmx`.
 - Generated marketplace plugins group related skills, such as `django`, `rust`,
   `nonfiction-book-writing`, `customer-discovery`, `eighty-twenty`,
-  `cookiecutter`, `seo`, and `traction`.
+  `cookiecutter`, `router`, `seo`, and `traction`.
 - Keep grouped plugins generated from the same skill source, not hand-maintained
   copies.
 
