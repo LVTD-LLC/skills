@@ -139,9 +139,17 @@ def main() -> int:
     try:
         markdown = path.read_text(encoding="utf-8")
     except UnicodeDecodeError:
-        markdown = path.read_text()
+        markdown = path.read_text(encoding="latin-1")
 
-    value_re = re.compile(args.value_regex, re.IGNORECASE) if args.value_regex else DEFAULT_VALUE_RE
+    if args.value_regex:
+        try:
+            value_re = re.compile(args.value_regex, re.IGNORECASE)
+        except re.error as exc:
+            print(f"error: invalid --value-regex: {exc}", file=sys.stderr)
+            return 2
+    else:
+        value_re = DEFAULT_VALUE_RE
+
     sections = parse_sections(markdown, args.max_level, value_re)
 
     if args.format == "json":
