@@ -1,0 +1,37 @@
+{
+  "name": "b2b-sales",
+  "version": "0.2.0",
+  "description": "B2B sales workflow guidance for diagnosing pipeline constraints and engineering reach, resonance, timing, and trust.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "b2b-sales",
+    "sales",
+    "pipeline",
+    "outbound",
+    "messaging",
+    "trust",
+    "b2b-reach-engineering",
+    "b2b-resonance-audit",
+    "b2b-sales-constraint-diagnosis",
+    "b2b-timing-engine",
+    "b2b-trust-engineering",
+    "reach",
+    "account-based-marketing",
+    "positioning",
+    "copywriting",
+    "diagnosis",
+    "constraints",
+    "timing",
+    "follow-up",
+    "proof",
+    "closing"
+  ],
+  "skills": "./skills/",
+  "displayName": "B2B Sales"
+}

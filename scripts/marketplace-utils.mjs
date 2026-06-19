@@ -115,6 +115,16 @@ const MARKETPLACE_PLUGIN_GROUPS = [
       hasSkillTag(skill, "eighty-twenty") || skill.name.startsWith("eighty-twenty-"),
   },
   {
+    name: "b2b-sales",
+    displayName: "B2B Sales",
+    category: "Marketing",
+    taskLabel: "B2B sales diagnosis and pipeline repair",
+    description:
+      "B2B sales workflow guidance for diagnosing pipeline constraints and engineering reach, resonance, timing, and trust.",
+    tags: ["b2b-sales", "sales", "pipeline", "outbound", "messaging", "trust"],
+    matches: (skill) => hasSkillTag(skill, "b2b-sales") || skill.name.startsWith("b2b-"),
+  },
+  {
     name: "cookiecutter",
     displayName: "Cookiecutter",
     category: "Coding",
