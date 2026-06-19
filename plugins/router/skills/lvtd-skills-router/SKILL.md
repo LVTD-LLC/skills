@@ -1,6 +1,6 @@
 ---
 name: lvtd-skills-router
-description: Use when the user is unsure which LVTD skill fits their problem, asks what skill to use, describes a cross-domain workflow, or needs help choosing between Django, Rust, SEO, writing, product, library, or template skills.
+description: Use when the user is unsure which LVTD skill fits their problem, asks what skill to use, describes a cross-domain workflow, or needs help choosing between Django, Rust, SEO, B2B sales, writing, product, library, or template skills.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
@@ -119,6 +119,16 @@ Use these defaults when the user's request is ambiguous:
   replies, or meeting requests.
 - `customer-learning-notes`: synthesizing raw customer notes, transcripts, call
   summaries, or CRM snippets into shared team learning and next questions.
+- `b2b-sales-constraint-diagnosis`: diagnosing the one sales bottleneck limiting
+  current pipeline or revenue: reach, resonance, timing, or trust.
+- `b2b-reach-engineering`: building named-account reach systems, target buyer
+  lists, controlled delivery channels, and first-touch saturation plans.
+- `b2b-resonance-audit`: auditing and rewriting B2B messaging around buyer
+  pain, concrete outcome, and mechanism so the right buyers remember it.
+- `b2b-timing-engine`: designing 4-6 week buyer-presence cadences so known
+  buyers remember the company when pain becomes urgent.
+- `b2b-trust-engineering`: reducing perceived buying risk with relevant proof,
+  clear next steps, layered familiarity, and confirmatory sales calls.
 - `traction-bullseye`: choosing and focusing startup traction channels.
 - `traction-channel-research`: researching comparable growth paths and channel
   options before Bullseye ranking.
@@ -153,6 +163,8 @@ Use these defaults when the user's request is ambiguous:
   seed marketing, sales optimization, and production skills.
 - `customer-discovery`: customer interviews, segment slicing, access,
   commitment validation, and notes synthesis.
+- `b2b-sales`: constraint diagnosis, reach engineering, resonance audits,
+  timing engines, and trust engineering for B2B sales.
 - `traction`: startup traction, channel research, test planning, and
   channel-specific growth skills.
 - `cookiecutter`: `cookiecutter`

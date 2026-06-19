@@ -1,0 +1,55 @@
+{
+  "name": "b2b-sales",
+  "version": "0.2.0",
+  "description": "B2B sales workflow guidance for diagnosing pipeline constraints and engineering reach, resonance, timing, and trust.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "b2b-sales",
+    "sales",
+    "pipeline",
+    "outbound",
+    "messaging",
+    "trust",
+    "b2b-reach-engineering",
+    "b2b-resonance-audit",
+    "b2b-sales-constraint-diagnosis",
+    "b2b-timing-engine",
+    "b2b-trust-engineering",
+    "reach",
+    "account-based-marketing",
+    "positioning",
+    "copywriting",
+    "diagnosis",
+    "constraints",
+    "timing",
+    "follow-up",
+    "proof",
+    "closing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "B2B Sales",
+    "shortDescription": "B2B sales workflow guidance for diagnosing pipeline constraints and engineering reach, resonance, timing, and trust.",
+    "longDescription": "B2B sales workflow guidance for diagnosing pipeline constraints and engineering reach, resonance, timing, and trust. Packaged as a marketplace plugin for Codex and Claude Code. Includes: B2B Reach Engineering, B2B Resonance Audit, B2B Sales Constraint Diagnosis, B2B Timing Engine, B2B Trust Engineering. Category: Marketing.",
+    "developerName": "LVTD",
+    "category": "Marketing",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the B2B Sales plugin when working on B2B sales diagnosis and pipeline repair tasks. It includes the B2B Reach Engineering, B2B Resonance Audit, B2B Sales Constraint Diagnosis, B2B Timing Engine, and B2B Trust Engineering skills."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/b2b-sales.svg",
+    "logo": "./assets/b2b-sales.svg",
+    "screenshots": []
+  }
+}
