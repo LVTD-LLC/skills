@@ -48,8 +48,8 @@
       "Use the B2B Sales plugin when working on B2B sales diagnosis and pipeline repair tasks. It includes the B2B Reach Engineering, B2B Resonance Audit, B2B Sales Constraint Diagnosis, B2B Timing Engine, and B2B Trust Engineering skills."
     ],
     "brandColor": "#FF4057",
-    "composerIcon": "./assets/app-icon.png",
-    "logo": "./assets/app-icon.png",
+    "composerIcon": "./assets/b2b-sales.svg",
+    "logo": "./assets/b2b-sales.svg",
     "screenshots": []
   }
 }

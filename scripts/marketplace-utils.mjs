@@ -121,6 +121,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "B2B sales diagnosis and pipeline repair",
     description:
       "B2B sales workflow guidance for diagnosing pipeline constraints and engineering reach, resonance, timing, and trust.",
+    iconFile: "b2b-sales.svg",
     tags: ["b2b-sales", "sales", "pipeline", "outbound", "messaging", "trust"],
     matches: (skill) => hasSkillTag(skill, "b2b-sales"),
   },
