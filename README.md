@@ -28,9 +28,13 @@ points the agent at the smallest useful set of skills.
   `product-led-seo-strategy` to shape the strategy, `seo-roadmap-prioritization`
   to sequence work, and `technical-seo-triage` for indexing or traffic issues.
 - **Useful nonfiction books**: use `book-toc-lab` to shape the promise, scope,
-  reader outcome, and takeaway-first table of contents; use the other
-  nonfiction skills for reader experience edits, beta feedback, seed marketing,
-  sales optimization, and self-publishing production.
+  reader outcome, and takeaway-first table of contents; use
+  `book-reader-conversations` for pre-draft validation,
+  `technical-book-lab-design`, `technical-manuscript-verification`, and
+  `evergreen-technical-book` for practical technical books, and
+  `manuscript-engagement-analytics` plus the other nonfiction skills for reader
+  experience edits, beta feedback, seed marketing, sales optimization, and
+  self-publishing production.
 - **Customer discovery**: use `customer-discovery-conversations` to plan
   better customer conversations, then use the related skills for segment
   slicing, conversation access, commitment validation, and notes synthesis.
