@@ -171,6 +171,7 @@ Generated marketplace plugin IDs:
 - `cookiecutter`
 - `customer-discovery`
 - `django`
+- `eighty-twenty`
 - `nonfiction-book-writing`
 - `router`
 - `rust`

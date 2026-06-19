@@ -113,7 +113,8 @@ Recommended distribution model:
 
 - Direct skills CLI installs use canonical skill names such as `django-htmx`.
 - Generated marketplace plugins group related skills, such as `django`, `rust`,
-  `nonfiction-book-writing`, `cookiecutter`, `seo`, and `traction`.
+  `nonfiction-book-writing`, `customer-discovery`, `eighty-twenty`,
+  `cookiecutter`, `seo`, and `traction`.
 - Keep grouped plugins generated from the same skill source, not hand-maintained
   copies.
 
@@ -124,6 +125,10 @@ Tradeoff:
   complete baseline.
 - Plugin IDs no longer need to match canonical skill names; skill namespaces
   make the bundled skill explicit after install.
+- Split a grouped plugin only when the install audience clearly diverges, the
+  marketplace label becomes misleading, or the bundle grows enough to create
+  meaningful install/update friction. Skill count alone is not a reason to
+  split because hosts still load individual skills by trigger.
 
 ### 4. Version Skills Independently
 
