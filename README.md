@@ -17,12 +17,13 @@ points the agent at the smallest useful set of skills.
   jobs, `fastmcp-django` for MCP servers inside Django apps, and the
   `django-test-*` skills when test suites need profiling, faster data setup,
   parallelism, or CI optimization.
-- **Rust service work**: use `rust-api-test-harness` for black-box HTTP
+- **Rust service and game work**: use `rust-api-test-harness` for black-box HTTP
   integration tests, then reach for the Rust service skills when the work
   involves SQLx/Postgres, domain boundaries, observability, security,
   idempotent workflows, or deployment readiness. For language-level Rust work,
   use the ownership, trait API, iterator/collection, concurrency, async, unsafe,
-  and FFI skills.
+  and FFI skills. For small Rust games, use the game-slice, game-loop, tilemap,
+  ECS, turn-intent, procgen/AI, data-driven content, and release-polish skills.
 - **SEO and organic growth**: use `seo-opportunity-research` to find demand,
   `seo-persona-intent-mapping` to clarify audience and intent,
   `product-led-seo-strategy` to shape the strategy, `seo-roadmap-prioritization`
@@ -61,7 +62,9 @@ Skill areas:
 - **Rust**: HTTP API test harnesses, SQLx/Postgres persistence, domain
   boundaries, observability, security, idempotent workflows, deployment,
   ownership/borrowing, trait API design, iterators/collections, concurrency,
-  async tasks, unsafe boundaries, and FFI wrappers.
+  async tasks, unsafe boundaries, FFI wrappers, and 2D game development
+  workflows for planning, loops, tilemaps, ECS, turns, procgen, content, and
+  release.
 - **SEO**: opportunity research, persona-intent mapping, product-led strategy,
   roadmap prioritization, and technical SEO triage.
 - **Nonfiction writing**: table-of-contents design, reader experience editing,
@@ -224,6 +227,10 @@ Primary books and long-form sources:
 - *Programming Rust* by Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall:
   Rust ownership/borrowing, traits, iterators/collections, concurrency,
   async task design, unsafe boundaries, and FFI wrappers.
+- *Hands-On Rust* by Herbert Wolverson: Rust game slice planning, bracket-lib
+  game loops, tile maps and cameras, ECS gameplay, turn/intent systems,
+  roguelike procedural generation and AI, data-driven content, and release
+  polish.
 
 Short-form sources and public posts:
 
@@ -240,7 +247,8 @@ Libraries, tools, and official documentation referenced while authoring skills:
   tooling.
 - Rust ecosystem libraries and tools used in guidance and examples, including
   Actix, Axum, Tokio, SQLx, PostgreSQL, Docker, `tracing`, `thiserror`,
-  `anyhow`, `wiremock`, and Cargo verification workflows.
+  `anyhow`, `wiremock`, Cargo verification workflows, `bracket-lib`, Legion,
+  Bevy ECS, Serde, and RON.
 
 Skill authoring and review resources:
 
