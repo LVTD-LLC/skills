@@ -71,7 +71,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
       "meshes",
       "voxels",
     ],
-    matches: (skill) => hasSkillTag(skill, "game-geometry") || skill.name.startsWith("game-"),
+    matches: (skill) => hasSkillTag(skill, "game-geometry") || skill.name.startsWith("game-geometry-"),
   },
   {
     name: "django",
