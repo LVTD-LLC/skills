@@ -36,7 +36,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
       "Game design workflow guidance for prototyping, mechanics, balance, player experience, interface feedback, playtesting, narrative systems, design docs, and responsibility reviews.",
     iconFile: "game-design.svg",
     tags: ["game-design", "games", "prototyping", "playtesting", "balance", "narrative", "ux"],
-    matches: (skill) => hasSkillTag(skill, "game-design") || skill.name.startsWith("game-"),
+    matches: (skill) => hasSkillTag(skill, "game-design"),
   },
   {
     name: "rust",
