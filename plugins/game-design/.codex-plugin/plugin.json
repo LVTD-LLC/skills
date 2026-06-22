@@ -75,8 +75,8 @@
       "Use the Game Design plugin when working on game design, prototyping, playtesting, and AI-assisted game development tasks. It includes the Game Balance Economy, Game Design Docs, Game Interface Feedback, Game Mechanics Design, Game Playtest Planning, Game Prototype Loop, Game Responsibility Review, Game Story World Character, and Player Experience Modeling skills."
     ],
     "brandColor": "#FF4057",
-    "composerIcon": "./assets/app-icon.png",
-    "logo": "./assets/app-icon.png",
+    "composerIcon": "./assets/game-design.svg",
+    "logo": "./assets/game-design.svg",
     "screenshots": []
   }
 }
