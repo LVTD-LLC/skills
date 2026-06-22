@@ -1,0 +1,62 @@
+{
+  "name": "game-geometry",
+  "version": "0.2.0",
+  "description": "Game geometry guidance for representation choice, spatial queries, transforms, vector math, smooth curves, fields, SDFs, meshes, voxels, and conversion workflows.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "game-geometry",
+    "game-dev",
+    "geometry",
+    "collision",
+    "transforms",
+    "splines",
+    "sdf",
+    "meshes",
+    "voxels",
+    "game-geometry-representation-choice",
+    "game-mesh-voxel-conversion",
+    "game-sdf-and-field-modeling",
+    "game-smooth-curves-and-motion",
+    "game-spatial-queries",
+    "game-transform-systems",
+    "game-vector-math-primitives",
+    "representation",
+    "procedural-generation",
+    "conversion",
+    "fields",
+    "bezier",
+    "motion",
+    "raycasting",
+    "spatial-queries",
+    "cameras",
+    "coordinate-systems",
+    "vectors",
+    "rendering"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Game Geometry",
+    "shortDescription": "Game geometry guidance for representation choice, spatial queries, transforms, vector math, smooth curves, fields, SDFs, meshes, voxels, and conversion workflows.",
+    "longDescription": "Game geometry guidance for representation choice, spatial queries, transforms, vector math, smooth curves, fields, SDFs, meshes, voxels, and conversion workflows. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Game Geometry Representation Choice, Game Mesh Voxel Conversion, Game SDF And Field Modeling, Game Smooth Curves And Motion, Game Spatial Queries, Game Transform Systems, Game Vector Math Primitives. Category: Coding.",
+    "developerName": "LVTD",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Game Geometry plugin when working on game geometry tasks. It includes the Game Geometry Representation Choice, Game Mesh Voxel Conversion, Game SDF And Field Modeling, Game Smooth Curves And Motion, Game Spatial Queries, Game Transform Systems, and Game Vector Math Primitives skills."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
+    "screenshots": []
+  }
+}

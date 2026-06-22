@@ -54,6 +54,26 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => hasSkillTag(skill, "rust") || skill.name.startsWith("rust-"),
   },
   {
+    name: "game-geometry",
+    displayName: "Game Geometry",
+    category: "Coding",
+    taskLabel: "game geometry",
+    description:
+      "Game geometry guidance for representation choice, spatial queries, transforms, vector math, smooth curves, fields, SDFs, meshes, voxels, and conversion workflows.",
+    tags: [
+      "game-dev",
+      "game-geometry",
+      "geometry",
+      "collision",
+      "transforms",
+      "splines",
+      "sdf",
+      "meshes",
+      "voxels",
+    ],
+    matches: (skill) => hasSkillTag(skill, "game-geometry") || skill.name.startsWith("game-"),
+  },
+  {
     name: "django",
     displayName: "Django",
     category: "Coding",
