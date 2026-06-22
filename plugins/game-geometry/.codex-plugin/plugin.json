@@ -55,8 +55,8 @@
       "Use the Game Geometry plugin when working on game geometry tasks. It includes the Game Geometry Representation Choice, Game Mesh Voxel Conversion, Game SDF And Field Modeling, Game Smooth Curves And Motion, Game Spatial Queries, Game Transform Systems, and Game Vector Math Primitives skills."
     ],
     "brandColor": "#FF4057",
-    "composerIcon": "./assets/app-icon.png",
-    "logo": "./assets/app-icon.png",
+    "composerIcon": "./assets/game-geometry.svg",
+    "logo": "./assets/game-geometry.svg",
     "screenshots": []
   }
 }

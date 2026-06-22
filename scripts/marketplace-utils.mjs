@@ -60,6 +60,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "game geometry",
     description:
       "Game geometry guidance for representation choice, spatial queries, transforms, vector math, smooth curves, fields, SDFs, meshes, voxels, and conversion workflows.",
+    iconFile: "game-geometry.svg",
     tags: [
       "game-dev",
       "game-geometry",
