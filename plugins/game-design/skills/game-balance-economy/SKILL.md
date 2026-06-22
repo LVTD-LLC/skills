@@ -41,7 +41,7 @@ Supporting sources include MDA for reasoning from mechanics to dynamics and acce
 Use `scripts/expected_value.py` for quick expected value checks:
 
 ```bash
-python3 skills/game-balance-economy/scripts/expected_value.py --outcome 0:0.5 --outcome 10:0.5
+python3 path/to/game-balance-economy/scripts/expected_value.py --outcome 0:0.5 --outcome 10:0.5
 ```
 
 ## Local References
