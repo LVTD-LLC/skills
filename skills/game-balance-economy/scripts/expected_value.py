@@ -23,18 +23,50 @@ from pathlib import Path
 def parse_outcome(raw: str) -> tuple[float, float]:
     try:
         value_raw, probability_raw = raw.split(":", 1)
-        return float(value_raw), float(probability_raw)
+        value = float(value_raw)
+        probability = float(probability_raw)
     except ValueError as exc:
         raise argparse.ArgumentTypeError(
             f"Invalid outcome '{raw}'. Use VALUE:PROBABILITY, for example 10:0.25."
         ) from exc
+    if not 0.0 <= probability <= 1.0:
+        raise argparse.ArgumentTypeError(
+            f"Probability {probability} in '{raw}' must be between 0 and 1."
+        )
+    return value, probability
 
 
 def load_json(path: Path) -> list[tuple[float, float]]:
-    data = json.loads(path.read_text())
+    try:
+        data = json.loads(path.read_text())
+    except OSError as exc:
+        raise SystemExit(f"error: could not read JSON file {path}: {exc}") from exc
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"error: invalid JSON in {path}: {exc}") from exc
+
+    if not isinstance(data, list):
+        raise SystemExit(
+            f"error: JSON file must contain a list of outcomes, got {type(data).__name__}."
+        )
+
     outcomes: list[tuple[float, float]] = []
-    for item in data:
-        outcomes.append((float(item["value"]), float(item["probability"])))
+    for index, item in enumerate(data):
+        if not isinstance(item, dict):
+            raise SystemExit(f"error: item {index} in JSON file must be an object.")
+        if "value" not in item or "probability" not in item:
+            raise SystemExit(
+                f"error: item {index} in JSON file is missing 'value' or 'probability'."
+            )
+        try:
+            value = float(item["value"])
+            probability = float(item["probability"])
+        except (TypeError, ValueError) as exc:
+            raise SystemExit(f"error: item {index} has a non-numeric value or probability.") from exc
+        if not 0.0 <= probability <= 1.0:
+            raise SystemExit(
+                f"error: probability {probability} for item {index} must be between 0 and 1."
+            )
+        outcomes.append((value, probability))
     return outcomes
 
 
@@ -60,6 +92,7 @@ def main() -> int:
 
     if abs(probability_sum - 1.0) > 0.000001:
         print("warning: probabilities do not sum to 1.0", file=sys.stderr)
+        return 1
 
     return 0
 
