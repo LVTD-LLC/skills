@@ -66,6 +66,27 @@ Use these defaults when the user's request is ambiguous:
   queues, side effects, concurrency, and idempotency keys.
 - `rust-deployable-service`: Docker, runtime config, secrets, health checks,
   SQLx offline builds, and production startup validation.
+- `game-geometry-representation-choice`: choosing between meshes, SDFs,
+  voxels, splines, parametric surfaces, fields, and hybrid game-geometry
+  workflows before implementation.
+- `game-spatial-queries`: raycasts, picking, collision predicates,
+  point-in-triangle checks, barycentric constraints, signed distances, and
+  geometry query edge cases.
+- `game-transform-systems`: coordinate spaces, local/world/view/projection
+  transforms, homogeneous coordinates, camera constraints, parent-child
+  transforms, and inverse transforms.
+- `game-vector-math-primitives`: dot, cross, and triple products for game
+  rendering, collision, orientation, normals, projections, signed areas, and
+  signed volumes.
+- `game-smooth-curves-and-motion`: splines, Bezier curves, interpolation,
+  derivative continuity, path parameterization, camera rails, waypoint paths,
+  and smooth game motion.
+- `game-sdf-and-field-modeling`: SDF primitives, implicit functions, scalar
+  fields, vector fields, deformation fields, procedural volumes, and field
+  composition.
+- `game-mesh-voxel-conversion`: mesh, SDF, voxel, image, contour, and smooth
+  curve conversions, including mesh repair, contouring, voxel morphology, and
+  attribute preservation.
 - `cookiecutter`: Cookiecutter templates, Jinja rendering, hooks, options,
   generated project validation, and template cleanup.
 - `seo-opportunity-research`: finding organic growth opportunities from
@@ -152,6 +173,9 @@ Use these defaults when the user's request is ambiguous:
   skills.
 - `rust`: Rust API testing, persistence, domain, observability, security,
   idempotency, and deployment skills.
+- `game-geometry`: game geometry representation choice, spatial queries,
+  transforms, vector primitives, smooth curves, SDFs, fields, mesh and voxel
+  conversion.
 - `seo`: `seo-opportunity-research`, `seo-persona-intent-mapping`,
   `product-led-seo-strategy`, `seo-roadmap-prioritization`,
   `technical-seo-triage`, `link-building-strategy`,
