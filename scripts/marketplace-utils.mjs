@@ -33,11 +33,16 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     category: "Coding",
     taskLabel: "Rust",
     description:
-      "Rust workflow guidance for production services and language-level code, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, and deployment.",
+      "Rust workflow guidance for production services, language-level code, and 2D game development, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, deployment, game loops, ECS, tilemaps, turns, procgen, and content pipelines.",
     iconFile: "rust.svg",
     tags: [
       "rust",
       "backend",
+      "game-development",
+      "ecs",
+      "tilemaps",
+      "procgen",
+      "data-driven-content",
       "api-testing",
       "sqlx",
       "ownership",

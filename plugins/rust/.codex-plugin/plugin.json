@@ -1,7 +1,7 @@
 {
   "name": "rust",
   "version": "0.2.0",
-  "description": "Rust workflow guidance for production services and language-level code, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, and deployment.",
+  "description": "Rust workflow guidance for production services, language-level code, and 2D game development, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, deployment, game loops, ECS, tilemaps, turns, procgen, and content pipelines.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -12,6 +12,11 @@
   "keywords": [
     "rust",
     "backend",
+    "game-development",
+    "ecs",
+    "tilemaps",
+    "procgen",
+    "data-driven-content",
     "api-testing",
     "sqlx",
     "ownership",
@@ -82,14 +87,12 @@
     "collections",
     "hashmap",
     "performance",
-    "ecs",
     "legion",
     "components",
     "borrowing",
     "lifetimes",
     "borrow-checker",
     "roguelike",
-    "procgen",
     "pathfinding",
     "authentication",
     "sessions",
@@ -112,8 +115,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Rust",
-    "shortDescription": "Rust workflow guidance for production services and language-level code, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, and deployment.",
-    "longDescription": "Rust workflow guidance for production services and language-level code, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, and deployment. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Rust API Test Harness, Rust Async Task Design, Rust Bracket Game Loop, Rust Concurrency Primitives, Rust Data Driven Game Content, Rust Deployable Service, Rust Domain Boundaries, Rust Error Observability, Rust FFI Safe Wrappers, Rust Game Polish Release, Rust Game Slice Planning, Rust Idempotent Workflows, Rust Iterator Collections, Rust Legion ECS Gameplay, Rust Ownership Borrowing, Rust Roguelike Procgen AI, Rust Service Security, Rust SQLx Postgres Service, Rust Tilemap Camera Rendering, Rust Trait API Design, Rust Turn Intent Systems, Rust Unsafe Boundaries. Category: Coding.",
+    "shortDescription": "Rust workflow guidance for production services, language-level code, and 2D game development, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, deployment, game loops, ECS, tilemaps, turns, procgen, and content pipelines.",
+    "longDescription": "Rust workflow guidance for production services, language-level code, and 2D game development, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, deployment, game loops, ECS, tilemaps, turns, procgen, and content pipelines. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Rust API Test Harness, Rust Async Task Design, Rust Bracket Game Loop, Rust Concurrency Primitives, Rust Data Driven Game Content, Rust Deployable Service, Rust Domain Boundaries, Rust Error Observability, Rust FFI Safe Wrappers, Rust Game Polish Release, Rust Game Slice Planning, Rust Idempotent Workflows, Rust Iterator Collections, Rust Legion ECS Gameplay, Rust Ownership Borrowing, Rust Roguelike Procgen AI, Rust Service Security, Rust SQLx Postgres Service, Rust Tilemap Camera Rendering, Rust Trait API Design, Rust Turn Intent Systems, Rust Unsafe Boundaries. Category: Coding.",
     "developerName": "LVTD",
     "category": "Coding",
     "capabilities": [
