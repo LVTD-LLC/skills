@@ -47,7 +47,7 @@ fn integrate_motion(
     mut query: Query<(&Velocity, &mut Transform, &Collider)>,
 ) {
     for (velocity, mut transform, collider) in &mut query {
-        let next = transform.translation.truncate() + velocity.0 * time.delta_seconds();
+        let next = transform.translation.truncate() + velocity.0 * time.delta_secs();
         if can_move_to(next, collider) {
             transform.translation = next.extend(transform.translation.z);
         }
