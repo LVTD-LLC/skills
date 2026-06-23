@@ -19,10 +19,22 @@
       "category": "Productivity"
     },
     {
-      "name": "rust",
+      "name": "rust-core",
       "source": {
         "source": "local",
-        "path": "./plugins/rust"
+        "path": "./plugins/rust-core"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Coding"
+    },
+    {
+      "name": "rust-game-development",
+      "source": {
+        "source": "local",
+        "path": "./plugins/rust-game-development"
       },
       "policy": {
         "installation": "AVAILABLE",
