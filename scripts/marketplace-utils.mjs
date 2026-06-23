@@ -33,7 +33,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     category: "Coding",
     taskLabel: "Rust",
     description:
-      "Rust workflow guidance for production services, language-level code, and 2D game development, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, deployment, game loops, ECS, tilemaps, turns, procgen, and content pipelines.",
+      "Rust workflow guidance for production services, language-level code, 2D game development, Bevy systems, and library lifecycle work, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, deployment, game loops, ECS, tilemaps, turns, procgen, content pipelines, Bevy assets, state, physics, collision, world building, benchmarking, feature flags, rustdoc, and crate publishing.",
     iconFile: "rust.svg",
     tags: [
       "rust",
