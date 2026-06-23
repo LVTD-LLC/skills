@@ -55,9 +55,9 @@ fn wait_for_assets(
     mut next_state: ResMut<NextState<AppState>>,
 ) {
     let handles = [
-        assets.player_sheet.id(),
-        assets.explosion_audio.id(),
-        assets.ui_font.id(),
+        assets.player_sheet.id().untyped(),
+        assets.explosion_audio.id().untyped(),
+        assets.ui_font.id().untyped(),
     ];
 
     if handles.iter().all(|id| asset_server.is_loaded_with_dependencies(*id)) {
