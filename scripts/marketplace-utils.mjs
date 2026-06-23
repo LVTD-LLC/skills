@@ -39,21 +39,16 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => hasSkillTag(skill, "game-design"),
   },
   {
-    name: "rust",
-    displayName: "Rust",
+    name: "rust-core",
+    displayName: "Rust Core Engineering",
     category: "Coding",
-    taskLabel: "Rust",
+    taskLabel: "Rust systems, services, libraries, and language-level code",
     description:
-      "Rust workflow guidance for production services, language-level code, and 2D game development, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, deployment, game loops, ECS, tilemaps, turns, procgen, and content pipelines.",
+      "Rust core engineering guidance for production services, language-level code, and reusable libraries, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, deployment, SQLx, observability, benchmarking, feature flags, rustdoc, and crate publishing.",
     iconFile: "rust.svg",
     tags: [
       "rust",
       "backend",
-      "game-development",
-      "ecs",
-      "tilemaps",
-      "procgen",
-      "data-driven-content",
       "api-testing",
       "sqlx",
       "ownership",
@@ -66,8 +61,40 @@ const MARKETPLACE_PLUGIN_GROUPS = [
       "observability",
       "security",
       "deployment",
+      "library",
+      "benchmarking",
+      "rustdoc",
+      "publishing",
     ],
-    matches: (skill) => hasSkillTag(skill, "rust") || skill.name.startsWith("rust-"),
+    matches: (skill) => isRustCoreSkill(skill),
+  },
+  {
+    name: "rust-game-development",
+    displayName: "Rust Game Development",
+    category: "Coding",
+    taskLabel: "Rust and Bevy game development",
+    description:
+      "Rust game development guidance for Bevy and other Rust game stacks, including asset pipelines, state flow, fixed-step physics, collision broadphases, procedural worlds, game loops, ECS gameplay, tilemaps, cameras, turn systems, roguelike procgen, content pipelines, slice planning, polish, and release checks.",
+    iconFile: "game-geometry.svg",
+    tags: [
+      "rust",
+      "game-development",
+      "gamedev",
+      "bevy",
+      "ecs",
+      "tilemaps",
+      "procgen",
+      "data-driven-content",
+      "assets",
+      "state-management",
+      "physics",
+      "collision",
+      "world-building",
+      "game-loop",
+      "roguelike",
+      "polish",
+    ],
+    matches: (skill) => isRustGameDevelopmentSkill(skill),
   },
   {
     name: "game-geometry",
@@ -195,6 +222,18 @@ const MARKETPLACE_PLUGIN_GROUPS = [
 
 function hasSkillTag(skill, tag) {
   return metadataForSkill(skill).tags.includes(tag);
+}
+
+function isRustSkill(skill) {
+  return hasSkillTag(skill, "rust") || skill.name.startsWith("rust-");
+}
+
+function isRustGameDevelopmentSkill(skill) {
+  return isRustSkill(skill) && hasSkillTag(skill, "gamedev");
+}
+
+function isRustCoreSkill(skill) {
+  return isRustSkill(skill) && !isRustGameDevelopmentSkill(skill);
 }
 
 function isTractionSkill(skill) {
