@@ -60,7 +60,7 @@ change behavior, dependencies, or performance.
 | Mistake | Why it hurts | Do instead |
 |---------|--------------|------------|
 | Optimizing without baseline | No proof of improvement | Benchmark first |
-| Testing only defaults | Hidden feature regressions | Run feature matrix |
+| Testing only defaults | Feature-specific regressions | Run feature matrix |
 | Claiming broad speedups | Misleads users | Scope claims to measured cases |
 
 ## Exit Criteria
