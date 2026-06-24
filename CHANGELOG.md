@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added an Astro static catalog site generated from canonical skills and plugin metadata, plus CapRover deployment wiring for `skills.lvtd.dev`.
 - Created the initial LVTD skills catalog.
 - Added `calibredb` for managing and querying Calibre libraries with the `calibredb` CLI.
 - Added `book-toc-lab` for designing and validating useful nonfiction book tables of contents before drafting.

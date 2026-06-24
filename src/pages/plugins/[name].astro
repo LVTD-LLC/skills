@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { buildCatalog, skillUrl } from "../../lib/catalog.mjs";
+
+export async function getStaticPaths() {
+  const catalog = await buildCatalog();
+
+  return catalog.plugins.map((plugin) => ({
+    params: { name: plugin.name },
+    props: { plugin },
+  }));
+}
+
+const { plugin } = Astro.props;
+---
+
+<BaseLayout title={`${plugin.displayName} | LVTD Skills`} description={plugin.description}>
+  <article class="detail">
+    <div>
+      <p class="meta"><a href="/">Catalog</a> / Plugins</p>
+      <h1>{plugin.displayName}</h1>
+      <p class="lede">{plugin.description}</p>
+      <div class="chips">
+        <span class="badge">{plugin.category}</span>
+        {plugin.tags.map((tag) => <span class="chip">{tag}</span>)}
+      </div>
+
+      <section style="margin-top: 28px;">
+        <h2>Included Skills</h2>
+        <div class="grid two">
+          {plugin.skills.map((skill) => (
+            <article class="skill-card">
+              <div class="card-head">
+                <h3><a href={skillUrl(skill)}>{skill.displayName}</a></h3>
+                <span class="badge">{skill.category}</span>
+              </div>
+              <p>{skill.description}</p>
+              <div class="chips">
+                {skill.tags.slice(0, 4).map((tag) => <span class="chip">{tag}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <aside class="panel">
+      <img src={plugin.iconPath} alt="" width="64" height="64" />
+      <h2>Marketplace Source</h2>
+      <div class="list">
+        <a href={plugin.sourceUrl}>Open plugin folder</a>
+        <a href="/catalog.json">Open JSON catalog</a>
+      </div>
+      <p class="muted" style="margin-top: 16px;">Path: <code>{plugin.sourcePath}</code></p>
+    </aside>
+  </article>
+</BaseLayout>

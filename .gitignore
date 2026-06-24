@@ -1,4 +1,6 @@
 node_modules/
+.astro/
 dist/
+site-dist/
 .DS_Store
 skills/**/progress.md

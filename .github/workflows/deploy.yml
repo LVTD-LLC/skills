@@ -1,0 +1,48 @@
+name: Deploy
+
+on:
+  workflow_run:
+    workflows:
+      - Test
+    branches:
+      - main
+    types:
+      - completed
+  workflow_dispatch:
+
+env:
+  APP_NAME: lvtd-skills
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Create CapRover deploy tarball
+        run: tar --exclude=deploy.tar --exclude=node_modules --exclude=site-dist --exclude=dist -cf deploy.tar .
+
+      - name: Deploy to CapRover
+        env:
+          CAPROVER_SERVER: ${{ secrets.CAPROVER_SERVER }}
+          CAPROVER_APP_TOKEN: ${{ secrets.CAPROVER_TOKEN_LVTD_SKILLS }}
+        run: |
+          set -euo pipefail
+          response="$(
+            curl -fsS \
+              -X POST "${CAPROVER_SERVER%/}/api/v2/user/apps/appData/${APP_NAME}?detached=1" \
+              -H "x-captain-app-token: ${CAPROVER_APP_TOKEN}" \
+              -H "x-namespace: captain" \
+              -F "gitHash=${GITHUB_SHA}" \
+              -F "sourceFile=@deploy.tar;type=application/x-tar"
+          )"
+          RESPONSE="$response" node -e '
+            const response = JSON.parse(process.env.RESPONSE);
+            if (![100, 101].includes(response.status)) {
+              console.error(response.description || "CapRover deploy upload failed");
+              process.exit(1);
+            }
+            console.log(response.description || "CapRover deploy accepted");
+          '
