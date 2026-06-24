@@ -1,9 +1,13 @@
 name: Deploy
 
 on:
-  push:
+  workflow_run:
+    workflows:
+      - Test
     branches:
       - main
+    types:
+      - completed
   workflow_dispatch:
 
 env:
@@ -11,6 +15,7 @@ env:
 
 jobs:
   deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -20,8 +25,24 @@ jobs:
         run: tar --exclude=deploy.tar --exclude=node_modules --exclude=site-dist --exclude=dist -cf deploy.tar .
 
       - name: Deploy to CapRover
-        uses: caprover/deploy-from-github@d76580d79952f6841c453bb3ed37ef452b19752c
-        with:
-          server: ${{ secrets.CAPROVER_SERVER }}
-          app: ${{ env.APP_NAME }}
-          token: ${{ secrets.CAPROVER_TOKEN_LVTD_SKILLS }}
+        env:
+          CAPROVER_SERVER: ${{ secrets.CAPROVER_SERVER }}
+          CAPROVER_APP_TOKEN: ${{ secrets.CAPROVER_TOKEN_LVTD_SKILLS }}
+        run: |
+          set -euo pipefail
+          response="$(
+            curl -fsS \
+              -X POST "${CAPROVER_SERVER%/}/api/v2/user/apps/appData/${APP_NAME}?detached=1" \
+              -H "x-captain-app-token: ${CAPROVER_APP_TOKEN}" \
+              -H "x-namespace: captain" \
+              -F "gitHash=${GITHUB_SHA}" \
+              -F "sourceFile=@deploy.tar;type=application/x-tar"
+          )"
+          RESPONSE="$response" node -e '
+            const response = JSON.parse(process.env.RESPONSE);
+            if (![100, 101].includes(response.status)) {
+              console.error(response.description || "CapRover deploy upload failed");
+              process.exit(1);
+            }
+            console.log(response.description || "CapRover deploy accepted");
+          '
