@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Create CapRover deploy tarball
         run: tar --exclude=deploy.tar --exclude=node_modules --exclude=site-dist --exclude=dist -cf deploy.tar .
 
       - name: Deploy to CapRover
-        uses: caprover/deploy-from-github@main
+        uses: caprover/deploy-from-github@d76580d79952f6841c453bb3ed37ef452b19752c
         with:
           server: ${{ secrets.CAPROVER_SERVER }}
           app: ${{ env.APP_NAME }}

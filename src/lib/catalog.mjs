@@ -3,6 +3,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 
 const REPOSITORY_URL = "https://github.com/LVTD-LLC/skills";
+let catalogPromise;
 
 async function loadBuildUtilities() {
   const root = process.cwd();
@@ -15,7 +16,8 @@ async function loadBuildUtilities() {
 }
 
 function markdownSummary(markdown) {
-  const body = markdown.replace(/^---\n[\s\S]*?\n---\n/, "").trim();
+  const normalized = normalizeLineEndings(markdown);
+  const body = normalized.replace(/^---\n[\s\S]*?\n---\n/, "").trim();
   const paragraphs = body
     .split(/\n{2,}/)
     .map((paragraph) => paragraph.trim())
@@ -26,7 +28,11 @@ function markdownSummary(markdown) {
 }
 
 function firstHeading(markdown, fallback) {
-  return markdown.match(/^#\s+(.+)$/m)?.[1].trim() || fallback;
+  return normalizeLineEndings(markdown).match(/^#\s+(.+)$/m)?.[1].trim() || fallback;
+}
+
+function normalizeLineEndings(value) {
+  return value.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
 }
 
 function shortHash(value) {
@@ -55,6 +61,12 @@ function pluginSiteIconPath(plugin) {
 }
 
 export async function buildCatalog() {
+  catalogPromise ??= buildCatalogFresh();
+
+  return catalogPromise;
+}
+
+async function buildCatalogFresh() {
   const {
     CATALOG_VERSION,
     loadSkills,
