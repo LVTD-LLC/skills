@@ -91,7 +91,31 @@ scripts/
   skill-utils.mjs
   validate-marketplaces.mjs
   validate-skills.mjs
+src/
+  pages/
+    index.astro
+    catalog.json.js
 ```
+
+## Catalog Site
+
+The public catalog site is an Astro static site generated from the same canonical
+repo data as the registries and marketplace manifests:
+
+- `skills/<skill-name>/SKILL.md`
+- `scripts/skill-utils.mjs`
+- `scripts/marketplace-utils.mjs`
+- generated marketplace plugin groupings
+
+Run the full repository build to validate skills, refresh marketplace artifacts,
+and generate the site:
+
+```bash
+npm run build
+```
+
+The Astro output goes to `site-dist/`. The generated JSON endpoint is available
+at `/catalog.json`, and skill/plugin pages are generated at build time.
 
 ## Install A Skill Directly
 

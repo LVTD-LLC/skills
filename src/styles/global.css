@@ -1,0 +1,340 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --ink: #18202b;
+  --muted: #5f6b7a;
+  --line: #dfe5ee;
+  --accent: #ff4057;
+  --accent-dark: #c72239;
+  --teal: #137b73;
+  --amber: #9d6b08;
+  --code: #101722;
+  --radius: 8px;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.topbar {
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.92);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand,
+.nav-links,
+.actions,
+.meta,
+.chips,
+.stats,
+.card-head,
+.split-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand {
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.brand img {
+  width: 34px;
+  height: 34px;
+}
+
+.nav-links a,
+.button,
+.icon-button {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 12px;
+  text-decoration: none;
+  font-weight: 650;
+  font-size: 0.9rem;
+}
+
+.button.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.button:hover,
+.icon-button:hover,
+.nav-links a:hover {
+  border-color: var(--accent);
+}
+
+.page {
+  padding: 32px 0 56px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 28px;
+  align-items: start;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.lede {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 64ch;
+}
+
+.panel,
+.skill-card,
+.plugin-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.panel {
+  padding: 18px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 26px 0;
+}
+
+.stat {
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  padding: 14px 16px;
+}
+
+.stat:nth-child(2) {
+  border-color: var(--teal);
+}
+
+.stat:nth-child(3) {
+  border-color: var(--amber);
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+
+.stat span,
+.muted,
+.meta {
+  color: var(--muted);
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  margin: 26px 0 16px;
+}
+
+.search {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0 14px;
+  font: inherit;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.skill-card,
+.plugin-card {
+  padding: 16px;
+}
+
+.skill-card {
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-head {
+  justify-content: space-between;
+  align-items: start;
+}
+
+.badge,
+.chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: #fbfcfe;
+}
+
+.badge {
+  border-color: #ffd1d8;
+  color: var(--accent-dark);
+}
+
+.chips {
+  flex-wrap: wrap;
+}
+
+.skill-card p,
+.plugin-card p {
+  color: var(--muted);
+}
+
+.card-actions {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+code,
+pre {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+pre {
+  overflow-x: auto;
+  background: var(--code);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 14px;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 24px;
+  align-items: start;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+}
+
+.list a {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  color: var(--muted);
+  background: #fff;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .detail,
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .stats,
+  .grid,
+  .grid.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .shell {
+    width: min(100% - 20px, 1180px);
+  }
+
+  .stats,
+  .grid,
+  .grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links,
+  .actions,
+  .split-actions {
+    flex-wrap: wrap;
+  }
+}

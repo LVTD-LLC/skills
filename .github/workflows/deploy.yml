@@ -1,0 +1,27 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  APP_NAME: lvtd-skills
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Create CapRover deploy tarball
+        run: tar --exclude=deploy.tar --exclude=node_modules --exclude=site-dist --exclude=dist -cf deploy.tar .
+
+      - name: Deploy to CapRover
+        uses: caprover/deploy-from-github@main
+        with:
+          server: ${{ secrets.CAPROVER_SERVER }}
+          app: ${{ env.APP_NAME }}
+          token: ${{ secrets.CAPROVER_TOKEN_LVTD_SKILLS }}

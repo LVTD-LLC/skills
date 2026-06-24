@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { buildCatalog, githubEditUrl, pluginUrl } from "../../lib/catalog.mjs";
+
+export async function getStaticPaths() {
+  const catalog = await buildCatalog();
+
+  return catalog.skills.map((skill) => ({
+    params: { name: skill.name },
+    props: { skill, plugin: catalog.plugins.find((candidate) => candidate.name === skill.pluginName) },
+  }));
+}
+
+const { skill, plugin } = Astro.props;
+---
+
+<BaseLayout title={`${skill.displayName} | LVTD Skills`} description={skill.description}>
+  <article class="detail">
+    <div>
+      <p class="meta"><a href="/">Catalog</a> / Skills</p>
+      <h1>{skill.displayName}</h1>
+      <p class="lede">{skill.description}</p>
+      <div class="chips">
+        <span class="badge">{skill.category}</span>
+        <span class="chip">v{skill.version}</span>
+        <span class="chip">{skill.license}</span>
+        {skill.tags.map((tag) => <span class="chip">{tag}</span>)}
+      </div>
+
+      <section style="margin-top: 28px;">
+        <h2>Install</h2>
+        <pre><code>{skill.installCommand}</code></pre>
+      </section>
+
+      {skill.summary && (
+        <section>
+          <h2>From `SKILL.md`</h2>
+          <p>{skill.summary}</p>
+        </section>
+      )}
+    </div>
+
+    <aside class="panel">
+      <h2>Source</h2>
+      <div class="list">
+        <a href={skill.sourceUrl}>Open folder on GitHub</a>
+        <a href={githubEditUrl(skill.entrypoint)}>Edit SKILL.md</a>
+        {plugin && <a href={pluginUrl(plugin)}>Plugin: {plugin.displayName}</a>}
+      </div>
+      <p class="muted" style="margin-top: 16px;">Fingerprint: <code>{skill.fingerprint}</code></p>
+      <p class="muted">Path: <code>{skill.entrypoint}</code></p>
+    </aside>
+  </article>
+</BaseLayout>

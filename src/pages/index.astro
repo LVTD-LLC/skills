@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { buildCatalog, pluginUrl, skillUrl } from "../lib/catalog.mjs";
+
+const catalog = await buildCatalog();
+const featuredPlugins = catalog.plugins.slice(0, 6);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div>
+      <h1>Reusable Agent Skills for shipping real work.</h1>
+      <p class="lede">
+        Browse the LVTD catalog for coding, Django, Rust, SEO, traction, B2B sales,
+        customer discovery, and nonfiction writing workflows.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="#skills">Browse skills</a>
+        <a class="button" href={catalog.repositoryUrl}>View repository</a>
+      </div>
+    </div>
+    <aside class="panel">
+      <h2>Install directly</h2>
+      <pre><code>npx skills add LVTD-LLC/skills --skill django-htmx</code></pre>
+      <p class="muted">
+        Skill cards include copy-ready install commands and source links.
+      </p>
+    </aside>
+  </section>
+
+  <section class="stats" aria-label="Catalog stats">
+    <div class="stat"><strong>{catalog.stats.skillCount}</strong><span>skills</span></div>
+    <div class="stat"><strong>{catalog.stats.pluginCount}</strong><span>plugins</span></div>
+    <div class="stat"><strong>{catalog.stats.categoryCount}</strong><span>categories</span></div>
+    <div class="stat"><strong>v{catalog.version}</strong><span>catalog version</span></div>
+  </section>
+
+  <section class="grid two" aria-label="Catalog breakdown">
+    <div class="panel">
+      <h2>Categories</h2>
+      <div class="chips">
+        {catalog.categories.map((category) => (
+          <span class="chip">{category.name} · {category.count}</span>
+        ))}
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Popular tags</h2>
+      <div class="chips">
+        {catalog.tags.map((tag) => (
+          <span class="chip">{tag.name} · {tag.count}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="plugins" style="margin-top: 28px;">
+    <h2>Marketplace Plugins</h2>
+    <div class="grid">
+      {featuredPlugins.map((plugin) => (
+        <article class="plugin-card">
+          <div class="card-head">
+            <h3><a href={pluginUrl(plugin)}>{plugin.displayName}</a></h3>
+            <img src={plugin.iconPath} alt="" width="34" height="34" />
+          </div>
+          <p>{plugin.description}</p>
+          <div class="meta">{plugin.skills.length} {plugin.skills.length === 1 ? "skill" : "skills"} · {plugin.category}</div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="toolbar">
+      <h2>Skills</h2>
+      <input class="search" type="search" data-skill-search placeholder="Search skills, tags, categories" aria-label="Search skills" />
+    </div>
+    <div class="grid" data-skill-grid>
+      {catalog.skills.map((skill) => (
+        <article
+          class="skill-card"
+          data-skill-card
+          data-search={`${skill.displayName} ${skill.name} ${skill.description} ${skill.category} ${skill.tags.join(" ")}`}
+        >
+          <div class="card-head">
+            <h3><a href={skillUrl(skill)}>{skill.displayName}</a></h3>
+            <span class="badge">{skill.category}</span>
+          </div>
+          <p>{skill.description}</p>
+          <div class="chips">
+            {skill.tags.slice(0, 4).map((tag) => <span class="chip">{tag}</span>)}
+          </div>
+          <div class="card-actions">
+            <a class="button" href={skillUrl(skill)}>Open</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <script>
+    const input = document.querySelector("[data-skill-search]");
+    const cards = [...document.querySelectorAll("[data-skill-card]")];
+
+    input?.addEventListener("input", () => {
+      const query = input.value.trim().toLowerCase();
+
+      for (const card of cards) {
+        const haystack = card.dataset.search.toLowerCase();
+        card.hidden = query.length > 0 && !haystack.includes(query);
+      }
+    });
+  </script>
+</BaseLayout>

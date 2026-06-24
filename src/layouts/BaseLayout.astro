@@ -1,0 +1,42 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "LVTD Skills",
+  description = "Reusable Agent Skills for Codex, Claude Code, OpenClaw, and compatible clients.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="shell nav" aria-label="Primary">
+        <a class="brand" href="/">
+          <img src="/app-icon.png" alt="" width="34" height="34" />
+          <span>LVTD Skills</span>
+        </a>
+        <div class="nav-links">
+          <a href="/#skills">Skills</a>
+          <a href="/#plugins">Plugins</a>
+          <a href="/catalog.json">JSON</a>
+          <a href="https://github.com/LVTD-LLC/skills">GitHub</a>
+        </div>
+      </nav>
+    </header>
+    <main class="shell page">
+      <slot />
+    </main>
+    <footer class="footer">
+      <div class="shell">
+        Data is generated from the repository at build time. Update `skills/` or marketplace metadata, and the site follows.
+      </div>
+    </footer>
+  </body>
+</html>
