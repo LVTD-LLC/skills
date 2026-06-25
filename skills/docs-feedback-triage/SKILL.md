@@ -40,8 +40,8 @@ When triaging feedback, return:
 | Need | Start Here |
 |------|------------|
 | Understand feedback channels | `references/core/knowledge.md` |
-| Apply triage rules | `references/core/rules.md` |
-| See triage examples | `references/core/examples.md` |
+| Apply triage rules | `references/core/knowledge.md` |
+| See triage examples | `references/core/knowledge.md` |
 | Triage feedback | `workflows/triage-doc-feedback.md` |
 | Route by task | `guidelines.md` |
 

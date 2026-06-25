@@ -40,8 +40,8 @@ When auditing or redesigning IA, return:
 | Need | Start Here |
 |------|------------|
 | Understand IA patterns | `references/core/knowledge.md` |
-| Apply IA rules | `references/core/rules.md` |
-| See IA examples | `references/core/examples.md` |
+| Apply IA rules | `references/core/knowledge.md` |
+| See IA examples | `references/core/knowledge.md` |
 | Audit or redesign IA | `workflows/audit-doc-ia.md` |
 | Route by task | `guidelines.md` |
 

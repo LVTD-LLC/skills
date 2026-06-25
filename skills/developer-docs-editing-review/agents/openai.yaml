@@ -1,4 +1,0 @@
-interface:
-  display_name: "Developer Docs Editing Review"
-  short_description: "Edit and review developer docs for accuracy, completeness, and clarity."
-  default_prompt: "Review this developer documentation draft and return prioritized findings."

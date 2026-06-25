@@ -1,4 +1,0 @@
-interface:
-  display_name: "Code Sample Documentation"
-  short_description: "Design and review accurate, useful code samples for developer docs."
-  default_prompt: "Review these documentation code samples for usability and correctness."

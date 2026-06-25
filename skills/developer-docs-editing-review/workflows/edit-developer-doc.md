@@ -13,7 +13,7 @@ Run a structured edit or review of developer documentation.
 - Draft or existing documentation.
 - Audience, doc goal, source material, or release context when available.
 
-**Reference**: `references/core/knowledge.md`, `references/core/rules.md`
+**Reference**: `references/core/knowledge.md`
 
 ## Workflow Steps
 

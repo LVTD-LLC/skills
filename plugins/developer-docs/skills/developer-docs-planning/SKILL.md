@@ -40,8 +40,8 @@ When planning documentation, return:
 | Need | Start Here |
 |------|------------|
 | Understand doc types | `references/core/knowledge.md` |
-| Apply planning rules | `references/core/rules.md` |
-| See plan examples | `references/core/examples.md` |
+| Apply planning rules | `references/core/knowledge.md` |
+| See plan examples | `references/core/knowledge.md` |
 | Create a documentation plan | `workflows/create-doc-plan.md` |
 | Route by task | `guidelines.md` |
 

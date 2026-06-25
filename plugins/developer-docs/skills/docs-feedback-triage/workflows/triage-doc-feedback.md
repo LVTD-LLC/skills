@@ -13,7 +13,7 @@ Turn documentation feedback into prioritized action.
 - Feedback item or feedback set.
 - Affected doc URL, product context, or support evidence when available.
 
-**Reference**: `references/core/knowledge.md`, `references/core/rules.md`
+**Reference**: `references/core/knowledge.md`
 
 ## Workflow Steps
 

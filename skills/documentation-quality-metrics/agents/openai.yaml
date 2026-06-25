@@ -1,4 +1,0 @@
-interface:
-  display_name: "Documentation Quality Metrics"
-  short_description: "Audit docs quality and design useful measurement plans."
-  default_prompt: "Audit this developer documentation and recommend quality metrics."

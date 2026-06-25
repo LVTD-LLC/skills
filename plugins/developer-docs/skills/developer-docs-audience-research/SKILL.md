@@ -40,8 +40,8 @@ When researching an audience, return:
 | Need | Start Here |
 |------|------------|
 | Understand audience concepts | `references/core/knowledge.md` |
-| Apply research rules | `references/core/rules.md` |
-| See concise examples | `references/core/examples.md` |
+| Apply research rules | `references/core/knowledge.md` |
+| See concise examples | `references/core/knowledge.md` |
 | Produce an audience brief | `workflows/map-doc-audience.md` |
 | Route by task | `guidelines.md` |
 

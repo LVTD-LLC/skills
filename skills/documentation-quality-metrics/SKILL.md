@@ -40,8 +40,8 @@ When auditing quality or designing metrics, return:
 | Need | Start Here |
 |------|------------|
 | Understand quality dimensions | `references/core/knowledge.md` |
-| Apply audit and metric rules | `references/core/rules.md` |
-| See metric examples | `references/core/examples.md` |
+| Apply audit and metric rules | `references/core/knowledge.md` |
+| See metric examples | `references/core/knowledge.md` |
 | Run quality audit | `workflows/audit-doc-quality.md` |
 | Route by task | `guidelines.md` |
 

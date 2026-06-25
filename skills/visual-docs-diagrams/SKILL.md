@@ -39,8 +39,8 @@ When designing or reviewing visual docs, return:
 | Need | Start Here |
 |------|------------|
 | Understand visual types | `references/core/knowledge.md` |
-| Apply visual rules | `references/core/rules.md` |
-| See visual decision examples | `references/core/examples.md` |
+| Apply visual rules | `references/core/knowledge.md` |
+| See visual decision examples | `references/core/knowledge.md` |
 | Design or review a visual | `workflows/design-technical-visual.md` |
 | Route by task | `guidelines.md` |
 

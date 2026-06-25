@@ -1,4 +1,0 @@
-interface:
-  display_name: "Developer Docs Planning"
-  short_description: "Choose content types and create practical developer documentation plans."
-  default_prompt: "Create a documentation plan for this developer-facing feature."

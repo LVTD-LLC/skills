@@ -40,8 +40,8 @@ When reviewing or designing code samples, return:
 | Need | Start Here |
 |------|------------|
 | Understand sample types | `references/core/knowledge.md` |
-| Apply sample rules | `references/core/rules.md` |
-| See before/after examples | `references/core/examples.md` |
+| Apply sample rules | `references/core/knowledge.md` |
+| See before/after examples | `references/core/knowledge.md` |
 | Review or design a sample | `workflows/review-code-sample.md` |
 | Route by task | `guidelines.md` |
 

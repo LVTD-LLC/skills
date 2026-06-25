@@ -1,4 +1,0 @@
-interface:
-  display_name: "Documentation Information Architecture"
-  short_description: "Audit and redesign docs navigation, inventory, and IA."
-  default_prompt: "Audit this documentation structure and recommend a clearer information architecture."

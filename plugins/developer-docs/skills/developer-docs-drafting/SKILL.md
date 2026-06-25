@@ -40,8 +40,8 @@ When drafting a doc, return:
 | Need | Start Here |
 |------|------------|
 | Understand drafting components | `references/core/knowledge.md` |
-| Apply drafting rules | `references/core/rules.md` |
-| See before/after examples | `references/core/examples.md` |
+| Apply drafting rules | `references/core/knowledge.md` |
+| See before/after examples | `references/core/knowledge.md` |
 | Draft a page | `workflows/draft-developer-doc.md` |
 | Route by task | `guidelines.md` |
 

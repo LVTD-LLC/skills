@@ -41,8 +41,8 @@ When editing directly, return the revised doc plus a brief change summary and un
 | Need | Start Here |
 |------|------------|
 | Understand editing passes | `references/core/knowledge.md` |
-| Apply review rules | `references/core/rules.md` |
-| See examples of edits and feedback | `references/core/examples.md` |
+| Apply review rules | `references/core/knowledge.md` |
+| See examples of edits and feedback | `references/core/knowledge.md` |
 | Run a full edit | `workflows/edit-developer-doc.md` |
 | Route by task | `guidelines.md` |
 

@@ -13,7 +13,7 @@ Design or review a screenshot, diagram, or video for developer documentation.
 - Reader goal, surrounding text, and concept or task to support.
 - Product or system details that the visual must represent.
 
-**Reference**: `references/core/knowledge.md`, `references/core/rules.md`
+**Reference**: `references/core/knowledge.md`
 
 ## Workflow Steps
 

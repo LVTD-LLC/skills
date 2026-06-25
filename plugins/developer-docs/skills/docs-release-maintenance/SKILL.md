@@ -40,8 +40,8 @@ When planning release or maintenance work, return:
 | Need | Start Here |
 |------|------------|
 | Understand release and maintenance concepts | `references/core/knowledge.md` |
-| Apply lifecycle rules | `references/core/rules.md` |
-| See checklist examples | `references/core/examples.md` |
+| Apply lifecycle rules | `references/core/knowledge.md` |
+| See checklist examples | `references/core/knowledge.md` |
 | Plan release, maintenance, or deprecation | `workflows/plan-doc-release-maintenance.md` |
 | Route by task | `guidelines.md` |
 
