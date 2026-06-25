@@ -1,0 +1,4 @@
+interface:
+  display_name: "Developer Docs Audience Research"
+  short_description: "Map users, goals, questions, and friction before writing developer docs."
+  default_prompt: "Map the audience and user goals for this developer documentation project."

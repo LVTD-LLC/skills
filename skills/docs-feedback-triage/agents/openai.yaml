@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docs Feedback Triage"
+  short_description: "Triage documentation feedback into prioritized, actionable work."
+  default_prompt: "Triage these developer documentation feedback items."

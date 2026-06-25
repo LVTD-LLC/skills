@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docs Release Maintenance"
+  short_description: "Plan docs releases, ownership, freshness, and deprecation."
+  default_prompt: "Plan documentation release and maintenance work for this software change."

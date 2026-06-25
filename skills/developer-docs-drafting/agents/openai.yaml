@@ -1,0 +1,4 @@
+interface:
+  display_name: "Developer Docs Drafting"
+  short_description: "Draft skimmable developer docs with clear goals, steps, and structure."
+  default_prompt: "Draft a developer documentation page from this source material."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Docs Diagrams"
+  short_description: "Design and review screenshots, diagrams, and visual docs."
+  default_prompt: "Review this documentation visual for clarity, accessibility, and maintenance."
