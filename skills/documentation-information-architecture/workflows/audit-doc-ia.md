@@ -13,7 +13,7 @@ Audit or redesign documentation information architecture.
 - Current docs or sitemap.
 - User tasks, audiences, analytics, search data, support signals, or feedback when available.
 
-**Reference**: `references/core/knowledge.md`
+**Reference**: `../references/core/knowledge.md`
 
 ## Workflow Steps
 

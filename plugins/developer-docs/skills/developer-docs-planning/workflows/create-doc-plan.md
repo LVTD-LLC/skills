@@ -13,7 +13,7 @@ Create a practical documentation plan for a developer-facing feature, product, o
 - Audience or user goal hypothesis.
 - Product surface, feature brief, API schema, release plan, or existing docs.
 
-**Reference**: `references/core/knowledge.md`
+**Reference**: `../references/core/knowledge.md`
 
 ## Workflow Steps
 

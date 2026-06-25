@@ -14,7 +14,7 @@ Plan documentation release, maintenance, deprecation, or deletion work.
 - Code/product change, release notes, issue, doc set, or stale-content list.
 - Owners or source-of-truth candidates when available.
 
-**Reference**: `references/core/knowledge.md`
+**Reference**: `../references/core/knowledge.md`
 
 ## Workflow Steps
 

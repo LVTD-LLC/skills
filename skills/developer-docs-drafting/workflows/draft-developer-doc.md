@@ -14,7 +14,7 @@ Draft a developer documentation page from audience, goal, and source material.
 - Content type or documentation plan.
 - Source material: code, API schema, design note, issue, release note, or existing doc.
 
-**Reference**: `references/core/knowledge.md`
+**Reference**: `../references/core/knowledge.md`
 
 ## Workflow Steps
 

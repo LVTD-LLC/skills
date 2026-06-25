@@ -13,7 +13,7 @@ Audit documentation quality or design a docs measurement plan.
 - Doc, doc set, or metrics question.
 - Available analytics, feedback, support data, source checks, or user evidence.
 
-**Reference**: `references/core/knowledge.md`
+**Reference**: `../references/core/knowledge.md`
 
 ## Workflow Steps
 

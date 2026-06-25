@@ -13,7 +13,7 @@ Create an audience brief for developer documentation.
 - Product, feature, or doc surface to analyze.
 - Any available support tickets, analytics, user feedback, sales notes, forum posts, or existing docs.
 
-**Reference**: `references/core/knowledge.md`
+**Reference**: `../references/core/knowledge.md`
 
 ## Workflow Steps
 
