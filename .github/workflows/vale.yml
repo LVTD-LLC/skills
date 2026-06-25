@@ -22,7 +22,8 @@ jobs:
         with:
           version: 3.15.1
           files: '["README.md","AGENTS.md","CHANGELOG.md","CONTEXT.md","SECURITY.md","docs","skills"]'
-          filter_mode: added
+          reporter: ${{ github.event_name == 'pull_request' && 'github-pr-annotations' || 'github-check' }}
+          filter_mode: ${{ github.event_name == 'pull_request' && 'added' || 'nofilter' }}
           # Keep advisory until the project vocabulary and blocking rules settle.
           fail_on_error: false
 
