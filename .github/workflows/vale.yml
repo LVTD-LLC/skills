@@ -1,0 +1,81 @@
+name: Vale
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+jobs:
+  vale:
+    name: Prose lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run Vale
+        uses: vale-cli/vale-action@v2.1.1
+        with:
+          version: 3.15.1
+          files: '["README.md","AGENTS.md","CHANGELOG.md","CONTEXT.md","SECURITY.md","docs","skills"]'
+          reporter: ${{ github.event_name == 'pull_request' && 'github-pr-annotations' || 'github-check' }}
+          filter_mode: ${{ github.event_name == 'pull_request' && 'added' || 'nofilter' }}
+          # Keep advisory until the project vocabulary and blocking rules settle.
+          fail_on_error: false
+
+      - name: Summarize Vale findings for forked PRs
+        if: ${{ always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          VALE_VERSION: 3.15.1
+        run: |
+          set -euo pipefail
+
+          git fetch --no-tags --depth=1 origin "$BASE_SHA"
+          mapfile -t files < <(
+            git diff --name-only --diff-filter=ACMR "$BASE_SHA" "$GITHUB_SHA" -- \
+              README.md AGENTS.md CHANGELOG.md CONTEXT.md SECURITY.md docs skills
+          )
+
+          {
+            echo "### Vale advisory results"
+            echo
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No changed source Markdown files were found." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          vale_dir="$RUNNER_TEMP/vale-${VALE_VERSION}"
+          report="$RUNNER_TEMP/vale-summary.txt"
+          mkdir -p "$vale_dir"
+          curl --fail --silent --show-error --location \
+            "https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz" \
+            --output "$vale_dir/vale.tar.gz"
+          tar -xzf "$vale_dir/vale.tar.gz" -C "$vale_dir" vale
+          "$vale_dir/vale" sync
+
+          status=0
+          "$vale_dir/vale" --output=line "${files[@]}" > "$report" || status=$?
+          if [ "$status" -eq 2 ]; then
+            echo "Vale failed to run. See workflow logs for details." >> "$GITHUB_STEP_SUMMARY"
+            exit 2
+          fi
+
+          if [ -s "$report" ]; then
+            {
+              echo "Reviewdog annotations can be unavailable on forked PRs, so findings for changed Markdown files are shown here."
+              echo
+              echo '```text'
+              sed -n '1,400p' "$report"
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No Vale findings in changed source Markdown files." >> "$GITHUB_STEP_SUMMARY"
+          fi
