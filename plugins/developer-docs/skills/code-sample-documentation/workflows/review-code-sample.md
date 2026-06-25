@@ -13,7 +13,7 @@ Review or design a code sample for developer documentation.
 - Sample code or sample requirements.
 - Target reader, doc goal, language or API version, and source of truth when available.
 
-**Reference**: `../references/core/knowledge.md`
+**Reference**: from this workflow file, open `../references/core/knowledge.md`.
 
 ## Workflow Steps
 
