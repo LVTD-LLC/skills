@@ -50,13 +50,19 @@ plugins/<plugin-name>/
 
 Plugin IDs:
 
+- `b2b-sales`
 - `cookiecutter`
 - `customer-discovery`
+- `developer-docs`
 - `django`
 - `eighty-twenty`
+- `game-design`
+- `game-geometry`
+- `linkedin-writing`
 - `nonfiction-book-writing`
 - `router`
-- `rust`
+- `rust-core`
+- `rust-game-development`
 - `seo`
 - `traction`
 

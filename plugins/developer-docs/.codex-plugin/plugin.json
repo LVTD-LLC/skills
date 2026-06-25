@@ -1,7 +1,7 @@
 {
   "name": "developer-docs",
   "version": "0.2.0",
-  "description": "Developer documentation workflow guidance for audience research, planning, drafting, editing, code samples, visuals, feedback, quality metrics, information architecture, release, maintenance, and deprecation.",
+  "description": "Developer documentation workflow guidance for audience research, technical research, planning, drafting, editing, code samples, visuals, SaaS docs, Agile integration, platform selection, feedback, quality metrics, information architecture, release, maintenance, and deprecation.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -18,15 +18,23 @@
     "docs-ops",
     "quality",
     "information-architecture",
+    "research",
+    "saas",
+    "agile",
+    "platform-selection",
     "code-sample-documentation",
     "developer-docs-audience-research",
     "developer-docs-drafting",
     "developer-docs-editing-review",
     "developer-docs-planning",
+    "developer-docs-technical-research",
+    "docs-agile-integration",
     "docs-feedback-triage",
     "docs-release-maintenance",
     "documentation-information-architecture",
+    "documentation-platform-selection",
     "documentation-quality-metrics",
+    "saas-documentation",
     "visual-docs-diagrams",
     "user-research",
     "audience-research",
@@ -36,20 +44,23 @@
     "review",
     "planning",
     "content-strategy",
+    "sme-interviews",
     "feedback",
     "triage",
     "release-management",
     "maintenance",
     "navigation",
+    "tooling",
     "metrics",
+    "operations",
     "diagrams",
     "accessibility"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Developer Documentation",
-    "shortDescription": "Developer documentation workflow guidance for audience research, planning, drafting, editing, code samples, visuals, feedback, quality metrics, information architecture, release, maintenance, and deprecation.",
-    "longDescription": "Developer documentation workflow guidance for audience research, planning, drafting, editing, code samples, visuals, feedback, quality metrics, information architecture, release, maintenance, and deprecation. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Code Sample Documentation, Developer Docs Audience Research, Developer Docs Drafting, Developer Docs Editing Review, Developer Docs Planning, Docs Feedback Triage, Docs Release Maintenance, Documentation Information Architecture, Documentation Quality Metrics, Visual Docs Diagrams. Category: Writing.",
+    "shortDescription": "Developer documentation workflow guidance for audience research, technical research, planning, drafting, editing, code samples, visuals, SaaS docs, Agile integration, platform selection, feedback, quality metrics, information architecture, release, maintenance, and deprecation.",
+    "longDescription": "Developer documentation workflow guidance for audience research, technical research, planning, drafting, editing, code samples, visuals, SaaS docs, Agile integration, platform selection, feedback, quality metrics, information architecture, release, maintenance, and deprecation. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Code Sample Documentation, Developer Docs Audience Research, Developer Docs Drafting, Developer Docs Editing Review, Developer Docs Planning, Developer Docs Technical Research, Docs Agile Integration, Docs Feedback Triage, Docs Release Maintenance, Documentation Information Architecture, Documentation Platform Selection, Documentation Quality Metrics, SaaS Documentation, Visual Docs Diagrams. Category: Writing.",
     "developerName": "LVTD",
     "category": "Writing",
     "capabilities": [
@@ -58,7 +69,7 @@
     ],
     "websiteURL": "https://github.com/LVTD-LLC/skills",
     "defaultPrompt": [
-      "Use the Developer Documentation plugin when working on developer documentation, technical writing, docs quality, and docs operations tasks. It includes the Code Sample Documentation, Developer Docs Audience Research, Developer Docs Drafting, Developer Docs Editing Review, Developer Docs Planning, Docs Feedback Triage, Docs Release Maintenance, Documentation Information Architecture, Documentation Quality Metrics, and Visual Docs Diagrams skills."
+      "Use the Developer Documentation plugin when working on developer documentation, technical writing, technical research, SaaS docs, docs tooling, docs quality, and docs operations tasks. It includes the Code Sample Documentation, Developer Docs Audience Research, Developer Docs Drafting, Developer Docs Editing Review, Developer Docs Planning, Developer Docs Technical Research, Docs Agile Integration, Docs Feedback Triage, Docs Release Maintenance, Documentation Information Architecture, Documentation Platform Selection, Documentation Quality Metrics, SaaS Documentation, and Visual Docs Diagrams skills."
     ],
     "brandColor": "#FF4057",
     "composerIcon": "./assets/developer-docs.svg",
