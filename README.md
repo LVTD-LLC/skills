@@ -179,6 +179,7 @@ Generated marketplace plugin IDs:
 - `customer-discovery`
 - `django`
 - `eighty-twenty`
+- `linkedin-writing`
 - `nonfiction-book-writing`
 - `router`
 - `rust`
@@ -221,6 +222,9 @@ Primary books and long-form sources:
   link-building strategy, linkable assets, prospecting, prospect
   qualification, outreach, broken link building, guest posts, and local
   sponsorship link building.
+- *Growth Hacking LinkedIn* by Bjorn Radde: LinkedIn post writing, content
+  ideation, comment writing, article/newsletter writing, and post
+  experimentation patterns.
 - *Zero to Production in Rust* by Luca Palmieri: Rust HTTP API testing,
   SQLx/Postgres service boundaries, deployable service patterns, security,
   observability, domain boundaries, and idempotent workflows.
