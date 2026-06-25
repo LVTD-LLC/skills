@@ -147,7 +147,7 @@ root Markdown files, `docs/`, and canonical `skills/` packages. It intentionally
 does not scan generated marketplace artifacts under `.claude-plugin/`,
 `.agents/plugins/`, or `plugins/`.
 
-To run it locally, install Vale and use:
+To run it locally, install Vale `3.15.1` to match CI and use:
 
 ```bash
 npm run lint:prose
