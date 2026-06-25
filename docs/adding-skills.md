@@ -140,6 +140,24 @@ This command validates source skills, rebuilds generated files, validates
 marketplace artifacts against the canonical `skills/` folders, and fails if
 committed generated marketplace artifacts are stale.
 
+## Prose Linting
+
+Vale runs in pull requests as an advisory prose linter for source documentation:
+root Markdown files, `docs/`, and canonical `skills/` packages. It intentionally
+does not scan generated marketplace artifacts under `.claude-plugin/`,
+`.agents/plugins/`, or `plugins/`.
+
+To run it locally, install Vale and use:
+
+```bash
+npm run lint:prose
+```
+
+If Vale flags valid project terminology, add a focused regular expression to
+`.github/styles/config/vocabularies/LVTD/accept.txt`. Use
+`.github/styles/config/vocabularies/LVTD/reject.txt` only for terms that should
+be blocked across skill prose.
+
 ## PR Checklist
 
 - Source skill is added or updated under `skills/<skill-name>/`.
