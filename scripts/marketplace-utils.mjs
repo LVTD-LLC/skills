@@ -143,9 +143,10 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     name: "developer-docs",
     displayName: "Developer Documentation",
     category: "Writing",
-    taskLabel: "developer documentation, technical writing, docs quality, and docs operations",
+    taskLabel:
+      "developer documentation, technical writing, technical research, SaaS docs, docs tooling, docs quality, and docs operations",
     description:
-      "Developer documentation workflow guidance for audience research, planning, drafting, editing, code samples, visuals, feedback, quality metrics, information architecture, release, maintenance, and deprecation.",
+      "Developer documentation workflow guidance for audience research, technical research, planning, drafting, editing, code samples, visuals, SaaS docs, Agile integration, platform selection, feedback, quality metrics, information architecture, release, maintenance, and deprecation.",
     iconFile: "developer-docs.svg",
     tags: [
       "developer-docs",
@@ -156,6 +157,10 @@ const MARKETPLACE_PLUGIN_GROUPS = [
       "docs-ops",
       "quality",
       "information-architecture",
+      "research",
+      "saas",
+      "agile",
+      "platform-selection",
     ],
     matches: (skill) => hasSkillTag(skill, "developer-docs"),
   },
