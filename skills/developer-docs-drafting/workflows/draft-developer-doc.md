@@ -13,6 +13,7 @@ Draft a developer documentation page from audience, goal, and source material.
 - Audience and reader goal.
 - Content type or documentation plan.
 - Source material: code, API schema, design note, issue, release note, or existing doc.
+- Learning objective, scenario plan, or SaaS responsibility boundary when available.
 
 **Reference**: from this workflow file, open `../references/core/knowledge.md`.
 
@@ -24,8 +25,10 @@ Draft a developer documentation page from audience, goal, and source material.
 
 - [ ] Name the primary reader.
 - [ ] Write the one primary goal.
+- [ ] Write the learning objective or reader destination when available.
 - [ ] Choose the content type.
 - [ ] List prerequisites, assumptions, and source material.
+- [ ] For SaaS docs, state what the provider manages and what the reader controls.
 
 ### Step 2: Create The Outline
 
@@ -34,6 +37,7 @@ Draft a developer documentation page from audience, goal, and source material.
 - [ ] Draft a title that reflects the reader goal.
 - [ ] List sections in reader order.
 - [ ] Add prerequisites before first action.
+- [ ] For scenario docs, outline one realistic route from problem to result.
 - [ ] Add verification, troubleshooting, and next steps when relevant.
 - [ ] Remove sections that do not support the goal.
 
@@ -46,6 +50,7 @@ Draft a developer documentation page from audience, goal, and source material.
 - [ ] Put ordered actions in numbered steps.
 - [ ] Use bullets or tables for unordered groups.
 - [ ] Keep callouts rare and important.
+- [ ] Link to reference material for variations instead of overloading the main route.
 - [ ] Mark TODOs instead of inventing uncertain details.
 
 ### Step 4: Check Reader Flow
@@ -56,6 +61,8 @@ Draft a developer documentation page from audience, goal, and source material.
 - [ ] The first command or action has all prerequisites.
 - [ ] Each step has one main action.
 - [ ] The reader can verify success.
+- [ ] Scenario docs stay grounded in the user's problem.
+- [ ] SaaS docs expose role, permission, and responsibility boundaries.
 - [ ] Links route away only when leaving the page is useful.
 
 ### Step 5: Return The Draft

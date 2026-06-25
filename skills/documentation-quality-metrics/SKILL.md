@@ -14,26 +14,28 @@ metadata:
 
 Use this skill to evaluate developer documentation quality and choose metrics that answer real questions. It combines editorial quality with analytics and user outcomes.
 
-This skill is derived from *Docs for Developers: An Engineer's Field Guide to Technical Writing*, especially Chapter 9, "Measuring documentation quality." The guidance is transformed and paraphrased; do not copy book prose into user outputs. Source: https://link.springer.com/book/10.1007/978-1-4842-7217-6
+This skill is derived from *Docs for Developers: An Engineer's Field Guide to Technical Writing*, especially Chapter 9, "Measuring documentation quality." It is expanded with paraphrased guidance from Christopher Gales and the Splunk Documentation Team's *The Product Is Docs: Writing Technical Documentation in a Product Development Group*, especially Chapter 11, "Measuring Success." Do not copy book prose into user outputs. Source: https://link.springer.com/book/10.1007/978-1-4842-7217-6
 
 ## Quick Start
 
 1. Load `guidelines.md` to choose the smallest useful reference set.
 2. Identify the decision the measurement should support.
-3. Audit functional quality before structural polish.
-4. Use `workflows/audit-doc-quality.md` for a full quality or metric plan.
-5. Prefer metric clusters with baseline and context over isolated numbers.
+3. Decide how much uncertainty the team needs to reduce before acting.
+4. Audit functional quality before structural polish.
+5. Use `workflows/audit-doc-quality.md` for a full quality or metric plan.
+6. Prefer metric clusters with baseline and context over isolated numbers.
 
 ## Default Output
 
 When auditing quality or designing metrics, return:
 
 1. **Measurement question** - what decision the metric or audit supports.
-2. **Functional quality findings** - accessibility, purpose, findability, accuracy, completeness.
-3. **Structural quality findings** - clarity, concision, consistency.
-4. **Metric plan** - qualitative and quantitative signals, baselines, owners, and limits.
-5. **Recommended actions** - fixes, experiments, or data collection.
-6. **Caveats** - what the available metrics cannot prove.
+2. **Uncertainty to reduce** - what the team does not know yet and how precise the answer needs to be.
+3. **Functional quality findings** - accessibility, purpose, findability, accuracy, completeness.
+4. **Structural quality findings** - clarity, concision, consistency.
+5. **Metric plan** - qualitative and quantitative signals, baselines, owners, and limits.
+6. **Recommended actions** - fixes, experiments, or data collection.
+7. **Caveats** - what the available metrics cannot prove.
 
 ## Contents
 
@@ -49,5 +51,5 @@ When auditing quality or designing metrics, return:
 
 - Good docs fulfill their purpose for users.
 - Functional quality matters before stylistic polish.
-- Metrics need context, baselines, and a decision they inform.
+- Metrics reduce uncertainty for a decision; counting is not measurement by itself.
 - Combine analytics with qualitative evidence; neither tells the full story alone.

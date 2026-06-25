@@ -2,7 +2,7 @@
 
 Good developer docs give readers a clear path through a task or concept. Structure matters because many readers skim, search, copy commands, and jump between sections.
 
-Source basis: *Docs for Developers*, Chapter 3, "Drafting documentation."
+Source basis: *Docs for Developers*, Chapter 3, "Drafting documentation"; *The Product Is Docs*, Chapter 9, "Learning Objectives," Chapter 14, "Scenario-driven Information Development," and Chapter 25, "Writing SaaS Documentation."
 
 ## Drafting Components
 
@@ -33,6 +33,33 @@ Procedures work best when they include:
 
 Readers often scan before committing. Put important information early, use specific headings, break large blocks, and avoid hiding required details in notes or long paragraphs.
 
+## Learning Objective Route
+
+Draft from starting point to destination. The opening should tell readers whether they are in the right place, what they need before they start, and what they will be able to do or decide by the end. Keep extra background, variations, and implementation detail off the main route unless they affect the objective.
+
+## Scenario Walkthroughs
+
+A scenario walkthrough shows how a specific audience solves a realistic problem end to end. It should:
+
+- Name the audience and problem early.
+- Provide a concrete starting point and sample context.
+- Walk one supported route to the result.
+- Include only adjacent concepts that affect the scenario.
+- Link to reference docs for options and variations.
+- Validate the workflow with product, QA, support, or customer-facing teams.
+
+Avoid turning a scenario into a feature tour, a marketing success story, or comprehensive product documentation.
+
+## Self-Contained SaaS Topics
+
+SaaS readers may arrive from search, support links, or release notes with little context. Help them orient quickly:
+
+- State whether the topic is for administrators, end users, superusers, or internal operators.
+- Explain what the service provider manages and what the customer controls.
+- Put permissions and plan or browser requirements before the first action.
+- Use consistent prerequisites, next steps, related links, and verification sections.
+- Keep topics limited, but include enough context that readers do not have to chase a chain of pages to complete the task.
+
 ## Common Misconceptions
 
 - **Myth**: Drafting starts with prose.
@@ -41,6 +68,10 @@ Readers often scan before committing. Put important information early, use speci
   **Reality**: Overused callouts train readers to ignore them.
 - **Myth**: Longer explanations are always more helpful.
   **Reality**: Unfocused detail can block the task.
+- **Myth**: A scenario should show every option the product supports.
+  **Reality**: A scenario should guide one realistic path and link to reference material for variations.
+- **Myth**: A self-contained topic must explain the whole product.
+  **Reality**: It should provide enough context for the task while preserving a clear boundary.
 
 ## Rules And Checks
 
@@ -58,6 +89,10 @@ Use these rules when writing or rewriting developer documentation.
 8. **One action per step** - Split steps that ask the reader to do multiple independent things.
 9. **End procedures with verification** - Tell readers how to know the action worked.
 10. **Use callouts sparingly** - Reserve warnings and cautions for material that changes reader safety or success.
+11. **Lead with user problem in scenarios** - Mention product features in the context of the problem they solve.
+12. **Keep the route narrow** - Put prerequisites, required concepts, and supported steps on the page; link out for scenery.
+13. **Label SaaS responsibility boundaries** - Make provider-managed, customer-managed, and permission-gated work explicit.
+14. **Signpost jump-in readers** - Use specific headings, next steps, and related links so readers can recover context quickly.
 
 ## Quick Reference
 
@@ -65,6 +100,7 @@ Use these rules when writing or rewriting developer documentation.
 |---------|-------|
 | Title | Names the goal or precise topic |
 | Opening | Gives outcome, audience, and prerequisites |
+| Learning objective | Names observable reader outcome |
 | Heading | Skimmable and specific |
 | Step | Actionable, atomic, and ordered |
 | List | Grouped by one clear principle |
@@ -78,6 +114,8 @@ Use these rules when writing or rewriting developer documentation.
 - A numbered step contains "and" between unrelated actions.
 - Headings are generic, such as "Overview" repeated across many pages.
 - The doc has many notes but no clear path.
+- The scenario starts by listing product features instead of the user's problem.
+- The topic assumes SaaS readers know whether they or the provider own an action.
 
 
 ## Examples And Patterns
@@ -146,4 +184,24 @@ Why it works: Required setup belongs in the main path, not a note.
 ## Verify incoming requests
 ## Test a valid webhook
 ## Troubleshoot failed verification
+```
+
+## Scenario Outline Pattern
+
+```text
+# Investigate failed logins and notify the security channel
+## Who this is for
+## Before you begin
+## Review the failed-login signal
+## Create the alert rule
+## Send a test event
+## Verify the notification
+## Troubleshoot missing notifications
+## Related alert options
+```
+
+## SaaS Responsibility Pattern
+
+```text
+This task is for workspace administrators. Your service provider manages alert processing and storage. You manage alert rules, notification targets, and test events. You need admin access and a supported browser before you begin.
 ```
