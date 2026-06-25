@@ -22,6 +22,8 @@ Audit documentation quality or design a docs measurement plan.
 **Goal**: Keep metrics tied to action.
 
 - [ ] State what decision the team needs to make.
+- [ ] State what uncertainty must be reduced before acting.
+- [ ] Decide how precise the answer needs to be.
 - [ ] Identify user goal, doc goal, and organization goal.
 - [ ] Define audience, doc type, and time window.
 
@@ -50,6 +52,7 @@ Audit documentation quality or design a docs measurement plan.
 - [ ] Select quantitative signals that answer the question.
 - [ ] Add qualitative signals that explain behavior.
 - [ ] Define baseline, segment, owner, and cadence.
+- [ ] Prefer a small experiment or sample when it is enough to guide the decision.
 - [ ] Note what the metrics cannot prove.
 
 ### Step 5: Recommend Actions
@@ -58,6 +61,7 @@ Audit documentation quality or design a docs measurement plan.
 
 - [ ] Prioritize fixes by reader impact.
 - [ ] Recommend data collection when evidence is missing.
+- [ ] Name the action that follows each likely metric result.
 - [ ] Define what to watch after changes ship.
 
 ## Exit Criteria

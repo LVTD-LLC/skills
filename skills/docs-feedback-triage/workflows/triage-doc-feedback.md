@@ -5,6 +5,7 @@ Turn documentation feedback into prioritized action.
 ## When To Use
 
 - Reviewing page feedback, support trends, survey results, or docs issues.
+- Responding to frustrated, public, or community-visible docs feedback.
 - Setting up a feedback intake template.
 - Deciding what documentation fixes to prioritize.
 
@@ -24,6 +25,7 @@ Turn documentation feedback into prioritized action.
 - [ ] Capture source, URL, section, user goal, and product/version.
 - [ ] Summarize the problem in one sentence.
 - [ ] Preserve exact error messages or search terms when available.
+- [ ] Note whether the reporter needs acknowledgement, support routing, or public response.
 - [ ] Identify missing context to request.
 
 ### Step 2: Validate And Route
@@ -34,6 +36,7 @@ Turn documentation feedback into prioritized action.
 - [ ] Search for duplicates.
 - [ ] Classify as docs, product, support, policy, or unclear.
 - [ ] Route non-doc issues while preserving docs implications.
+- [ ] Escalate account-specific, sensitive, abusive, or production-impacting issues to the right team.
 
 ### Step 3: Assess Actionability
 
@@ -49,6 +52,7 @@ Turn documentation feedback into prioritized action.
 
 - [ ] Estimate severity and number of affected users.
 - [ ] Check whether users are blocked or harmed.
+- [ ] Check support, community, field, or education signals for repeated patterns.
 - [ ] Apply P0-P3 priority.
 - [ ] Note supporting evidence such as support volume or analytics.
 
@@ -58,6 +62,7 @@ Turn documentation feedback into prioritized action.
 
 - [ ] Create or update the work item.
 - [ ] Reply to reporter when contact exists and the report is useful.
+- [ ] Acknowledge frustration and explain the next step when responding to negative feedback.
 - [ ] Record the resolution or reason for no action.
 - [ ] Watch for repeat feedback after the fix.
 

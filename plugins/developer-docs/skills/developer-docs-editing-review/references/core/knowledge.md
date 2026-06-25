@@ -2,7 +2,7 @@
 
 Editing developer docs is a quality pass on both information and reader flow. It should test whether the doc works, not only whether the prose sounds polished.
 
-Source basis: *Docs for Developers*, Chapter 4, "Editing documentation."
+Source basis: *Docs for Developers*, Chapter 4, "Editing documentation"; *The Product Is Docs*, Chapter 15, "Technical Editing," and Chapter 16, "Technical Verification."
 
 ## Editing Passes
 
@@ -24,6 +24,37 @@ Source basis: *Docs for Developers*, Chapter 4, "Editing documentation."
 
 Review comments are inputs, not commands. Resolve conflicts by returning to the reader goal, source of truth, risk, and evidence.
 
+## Technical Editing Scope
+
+Technical editing is more than copyediting. It checks whether the content is accessible, clear, usable, relevant, cohesive, consistent in terminology, appropriate for the audience, and scoped to the learning objective. Editing can happen before, during, or after drafting; the most useful edit depends on the writer's timing and the release risk.
+
+Fast product cycles benefit from smaller edit units. A single topic, section, or pull request can receive focused feedback faster than a large manual or doc set.
+
+## Technical Verification
+
+Technical verification confirms that documentation is accurate enough for users to rely on. Start from the assumption that technical material needs review by someone other than the writer, then carve out exceptions based on risk.
+
+| Review Type | Use For |
+|-------------|---------|
+| Spot review | Confirming an assumption, setting, edge case, or unclear concept while writing |
+| Draft review | Written review of a near-complete topic or doc set |
+| QA review | Testing procedures, migrations, upgrades, or risky workflows |
+| Review meeting | Resolving missing, shallow, or conflicting written reviews |
+
+QA testing is most valuable for complex, multistep, hard-to-set-up, destructive, high-commitment, edge-case-heavy, or hard-to-verify procedures. Migration, upgrade, data transformation, and recovery procedures usually deserve formal testing.
+
+## Reviewer Routing
+
+Target reviewers by what they can verify:
+
+- Responsible engineer: behavior, limits, API details, implementation consequences.
+- Product manager: user goals, use cases, release scope, and product fit.
+- QA: procedure correctness, edge cases, test environments, success criteria.
+- Support, field, education, or customer success: customer pain, terminology, and common failure modes.
+- Peer writer or editor: usability, clarity, consistency, information design, and style.
+
+Ask reviewers specific questions and send small chunks when possible. Track review requests in the team's normal tooling and keep written confirmation for high-risk procedure testing.
+
 ## Common Misconceptions
 
 - **Myth**: Editing means fixing grammar at the end.
@@ -32,6 +63,10 @@ Review comments are inputs, not commands. Resolve conflicts by returning to the 
   **Reality**: Blindly accepting feedback can create inconsistency or drift from user needs.
 - **Myth**: Technical review can happen after publish.
   **Reality**: High-risk procedures and examples need validation before release.
+- **Myth**: A shallow "looks good" review is enough.
+  **Reality**: Review quality matters; missing or incomplete verification leaves the writer accountable for reader failure.
+- **Myth**: Editing must wait until the full draft is finished.
+  **Reality**: Planning, outline, single-topic, side-by-side, and post-release edits can all improve quality depending on timing.
 
 ## Rules And Checks
 
@@ -48,13 +83,18 @@ Use these rules when editing or reviewing developer documentation.
 7. **Cut duplication and vague language** - Remove repeated ideas, inconsistent terms, idioms, and biased wording.
 8. **Request specific feedback** - Ask reviewers to check named sections, claims, examples, or risks.
 9. **Resolve conflicts through user need** - When comments disagree, choose the option that best serves the target reader.
+10. **Prepare before review** - Self-edit first so reviewers spend attention on content, not avoidable noise.
+11. **Target essential reviewers** - Assign required reviewers individually and make each role clear.
+12. **Use QA for risky procedures** - Formal procedure testing belongs in the release path when user harm or complex setup is possible.
+13. **Track incomplete reviews** - Missing, vague, or contradictory review is an unresolved risk, not approval.
+14. **Capture confirmation** - For high-risk docs, preserve written review or test results.
 
 ## Risk Order
 
 | Priority | Examples |
 |----------|----------|
 | Highest | Security, privacy, data loss, irreversible operations |
-| High | Broken commands, incorrect API details, missing prerequisites |
+| High | Broken commands, incorrect API details, missing prerequisites, failed migrations |
 | Medium | Confusing order, missing context, weak troubleshooting |
 | Lower | Style preferences, minor wording, formatting polish |
 
@@ -65,6 +105,9 @@ Use these rules when editing or reviewing developer documentation.
 - Review comments ask for broad "looks good?" feedback.
 - Multiple terms describe the same product concept.
 - The doc has no next step, expected result, or recovery path.
+- Required reviewers are copied as a group with no specific assignment.
+- QA has not tested a procedure that can alter data, affect production, or consume significant resources.
+- A reviewer approved the doc but did not check the risky sections.
 
 
 ## Examples And Patterns
@@ -92,6 +135,16 @@ Better:
 
 ```text
 Can you verify the Node.js signature example, the expected error codes, and whether the dashboard label is still "Signing secret"?
+```
+
+## Verification Routing Pattern
+
+```text
+Doc: Upgrade production workspace to the new auth flow
+Risk: Production access and irreversible configuration changes
+Required review: Auth engineer for behavior, PM for support window, QA for procedure test, support for common failure modes
+QA test request: Run the procedure in a staging workspace with an old-token account and confirm expected login, rollback, and error states
+Release blocker: Publish only after QA records pass/fail result or owner accepts residual risk
 ```
 
 ## Feedback Integration
