@@ -159,8 +159,8 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     description:
       "LinkedIn writing workflow guidance for posts, content ideas, comments, articles, newsletters, and performance-driven content iteration.",
     iconFile: "linkedin.svg",
-    tags: ["linkedin", "content-writing", "social-media", "posts", "newsletters"],
-    matches: (skill) => hasSkillTag(skill, "linkedin"),
+    tags: ["linkedin-writing", "linkedin", "content-writing", "social-media", "posts", "newsletters"],
+    matches: (skill) => hasSkillTag(skill, "linkedin-writing"),
   },
   {
     name: "b2b-sales",

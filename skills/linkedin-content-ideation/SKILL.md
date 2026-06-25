@@ -7,7 +7,7 @@ metadata:
   version: "0.1.0"
   displayName: LinkedIn Content Ideation
   category: Marketing
-  tags: linkedin,content-ideation,content-strategy,social-media,growth
+  tags: linkedin-writing,linkedin,content-ideation,content-strategy,social-media,growth
 ---
 
 # LinkedIn Content Ideation

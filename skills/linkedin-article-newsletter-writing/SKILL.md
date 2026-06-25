@@ -7,7 +7,7 @@ metadata:
   version: "0.1.0"
   displayName: LinkedIn Article Newsletter Writing
   category: Marketing
-  tags: linkedin,articles,newsletters,content-writing,thought-leadership
+  tags: linkedin-writing,linkedin,articles,newsletters,content-writing,thought-leadership
 ---
 
 # LinkedIn Article Newsletter Writing

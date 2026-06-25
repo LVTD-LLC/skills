@@ -7,7 +7,7 @@ metadata:
   version: "0.1.0"
   displayName: LinkedIn Comment Writing
   category: Marketing
-  tags: linkedin,comments,engagement,content-writing,social-media
+  tags: linkedin-writing,linkedin,comments,engagement,content-writing,social-media
 ---
 
 # LinkedIn Comment Writing

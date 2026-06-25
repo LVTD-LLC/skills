@@ -7,7 +7,7 @@ metadata:
   version: "0.1.0"
   displayName: LinkedIn Post Writing
   category: Marketing
-  tags: linkedin,content-writing,posts,social-media,personal-brand
+  tags: linkedin-writing,linkedin,content-writing,posts,social-media,personal-brand
 ---
 
 # LinkedIn Post Writing

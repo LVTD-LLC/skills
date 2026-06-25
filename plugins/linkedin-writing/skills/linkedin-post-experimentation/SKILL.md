@@ -7,7 +7,7 @@ metadata:
   version: "0.1.0"
   displayName: LinkedIn Post Experimentation
   category: Marketing
-  tags: linkedin,analytics,content-experiments,growth,social-media
+  tags: linkedin-writing,linkedin,analytics,content-experiments,growth,social-media
 ---
 
 # LinkedIn Post Experimentation
