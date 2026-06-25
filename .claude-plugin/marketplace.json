@@ -600,6 +600,49 @@
       ]
     },
     {
+      "name": "linkedin-writing",
+      "displayName": "LinkedIn Writing",
+      "source": "./plugins/linkedin-writing",
+      "description": "LinkedIn writing workflow guidance for posts, content ideas, comments, articles, newsletters, and performance-driven content iteration.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "Marketing",
+      "tags": [
+        "linkedin",
+        "content-writing",
+        "social-media",
+        "posts",
+        "newsletters"
+      ],
+      "keywords": [
+        "linkedin-writing",
+        "linkedin",
+        "content-writing",
+        "social-media",
+        "posts",
+        "newsletters",
+        "linkedin-article-newsletter-writing",
+        "linkedin-comment-writing",
+        "linkedin-content-ideation",
+        "linkedin-post-experimentation",
+        "linkedin-post-writing",
+        "articles",
+        "thought-leadership",
+        "comments",
+        "engagement",
+        "content-ideation",
+        "content-strategy",
+        "growth",
+        "analytics",
+        "content-experiments",
+        "personal-brand"
+      ]
+    },
+    {
       "name": "b2b-sales",
       "displayName": "B2B Sales",
       "source": "./plugins/b2b-sales",

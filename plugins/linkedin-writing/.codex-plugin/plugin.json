@@ -1,0 +1,55 @@
+{
+  "name": "linkedin-writing",
+  "version": "0.2.0",
+  "description": "LinkedIn writing workflow guidance for posts, content ideas, comments, articles, newsletters, and performance-driven content iteration.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "linkedin-writing",
+    "linkedin",
+    "content-writing",
+    "social-media",
+    "posts",
+    "newsletters",
+    "linkedin-article-newsletter-writing",
+    "linkedin-comment-writing",
+    "linkedin-content-ideation",
+    "linkedin-post-experimentation",
+    "linkedin-post-writing",
+    "articles",
+    "thought-leadership",
+    "comments",
+    "engagement",
+    "content-ideation",
+    "content-strategy",
+    "growth",
+    "analytics",
+    "content-experiments",
+    "personal-brand"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "LinkedIn Writing",
+    "shortDescription": "LinkedIn writing workflow guidance for posts, content ideas, comments, articles, newsletters, and performance-driven content iteration.",
+    "longDescription": "LinkedIn writing workflow guidance for posts, content ideas, comments, articles, newsletters, and performance-driven content iteration. Packaged as a marketplace plugin for Codex and Claude Code. Includes: LinkedIn Article Newsletter Writing, LinkedIn Comment Writing, LinkedIn Content Ideation, LinkedIn Post Experimentation, LinkedIn Post Writing. Category: Marketing.",
+    "developerName": "LVTD",
+    "category": "Marketing",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the LinkedIn Writing plugin when working on LinkedIn post writing, content ideation, comments, newsletters, and content experiments tasks. It includes the LinkedIn Article Newsletter Writing, LinkedIn Comment Writing, LinkedIn Content Ideation, LinkedIn Post Experimentation, and LinkedIn Post Writing skills."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/linkedin.svg",
+    "logo": "./assets/linkedin.svg",
+    "screenshots": []
+  }
+}

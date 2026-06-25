@@ -152,6 +152,17 @@ const MARKETPLACE_PLUGIN_GROUPS = [
       hasSkillTag(skill, "eighty-twenty") || skill.name.startsWith("eighty-twenty-"),
   },
   {
+    name: "linkedin-writing",
+    displayName: "LinkedIn Writing",
+    category: "Marketing",
+    taskLabel: "LinkedIn post writing, content ideation, comments, newsletters, and content experiments",
+    description:
+      "LinkedIn writing workflow guidance for posts, content ideas, comments, articles, newsletters, and performance-driven content iteration.",
+    iconFile: "linkedin.svg",
+    tags: ["linkedin", "content-writing", "social-media", "posts", "newsletters"],
+    matches: (skill) => hasSkillTag(skill, "linkedin"),
+  },
+  {
     name: "b2b-sales",
     displayName: "B2B Sales",
     category: "Marketing",
