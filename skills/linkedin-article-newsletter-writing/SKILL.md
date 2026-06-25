@@ -15,8 +15,8 @@ metadata:
 ## Source Traceability
 
 Primary source: Growth Hacking LinkedIn by Bjorn Radde, especially sections
-3.4.3 "Article", 3.4.5 "Newsletter", 3.4.6 "Live streams", and 3.7
-"Social Selling Index". Guidance is transformed and paraphrased.
+3.4.3 "Article", 3.4.5 "Newsletter", and 3.7 "Social Selling Index".
+Guidance is transformed and paraphrased.
 
 ## Reference Routing
 

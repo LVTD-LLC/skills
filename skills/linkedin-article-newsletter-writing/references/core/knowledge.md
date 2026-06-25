@@ -14,7 +14,6 @@ promoted through shorter posts.
 | Growth Hacking LinkedIn, 3.4.3 | Articles demonstrate expertise, should be useful rather than promotional, and need a clear goal, audience, and cadence. |
 | Growth Hacking LinkedIn, 3.4.3 | A "why follow me" article can explain the value of following the author and can be featured on the profile. |
 | Growth Hacking LinkedIn, 3.4.5 | Newsletters work when they focus on one professional topic and publish regularly. |
-| Growth Hacking LinkedIn, 3.4.6 | Live formats can support visibility when available, but availability and access criteria change. |
 | Growth Hacking LinkedIn, 3.7 | Sharing relevant insights contributes to professional brand and social-selling presence. |
 
 ## Current LinkedIn Checks
