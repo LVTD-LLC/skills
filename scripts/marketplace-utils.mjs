@@ -140,6 +140,26 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => hasSkillTag(skill, "books") && hasSkillTag(skill, "nonfiction"),
   },
   {
+    name: "developer-docs",
+    displayName: "Developer Documentation",
+    category: "Writing",
+    taskLabel: "developer documentation, technical writing, docs quality, and docs operations",
+    description:
+      "Developer documentation workflow guidance for audience research, planning, drafting, editing, code samples, visuals, feedback, quality metrics, information architecture, release, maintenance, and deprecation.",
+    iconFile: "developer-docs.svg",
+    tags: [
+      "developer-docs",
+      "technical-writing",
+      "documentation",
+      "api-docs",
+      "code-samples",
+      "docs-ops",
+      "quality",
+      "information-architecture",
+    ],
+    matches: (skill) => hasSkillTag(skill, "developer-docs"),
+  },
+  {
     name: "customer-discovery",
     displayName: "Customer Discovery",
     category: "Marketing",
