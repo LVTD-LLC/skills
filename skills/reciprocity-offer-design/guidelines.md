@@ -34,7 +34,7 @@ Start
 
 | File | Purpose |
 | --- | --- |
-| references/reciprocity/knowledge.md | Definitions, concepts, source lines |
+| references/reciprocity/knowledge.md | Definitions, concepts, and source grounding |
 | references/reciprocity/rules.md | Core rules, guidelines, exceptions |
 | references/reciprocity/examples.md | Bad/better examples |
 | references/reciprocity/smells.md | Anti-patterns and detection |

@@ -1,8 +1,6 @@
 # Scarcity and Urgency Knowledge
 
-Source: Robert B. Cialdini, Influence: The Psychology of Persuasion, local text extraction in tmp/influence-analysis/influence.txt.
-
-Source lines for this topic: 1775-2023.
+Source basis: Robert B. Cialdini, Influence: The Psychology of Persuasion. The concepts below are paraphrased for skill use; this file does not require access to the local extraction used during authoring.
 
 ## Overview
 
@@ -12,19 +10,19 @@ Use scarcity only when availability is genuinely constrained. Scarcity can help 
 
 ### Scarcity principle
 
-**Definition**: Opportunities seem more valuable when availability is limited. Cialdini introduces this at lines 1775-1853.
+**Definition**: Opportunities seem more valuable when availability is limited. Cialdini introduces this in the scarcity chapter.
 
 ### Loss framing
 
-**Definition**: Potential loss can motivate more strongly than equivalent gain; examples appear around lines 1775-1830.
+**Definition**: Potential loss can motivate more strongly than equivalent gain.
 
 ### Psychological reactance
 
-**Definition**: Threatened freedom can make people want the restricted option more; reactance begins at line 1854.
+**Definition**: Threatened freedom can make people want the restricted option more.
 
 ### Competition pressure
 
-**Definition**: Rival buyers can intensify scarcity arousal and reduce deliberation; examples appear near lines 1990-2006.
+**Definition**: Rival buyers can intensify scarcity arousal and reduce deliberation.
 
 ## How It Relates To Other Influence Principles
 
@@ -47,6 +45,6 @@ Use scarcity only when availability is genuinely constrained. Scarcity can help 
 | Concept | One-Line Summary |
 | --- | --- |
 | Scarcity principle | Opportunities seem more valuable when availability is limited. |
-| Loss framing | Potential loss can motivate more strongly than equivalent gain; examples appear around lines 1775-1830. |
-| Psychological reactance | Threatened freedom can make people want the restricted option more; reactance begins at line 1854. |
-| Competition pressure | Rival buyers can intensify scarcity arousal and reduce deliberation; examples appear near lines 1990-2006. |
+| Loss framing | Potential loss can motivate more strongly than equivalent gain. |
+| Psychological reactance | Threatened freedom can make people want the restricted option more. |
+| Competition pressure | Rival buyers can intensify scarcity arousal and reduce deliberation. |

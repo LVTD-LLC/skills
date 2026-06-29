@@ -1,8 +1,6 @@
 # Influence Audit Knowledge
 
-Source: Robert B. Cialdini, Influence: The Psychology of Persuasion, local text extraction in tmp/influence-analysis/influence.txt.
-
-Source lines for this topic: 81-219, 2024-2088, plus chapter defense sections.
+Source basis: Robert B. Cialdini, Influence: The Psychology of Persuasion. The concepts below are paraphrased for skill use; this file does not require access to the local extraction used during authoring.
 
 ## Overview
 
@@ -12,11 +10,11 @@ Audit persuasion by identifying which shortcut cues are present, whether those c
 
 ### Shortcut cue
 
-**Definition**: A single piece of evidence people use when they lack time, energy, or certainty for full analysis. Cialdini frames these cues as useful but exploitable at lines 148-154 and 2057-2079.
+**Definition**: A single piece of evidence people use when they lack time, energy, or certainty for full analysis. Cialdini frames these cues as useful but exploitable shortcuts.
 
 ### Counterfeit cue
 
-**Definition**: A cue engineered to look like valid evidence while misrepresenting reality, such as staged popularity or fabricated scarcity. The epilogue treats this as the main ethical breach at lines 2081-2087.
+**Definition**: A cue engineered to look like valid evidence while misrepresenting reality, such as staged popularity or fabricated scarcity. The epilogue treats this as the main ethical breach.
 
 ### Influence stack
 

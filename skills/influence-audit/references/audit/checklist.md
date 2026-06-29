@@ -26,5 +26,5 @@ Use this checklist before finalizing advice, copy, or an audit.
 
 ## Source Traceability
 
-- [ ] Include source line references when explaining book-derived concepts.
+- [ ] Attribute book-derived concepts without relying on unpackaged local extraction paths.
 - [ ] Paraphrase book content rather than copying long passages.

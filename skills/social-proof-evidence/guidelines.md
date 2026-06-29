@@ -34,7 +34,7 @@ Start
 
 | File | Purpose |
 | --- | --- |
-| references/social-proof/knowledge.md | Definitions, concepts, source lines |
+| references/social-proof/knowledge.md | Definitions, concepts, and source grounding |
 | references/social-proof/rules.md | Core rules, guidelines, exceptions |
 | references/social-proof/examples.md | Bad/better examples |
 | references/social-proof/smells.md | Anti-patterns and detection |

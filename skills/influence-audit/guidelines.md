@@ -34,7 +34,7 @@ Start
 
 | File | Purpose |
 | --- | --- |
-| references/audit/knowledge.md | Definitions, concepts, source lines |
+| references/audit/knowledge.md | Definitions, concepts, and source grounding |
 | references/audit/rules.md | Core rules, guidelines, exceptions |
 | references/audit/examples.md | Bad/better examples |
 | references/audit/smells.md | Anti-patterns and detection |

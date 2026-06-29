@@ -18,7 +18,7 @@ Urgency copy should still include price, terms, alternatives, and consequences.
 
 ### 4. Separate possession value from use value
 
-Scarcity can affect collectible or status value; it does not make ordinary utility better. Cialdini makes this defense point around lines 1984-2006.
+Scarcity can affect collectible or status value; it does not make ordinary utility better. Cialdini makes this defense point in the scarcity chapter.
 
 ## Guidelines
 
@@ -45,4 +45,4 @@ Scarcity can affect collectible or status value; it does not make ordinary utili
 | Prove the constraint | Know whether scarcity comes from inventory, capacity, deadline, eligibility, seasonality, or policy. |
 | Avoid invented deadlines | Do not create timers or claims that reset, follow the user, or lack operational reason. |
 | Give decision context | Urgency copy should still include price, terms, alternatives, and consequences. |
-| Separate possession value from use value | Scarcity can affect collectible or status value; it does not make ordinary utility better. Cialdini makes this defense point around lines 1984-2006. |
+| Separate possession value from use value | Scarcity can affect collectible or status value; it does not make ordinary utility better. Cialdini makes this defense point in the scarcity chapter. |

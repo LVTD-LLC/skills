@@ -1,8 +1,6 @@
 # Authority Knowledge
 
-Source: Robert B. Cialdini, Influence: The Psychology of Persuasion, local text extraction in tmp/influence-analysis/influence.txt.
-
-Source lines for this topic: 1584-1774.
+Source basis: Robert B. Cialdini, Influence: The Psychology of Persuasion. The concepts below are paraphrased for skill use; this file does not require access to the local extraction used during authoring.
 
 ## Overview
 
@@ -12,19 +10,19 @@ Use authority signals to clarify expertise and accountability, not to bypass scr
 
 ### Authority shortcut
 
-**Definition**: People often defer to recognized authority because it is usually efficient. Cialdini discusses automatic obedience around lines 1584-1664.
+**Definition**: People often defer to recognized authority because it is usually efficient. Cialdini discusses automatic obedience in the authority chapter.
 
 ### Title signal
 
-**Definition**: Titles can generate deference even when detached from real expertise; titles begin at line 1665.
+**Definition**: Titles can generate deference even when detached from real expertise.
 
 ### Clothing signal
 
-**Definition**: Uniforms and professional attire can imply authority; clothes begin at line 1695.
+**Definition**: Uniforms and professional attire can imply authority.
 
 ### Trappings signal
 
-**Definition**: Status objects and institutional symbols can transfer credibility; trappings begin at line 1711.
+**Definition**: Status objects and institutional symbols can transfer credibility.
 
 ### Relevance gap
 
@@ -51,7 +49,7 @@ Use authority signals to clarify expertise and accountability, not to bypass scr
 | Concept | One-Line Summary |
 | --- | --- |
 | Authority shortcut | People often defer to recognized authority because it is usually efficient. |
-| Title signal | Titles can generate deference even when detached from real expertise; titles begin at line 1665. |
-| Clothing signal | Uniforms and professional attire can imply authority; clothes begin at line 1695. |
-| Trappings signal | Status objects and institutional symbols can transfer credibility; trappings begin at line 1711. |
+| Title signal | Titles can generate deference even when detached from real expertise. |
+| Clothing signal | Uniforms and professional attire can imply authority. |
+| Trappings signal | Status objects and institutional symbols can transfer credibility. |
 | Relevance gap | A real credential can still be irrelevant to the specific claim. |

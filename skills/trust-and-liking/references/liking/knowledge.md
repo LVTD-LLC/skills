@@ -1,8 +1,6 @@
 # Liking and Trust Knowledge
 
-Source: Robert B. Cialdini, Influence: The Psychology of Persuasion, local text extraction in tmp/influence-analysis/influence.txt.
-
-Source lines for this topic: 1261-1583.
+Source basis: Robert B. Cialdini, Influence: The Psychology of Persuasion. The concepts below are paraphrased for skill use; this file does not require access to the local extraction used during authoring.
 
 ## Overview
 
@@ -12,23 +10,23 @@ Build trust by finding real common ground, making useful cooperation easy, and a
 
 ### Liking rule
 
-**Definition**: People are more inclined to say yes to people they know and like. The chapter opens with this rule at lines 1261-1311.
+**Definition**: People are more inclined to say yes to people they know and like. The liking chapter opens with this rule.
 
 ### Similarity
 
-**Definition**: Shared background, identity, preferences, or context can increase liking; the similarity section starts at line 1312.
+**Definition**: Shared background, identity, preferences, or context can increase liking; the similarity discussion explains this effect.
 
 ### Compliment effect
 
-**Definition**: Praise can create liking even when strategic, so use it carefully; compliments begin at line 1324.
+**Definition**: Praise can create liking even when strategic, so use it carefully.
 
 ### Cooperation
 
-**Definition**: Working toward shared goals can create liking more reliably than surface charm; cooperation begins at line 1338.
+**Definition**: Working toward shared goals can create liking more reliably than surface charm.
 
 ### Association
 
-**Definition**: Positive or negative associations can transfer to people and products; association begins at line 1414.
+**Definition**: Positive or negative associations can transfer to people and products.
 
 ## How It Relates To Other Influence Principles
 
@@ -51,7 +49,7 @@ Build trust by finding real common ground, making useful cooperation easy, and a
 | Concept | One-Line Summary |
 | --- | --- |
 | Liking rule | People are more inclined to say yes to people they know and like. |
-| Similarity | Shared background, identity, preferences, or context can increase liking; the similarity section starts at line 1312. |
-| Compliment effect | Praise can create liking even when strategic, so use it carefully; compliments begin at line 1324. |
-| Cooperation | Working toward shared goals can create liking more reliably than surface charm; cooperation begins at line 1338. |
-| Association | Positive or negative associations can transfer to people and products; association begins at line 1414. |
+| Similarity | Shared background, identity, preferences, or context can increase liking; the similarity discussion explains this effect. |
+| Compliment effect | Praise can create liking even when strategic, so use it carefully. |
+| Cooperation | Working toward shared goals can create liking more reliably than surface charm. |
+| Association | Positive or negative associations can transfer to people and products. |

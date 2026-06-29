@@ -34,7 +34,7 @@ Start
 
 | File | Purpose |
 | --- | --- |
-| references/commitment/knowledge.md | Definitions, concepts, source lines |
+| references/commitment/knowledge.md | Definitions, concepts, and source grounding |
 | references/commitment/rules.md | Core rules, guidelines, exceptions |
 | references/commitment/examples.md | Bad/better examples |
 | references/commitment/smells.md | Anti-patterns and detection |

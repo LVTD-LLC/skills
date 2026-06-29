@@ -1,8 +1,6 @@
 # Reciprocity Knowledge
 
-Source: Robert B. Cialdini, Influence: The Psychology of Persuasion, local text extraction in tmp/influence-analysis/influence.txt.
-
-Source lines for this topic: 220-438.
+Source basis: Robert B. Cialdini, Influence: The Psychology of Persuasion. The concepts below are paraphrased for skill use; this file does not require access to the local extraction used during authoring.
 
 ## Overview
 
@@ -12,19 +10,19 @@ Use reciprocity to create real value before asking, while avoiding obligation tr
 
 ### Reciprocity rule
 
-**Definition**: People tend to repay gifts, favors, invitations, and concessions. Cialdini describes its cultural power at lines 220-249.
+**Definition**: People tend to repay gifts, favors, invitations, and concessions. Cialdini describes reciprocity as a culturally powerful rule.
 
 ### Uninvited debt
 
-**Definition**: An unsolicited favor can still create obligation, which makes it easy to exploit. See lines 285-299.
+**Definition**: An unsolicited favor can still create obligation, which makes it easy to exploit.
 
 ### Unequal exchange
 
-**Definition**: Small initial gifts can trigger larger return favors when obligation drives the decision. See lines 299-401.
+**Definition**: Small initial gifts can trigger larger return favors when obligation drives the decision.
 
 ### Rejection-then-retreat
 
-**Definition**: A large initial request can make a smaller retreat look like a concession, increasing compliance. Notes cite the tactic around lines 2138-2148.
+**Definition**: A large initial request can make a smaller retreat look like a concession, increasing compliance.
 
 ## How It Relates To Other Influence Principles
 

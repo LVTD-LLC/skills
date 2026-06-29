@@ -34,7 +34,7 @@ Start
 
 | File | Purpose |
 | --- | --- |
-| references/scarcity/knowledge.md | Definitions, concepts, source lines |
+| references/scarcity/knowledge.md | Definitions, concepts, and source grounding |
 | references/scarcity/rules.md | Core rules, guidelines, exceptions |
 | references/scarcity/examples.md | Bad/better examples |
 | references/scarcity/smells.md | Anti-patterns and detection |

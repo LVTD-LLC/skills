@@ -1,8 +1,6 @@
 # Contrast and Reasons Knowledge
 
-Source: Robert B. Cialdini, Influence: The Psychology of Persuasion, local text extraction in tmp/influence-analysis/influence.txt.
-
-Source lines for this topic: 111-219.
+Source basis: Robert B. Cialdini, Influence: The Psychology of Persuasion. The concepts below are paraphrased for skill use; this file does not require access to the local extraction used during authoring.
 
 ## Overview
 
@@ -12,19 +10,19 @@ Frame comparisons so users understand relative value without being misled by seq
 
 ### Trigger feature
 
-**Definition**: A salient cue can activate an automatic response even when the whole situation deserves more thought. Chapter 1 develops this idea around lines 111-162.
+**Definition**: A salient cue can activate an automatic response even when the whole situation deserves more thought. Chapter 1 develops this idea.
 
 ### Reason cue
 
-**Definition**: People respond better to requests with reasons, but shallow reason words can also trigger compliance. The copying-machine study appears around line 138.
+**Definition**: People respond better to requests with reasons, but shallow reason words can also trigger compliance. The copying-machine study illustrates this.
 
 ### Perceptual contrast
 
-**Definition**: A second item can seem more different because of what came before it. Contrast is introduced at line 174.
+**Definition**: A second item can seem more different because of what came before it.
 
 ### Sequential add-on
 
-**Definition**: Small add-ons can seem cheaper after a large purchase; the sales examples appear around lines 180-188.
+**Definition**: Small add-ons can seem cheaper after a large purchase; sales examples illustrate this effect.
 
 ## How It Relates To Other Influence Principles
 
@@ -49,4 +47,4 @@ Frame comparisons so users understand relative value without being misled by seq
 | Trigger feature | A salient cue can activate an automatic response even when the whole situation deserves more thought. |
 | Reason cue | People respond better to requests with reasons, but shallow reason words can also trigger compliance. |
 | Perceptual contrast | A second item can seem more different because of what came before it. |
-| Sequential add-on | Small add-ons can seem cheaper after a large purchase; the sales examples appear around lines 180-188. |
+| Sequential add-on | Small add-ons can seem cheaper after a large purchase; sales examples illustrate this effect. |

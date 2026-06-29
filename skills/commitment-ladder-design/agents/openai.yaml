@@ -2,5 +2,3 @@ interface:
   display_name: "Commitment Ladders"
   short_description: "Design authentic commitment"
   default_prompt: "Use $commitment-ladder-design to improve this persuasion task ethically."
-policy:
-  allow_implicit_invocation: true

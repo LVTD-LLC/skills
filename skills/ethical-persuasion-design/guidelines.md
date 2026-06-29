@@ -34,7 +34,7 @@ Start
 
 | File | Purpose |
 | --- | --- |
-| references/persuasion/knowledge.md | Definitions, concepts, source lines |
+| references/persuasion/knowledge.md | Definitions, concepts, and source grounding |
 | references/persuasion/rules.md | Core rules, guidelines, exceptions |
 | references/persuasion/examples.md | Bad/better examples |
 | references/persuasion/smells.md | Anti-patterns and detection |

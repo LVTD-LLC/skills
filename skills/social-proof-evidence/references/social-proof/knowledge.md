@@ -1,8 +1,6 @@
 # Social Proof Knowledge
 
-Source: Robert B. Cialdini, Influence: The Psychology of Persuasion, local text extraction in tmp/influence-analysis/influence.txt.
-
-Source lines for this topic: 862-1260.
+Source basis: Robert B. Cialdini, Influence: The Psychology of Persuasion. The concepts below are paraphrased for skill use; this file does not require access to the local extraction used during authoring.
 
 ## Overview
 
@@ -12,7 +10,7 @@ Use social proof as evidence, not theater. The principle works because people in
 
 ### Social proof
 
-**Definition**: People treat behavior as more correct when they see others doing it. Cialdini defines this at lines 862-900.
+**Definition**: People treat behavior as more correct when they see others doing it. Cialdini defines this in the social proof chapter.
 
 ### Uncertainty amplifier
 

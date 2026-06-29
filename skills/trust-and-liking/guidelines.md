@@ -34,7 +34,7 @@ Start
 
 | File | Purpose |
 | --- | --- |
-| references/liking/knowledge.md | Definitions, concepts, source lines |
+| references/liking/knowledge.md | Definitions, concepts, and source grounding |
 | references/liking/rules.md | Core rules, guidelines, exceptions |
 | references/liking/examples.md | Bad/better examples |
 | references/liking/smells.md | Anti-patterns and detection |

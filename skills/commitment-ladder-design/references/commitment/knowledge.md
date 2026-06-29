@@ -1,8 +1,6 @@
 # Commitment and Consistency Knowledge
 
-Source: Robert B. Cialdini, Influence: The Psychology of Persuasion, local text extraction in tmp/influence-analysis/influence.txt.
-
-Source lines for this topic: 439-861.
+Source basis: Robert B. Cialdini, Influence: The Psychology of Persuasion. The concepts below are paraphrased for skill use; this file does not require access to the local extraction used during authoring.
 
 ## Overview
 
@@ -12,23 +10,23 @@ Design commitments that help users act on real intent, not commitments that trap
 
 ### Consistency drive
 
-**Definition**: After a choice or stand, people feel pressure to act consistently with it. Cialdini introduces this mechanism at lines 439-520.
+**Definition**: After a choice or stand, people feel pressure to act consistently with it. Cialdini introduces this mechanism in the commitment and consistency chapter.
 
 ### Public commitment
 
-**Definition**: Commitments become more durable when visible to others. The public-eye section starts at line 628.
+**Definition**: Commitments become more durable when visible to others. The public commitment discussion explains this effect.
 
 ### Effortful commitment
 
-**Definition**: More effort can increase ownership and persistence; the effort section starts at line 654.
+**Definition**: More effort can increase ownership and persistence; the effortful commitment discussion explains this effect.
 
 ### Inner choice
 
-**Definition**: Commitments are strongest when people experience them as freely chosen; the inner-choice section starts at line 698.
+**Definition**: Commitments are strongest when people experience them as freely chosen; the inner-choice discussion explains this effect.
 
 ### Lowball
 
-**Definition**: A choice is secured under attractive terms, then terms change after commitment. The notes cite controlled evidence at line 2196.
+**Definition**: A choice is secured under attractive terms, then terms change after commitment. The lowball discussion treats this as a consistency trap.
 
 ## How It Relates To Other Influence Principles
 
@@ -52,6 +50,6 @@ Design commitments that help users act on real intent, not commitments that trap
 | --- | --- |
 | Consistency drive | After a choice or stand, people feel pressure to act consistently with it. |
 | Public commitment | Commitments become more durable when visible to others. |
-| Effortful commitment | More effort can increase ownership and persistence; the effort section starts at line 654. |
-| Inner choice | Commitments are strongest when people experience them as freely chosen; the inner-choice section starts at line 698. |
+| Effortful commitment | More effort can increase ownership and persistence; the effortful commitment discussion explains this effect. |
+| Inner choice | Commitments are strongest when people experience them as freely chosen; the inner-choice discussion explains this effect. |
 | Lowball | A choice is secured under attractive terms, then terms change after commitment. |

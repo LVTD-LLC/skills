@@ -34,7 +34,7 @@ Start
 
 | File | Purpose |
 | --- | --- |
-| references/authority/knowledge.md | Definitions, concepts, source lines |
+| references/authority/knowledge.md | Definitions, concepts, and source grounding |
 | references/authority/rules.md | Core rules, guidelines, exceptions |
 | references/authority/examples.md | Bad/better examples |
 | references/authority/smells.md | Anti-patterns and detection |

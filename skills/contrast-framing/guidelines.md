@@ -34,7 +34,7 @@ Start
 
 | File | Purpose |
 | --- | --- |
-| references/contrast/knowledge.md | Definitions, concepts, source lines |
+| references/contrast/knowledge.md | Definitions, concepts, and source grounding |
 | references/contrast/rules.md | Core rules, guidelines, exceptions |
 | references/contrast/examples.md | Bad/better examples |
 | references/contrast/smells.md | Anti-patterns and detection |
