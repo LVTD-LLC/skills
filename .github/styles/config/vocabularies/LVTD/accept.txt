@@ -11,14 +11,17 @@
 (?i)broadphase
 (?i)broadphases
 (?i)buildable
+(?i)breakpoints?
 (?i)canonicaliz(e|es|ed|ation)
 (?i)citability
 (?i)clickbait
+(?i)calc
 (?i)config(s)?
 (?i)cookiecutter
 (?i)crawlab(le|ility)
 (?i)dedup(e|ed|lication)
 (?i)deduplicate
+(?i)declaratively
 (?i)denoising
 (?i)denormalized
 (?i)deallocator
@@ -32,12 +35,14 @@
 (?i)dropoffs
 (?i)dto(s)?
 (?i)draftable
+(?i)dvh
 (?i)ebook(s)?
 (?i)enablement
 (?i)enqueueing
 (?i)enum(s)?
 (?i)findability
 (?i)frontmatter
+(?i)flexbox
 (?i)gameplay
 (?i)geo
 (?i)globals
@@ -47,9 +52,11 @@
 (?i)heatmap
 (?i)idempotency
 (?i)infographic
+(?i)inspectable
 (?i)influencers
 (?i)keyset
 (?i)learnable
+(?i)lvh
 (?i)lockfile
 (?i)microsites?
 (?i)middleware
@@ -62,6 +69,7 @@
 (?i)noindex
 (?i)nullability
 (?i)nullable
+(?i)nullish
 (?i)onboarding
 (?i)opfs?
 (?i)overfit
@@ -114,6 +122,7 @@
 (?i)touchpoints
 (?i)triaging
 (?i)typoed
+(?i)unitless
 (?i)unmanaged
 (?i)undercount(ed)?
 (?i)untracked
@@ -128,16 +137,25 @@
 
 # Common technical names, formats, and acronyms.
 (?i)api(s)?
+(?i)css
 (?i)cta(s)?
+(?i)crypto
+(?i)dev
 (?i)cli(s)?
 (?i)dm(s)?
+(?i)hsl
 (?i)kpi(s)?
 (?i)isbn(s)?
+(?i)javascript
 (?i)lod(s)?
+(?i)oklch
 (?i)pdf(s)?
+(?i)px
+(?i)rgb
 (?i)sdf(s)?
 (?i)serp(s)?
 (?i)sha(s)?
+(?i)svh
 (?i)ui(s)?
 (?i)uv(s)?
 Actix
