@@ -232,6 +232,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     taskLabel: "ethical persuasion, influence audits, social proof, authority, scarcity, reciprocity, commitment, liking, and contrast framing",
     description:
       "Influence and persuasion guidance for ethical audits, offer design, commitment ladders, social proof, rapport, authority signals, scarcity, urgency, and contrast framing.",
+    iconFile: "icons8-expand_influence.svg",
     tags: [
       "influence",
       "persuasion",
