@@ -13,7 +13,7 @@ Step-by-step process for applying css math units to front-end code.
 - Know the target browser/UI state.
 - Have the relevant CSS, JavaScript, or design token values.
 
-**Reference**: `references/css-calculations/rules.md`
+**Reference**: `../references/css-calculations/rules.md`
 
 ## Workflow Steps
 
@@ -25,23 +25,23 @@ Step-by-step process for applying css math units to front-end code.
 - [ ] List known inputs and units.
 - [ ] Identify the source of each input.
 
-**Reference**: `references/css-calculations/knowledge.md`
+**Reference**: `../references/css-calculations/knowledge.md`
 
 ### Step 2: Pick the Formula Pattern
 
 **Goal**: Choose the smallest math model that explains the behavior.
 
-- [ ] Check whether a pattern in `references/css-calculations/patterns.md` matches.
+- [ ] Check whether a pattern in `../references/css-calculations/patterns.md` matches.
 - [ ] Prefer a bounded formula over a magic number.
 - [ ] Decide whether CSS or JavaScript owns the calculation.
 
-**Reference**: `references/css-calculations/patterns.md`
+**Reference**: `../references/css-calculations/patterns.md`
 
 ### Step 3: Apply the Rules
 
 **Goal**: Convert the formula into maintainable code.
 
-- [ ] Follow the relevant rules in `references/css-calculations/rules.md`.
+- [ ] Follow the relevant rules in `../references/css-calculations/rules.md`.
 - [ ] Use named tokens, variables, or intermediate values.
 - [ ] Keep units valid and readable.
 

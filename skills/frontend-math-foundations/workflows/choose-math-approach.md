@@ -13,7 +13,7 @@ Step-by-step process for applying frontend math foundations to front-end code.
 - Know the target browser/UI state.
 - Have the relevant CSS, JavaScript, or design token values.
 
-**Reference**: `references/math-foundations/rules.md`
+**Reference**: `../references/math-foundations/rules.md`
 
 ## Workflow Steps
 
@@ -25,23 +25,23 @@ Step-by-step process for applying frontend math foundations to front-end code.
 - [ ] List known inputs and units.
 - [ ] Identify the source of each input.
 
-**Reference**: `references/math-foundations/knowledge.md`
+**Reference**: `../references/math-foundations/knowledge.md`
 
 ### Step 2: Pick the Formula Pattern
 
 **Goal**: Choose the smallest math model that explains the behavior.
 
-- [ ] Check whether a pattern in `references/math-foundations/patterns.md` matches.
+- [ ] Check whether a pattern in `../references/math-foundations/patterns.md` matches.
 - [ ] Prefer a bounded formula over a magic number.
 - [ ] Decide whether CSS or JavaScript owns the calculation.
 
-**Reference**: `references/math-foundations/patterns.md`
+**Reference**: `../references/math-foundations/patterns.md`
 
 ### Step 3: Apply the Rules
 
 **Goal**: Convert the formula into maintainable code.
 
-- [ ] Follow the relevant rules in `references/math-foundations/rules.md`.
+- [ ] Follow the relevant rules in `../references/math-foundations/rules.md`.
 - [ ] Use named tokens, variables, or intermediate values.
 - [ ] Keep units valid and readable.
 

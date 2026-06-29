@@ -13,7 +13,7 @@ Step-by-step process for applying flexbox math to front-end code.
 - Know the target browser/UI state.
 - Have the relevant CSS, JavaScript, or design token values.
 
-**Reference**: `references/flex-distribution/rules.md`
+**Reference**: `../references/flex-distribution/rules.md`
 
 ## Workflow Steps
 
@@ -25,23 +25,23 @@ Step-by-step process for applying flexbox math to front-end code.
 - [ ] List known inputs and units.
 - [ ] Identify the source of each input.
 
-**Reference**: `references/flex-distribution/knowledge.md`
+**Reference**: `../references/flex-distribution/knowledge.md`
 
 ### Step 2: Pick the Formula Pattern
 
 **Goal**: Choose the smallest math model that explains the behavior.
 
-- [ ] Check whether a pattern in `references/flex-distribution/patterns.md` matches.
+- [ ] Check whether a pattern in `../references/flex-distribution/patterns.md` matches.
 - [ ] Prefer a bounded formula over a magic number.
 - [ ] Decide whether CSS or JavaScript owns the calculation.
 
-**Reference**: `references/flex-distribution/patterns.md`
+**Reference**: `../references/flex-distribution/patterns.md`
 
 ### Step 3: Apply the Rules
 
 **Goal**: Convert the formula into maintainable code.
 
-- [ ] Follow the relevant rules in `references/flex-distribution/rules.md`.
+- [ ] Follow the relevant rules in `../references/flex-distribution/rules.md`.
 - [ ] Use named tokens, variables, or intermediate values.
 - [ ] Keep units valid and readable.
 
