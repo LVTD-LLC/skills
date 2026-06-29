@@ -1,0 +1,6 @@
+interface:
+  display_name: "Scarcity Urgency"
+  short_description: "Use honest urgency"
+  default_prompt: "Use $scarcity-urgency to improve this persuasion task ethically."
+policy:
+  allow_implicit_invocation: true

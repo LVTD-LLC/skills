@@ -12,6 +12,7 @@
 (?i)broadphases
 (?i)buildable
 (?i)canonicaliz(e|es|ed|ation)
+(?i)cialdini
 (?i)citability
 (?i)clickbait
 (?i)config(s)?
@@ -38,6 +39,7 @@
 (?i)enum(s)?
 (?i)findability
 (?i)frontmatter
+(?i)freemium
 (?i)gameplay
 (?i)geo
 (?i)globals
@@ -51,6 +53,7 @@
 (?i)keyset
 (?i)learnable
 (?i)lockfile
+(?i)lowball
 (?i)microsites?
 (?i)middleware
 (?i)misconfiguration(s)?
@@ -78,6 +81,9 @@
 (?i)profiler
 (?i)productionize
 (?i)qcluster
+(?i)replenishable
+(?i)unscoped
+(?i)waitlists?
 (?i)querysets?
 (?i)raycasts?
 (?i)raymarching
