@@ -1,0 +1,63 @@
+{
+  "name": "influence",
+  "version": "0.2.0",
+  "description": "Influence and persuasion guidance for ethical audits, offer design, commitment ladders, social proof, rapport, authority signals, scarcity, urgency, and contrast framing.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "influence",
+    "persuasion",
+    "ethics",
+    "marketing",
+    "copywriting",
+    "social-proof",
+    "authority",
+    "scarcity",
+    "reciprocity",
+    "commitment",
+    "rapport",
+    "authority-credibility",
+    "commitment-ladder-design",
+    "contrast-framing",
+    "ethical-persuasion-design",
+    "influence-audit",
+    "reciprocity-offer-design",
+    "scarcity-urgency",
+    "social-proof-evidence",
+    "trust-and-liking",
+    "credibility",
+    "onboarding",
+    "framing",
+    "pricing",
+    "audit",
+    "offers",
+    "urgency",
+    "evidence",
+    "trust"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Influence Persuasion",
+    "shortDescription": "Influence and persuasion guidance for ethical audits, offer design, commitment ladders, social proof, rapport, authority signals, scarcity, urgency, and contrast framing.",
+    "longDescription": "Influence and persuasion guidance for ethical audits, offer design, commitment ladders, social proof, rapport, authority signals, scarcity, urgency, and contrast framing. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Authority Credibility, Commitment Ladder Design, Contrast Framing, Ethical Persuasion Design, Influence Audit, Reciprocity Offer Design, Scarcity Urgency, Social Proof Evidence, Trust and Liking. Category: Marketing.",
+    "developerName": "LVTD",
+    "category": "Marketing",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Influence Persuasion plugin when working on ethical persuasion, influence audits, social proof, authority, scarcity, reciprocity, commitment, liking, and contrast framing tasks. It includes the Authority Credibility, Commitment Ladder Design, Contrast Framing, Ethical Persuasion Design, Influence Audit, Reciprocity Offer Design, Scarcity Urgency, Social Proof Evidence, and Trust and Liking skills."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/app-icon.png",
+    "logo": "./assets/app-icon.png",
+    "screenshots": []
+  }
+}
