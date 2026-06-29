@@ -1,0 +1,40 @@
+{
+  "name": "web-design-math",
+  "version": "0.2.0",
+  "description": "Web design math guidance for CSS units, grid, flexbox, responsive layouts, color accessibility, JavaScript UI numbers, and frontend math foundations.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "web-design-math",
+    "web-design",
+    "frontend",
+    "css",
+    "layout",
+    "math",
+    "responsive-design",
+    "accessibility",
+    "javascript",
+    "color-math-accessibility",
+    "css-grid-math",
+    "css-math-units",
+    "flexbox-math",
+    "frontend-math-foundations",
+    "javascript-ui-math",
+    "responsive-layout-math",
+    "color",
+    "design-systems",
+    "grid",
+    "units",
+    "flexbox",
+    "design",
+    "ui",
+    "debugging"
+  ],
+  "skills": "./skills/",
+  "displayName": "Web Design Math"
+}

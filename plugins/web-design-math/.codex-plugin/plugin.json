@@ -1,0 +1,58 @@
+{
+  "name": "web-design-math",
+  "version": "0.2.0",
+  "description": "Web design math guidance for CSS units, grid, flexbox, responsive layouts, color accessibility, JavaScript UI numbers, and frontend math foundations.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "web-design-math",
+    "web-design",
+    "frontend",
+    "css",
+    "layout",
+    "math",
+    "responsive-design",
+    "accessibility",
+    "javascript",
+    "color-math-accessibility",
+    "css-grid-math",
+    "css-math-units",
+    "flexbox-math",
+    "frontend-math-foundations",
+    "javascript-ui-math",
+    "responsive-layout-math",
+    "color",
+    "design-systems",
+    "grid",
+    "units",
+    "flexbox",
+    "design",
+    "ui",
+    "debugging"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Web Design Math",
+    "shortDescription": "Web design math guidance for CSS units, grid, flexbox, responsive layouts, color accessibility, JavaScript UI numbers, and frontend math foundations.",
+    "longDescription": "Web design math guidance for CSS units, grid, flexbox, responsive layouts, color accessibility, JavaScript UI numbers, and frontend math foundations. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Color Math Accessibility, CSS Grid Math, CSS Math Units, Flexbox Math, Frontend Math Foundations, JavaScript UI Math, Responsive Layout Math. Category: Coding.",
+    "developerName": "LVTD",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Web Design Math plugin when working on web design math, frontend layout math, CSS math, and UI number logic tasks. It includes the Color Math Accessibility, CSS Grid Math, CSS Math Units, Flexbox Math, Frontend Math Foundations, JavaScript UI Math, and Responsive Layout Math skills."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/web-design-math.svg",
+    "logo": "./assets/web-design-math.svg",
+    "screenshots": []
+  }
+}

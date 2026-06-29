@@ -16,6 +16,16 @@ export const AUTHOR = {
   url: "https://github.com/LVTD-LLC",
 };
 
+const WEB_DESIGN_MATH_SKILL_NAMES = new Set([
+  "color-math-accessibility",
+  "css-grid-math",
+  "css-math-units",
+  "flexbox-math",
+  "frontend-math-foundations",
+  "javascript-ui-math",
+  "responsive-layout-math",
+]);
+
 const MARKETPLACE_PLUGIN_GROUPS = [
   {
     name: "router",
@@ -163,6 +173,26 @@ const MARKETPLACE_PLUGIN_GROUPS = [
       "platform-selection",
     ],
     matches: (skill) => hasSkillTag(skill, "developer-docs"),
+  },
+  {
+    name: "web-design-math",
+    displayName: "Web Design Math",
+    category: "Coding",
+    taskLabel: "web design math, frontend layout math, CSS math, and UI number logic",
+    description:
+      "Web design math guidance for CSS units, grid, flexbox, responsive layouts, color accessibility, JavaScript UI numbers, and frontend math foundations.",
+    iconFile: "web-design-math.svg",
+    tags: [
+      "web-design",
+      "frontend",
+      "css",
+      "layout",
+      "math",
+      "responsive-design",
+      "accessibility",
+      "javascript",
+    ],
+    matches: (skill) => WEB_DESIGN_MATH_SKILL_NAMES.has(skill.name),
   },
   {
     name: "customer-discovery",
