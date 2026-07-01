@@ -139,6 +139,26 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => hasSkillTag(skill, "django") || skill.name.includes("django"),
   },
   {
+    name: "htmx",
+    displayName: "htmx",
+    category: "Coding",
+    taskLabel: "server-driven htmx web apps",
+    description:
+      "Framework-neutral htmx workflow guidance for foundations, endpoint contracts, common recipes, local interactivity, JavaScript API integration, security, polling, SSE, and WebSockets.",
+    iconFile: "icons8-code.svg",
+    tags: [
+      "htmx",
+      "frontend",
+      "server-driven-ui",
+      "html",
+      "security",
+      "realtime",
+      "websockets",
+      "sse",
+    ],
+    matches: (skill) => skill.name.startsWith("htmx-"),
+  },
+  {
     name: "nonfiction-book-writing",
     displayName: "Nonfiction Book Writing",
     category: "Writing",
