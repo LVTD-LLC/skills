@@ -1,6 +1,6 @@
 ---
 name: experiment-type-selection
-description: Choose the right product experiment type: superiority, non-inferiority, equivalence, A/B/n, or holdback-backed validation. Use when deciding what kind of A/B test to run, when the question is not simply "is variant better," when validating no degradation, proving similarity, comparing multiple variants, or selecting an experiment design for a mature product.
+description: 'Choose the right product experiment type: superiority, non-inferiority, equivalence, A/B/n, or holdback-backed validation. Use when deciding what kind of A/B test to run, when the question is not simply "is variant better," when validating no degradation, proving similarity, comparing multiple variants, or selecting an experiment design for a mature product.'
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
