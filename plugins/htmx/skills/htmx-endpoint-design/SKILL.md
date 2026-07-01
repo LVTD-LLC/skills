@@ -39,7 +39,7 @@ Define the endpoint contract before writing attributes:
 - Prefer normal form encoding so server validation, CSRF, and file limitations are explicit.
 - Keep mutation requests same-origin unless the project has a deliberate CORS and CSRF design.
 - Use `hx-include` when one control must submit data from a nearby form or filter panel.
-- Use `hx-vals` only for small explicit values. Avoid secrets and avoid executable `js:` values unless there is no safer option.
+- Use `hx-vals` only for small explicit values. Avoid secrets and avoid executable `js:` values; prefer form fields, hidden inputs, or URL parameters instead.
 - Debounce or throttle chatty triggers such as `keyup`, `input`, and polling.
 - Use real links and forms when possible, then enhance them with htmx attributes.
 

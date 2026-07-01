@@ -1,6 +1,6 @@
 interface:
   display_name: "htmx Security"
-  short_description: "Harden htmx apps against XSS"
+  short_description: "Harden htmx apps against XSS, CSRF, and CSP"
   icon_small: "./assets/icons8-code.svg"
   icon_large: "./assets/icons8-code.svg"
   brand_color: "#424E5C"

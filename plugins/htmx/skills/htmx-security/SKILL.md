@@ -43,7 +43,7 @@ Do not mark content safe merely because it was stored in the database earlier.
 
 ## htmx-Specific Risks
 
-- User-controlled `hx-get`, `hx-post`, `hx-delete`, or `hx-trigger` can create unintended requests.
+- User-controlled `hx-get`, `hx-post`, `hx-put`, `hx-patch`, `hx-delete`, or `hx-trigger` can create unintended requests.
 - User-controlled `hx-on` or inline handlers can execute JavaScript.
 - User-controlled `hx-vals` can smuggle unexpected parameters.
 - Fragment responses can replace more of the page than intended if targets are broad.

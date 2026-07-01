@@ -101,3 +101,6 @@ Choose server tooling based on boring operational fit, not htmx novelty:
 - Use `htmx-endpoint-design` for request/response contracts, swaps, out-of-band updates, and events.
 - Use `htmx-recipes` for common interaction patterns.
 - Use `htmx-security` before accepting user HTML, adding CDN assets, or tightening CSP.
+- Use `htmx-interactivity` for coordinating Alpine.js, `_hyperscript`, or plain JavaScript with htmx swaps.
+- Use `htmx-js-api` for programmatic requests, dynamic markup processing, and event wiring.
+- Use `htmx-realtime` for polling, SSE, and WebSocket transport decisions.

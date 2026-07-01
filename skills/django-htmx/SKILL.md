@@ -29,6 +29,8 @@ Use the framework-neutral htmx skills for deeper pattern guidance, then translat
 - `htmx-recipes` for common interaction patterns such as active search, pagination, infinite scroll, polling, dialogs, and click-to-edit.
 - `htmx-security` for XSS, sanitization, CSP, CDN/SRI, CSRF, and htmx history-cache risk.
 - `htmx-realtime` for polling, SSE, and WebSocket tradeoffs.
+- `htmx-interactivity` for coordinating Alpine.js with htmx swaps, event boundaries, and keeping local state outside replaceable targets.
+- `htmx-js-api` for programmatic requests, `htmx.process` after dynamic injection, and event wiring.
 
 ## Implementation Workflow
 
