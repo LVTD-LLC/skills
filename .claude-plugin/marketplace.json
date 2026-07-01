@@ -717,6 +717,53 @@
       ]
     },
     {
+      "name": "practical-ab-testing",
+      "displayName": "Practical A/B Testing",
+      "source": "./plugins/practical-ab-testing",
+      "description": "Practical A/B testing guidance for designing experiments, selecting test types, reading results, planning holdbacks, evaluating inclusive impact, choosing platform strategy, and rolling out experimentation culture.",
+      "author": {
+        "name": "LVTD"
+      },
+      "homepage": "https://github.com/LVTD-LLC/skills",
+      "repository": "https://github.com/LVTD-LLC/skills",
+      "license": "MIT",
+      "category": "Product Management",
+      "tags": [
+        "practical-ab-testing",
+        "ab-testing",
+        "experimentation",
+        "product-analytics",
+        "product-management",
+        "platform-strategy",
+        "holdbacks",
+        "inclusive-design"
+      ],
+      "keywords": [
+        "practical-ab-testing",
+        "ab-testing",
+        "experimentation",
+        "product-analytics",
+        "product-management",
+        "platform-strategy",
+        "holdbacks",
+        "inclusive-design",
+        "ab-test-design-brief",
+        "ab-test-results-readout",
+        "ab-testing-platform-strategy",
+        "experiment-type-selection",
+        "experimentation-culture-rollout",
+        "holdback-experiment-design",
+        "inclusive-experiment-analysis",
+        "metrics",
+        "analytics",
+        "data-visualization",
+        "platform-engineering",
+        "experiment-design",
+        "product-culture",
+        "change-management"
+      ]
+    },
+    {
       "name": "traction",
       "displayName": "Traction",
       "source": "./plugins/traction",
