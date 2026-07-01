@@ -57,9 +57,12 @@
 (?i)hasher
 (?i)heatmap
 (?i)hx
+(?i)hoc
+(?i)holdback(s)?
 (?i)idempotency
 (?i)infographic
 (?i)inspectable
+(?i)interpretability
 (?i)influencers
 (?i)keyset
 (?i)learnable
@@ -80,12 +83,16 @@
 (?i)nullish
 (?i)onboarding
 (?i)opfs?
+(?i)operationaliz(e|es|ed|ation|ing)
 (?i)overfit
+(?i)overclaim(s|ed|ing)?
 (?i)nonbrand
+(?i)pageview(s)?
 (?i)parameterization
 (?i)pathfinding
 (?i)permissioned
 (?i)plaintext
+(?i)preconfigured
 (?i)playtest(s)?
 (?i)playtesting
 (?i)prefetch(es)?
@@ -121,6 +128,7 @@
 (?i)runbooks?
 (?i)sanitization
 (?i)serializer(s)?
+(?i)segmentable
 (?i)shareability
 (?i)sharding
 (?i)signup(s)?
@@ -132,6 +140,7 @@
 (?i)substeps?
 (?i)subtasks?
 (?i)semver
+(?i)mitigation(s)?
 (?i)teardown
 (?i)tilemaps?
 (?i)todos?
@@ -178,6 +187,7 @@
 (?i)sdf(s)?
 (?i)serp(s)?
 (?i)sha(s)?
+(?i)sdk(s)?
 (?i)sse
 (?i)subresource
 (?i)svh
@@ -207,9 +217,11 @@ JSON
 Kaleniuk
 Kanban
 Lambourne
+Leemay
 Luca
 Miri
 Mutex
+Nassery
 OAuth
 Oleksandr
 Orendorff
