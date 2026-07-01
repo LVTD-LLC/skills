@@ -6,7 +6,7 @@ compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
   version: "0.1.0"
   displayName: A/B Testing Platform Strategy
-  category: Engineering Management
+  category: Product Management
   tags: practical-ab-testing,ab-testing,experimentation,platform-engineering,product-analytics
 ---
 
