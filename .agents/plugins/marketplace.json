@@ -127,6 +127,18 @@
       "category": "Coding"
     },
     {
+      "name": "tdd",
+      "source": {
+        "source": "local",
+        "path": "./plugins/tdd"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Coding"
+    },
+    {
       "name": "customer-discovery",
       "source": {
         "source": "local",

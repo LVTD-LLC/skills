@@ -1,0 +1,48 @@
+{
+  "name": "tdd",
+  "version": "0.2.0",
+  "description": "Framework-neutral TDD and testing strategy guidance for browser JavaScript tests, Python mock isolation, sustainable test architecture, fast/slow suite tradeoffs, and test pyramid decisions.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "tdd",
+    "testing",
+    "test-architecture",
+    "test-pyramid",
+    "mocking",
+    "javascript",
+    "python",
+    "ci",
+    "browser-javascript-tdd",
+    "python-mock-isolation-design",
+    "test-architecture-strategy",
+    "browser",
+    "frontend",
+    "architecture"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "TDD",
+    "shortDescription": "Framework-neutral TDD and testing strategy guidance for browser JavaScript tests, Python mock isolation, sustainable test architecture, fast/slow suite tradeoffs, and test pyramid decisions.",
+    "longDescription": "Framework-neutral TDD and testing strategy guidance for browser JavaScript tests, Python mock isolation, sustainable test architecture, fast/slow suite tradeoffs, and test pyramid decisions. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Browser JavaScript TDD, Python Mock Isolation Design, Test Architecture Strategy. Category: Coding.",
+    "developerName": "LVTD",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the TDD plugin when working on test-driven development, test architecture, browser JavaScript tests, and Python test isolation tasks. It includes the Browser JavaScript TDD, Python Mock Isolation Design, and Test Architecture Strategy skills."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/icons8-code.svg",
+    "logo": "./assets/icons8-code.svg",
+    "screenshots": []
+  }
+}

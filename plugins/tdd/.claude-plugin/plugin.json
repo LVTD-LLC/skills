@@ -1,0 +1,30 @@
+{
+  "name": "tdd",
+  "version": "0.2.0",
+  "description": "Framework-neutral TDD and testing strategy guidance for browser JavaScript tests, Python mock isolation, sustainable test architecture, fast/slow suite tradeoffs, and test pyramid decisions.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "tdd",
+    "testing",
+    "test-architecture",
+    "test-pyramid",
+    "mocking",
+    "javascript",
+    "python",
+    "ci",
+    "browser-javascript-tdd",
+    "python-mock-isolation-design",
+    "test-architecture-strategy",
+    "browser",
+    "frontend",
+    "architecture"
+  ],
+  "skills": "./skills/",
+  "displayName": "TDD"
+}
