@@ -45,6 +45,7 @@
 (?i)enablement
 (?i)enqueueing
 (?i)enum(s)?
+(?i)env
 (?i)findability
 (?i)frontmatter
 (?i)flexbox
@@ -53,15 +54,18 @@
 (?i)geo
 (?i)globals
 (?i)greybox
+(?i)hardcoded
 (?i)hardcoding
 (?i)hasher
 (?i)heatmap
+(?i)hostnames?
 (?i)hx
 (?i)hoc
 (?i)holdback(s)?
 (?i)idempotency
 (?i)infographic
 (?i)inspectable
+(?i)initializer(s)?
 (?i)interpretability
 (?i)influencers
 (?i)keyset
@@ -73,6 +77,7 @@
 (?i)middleware
 (?i)misconfiguration(s)?
 (?i)minimaps?
+(?i)monkeypatch(ing)?
 (?i)monorepo(s)?
 (?i)namespace(d|s)?
 (?i)narrowphase
@@ -82,6 +87,7 @@
 (?i)nullable
 (?i)nullish
 (?i)onboarding
+(?i)onload
 (?i)opfs?
 (?i)operationaliz(e|es|ed|ation|ing)
 (?i)overfit
@@ -90,6 +96,7 @@
 (?i)pageview(s)?
 (?i)parameterization
 (?i)pathfinding
+(?i)passwordless
 (?i)permissioned
 (?i)plaintext
 (?i)preconfigured
@@ -113,6 +120,7 @@
 (?i)raymarching
 (?i)reachability
 (?i)readme(s)?
+(?i)redisplay(s|ed)?
 (?i)reframe(d)?
 (?i)recommenders?
 (?i)recommendability
@@ -120,6 +128,7 @@
 (?i)replayable
 (?i)repurpose
 (?i)reputational
+(?i)rethrows?
 (?i)retargeting
 (?i)repo(s)?
 (?i)roadmaps?
@@ -195,6 +204,7 @@
 (?i)uv(s)?
 (?i)ws
 Actix
+Ansible
 Astro
 Bezier
 Bevy
@@ -209,6 +219,7 @@ GitHub
 Greenfeld
 Greptile
 Gumroad
+Gunicorn
 HTMX
 Hunicke
 Jakob
