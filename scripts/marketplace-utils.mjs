@@ -408,8 +408,7 @@ function isTractionSkill(skill) {
 function isTddSkill(skill) {
   return (
     hasSkillTag(skill, "tdd") &&
-    !hasSkillTag(skill, "django") &&
-    !skill.name.includes("django")
+    !hasSkillTag(skill, "django")
   );
 }
 

@@ -7,7 +7,7 @@ metadata:
   version: "0.1.0"
   displayName: Django Selenium Functional Tests
   category: Django
-  tags: django,selenium,functional-tests,testing,browser
+  tags: django,tdd,selenium,functional-tests,testing,browser
 ---
 
 # Django Selenium Functional Tests
