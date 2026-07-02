@@ -23,6 +23,15 @@ In generated django-saas-starter projects:
 - The base templates already add `X-CSRFToken` during `htmx:configRequest` and set `window.htmx.config.historyRestoreAsHxRequest = false`. Do not duplicate this setup in feature templates.
 - Use Alpine.js only for browser-local state such as menus, modals, disclosure state, and lightweight transitions. If Alpine behavior grows beyond coordination with an HTMX swap, use the separate Alpine skill when present.
 
+Use the framework-neutral htmx skills for deeper pattern guidance, then translate back to Django's forms, views, templates, permissions, and tests:
+
+- `htmx-endpoint-design` for request/response contracts, target/swap choices, out-of-band updates, and events.
+- `htmx-recipes` for common interaction patterns such as active search, pagination, infinite scroll, polling, dialogs, and click-to-edit.
+- `htmx-security` for XSS, sanitization, CSP, CDN/SRI, CSRF, and htmx history-cache risk.
+- `htmx-realtime` for polling, SSE, and WebSocket tradeoffs.
+- `htmx-interactivity` for coordinating Alpine.js with htmx swaps, event boundaries, and keeping local state outside replaceable targets.
+- `htmx-js-api` for programmatic requests, `htmx.process` after dynamic injection, and event wiring.
+
 ## Implementation Workflow
 
 1. Find the server state owner: model, queryset, form, service, permission, or session value.
@@ -183,6 +192,16 @@ Keep the ownership line clear:
 - Use `push_url()` or `replace_url()` when the server decides which URL should appear after a swap.
 - Keep `historyRestoreAsHxRequest = false` so htmx history-cache misses are sent as normal full-page requests rather than HX requests.
 - Use `hx-boost` sparingly. Confirm forms still send CSRF tokens and links still render useful full pages.
+
+## Django Recipe Notes
+
+- For active search, prefer a GET form or input that targets a result-list partial. Preserve query params when the search should be refreshable or shareable.
+- For pagination, return the list plus pagination controls from the same partial so page links keep targeting the right container.
+- For infinite scroll, append item fragments only when ordering is stable, and include or remove the next-page sentinel deliberately.
+- For polling, keep the polled partial small and use `HttpResponseStopPolling` or status `286` when work is complete.
+- For custom dialogs, let Django render the dialog body and use `trigger_client_event()` to close the local dialog shell after successful saves.
+- For click-to-edit, pair a display partial and a bound-form partial for the same object. Test display, edit, save, cancel, and invalid form paths.
+- For global request headers, keep cross-cutting setup in the base template or bundled JS, not individual feature templates.
 
 ## Security Rules
 

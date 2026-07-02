@@ -79,6 +79,18 @@
       "category": "Coding"
     },
     {
+      "name": "htmx",
+      "source": {
+        "source": "local",
+        "path": "./plugins/htmx"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Coding"
+    },
+    {
       "name": "nonfiction-book-writing",
       "source": {
         "source": "local",
