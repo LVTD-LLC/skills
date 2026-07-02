@@ -1,6 +1,6 @@
 ---
 name: django-forms-validation-tdd
-description: Test-drive Django validation across model constraints, forms, ModelForms, views, template errors, duplicate handling, and redirects. Use when adding or refactoring Django forms, surfacing validation errors, deciding model-vs-form-vs-view responsibility, or preventing invalid input from being saved.
+description: "Test-drive Django validation across model constraints, forms, ModelForms, views, template errors, duplicate handling, and redirects. Use when adding or refactoring Django forms, surfacing validation errors, deciding model-vs-form-vs-view responsibility, or preventing invalid input from being saved."
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:

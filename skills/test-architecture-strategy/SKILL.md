@@ -1,6 +1,6 @@
 ---
 name: test-architecture-strategy
-description: Design a sustainable test architecture using test desiderata, test pyramid tradeoffs, fast and slow test separation, integration boundaries, CI feedback loops, and architecture choices that make code testable. Use when a test suite is too slow, too brittle, too mock-heavy, unclear about unit vs integration coverage, or needs a testing strategy before major growth.
+description: "Design a sustainable test architecture using test desiderata, test pyramid tradeoffs, fast and slow test separation, integration boundaries, CI feedback loops, and architecture choices that make code testable. Use when a test suite is too slow, too brittle, too mock-heavy, unclear about unit vs integration coverage, or needs a testing strategy before major growth."
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:

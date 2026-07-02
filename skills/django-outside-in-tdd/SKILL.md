@@ -1,6 +1,6 @@
 ---
 name: django-outside-in-tdd
-description: Drive Django features with outside-in and double-loop TDD: user story, Selenium or functional test, focused Django unit/integration tests, minimal implementation, and refactor. Use when starting or changing Django behavior with tests-first workflow, red/green/refactor, working-state-to-working-state refactors, or deciding which layer should own the next test.
+description: "Drive Django features with outside-in and double-loop TDD: user story, Selenium or functional test, focused Django unit/integration tests, minimal implementation, and refactor. Use when starting or changing Django behavior with tests-first workflow, red/green/refactor, working-state-to-working-state refactors, or deciding which layer should own the next test."
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:

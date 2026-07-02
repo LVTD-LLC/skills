@@ -1,6 +1,6 @@
 ---
 name: django-spike-despike-workflow
-description: Manage Django spikes and de-spiking with tests: branch experiments, exploratory code, learning capture, functional tests against spiked behavior, revert-and-rebuild, custom auth flows, email/token models, and dependency seams. Use when a Django feature was prototyped quickly and needs to be turned into production-quality tested code.
+description: "Manage Django spikes and de-spiking with tests: branch experiments, exploratory code, learning capture, functional tests against spiked behavior, revert-and-rebuild, custom auth flows, email/token models, and dependency seams. Use when a Django feature was prototyped quickly and needs to be turned into production-quality tested code."
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:

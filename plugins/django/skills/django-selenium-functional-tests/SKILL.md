@@ -1,6 +1,6 @@
 ---
 name: django-selenium-functional-tests
-description: Design, debug, and maintain Django Selenium functional tests with live server setup, explicit waits, test isolation, page objects, screenshots, CI artifacts, and staging checks. Use when browser tests are flaky, too slow, duplicated, failing in CI, need a page pattern, or should verify a Django user journey end to end.
+description: "Design, debug, and maintain Django Selenium functional tests with live server setup, explicit waits, test isolation, page objects, screenshots, CI artifacts, and staging checks. Use when browser tests are flaky, too slow, duplicated, failing in CI, need a page pattern, or should verify a Django user journey end to end."
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:

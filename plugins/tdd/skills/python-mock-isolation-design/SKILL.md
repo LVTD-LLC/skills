@@ -1,6 +1,6 @@
 ---
 name: python-mock-isolation-design
-description: Use Python mocks and fakes as a design tool without losing behavioral confidence. Use when testing external dependencies, choosing monkeypatch versus unittest.mock.patch, isolating slow boundaries, avoiding mock-heavy tests, interpreting mock call assertions, or refactoring toward clearer dependency seams.
+description: "Use Python mocks and fakes as a design tool without losing behavioral confidence. Use when testing external dependencies, choosing monkeypatch versus unittest.mock.patch, isolating slow boundaries, avoiding mock-heavy tests, interpreting mock call assertions, or refactoring toward clearer dependency seams."
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:

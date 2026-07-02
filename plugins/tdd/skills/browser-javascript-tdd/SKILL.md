@@ -1,6 +1,6 @@
 ---
 name: browser-javascript-tdd
-description: Test-drive browser JavaScript behavior with DOM fixtures, test runners, smoke tests, onload timing, selector refactors, and integration tradeoffs with Selenium or end-to-end tests. Use when adding client-side behavior, debugging DOM tests, choosing between JS unit tests and browser functional tests, or making JavaScript testable without overusing Selenium.
+description: "Test-drive browser JavaScript behavior with DOM fixtures, test runners, smoke tests, onload timing, selector refactors, and integration tradeoffs with Selenium or end-to-end tests. Use when adding client-side behavior, debugging DOM tests, choosing between JS unit tests and browser functional tests, or making JavaScript testable without overusing Selenium."
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:

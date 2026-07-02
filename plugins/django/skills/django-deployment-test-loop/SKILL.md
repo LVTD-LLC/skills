@@ -1,6 +1,6 @@
 ---
 name: django-deployment-test-loop
-description: Make Django deployment changes test-driven across Docker, production settings, Gunicorn, WhiteNoise/static files, environment variables, Ansible/server setup, staging smoke tests, and release checks. Use when containerizing Django, preparing production config, debugging staging, automating deploys, or deciding what deployment behavior functional tests should verify.
+description: "Make Django deployment changes test-driven across Docker, production settings, Gunicorn, WhiteNoise/static files, environment variables, Ansible/server setup, staging smoke tests, and release checks. Use when containerizing Django, preparing production config, debugging staging, automating deploys, or deciding what deployment behavior functional tests should verify."
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
