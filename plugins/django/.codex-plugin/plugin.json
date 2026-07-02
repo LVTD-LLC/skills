@@ -1,6 +1,6 @@
 {
   "name": "django",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Django workflow guidance for database performance, server-rendered UI, jobs, MCP servers, TDD, functional testing, deployment testing, and app behavior.",
   "author": {
     "name": "LVTD",

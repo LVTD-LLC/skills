@@ -1,6 +1,6 @@
 {
   "name": "rust-core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Rust core engineering guidance for production services, language-level code, and reusable libraries, including testing, persistence, ownership, traits, iterators, concurrency, async, unsafe, FFI, security, deployment, SQLx, observability, benchmarking, feature flags, rustdoc, and crate publishing.",
   "author": {
     "name": "LVTD",

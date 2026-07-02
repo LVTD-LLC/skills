@@ -24,6 +24,15 @@ Hypothesis" through "Summarizing the For You A/B Test" in the working text
 analysis at lines 1203-1942. Related motivation and variant examples come from
 chapter 1 lines 394-718.
 
+## Related Advanced Skills
+
+- `experiment-sensitivity-optimization`: use when the brief is blocked by MDE,
+  sample size, noisy metrics, CUPED, capping, or too many variants.
+- `experiment-verification-monitoring`: use when the brief needs prelaunch QA,
+  canaries, exposure validation, or active experiment health checks.
+- `long-term-impact-evaluation`: use when the brief needs delayed or sustained
+  impact measurement beyond the initial test window.
+
 ## Reference Routing
 
 | Need | Read |

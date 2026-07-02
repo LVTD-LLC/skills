@@ -1,6 +1,6 @@
 {
   "name": "game-geometry",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Game geometry guidance for representation choice, spatial queries, transforms, vector math, smooth curves, fields, SDFs, meshes, voxels, and conversion workflows.",
   "author": {
     "name": "LVTD",

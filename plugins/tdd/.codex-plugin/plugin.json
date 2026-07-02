@@ -1,6 +1,6 @@
 {
   "name": "tdd",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Framework-neutral TDD and testing strategy guidance for browser JavaScript tests, Python mock isolation, sustainable test architecture, fast/slow suite tradeoffs, and test pyramid decisions.",
   "author": {
     "name": "LVTD",

@@ -23,6 +23,15 @@ Primary source: Practical A/B Testing by Leemay Nassery. Guidance is
 transformed and paraphrased from chapter 6 lines 4507-5066, with motivation
 from the preface lines 270-280 and chapter 1 lines 1019-1078.
 
+## Related Advanced Skills
+
+- `experimentation-strategy-roadmap`: use when culture rollout must connect to
+  platform roadmap priorities, company strategy, and rate-quality-cost tradeoffs.
+- `experiment-verification-monitoring`: use when trust problems come from
+  invalid experiments, weak QA, missing health checks, or poor monitoring.
+- `trustworthy-experiment-insights`: use when stakeholders need help
+  understanding whether evidence is credible enough to influence decisions.
+
 ## Reference Routing
 
 | Need | Read |

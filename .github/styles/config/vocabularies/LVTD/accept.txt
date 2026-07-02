@@ -21,13 +21,17 @@
 (?i)calc
 (?i)config(s)?
 (?i)cookiecutter
+(?i)confounders?
+(?i)covariates?
 (?i)crawlab(le|ility)
 (?i)dedup(e|ed|lication)
 (?i)deduplicate
 (?i)debounc(e|ed)
+(?i)debuggable
 (?i)declaratively
 (?i)denoising
 (?i)denormalized
+(?i)derisking
 (?i)deallocator
 (?i)deliverables
 (?i)deserialize
@@ -69,6 +73,7 @@
 (?i)interpretability
 (?i)influencers
 (?i)keyset
+(?i)learnings?
 (?i)learnable
 (?i)lvh
 (?i)lockfile
@@ -76,6 +81,7 @@
 (?i)microsites?
 (?i)middleware
 (?i)misconfiguration(s)?
+(?i)misconfigured
 (?i)minimaps?
 (?i)monkeypatch(ing)?
 (?i)monorepo(s)?
@@ -100,6 +106,8 @@
 (?i)permissioned
 (?i)plaintext
 (?i)preconfigured
+(?i)predeclared
+(?i)prefilter
 (?i)playtest(s)?
 (?i)playtesting
 (?i)prefetch(es)?
@@ -109,6 +117,8 @@
 (?i)productionize
 (?i)qcluster
 (?i)params?
+(?i)platformiz(e|es|ed|ing|ation)
+(?i)rankers?
 (?i)replenishable
 (?i)realtime
 (?i)refreshable

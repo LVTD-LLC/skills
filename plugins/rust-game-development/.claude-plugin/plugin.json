@@ -1,6 +1,6 @@
 {
   "name": "rust-game-development",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Rust game development guidance for Bevy and other Rust game stacks, including asset pipelines, state flow, fixed-step physics, collision broadphases, procedural worlds, game loops, ECS gameplay, tilemaps, cameras, turn systems, roguelike procgen, content pipelines, slice planning, polish, and release checks.",
   "author": {
     "name": "LVTD",

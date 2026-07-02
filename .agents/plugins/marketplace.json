@@ -139,18 +139,6 @@
       "category": "Coding"
     },
     {
-      "name": "customer-discovery",
-      "source": {
-        "source": "local",
-        "path": "./plugins/customer-discovery"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Marketing"
-    },
-    {
       "name": "practical-ab-testing",
       "source": {
         "source": "local",
@@ -161,6 +149,18 @@
         "authentication": "ON_USE"
       },
       "category": "Product Management"
+    },
+    {
+      "name": "customer-discovery",
+      "source": {
+        "source": "local",
+        "path": "./plugins/customer-discovery"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Marketing"
     },
     {
       "name": "traction",
