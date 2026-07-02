@@ -133,9 +133,25 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     category: "Coding",
     taskLabel: "Django",
     description:
-      "Django workflow guidance for database performance, server-rendered UI, jobs, MCP servers, testing, and app behavior.",
+      "Django workflow guidance for database performance, server-rendered UI, jobs, MCP servers, TDD, functional testing, deployment testing, and app behavior.",
     iconFile: "django.svg",
-    tags: ["django", "database", "performance", "orm", "htmx", "alpinejs", "background-jobs", "mcp", "testing", "ci", "pytest"],
+    tags: [
+      "django",
+      "database",
+      "performance",
+      "orm",
+      "htmx",
+      "alpinejs",
+      "background-jobs",
+      "mcp",
+      "testing",
+      "tdd",
+      "selenium",
+      "forms",
+      "deployment",
+      "ci",
+      "pytest",
+    ],
     matches: (skill) => hasSkillTag(skill, "django") || skill.name.includes("django"),
   },
   {
@@ -213,6 +229,26 @@ const MARKETPLACE_PLUGIN_GROUPS = [
       "javascript",
     ],
     matches: (skill) => WEB_DESIGN_MATH_SKILL_NAMES.has(skill.name),
+  },
+  {
+    name: "tdd",
+    displayName: "TDD",
+    category: "Coding",
+    taskLabel: "test-driven development, test architecture, browser JavaScript tests, and Python test isolation",
+    description:
+      "Framework-neutral TDD and testing strategy guidance for browser JavaScript tests, Python mock isolation, sustainable test architecture, fast/slow suite tradeoffs, and test pyramid decisions.",
+    iconFile: "icons8-code.svg",
+    tags: [
+      "tdd",
+      "testing",
+      "test-architecture",
+      "test-pyramid",
+      "mocking",
+      "javascript",
+      "python",
+      "ci",
+    ],
+    matches: (skill) => isTddSkill(skill),
   },
   {
     name: "customer-discovery",
@@ -367,6 +403,14 @@ function isRustCoreSkill(skill) {
 
 function isTractionSkill(skill) {
   return hasSkillTag(skill, "traction") || skill.name.startsWith("traction-");
+}
+
+function isTddSkill(skill) {
+  return (
+    hasSkillTag(skill, "tdd") &&
+    !hasSkillTag(skill, "django") &&
+    !skill.name.includes("django")
+  );
 }
 
 function uniqueValues(values) {
