@@ -1,6 +1,6 @@
 {
   "name": "practical-ab-testing",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A/B testing and product experimentation guidance for experiment briefs, test type selection, readouts, platform strategy, culture rollout, inclusive analysis, holdbacks, throughput, sensitivity, ML evaluation, verification, trustworthy insights, adaptive testing, long-term impact, and strategy roadmaps.",
   "author": {
     "name": "LVTD",

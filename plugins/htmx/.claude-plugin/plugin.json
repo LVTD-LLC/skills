@@ -1,6 +1,6 @@
 {
   "name": "htmx",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Framework-neutral htmx workflow guidance for foundations, endpoint contracts, common recipes, local interactivity, JavaScript API integration, security, polling, SSE, and WebSockets.",
   "author": {
     "name": "LVTD",
