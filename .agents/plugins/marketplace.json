@@ -139,6 +139,18 @@
       "category": "Marketing"
     },
     {
+      "name": "practical-ab-testing",
+      "source": {
+        "source": "local",
+        "path": "./plugins/practical-ab-testing"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Product Management"
+    },
+    {
       "name": "traction",
       "source": {
         "source": "local",

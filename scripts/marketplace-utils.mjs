@@ -231,6 +231,26 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => hasSkillTag(skill, "customer-discovery"),
   },
   {
+    name: "practical-ab-testing",
+    displayName: "Practical A/B Testing",
+    category: "Product Management",
+    taskLabel: "product experimentation, A/B testing, experiment readouts, holdbacks, platform strategy, and experimentation culture",
+    description:
+      "Practical A/B testing guidance for designing experiments, selecting test types, reading results, planning holdbacks, evaluating inclusive impact, choosing platform strategy, and rolling out experimentation culture.",
+    iconFile: "practical-ab-testing.svg",
+    tags: [
+      "practical-ab-testing",
+      "ab-testing",
+      "experimentation",
+      "product-analytics",
+      "product-management",
+      "platform-strategy",
+      "holdbacks",
+      "inclusive-design",
+    ],
+    matches: (skill) => hasSkillTag(skill, "practical-ab-testing"),
+  },
+  {
     name: "traction",
     displayName: "Traction",
     category: "Marketing",
