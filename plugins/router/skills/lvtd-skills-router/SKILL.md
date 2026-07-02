@@ -123,6 +123,36 @@ Use these defaults when the user's request is ambiguous:
   community, field teams, analytics, and review channels.
 - `documentation-quality-metrics`: measuring developer documentation quality,
   success signals, feedback loops, and docs health.
+- `ab-test-design-brief`: planning product A/B tests with hypotheses, metrics,
+  guardrails, baselines, eligibility, variants, and launch criteria.
+- `experiment-type-selection`: choosing superiority, non-inferiority,
+  equivalence, A/B/n, or holdback-backed experiment types.
+- `ab-test-results-readout`: interpreting A/B test results, guardrails,
+  subgroup findings, data quality, and launch recommendations.
+- `ab-testing-platform-strategy`: scoping experimentation platform architecture,
+  build-vs-buy decisions, assignment, exposure logging, metrics, and dashboards.
+- `experimentation-culture-rollout`: rolling out experimentation practice,
+  stakeholder trust, education, demand generation, and adoption cadence.
+- `inclusive-experiment-analysis`: reviewing experiments for subgroup,
+  accessibility, device, bandwidth, geography, privacy, and representation risk.
+- `holdback-experiment-design`: designing degradation or long-term cumulative
+  holdbacks with population, duration, metrics, and withholding cost.
+- `experimentation-throughput-strategy`: increasing experiment rate through
+  capacity visibility, isolated versus overlapping tests, and coordination.
+- `experiment-sensitivity-optimization`: improving A/B test sensitivity with
+  MDE, metric choice, variant reduction, capping, CUPED, and variance reduction.
+- `ml-experiment-evaluation`: choosing offline evaluation, interleaving, A/B
+  testing, or adaptive paths for ML models, rankers, search, and recommendations.
+- `experiment-verification-monitoring`: designing prelaunch QA, canaries, A/A
+  tests, leakage/interference checks, active monitoring, and quality roadmaps.
+- `trustworthy-experiment-insights`: assessing false positives, false negatives,
+  power, replication, meta-analysis, and whether results should be trusted.
+- `adaptive-experimentation-strategy`: planning sequential tests, bandits,
+  Thompson sampling, contextual bandits, and adaptive testing readiness.
+- `long-term-impact-evaluation`: choosing long-term holdbacks, post-period
+  analysis, continuous monitoring, CLV models, or hybrid long-term measurement.
+- `experimentation-strategy-roadmap`: prioritizing experimentation investments
+  across rate, quality, cost, usability, infrastructure, and company strategy.
 - `seo-opportunity-research`: finding organic growth opportunities from
   customer demand, search behavior, communities, and competitive gaps.
 - `seo-persona-intent-mapping`: mapping personas, search intent, funnel stage,
@@ -242,6 +272,11 @@ Use these defaults when the user's request is ambiguous:
   review, code samples, visuals, SaaS docs, Agile integration, platform
   selection, feedback, metrics, information architecture, release, and
   maintenance skills.
+- `practical-ab-testing`: A/B testing and product experimentation skills for
+  experiment design, readouts, platform strategy, culture rollout, inclusive
+  analysis, holdbacks, throughput, sensitivity, ML evaluation, verification,
+  trustworthy insights, adaptive testing, long-term impact, and strategy
+  roadmaps.
 - `seo`: `seo-opportunity-research`, `seo-persona-intent-mapping`,
   `product-led-seo-strategy`, `seo-roadmap-prioritization`,
   `technical-seo-triage`, `link-building-strategy`,

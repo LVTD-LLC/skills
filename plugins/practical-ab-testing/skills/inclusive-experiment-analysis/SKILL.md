@@ -23,6 +23,15 @@ transformed and paraphrased from chapter 1 lines 719-912 and related subgroup
 analysis context from lines 639-718. Metric and eligibility context comes from
 chapter 2 lines 1564-1735.
 
+## Related Advanced Skills
+
+- `trustworthy-experiment-insights`: use when subgroup findings may be
+  underpowered, false positives, or false negatives.
+- `experiment-verification-monitoring`: use when inclusion risks depend on
+  assignment, exposure, device, geography, accessibility, or segment monitoring.
+- `adaptive-experimentation-strategy`: use cautiously when contextual bandits or
+  personalization could create uneven user impact across groups.
+
 ## Reference Routing
 
 | Need | Read |

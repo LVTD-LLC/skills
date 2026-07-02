@@ -23,6 +23,17 @@ transformed and paraphrased from chapter 3, especially lines 2013-2870. Related
 variant design context comes from chapter 1 lines 539-571 and chapter 2 lines
 1564-1735.
 
+## Related Advanced Skills
+
+- `experimentation-throughput-strategy`: use when the choice is isolated versus
+  overlapping testing or when testing availability constrains the design.
+- `adaptive-experimentation-strategy`: use when fixed-horizon A/B testing may be
+  replaced by sequential testing, bandits, or contextual bandits.
+- `ml-experiment-evaluation`: use when the experiment is evaluating ML models,
+  rankers, offline metrics, interleaving, or model filtering.
+- `long-term-impact-evaluation`: use when the test type question is really
+  about delayed or sustained impact measurement.
+
 ## Reference Routing
 
 | Need | Read |

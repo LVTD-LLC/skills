@@ -251,6 +251,31 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => isTddSkill(skill),
   },
   {
+    name: "practical-ab-testing",
+    displayName: "Practical A/B Testing",
+    category: "Product Management",
+    taskLabel:
+      "A/B testing, product experimentation, experiment design, analysis, platform strategy, and advanced experimentation methods",
+    description:
+      "A/B testing and product experimentation guidance for experiment briefs, test type selection, readouts, platform strategy, culture rollout, inclusive analysis, holdbacks, throughput, sensitivity, ML evaluation, verification, trustworthy insights, adaptive testing, long-term impact, and strategy roadmaps.",
+    iconFile: "practical-ab-testing.svg",
+    tags: [
+      "practical-ab-testing",
+      "next-level-ab-testing",
+      "ab-testing",
+      "experimentation",
+      "product-analytics",
+      "product-management",
+      "experiment-design",
+      "platform-strategy",
+      "adaptive-testing",
+      "holdbacks",
+      "machine-learning",
+      "inclusive-design",
+    ],
+    matches: (skill) => hasSkillTag(skill, "practical-ab-testing") || hasSkillTag(skill, "next-level-ab-testing"),
+  },
+  {
     name: "customer-discovery",
     displayName: "Customer Discovery",
     category: "Marketing",
@@ -265,26 +290,6 @@ const MARKETPLACE_PLUGIN_GROUPS = [
       "startups",
     ],
     matches: (skill) => hasSkillTag(skill, "customer-discovery"),
-  },
-  {
-    name: "practical-ab-testing",
-    displayName: "Practical A/B Testing",
-    category: "Product Management",
-    taskLabel: "product experimentation, A/B testing, experiment readouts, holdbacks, platform strategy, and experimentation culture",
-    description:
-      "Practical A/B testing guidance for designing experiments, selecting test types, reading results, planning holdbacks, evaluating inclusive impact, choosing platform strategy, and rolling out experimentation culture.",
-    iconFile: "practical-ab-testing.svg",
-    tags: [
-      "practical-ab-testing",
-      "ab-testing",
-      "experimentation",
-      "product-analytics",
-      "product-management",
-      "platform-strategy",
-      "holdbacks",
-      "inclusive-design",
-    ],
-    matches: (skill) => hasSkillTag(skill, "practical-ab-testing"),
   },
   {
     name: "traction",

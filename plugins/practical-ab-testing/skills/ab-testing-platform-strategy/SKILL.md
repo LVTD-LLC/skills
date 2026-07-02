@@ -22,6 +22,18 @@ transformed and paraphrased from chapter 5 lines 3804-4443. Related startup
 and "start simple" context comes from preface lines 286-332 and chapter 2 lines
 1622-1628.
 
+## Related Advanced Skills
+
+- `experimentation-strategy-roadmap`: use when deciding which platform
+  capability to prioritize across rate, quality, cost, usability, and company
+  strategy.
+- `experimentation-throughput-strategy`: use when the platform needs capacity
+  visibility, isolated versus overlapping test policies, or coordination tools.
+- `experiment-verification-monitoring`: use when the platform needs QA tooling,
+  canaries, A/A tests, active monitoring, leakage checks, or quality metrics.
+- `adaptive-experimentation-strategy`: use when considering sequential testing,
+  bandits, Thompson sampling, contextual bandits, or dynamic allocation support.
+
 ## Reference Routing
 
 | Need | Read |

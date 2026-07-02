@@ -22,6 +22,14 @@ Primary source: Practical A/B Testing by Leemay Nassery. Guidance is
 transformed and paraphrased from chapter 3 lines 2487-2836. Experiment-type
 context comes from chapter 3 lines 2013-2486.
 
+## Related Advanced Skills
+
+- `long-term-impact-evaluation`: use before detailed holdback design when the
+  team should compare holdbacks against post-period analysis, continuous
+  monitoring, CLV models, or hybrid methods.
+- `trustworthy-experiment-insights`: use when deciding whether long-term or
+  holdback evidence is credible enough to drive a product decision.
+
 ## Reference Routing
 
 | Need | Read |

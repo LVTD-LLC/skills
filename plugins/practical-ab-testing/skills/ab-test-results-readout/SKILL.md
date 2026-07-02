@@ -22,6 +22,16 @@ Primary source: Practical A/B Testing by Leemay Nassery. Guidance is
 transformed and paraphrased from chapter 4 lines 2950-3742 and chapter 1 lines
 572-718. Metric tradeoff context comes from chapter 2 lines 1296-1472.
 
+## Related Advanced Skills
+
+- `trustworthy-experiment-insights`: use when the readout needs false positive,
+  false negative, power, replication, meta-analysis, or suspicious-lift review.
+- `experiment-verification-monitoring`: use when result interpretation depends
+  on whether assignment, exposure, metrics, canaries, or active monitoring were
+  healthy.
+- `long-term-impact-evaluation`: use when short-term readout is not enough to
+  decide durable product or business impact.
+
 ## Reference Routing
 
 | Need | Read |
