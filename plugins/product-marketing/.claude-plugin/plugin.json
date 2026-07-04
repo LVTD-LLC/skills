@@ -1,0 +1,24 @@
+{
+  "name": "product-marketing",
+  "version": "0.3.0",
+  "description": "Product marketing guidance for improving product clarity, landing pages, launch pages, pricing pages, free tools, social previews, memorability, and shareability.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "product-marketing",
+    "marketing",
+    "launch",
+    "cro",
+    "pricing",
+    "shareability",
+    "make-product-viral",
+    "copywriting"
+  ],
+  "skills": "./skills/",
+  "displayName": "Product Marketing"
+}

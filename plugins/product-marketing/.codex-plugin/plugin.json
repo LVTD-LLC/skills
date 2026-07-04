@@ -1,0 +1,42 @@
+{
+  "name": "product-marketing",
+  "version": "0.3.0",
+  "description": "Product marketing guidance for improving product clarity, landing pages, launch pages, pricing pages, free tools, social previews, memorability, and shareability.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "product-marketing",
+    "marketing",
+    "launch",
+    "cro",
+    "pricing",
+    "shareability",
+    "make-product-viral",
+    "copywriting"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Product Marketing",
+    "shortDescription": "Product marketing guidance for improving product clarity, landing pages, launch pages, pricing pages, free tools, social previews, memorability, and shareability.",
+    "longDescription": "Product marketing guidance for improving product clarity, landing pages, launch pages, pricing pages, free tools, social previews, memorability, and shareability. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Make Product Viral. Category: Marketing.",
+    "developerName": "LVTD",
+    "category": "Marketing",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Product Marketing plugin when working on product marketing, landing-page clarity, launch pages, pricing-page polish, and shareability tasks. It includes the Make Product Viral skill."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/icons8-paid_search.svg",
+    "logo": "./assets/icons8-paid_search.svg",
+    "screenshots": []
+  }
+}

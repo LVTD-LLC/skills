@@ -1,0 +1,42 @@
+{
+  "name": "utilities",
+  "version": "0.3.0",
+  "description": "Utility workflow guidance for local tools and command-line helpers, including Calibre library management with calibredb.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "utilities",
+    "tools",
+    "cli",
+    "calibre",
+    "ebooks",
+    "calibredb",
+    "library-management",
+    "metadata"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Utilities",
+    "shortDescription": "Utility workflow guidance for local tools and command-line helpers, including Calibre library management with calibredb.",
+    "longDescription": "Utility workflow guidance for local tools and command-line helpers, including Calibre library management with calibredb. Packaged as a marketplace plugin for Codex and Claude Code. Includes: CalibreDB. Category: Productivity.",
+    "developerName": "LVTD",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Utilities plugin when working on utility workflows, local tools, and command-line helpers tasks. It includes the CalibreDB skill."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/icons8-tools.svg",
+    "logo": "./assets/icons8-tools.svg",
+    "screenshots": []
+  }
+}
