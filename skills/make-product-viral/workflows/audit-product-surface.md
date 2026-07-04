@@ -154,11 +154,5 @@ people can remember or share:
 
 ## Audit Output
 
-Return:
-
-1. Viral diagnosis.
-2. Highest-leverage fixes, ordered by impact.
-3. Hero rewrite.
-4. Shareability pass.
-5. Pricing or paywall note when relevant.
-6. Validation plan.
+Return the response format defined in `SKILL.md`. Keep the output contract there
+as the single source of truth so this workflow cannot drift from the main skill.
