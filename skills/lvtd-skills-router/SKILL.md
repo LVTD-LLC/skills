@@ -93,7 +93,7 @@ for (const skill of registry.skills) {
     console.log(`${skill.name} (${plugin}) - ${skill.description}`);
   }
 }
-' "django htmx"
+' "calibredb"
 ```
 
 ## Tie-Breakers
