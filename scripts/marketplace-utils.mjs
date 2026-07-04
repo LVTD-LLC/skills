@@ -38,6 +38,17 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => skill.name === "lvtd-skills-router",
   },
   {
+    name: "utilities",
+    displayName: "Utilities",
+    category: "Productivity",
+    taskLabel: "utility workflows, local tools, and command-line helpers",
+    description:
+      "Utility workflow guidance for local tools and command-line helpers, including Calibre library management with calibredb.",
+    iconFile: "icons8-tools.svg",
+    tags: ["utilities", "tools", "cli", "calibre", "ebooks"],
+    matches: (skill) => skill.name === "calibredb",
+  },
+  {
     name: "game-design",
     displayName: "Game Design",
     category: "Game Development",
@@ -301,6 +312,17 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     iconFile: "traction.svg",
     tags: ["traction", "growth", "marketing", "startups", "bullseye"],
     matches: (skill) => isTractionSkill(skill),
+  },
+  {
+    name: "product-marketing",
+    displayName: "Product Marketing",
+    category: "Marketing",
+    taskLabel: "product marketing, landing-page clarity, launch pages, pricing-page polish, and shareability",
+    description:
+      "Product marketing guidance for improving product clarity, landing pages, launch pages, pricing pages, free tools, social previews, memorability, and shareability.",
+    iconFile: "icons8-paid_search.svg",
+    tags: ["product-marketing", "marketing", "launch", "cro", "pricing", "shareability"],
+    matches: (skill) => skill.name === "make-product-viral",
   },
   {
     name: "eighty-twenty",

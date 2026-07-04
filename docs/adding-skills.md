@@ -12,12 +12,32 @@ skills/
   <skill-name>/
     SKILL.md
     references/
+    workflows/
     scripts/
     assets/
+    agents/
+    evals/
+    guidelines.md
 ```
 
-Only `SKILL.md` is required. Add `references/`, `scripts/`, or `assets/` when
-they make the skill easier to use or keep the main instructions concise.
+Only `SKILL.md` is required. Add supporting files only when they make the skill
+easier to use or keep the main instructions concise.
+
+Use these conventions:
+
+- `references/`: background material, source maps, API notes, schemas, or
+  longer examples that should load only when needed.
+- `workflows/`: task-specific playbooks that a skill links to for concrete
+  procedures.
+- `scripts/`: deterministic utilities that save the agent from rewriting the
+  same code. Prefer runnable scripts when the operation is mechanical,
+  validation-heavy, or error-prone.
+- `assets/`: files used in outputs, such as icons, templates, or fixture media.
+- `agents/openai.yaml`: optional UI metadata for skill lists and chips.
+- `evals/`: optional pressure scenarios or validation cases for checking whether
+  a skill works in realistic use.
+- `guidelines.md`: shared rules or source-derived guidance used by multiple
+  workflows in the same skill.
 
 ## Frontmatter Contract
 
@@ -61,7 +81,10 @@ instructions.
 
 Prefer deterministic scripts over prose for repeated mechanical checks. Keep
 scripts local to the skill directory and document when the agent should run
-them.
+them. Python scripts may be made runnable with `uv run` or an inline
+`uv run --script` shebang when that improves portability or dependency
+management, but do not force scripts into a skill when prose or existing tools
+are clearer.
 
 ## Source Attribution
 
@@ -108,6 +131,11 @@ The build regenerates:
 `dist/` is ignored. Marketplace artifacts under `.claude-plugin/`,
 `.agents/plugins/`, and `plugins/` are committed so marketplace installs work
 directly from GitHub.
+
+The `lvtd-skills-router` skill should route from generated registry and
+marketplace metadata instead of a hand-copied plugin list. When a skill changes
+plugin membership, update `scripts/marketplace-utils.mjs`, run the build, and
+let `dist/registry.json` describe the current catalog.
 
 ## Project-Installed Helper Skills
 

@@ -19,6 +19,18 @@
       "category": "Productivity"
     },
     {
+      "name": "utilities",
+      "source": {
+        "source": "local",
+        "path": "./plugins/utilities"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "game-design",
       "source": {
         "source": "local",
@@ -167,6 +179,18 @@
       "source": {
         "source": "local",
         "path": "./plugins/traction"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Marketing"
+    },
+    {
+      "name": "product-marketing",
+      "source": {
+        "source": "local",
+        "path": "./plugins/product-marketing"
       },
       "policy": {
         "installation": "AVAILABLE",

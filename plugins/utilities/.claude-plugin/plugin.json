@@ -1,0 +1,24 @@
+{
+  "name": "utilities",
+  "version": "0.3.0",
+  "description": "Utility workflow guidance for local tools and command-line helpers, including Calibre library management with calibredb.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "utilities",
+    "tools",
+    "cli",
+    "calibre",
+    "ebooks",
+    "calibredb",
+    "library-management",
+    "metadata"
+  ],
+  "skills": "./skills/",
+  "displayName": "Utilities"
+}
