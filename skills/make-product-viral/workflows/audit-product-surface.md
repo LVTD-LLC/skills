@@ -154,5 +154,15 @@ people can remember or share:
 
 ## Audit Output
 
-Return the response format defined in `SKILL.md`. Keep the output contract there
-as the single source of truth so this workflow cannot drift from the main skill.
+Return:
+
+1. **Viral diagnosis:** the main reason this is or is not likely to spread.
+2. **Highest-leverage fixes:** 3 to 7 changes, ordered by impact.
+3. **Hero rewrite:** headline, subhead, CTA, and proof or demo suggestion.
+4. **Shareability pass:** OG image, footer or final impression, and one-line
+   description.
+5. **Pricing or paywall note:** only if relevant.
+6. **Validation plan:** what to check before launch.
+
+Keep recommendations concrete. Prefer replacement copy, section order, product
+proof, pricing structure, and specific UI/content changes over abstract advice.
