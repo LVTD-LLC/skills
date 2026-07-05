@@ -18,7 +18,7 @@ Quality directories use clear categories, review submissions, maintain listings,
 
 ### Paid Inclusion Risk
 
-Paid listings are not automatically bad, but links intended to influence rankings need extra caution and may require qualified link attributes such as sponsored or nofollow.
+Paid listings are not automatically bad, but links intended to influence rankings need extra caution and may require qualified link attributes such as sponsored or non-ranking attributes.
 
 ## Helpful Tools
 

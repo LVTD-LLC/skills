@@ -42,5 +42,5 @@ Either way, thanks for maintaining the resource.
 |---------|--------------|-------------|
 | Low opens | Subject, sender trust, deliverability | Test subject and mailbox health |
 | Opens but no replies | Offer or relevance weak | Re-segment and strengthen evidence |
-| Replies but few links | Asset not citeable enough | Fix asset or ask type |
+| Replies but few links | Asset lacks citation value | Fix asset or ask type |
 | Many complaints | List or consent problem | Stop and audit compliance |

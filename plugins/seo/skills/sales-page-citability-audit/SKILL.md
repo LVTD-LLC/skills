@@ -22,7 +22,7 @@ This skill is derived from Garrett French and Eric Ward's *Ultimate Guide to Lin
 2. Use `workflows/audit-sales-page-citability.md` for a full page audit.
 3. Identify the audience action cycle around the page.
 4. Add or strengthen reference-worthy elements before outreach.
-5. Recommend anchorable sections, internal links, and citation-safe pitch angles.
+5. Recommend section-specific links, internal links, and citation-safe pitch angles.
 
 ## Default Output
 
@@ -31,7 +31,7 @@ When asked to audit citability, return:
 1. **Page role** - commercial goal, audience, action cycle, and target link contexts.
 2. **Citation gaps** - where the page lacks facts, definitions, examples, tools, or proof.
 3. **Recommended additions** - citable modules with purpose and implementation notes.
-4. **Anchor plan** - section URLs, internal links, and natural citation language.
+4. **Section link plan** - section URLs, internal links, and natural citation language.
 5. **Tool choices** - crawler, analytics/search data, CMS, structured data testing, and user research sources.
 6. **Outreach readiness** - whether the page is ready, needs support content, or should not be pitched.
 

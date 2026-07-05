@@ -25,13 +25,13 @@ Use this workflow to review directory and listing opportunities.
 
 ### Step 2: Apply Hard Rejects
 
-- [ ] Reject generic, spammy, irrelevant, abandoned, or link-selling directories.
+- [ ] Reject generic, low-quality, irrelevant, abandoned, or link-selling directories.
 - [ ] Flag paid followed links for risk review.
 
 ### Step 3: Inspect Quality
 
 - [ ] Check audience value, editorial standards, listing depth, neighboring listings, and recency.
-- [ ] Check indexability, link attributes, destination rules, and category fit.
+- [ ] Check search index status, link attributes, destination rules, and category fit.
 
 ### Step 4: Recommend Action
 

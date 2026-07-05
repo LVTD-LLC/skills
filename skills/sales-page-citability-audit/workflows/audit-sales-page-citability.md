@@ -43,7 +43,7 @@ Use this workflow to decide whether a commercial page can earn legitimate editor
 ### Step 5: Prepare Outreach Readiness
 
 - [ ] Create citation-safe phrasing.
-- [ ] Confirm page status, canonical, indexability, and internal links.
+- [ ] Confirm page status, canonical, search index status, and internal links.
 - [ ] Return ready, needs changes, or do-not-pitch.
 
 ## Exit Criteria

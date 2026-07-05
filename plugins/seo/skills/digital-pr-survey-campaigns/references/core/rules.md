@@ -39,4 +39,4 @@ Use these rules when designing or reviewing survey-led PR campaigns.
 - Questions appear designed to manufacture a desired statistic.
 - The pitch hides brand involvement.
 - Visuals are prettier than the underlying finding.
-- Outreach begins before the report page is live and citeable.
+- Outreach begins before the report page is live and citable.

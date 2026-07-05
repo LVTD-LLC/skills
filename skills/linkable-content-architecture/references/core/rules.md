@@ -6,7 +6,7 @@ Use these rules when auditing assets before link promotion.
 
 ### 1. Verify Technical Access
 
-- Check status code, canonical target, robots/meta directives, redirects, and indexability.
+- Check status code, canonical target, robots/meta directives, redirects, and search index status.
 - Do not promote blocked, duplicate, or unstable URLs.
 
 ### 2. Remove Orphan And Silo Problems
@@ -23,7 +23,7 @@ Use these rules when auditing assets before link promotion.
 ### 4. Preserve Asset Usefulness
 
 - Do not bury the useful content behind forms, popups, or aggressive conversion paths.
-- Let the asset satisfy the linker's audience first.
+- Let the asset satisfy the publisher's audience first.
 
 ### 5. Measure After Promotion
 

@@ -58,5 +58,5 @@ Use this workflow to plan data-led link campaigns before survey launch or outrea
 Task is complete when:
 
 - [ ] Claims match the data and methodology.
-- [ ] The report page is citeable before outreach.
+- [ ] The report page is citable before outreach.
 - [ ] Pitch segments, tools, and tracking fields are defined.

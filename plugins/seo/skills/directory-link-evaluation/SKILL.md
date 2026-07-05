@@ -31,7 +31,7 @@ When asked to evaluate directories, return:
 1. **Directory type** - local citation, niche directory, association, marketplace, resource index, or paid listing.
 2. **Audience and relevance** - who uses it, category fit, geography, and business fit.
 3. **Quality evidence** - editorial standards, indexing, visible traffic signals, outbound link quality, and maintenance.
-4. **Risk flags** - thin pages, paid-link footprints, sitewide links, irrelevant categories, or spammy neighbors.
+4. **Risk flags** - thin pages, paid-link footprints, links across the whole site, irrelevant categories, or low-quality neighbors.
 5. **Tool choices** - browser inspection, search operators, crawlers, backlink tools, index checks, and tracking sheet.
 6. **Recommendation** - submit, update, monitor, reject, or remove/disavow review if toxic.
 

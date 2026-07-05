@@ -14,7 +14,7 @@ Journalists and editors need to know who was surveyed, how many responses were c
 
 ### Report Page
 
-The link target should package findings, visuals, methodology, embeddable or reusable assets, and clear citation language. The page should remain valuable after initial outreach ends.
+The link target should package findings, visuals, methodology, share-ready assets, and clear citation language. The page should remain valuable after initial outreach ends.
 
 ### Story Segmentation
 

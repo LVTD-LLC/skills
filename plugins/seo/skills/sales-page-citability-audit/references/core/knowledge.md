@@ -16,7 +16,7 @@ Sales pages often explain why to buy but not why an editor should cite them. Add
 
 Map what the audience does before, during, and after the buying or problem-solving moment. Citable modules should support that real workflow.
 
-### Anchorable Modules
+### Section-Specific Modules
 
 Specific sections make commercial pages easier to cite: data points, definitions, calculators, templates, process diagrams, examples, FAQs, expert notes, and transparent comparison criteria.
 

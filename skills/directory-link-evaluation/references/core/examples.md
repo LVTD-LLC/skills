@@ -6,11 +6,11 @@ Use these examples to score directory opportunities.
 
 | Criterion | Good | Bad |
 |-----------|------|-----|
-| Audience | Clear niche, local, or buyer use | No obvious users beyond SEOs |
+| Audience | Clear niche, local, or buyer use | No obvious users beyond SEO practitioners |
 | Category fit | Specific and relevant | Forced into unrelated category |
 | Editorial review | Standards and moderation visible | Instant approval for anything |
 | Listing quality | Useful profile data | Thin name-link lists |
-| Link behavior | Natural, qualified when paid | Sitewide paid followed links |
+| Link behavior | Natural, qualified when paid | Paid followed links across the whole site |
 | Maintenance | Recent updates | Abandoned or broken pages |
 
 ## Recommendation Examples

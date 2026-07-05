@@ -30,14 +30,14 @@ Use this workflow before promoting a linkable asset.
 
 ### Step 3: Audit Internal Links
 
-- [ ] Find internal inlinks and outlinks for each asset.
+- [ ] Find incoming internal links and outgoing links for each asset.
 - [ ] Mark orphan, silo, and weak-anchor issues.
 - [ ] Add hub, contextual, and next-step link recommendations.
 
 ### Step 4: Connect Link Equity To Business Paths
 
 - [ ] Define useful paths from asset to supporting and commercial pages.
-- [ ] Avoid aggressive conversion elements that reduce citeability.
+- [ ] Avoid aggressive conversion elements that reduce citation value.
 
 ### Step 5: Decide Promotion Readiness
 
@@ -48,6 +48,6 @@ Use this workflow before promoting a linkable asset.
 
 Task is complete when:
 
-- [ ] Every promoted URL is stable, crawlable, indexable, and internally linked.
+- [ ] Every promoted URL is stable, crawlable, searchable, and internally linked.
 - [ ] Internal link fixes are specific and verifiable.
 - [ ] Outreach destination choices match architecture evidence.

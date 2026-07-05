@@ -29,7 +29,7 @@ This skill is derived from Garrett French and Eric Ward's *Ultimate Guide to Lin
 When asked for scaled outreach help, return:
 
 1. **Campaign model** - offer, segment, list source, send volume, and risk constraints.
-2. **Segmentation and variables** - what is templated, personalized, suppressed, and manually reviewed.
+2. **Segmentation and variables** - what uses templates, personalization, suppression, and manual review.
 3. **Pilot plan** - sample size, success thresholds, failure signals, and expansion rule.
 4. **Operations checklist** - deliverability, dedupe, opt-out, follow-up, ownership, and tracking fields.
 5. **Tool choices** - outreach CRM, spreadsheet/database, email verification, mailbox health, analytics, and compliance references.

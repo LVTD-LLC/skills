@@ -8,7 +8,7 @@ Use these rules when evaluating missed-link and attribution opportunities.
 
 - Confirm the page references the brand, asset, person, data, image, or old URL.
 - Capture the exact context and screenshot when useful.
-- Check whether the current link is missing, broken, nofollowed, redirected, or pointed incorrectly.
+- Check whether the current link is missing, broken, qualified, redirected, or pointed incorrectly.
 
 ### 2. Fix Owned Infrastructure First
 

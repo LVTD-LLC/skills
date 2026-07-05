@@ -18,7 +18,7 @@ External links to useful assets should support adjacent educational and commerci
 
 ### URL Stability
 
-Campaign URLs should be stable, canonical, indexable, and redirect-clean before publishers are asked to link.
+Campaign URLs should be stable, canonical, searchable, and redirect-clean before publishers are asked to link.
 
 ### Promotion Readiness
 

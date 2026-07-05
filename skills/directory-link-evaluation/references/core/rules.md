@@ -21,7 +21,7 @@ Use these rules when deciding whether to submit to, update, or reject a director
 
 ### 4. Evaluate Link Risk
 
-- Check whether outbound links are natural, sitewide, sponsored, nofollowed, or surrounded by spam.
+- Check whether outbound links are natural, placed across the whole site, sponsored, qualified, or surrounded by spam.
 - Treat paid inclusion as a risk review, not a simple SEO tactic.
 
 ### 5. Decide And Track
@@ -33,6 +33,6 @@ Use these rules when deciding whether to submit to, update, or reject a director
 
 - Generic directory with no real audience or category standards.
 - Obvious link-selling footprint.
-- Sitewide followed links sold for ranking purposes.
+- Followed links across the whole site sold for ranking purposes.
 - Irrelevant category or geography.
-- Spammy outbound neighbors or malware/adult/pharma clusters.
+- Low-quality outbound neighbors or malware/adult/pharma clusters.

@@ -4,9 +4,9 @@ Core concepts for building links through useful participation and collaboration.
 
 ## Key Concepts
 
-### Preciprocation
+### Useful Action Before Asking
 
-Useful action before the ask changes the relationship context. Examples include citing a publisher, sharing work, inviting expertise, introducing people, or giving a platform to someone else's ideas.
+Useful action before the ask changes the relationship context. Examples include citing a publisher, sharing work, inviting expertise, introducing people, or giving a platform to another person's ideas.
 
 ### Content Promotion Network
 
