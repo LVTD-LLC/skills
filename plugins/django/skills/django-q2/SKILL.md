@@ -67,7 +67,7 @@ from django.db import transaction
 from django_q.tasks import async_task
 
 transaction.on_commit(
-    lambda: async_task("accounts.tasks.send_welcome_email", user.pk)
+    lambda: async_task("myapp.tasks.send_welcome_email", user.pk)
 )
 ```
 
@@ -75,7 +75,7 @@ Use `q_options` when Django Q2 options would collide with task kwargs:
 
 ```python
 async_task(
-    "reports.tasks.rebuild_report",
+    "myapp.tasks.rebuild_report",
     report_id,
     q_options={"timeout": 300, "group": "reports"},
 )
@@ -164,7 +164,7 @@ When switching to ORM:
 
 - Test task business logic by calling the function directly.
 - Test enqueueing with synchronous mode:
-  - per call: `async_task("accounts.tasks.fn", arg, sync=True)`
+  - per call: `async_task("myapp.tasks.fn", arg, sync=True)`
   - per test: override `Q_CLUSTER["sync"] = True`
 - For worker/broker integration, run
   the project's `qcluster` command in a separate process and wait for
