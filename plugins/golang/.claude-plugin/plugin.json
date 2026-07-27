@@ -1,0 +1,43 @@
+{
+  "name": "golang",
+  "version": "0.3.0",
+  "description": "Go CLI engineering guidance for designing command contracts, testing command behavior, building Cobra and Viper applications, supervising external processes, and shipping reproducible cross-platform releases.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "golang",
+    "go",
+    "cli",
+    "cobra",
+    "viper",
+    "testing",
+    "subprocess",
+    "cross-compilation",
+    "distribution",
+    "go-cli-command-design",
+    "go-cli-distribution",
+    "go-cli-process-control",
+    "go-cli-testing",
+    "go-cobra-applications",
+    "command-design",
+    "flags",
+    "streams",
+    "portability",
+    "release",
+    "cgo",
+    "os-exec",
+    "signals",
+    "cancellation",
+    "table-tests",
+    "integration-tests",
+    "command-tree",
+    "configuration"
+  ],
+  "skills": "./skills/",
+  "displayName": "Go CLI Engineering"
+}

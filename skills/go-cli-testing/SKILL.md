@@ -1,0 +1,55 @@
+---
+name: go-cli-testing
+description: Design, implement, stabilize, and review Go CLI tests across pure command logic, table-driven cases, streams, files, environment, HTTP, repositories, subprocesses, integration tags, race checks, and artifact-level behavior. Use when adding command tests, diagnosing flaky Go tests, choosing test boundaries, or verifying agent-facing CLI contracts.
+license: MIT
+compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
+metadata:
+  version: "0.1.0"
+  displayName: Go CLI Testing
+  category: Go
+  tags: go,golang,cli,testing,table-tests,integration-tests,subprocess
+---
+
+# Go CLI Testing
+
+Test observable behavior at the narrowest boundary that proves it. Isolate every
+mutable resource and reserve executable tests for process-level semantics.
+
+## Core Workflow
+
+1. Inventory success, invalid, boundary, dependency-failure, and cancellation behavior.
+2. Map each case to a pure, command, adapter, integration, or binary test.
+3. Inject arguments, streams, configuration, clocks, and effectful dependencies.
+4. Isolate files, environment, servers, repositories, ports, and subprocesses.
+5. Assert stdout, stderr, exit behavior, and errors according to the public contract.
+6. Gate live or platform-specific tests and make their changes reversible.
+7. Run standard, race, tagged, and relevant platform checks.
+
+## Read Next
+
+| Task | Load |
+|---|---|
+| Build or overhaul a CLI test suite | `guidelines.md`, `workflows/test-cli-command.md` |
+| Write focused command tests | `references/cli-testing/rules.md`, `references/cli-testing/examples.md` |
+| Add subprocess, HTTP, repository, or integration tests | `references/cli-testing/patterns.md` |
+| Review coverage, isolation, or flakiness | `references/cli-testing/checklist.md` |
+| Choose the right test boundary | `references/cli-testing/knowledge.md` |
+
+## Guardrails
+
+- Do not mutate developer data or depend on fixed temporary paths and ports.
+- Do not run parallel tests that replace process-global state.
+- Replace timing sleeps with synchronization, deadlines, or fake clocks.
+- Inspect wrapped errors structurally unless exact diagnostics are contractual.
+- Prefer one valuable executable flow over many slow end-to-end tests.
+
+## Source Notes
+
+Guidance is transformed and paraphrased from testing material throughout
+Ricardo Gerardi, *Powerful Command-Line Applications in Go* (Pragmatic
+Bookshelf, 2021), especially Chapters 1-7 and 11. Examples are original.
+
+Book: https://pragprog.com/titles/rggo/powerful-command-line-applications-in-go/
+
+Modern test APIs should be verified against https://pkg.go.dev/testing and the
+current Go documentation before implementation.

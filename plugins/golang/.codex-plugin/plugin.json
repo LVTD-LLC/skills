@@ -1,0 +1,61 @@
+{
+  "name": "golang",
+  "version": "0.3.0",
+  "description": "Go CLI engineering guidance for designing command contracts, testing command behavior, building Cobra and Viper applications, supervising external processes, and shipping reproducible cross-platform releases.",
+  "author": {
+    "name": "LVTD",
+    "url": "https://github.com/LVTD-LLC"
+  },
+  "homepage": "https://github.com/LVTD-LLC/skills",
+  "repository": "https://github.com/LVTD-LLC/skills",
+  "license": "MIT",
+  "keywords": [
+    "golang",
+    "go",
+    "cli",
+    "cobra",
+    "viper",
+    "testing",
+    "subprocess",
+    "cross-compilation",
+    "distribution",
+    "go-cli-command-design",
+    "go-cli-distribution",
+    "go-cli-process-control",
+    "go-cli-testing",
+    "go-cobra-applications",
+    "command-design",
+    "flags",
+    "streams",
+    "portability",
+    "release",
+    "cgo",
+    "os-exec",
+    "signals",
+    "cancellation",
+    "table-tests",
+    "integration-tests",
+    "command-tree",
+    "configuration"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Go CLI Engineering",
+    "shortDescription": "Go CLI engineering guidance for designing command contracts, testing command behavior, building Cobra and Viper applications, supervising external processes, and shipping reproducible cross-platform releases.",
+    "longDescription": "Go CLI engineering guidance for designing command contracts, testing command behavior, building Cobra and Viper applications, supervising external processes, and shipping reproducible cross-platform releases. Packaged as a marketplace plugin for Codex and Claude Code. Includes: Go CLI Command Design, Go CLI Distribution, Go CLI Process Control, Go CLI Testing, Go Cobra Applications. Category: Coding.",
+    "developerName": "LVTD",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/LVTD-LLC/skills",
+    "defaultPrompt": [
+      "Use the Go CLI Engineering plugin when working on Go command-line interface design, testing, Cobra applications, subprocess control, and distribution tasks. It includes the Go CLI Command Design, Go CLI Distribution, Go CLI Process Control, Go CLI Testing, and Go Cobra Applications skills."
+    ],
+    "brandColor": "#FF4057",
+    "composerIcon": "./assets/icons8-code.svg",
+    "logo": "./assets/icons8-code.svg",
+    "screenshots": []
+  }
+}
