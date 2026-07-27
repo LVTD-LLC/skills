@@ -78,8 +78,8 @@
       "Use the Go CLI Engineering plugin when working on Go command-line interface design, testing, Cobra applications, subprocess control, and distribution tasks. It includes the Go CLI Application Architecture, Go CLI Command Design, Go CLI Distribution, Go CLI Errors and Observability, Go CLI Process Control, Go CLI Release Automation, Go CLI Terminal Experience, Go CLI Testing, Go Cobra Applications, and Go HTTP Client Resilience skills."
     ],
     "brandColor": "#FF4057",
-    "composerIcon": "./assets/icons8-code.svg",
-    "logo": "./assets/icons8-code.svg",
+    "composerIcon": "./assets/icons8-golang.svg",
+    "logo": "./assets/icons8-golang.svg",
     "screenshots": []
   }
 }

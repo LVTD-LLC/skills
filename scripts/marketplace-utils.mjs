@@ -56,7 +56,7 @@ const MARKETPLACE_PLUGIN_GROUPS = [
       "Go command-line interface design, testing, Cobra applications, subprocess control, and distribution",
     description:
       "Go CLI engineering guidance for designing command contracts, testing command behavior, building Cobra and Viper applications, supervising external processes, and shipping reproducible cross-platform releases.",
-    iconFile: "icons8-code.svg",
+    iconFile: "icons8-golang.svg",
     tags: [
       "go",
       "golang",
