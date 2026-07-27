@@ -1,5 +1,18 @@
 # HTTP Client Resilience Examples
 
+## Clone a Baseline Transport
+
+```go
+transport := http.DefaultTransport.(*http.Transport).Clone()
+transport.MaxIdleConns = 100
+transport.MaxIdleConnsPerHost = 10
+transport.MaxConnsPerHost = 20
+```
+
+Treat these values as workload-specific examples. Own the client and transport
+for the application lifetime and close idle connections during cleanup when
+appropriate.
+
 ## Testable Client
 
 ```go

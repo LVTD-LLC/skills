@@ -11,8 +11,13 @@
 
 - Pass concrete dependencies explicitly from one composition root.
 - Define narrow consumer-owned interfaces only where substitution is useful.
+- Discover interfaces after a real consumer needs substitution.
 - Avoid service locators, hidden singleton state, and packages named only `interfaces`.
 - Own cleanup where construction occurs and close in reverse dependency order.
+- Do not add production `dryRun` switches solely to bypass effects in tests;
+  inject the effect unless dry-run is a real user-facing capability.
+- Record lifecycle ownership for HTTP transports, SQL pools, listeners, timers,
+  watchers, and background goroutines.
 
 ## Configuration
 
@@ -30,3 +35,6 @@
 - Use `internal/` for implementation that must not become a public import contract.
 - Keep reusable public packages small and independent of the executable.
 - Reject circular dependency pressure by revisiting responsibility, not adding globals.
+- Prefer synchronous application APIs; expose channels only when streaming is
+  part of the caller contract.
+- Document ordering, partial-result, and cancellation behavior for concurrent operations.

@@ -2,6 +2,13 @@
 
 Use when implementing or reviewing a Cobra command-line application.
 
+## Parser Contract
+
+- [ ] Interspersed flags and `--` behavior match the pinned pflag version.
+- [ ] Positional argument cardinality and validation are explicit.
+- [ ] Custom value defaults, repetition, and failed mutation are tested.
+- [ ] Help, usage, diagnostics, and returned errors use the intended streams.
+
 ## Command Structure
 
 - [ ] A function constructs a fresh root command.

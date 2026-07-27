@@ -16,6 +16,8 @@
 | Connections are not reused | `references/http-client-resilience/rules.md` |
 | Error includes a token or huge body | `references/http-client-resilience/examples.md` |
 | Pagination loops or exceeds deadline | `references/http-client-resilience/knowledge.md` |
+| Inbound handler, middleware, or server shutdown | Use `go-http-server-applications` |
+| Batch fan-out exceeds its concurrency budget | Use this skill with `go-concurrency-pipelines` |
 
 ## Retry Decision
 

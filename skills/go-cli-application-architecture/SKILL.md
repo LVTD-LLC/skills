@@ -4,7 +4,7 @@ description: Design and review maintainable Go CLI application boundaries, packa
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go CLI Application Architecture
   category: Go
   tags: go,golang,cli,architecture,packages,dependency-injection
@@ -46,3 +46,8 @@ template. Keep CLI framework code as an adapter around application services.
 Guidance is transformed and paraphrased from Marian Montagnino,
 *Building Modern CLI Applications in Go* (Packt, 2023), especially Chapters
 2-3, with original adaptations aligned to current Go conventions.
+
+Concrete-first interfaces, dependency ownership, and adapter lifecycle guidance
+also incorporates transformed material from Inanc Gumus, *Go by Example:
+Programmer's Guide to Idiomatic and Testable Programs* (Manning, 2025),
+Chapters 5 and 8-10.

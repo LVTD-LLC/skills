@@ -72,6 +72,16 @@ check means the step failed.”
 
 ## Sequential Pipelines
 
+Use “pipeline” precisely:
+
+1. a sequential application workflow;
+2. an OS process pipeline connected by pipes;
+3. an in-process goroutine/channel pipeline.
+
+This skill owns the first two when external processes are involved.
+`go-concurrency-pipelines` owns in-process channel topology, backpressure,
+worker lifecycle, and iterator-backed streaming.
+
 A process pipeline can be modeled as an ordered collection of steps that share a
 small execution contract. Each step owns:
 
@@ -122,6 +132,9 @@ The clean architecture is:
 
 Merely returning from a signal-selecting function while a worker goroutine and
 child process continue is not graceful shutdown.
+
+Any goroutine coordinating process pipe readers inherits the same
+cancel-and-join obligation as the processes it supervises.
 
 ## Testing Boundaries
 

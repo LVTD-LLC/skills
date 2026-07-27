@@ -25,6 +25,15 @@ normally live for the application lifetime. Reusing them enables connection
 pooling. Response bodies must be closed. Reading to EOF when reasonable can
 allow reuse, but error bodies must still be size-limited.
 
+Choose response consumption deliberately. Stream large success bodies when
+callers can process incrementally; materialize only within a known size bound.
+Draining to `io.Discard` is memory-efficient but still needs byte and time
+bounds. Closing a body does not guarantee connection reuse.
+
+Clone and review a baseline transport instead of constructing a sparse
+`http.Transport` that silently loses default proxy, timeout, compression, or
+protocol behavior. Bound pool-wide and per-host connections from measured load.
+
 ## Retry Safety
 
 Safe retries require a transient failure plus an idempotent operation or a
@@ -41,3 +50,6 @@ contract states how callers can recognize and resume them.
 Prefer opaque cursor parameters. Validate the scheme and origin of any absolute
 next URL before reusing authentication. Close each page body before the next
 request. Retrying a page must not append its records twice.
+
+For a protocol promising one JSON document, validate the expected media type
+when required, decode one value, and reject unexpected trailing data.

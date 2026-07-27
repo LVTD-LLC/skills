@@ -113,6 +113,36 @@ occur at boundaries. Deliberately test:
 
 Avoid comparing error strings when the program exposes a stable error identity.
 
+## Coverage and Parallel Semantics
+
+Go coverage reports executed statements, not whether assertions proved the
+behavior. Name the scope being measured: one package, `./...`, or a broader
+`-coverpkg` set. Use uncovered code to discover missing behavior classes after
+correctness tests exist.
+
+A parallel subtest pauses at `t.Parallel` and resumes after its parent test
+function returns. Sibling parallel subtests can overlap without marking the
+parent parallel. A parallel parent additionally permits the entire group to
+overlap other parallel top-level tests.
+
+`t.Setenv` and process working-directory changes are incompatible with parallel
+tests or parallel ancestors. The race detector reports races only on executed
+paths; a clean run is bounded evidence.
+
+Performance benchmarks, allocation measurement, profiles, and statistical
+comparison belong to `go-performance-testing`.
+
+## Specialized Boundaries
+
+- Parser tests use a fresh `FlagSet` or command tree and distinguish help,
+  syntax, validation, and effect wiring.
+- Inbound HTTP handler and lifecycle tests route to
+  `go-http-server-applications`; function-backed `RoundTripper` fakes model
+  outbound clients.
+- Concurrent lifecycle tests use barriers and deadlines, not sleeps.
+- Repository fakes prove consumer behavior; real-driver tests prove SQL,
+  constraints, conversions, transactions, and pool behavior.
+
 ## Source Traceability
 
 Paraphrased from testing sections of *Powerful Command-Line Applications in

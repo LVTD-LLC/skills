@@ -16,6 +16,9 @@
 | Debug logs corrupt JSON | `references/errors-observability/rules.md` |
 | Support bundle leaks tokens or paths | `workflows/add-safe-diagnostics.md` |
 | Timeout is reported as an internal defect | `references/errors-observability/rules.md` |
+| Inbound HTTP status mapping or response handling | Use `go-http-server-applications` |
+| Local benchmarks or performance profiles | Use `go-performance-testing` |
+| Joined errors evade classification | `references/errors-observability/knowledge.md` |
 
 ## Decision
 

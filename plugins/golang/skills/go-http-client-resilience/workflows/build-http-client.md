@@ -6,12 +6,14 @@
 
 - [ ] Specify method, path, request/response schemas, auth, and idempotency.
 - [ ] Set total deadline, maximum response size, and pagination limits.
+- [ ] Choose streaming, bounded materialization, or bounded drain behavior.
 
 ### 2. Construct the Boundary
 
 - [ ] Inject a reusable client or `Doer`.
 - [ ] Build URLs safely and attach context.
 - [ ] Configure transport and redirect policy.
+- [ ] Clone a reviewed transport baseline and set pool limits from expected load.
 
 ### 3. Classify Responses
 
@@ -32,6 +34,7 @@
 - [ ] Unit-test with a function-backed transport.
 - [ ] Test cancellation, oversized bodies, status errors, retry exhaustion, and body closure.
 - [ ] Use `httptest.Server` for redirects, streaming, or protocol integration.
+- [ ] Load-test connection reuse and pool limits when throughput depends on them.
 - [ ] Confirm logs and errors contain no seeded secrets.
 - [ ] Test repeated and cross-origin cursors, page/record caps, empty pages with
       a next cursor, per-page body closure, retry deduplication, cancellation

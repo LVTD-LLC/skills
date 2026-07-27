@@ -24,6 +24,10 @@
   when the exposure tradeoff is documented; prefer terminal secret input.
 - Restore terminal state on success, error, panic boundary, and cancellation.
 - Stop tickers, goroutines, and render loops before returning.
+- Give input, rendering, and background work one shared cancellation tree.
+- Stop production, then drain or discard by contract, join goroutines, and only
+  then restore terminal state.
+- Bound or coalesce progress events so a slow terminal cannot grow memory without limit.
 
 ## Structured Output
 

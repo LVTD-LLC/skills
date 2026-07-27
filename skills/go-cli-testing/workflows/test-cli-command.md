@@ -25,6 +25,7 @@ Build a layered, isolated test suite around observable command behavior.
 - [ ] Mark exact-output compatibility requirements.
 - [ ] Identify filesystem, environment, network, process, and clock dependencies.
 - [ ] Choose the narrowest boundary that can prove each behavior.
+- [ ] Separate parser grammar, runner wiring, and process exit into distinct layers.
 
 **Reference:** `../references/cli-testing/checklist.md`
 
@@ -38,6 +39,7 @@ Build a layered, isolated test suite around observable command behavior.
 - [ ] Do not use `t.Parallel` where process state is shared.
 - [ ] Construct a fresh root command and typed configuration for every case.
 - [ ] Use a function-backed HTTP transport unless real protocol behavior is under test.
+- [ ] Use a real driver and production migrations when SQL adapter behavior is under test.
 
 **Reference:** `../references/cli-testing/rules.md`
 
@@ -79,6 +81,7 @@ Build a layered, isolated test suite around observable command behavior.
 
 - [ ] Run `go test ./...`.
 - [ ] Run `go test -race ./...`.
+- [ ] Review coverage scope and assertion quality after correctness tests exist.
 - [ ] Run tagged integration profiles uncached when applicable.
 - [ ] Replace sleeps with synchronization, deadlines, or fake clocks.
 - [ ] Re-run likely flaky cases enough to expose shared state.
@@ -87,6 +90,8 @@ Build a layered, isolated test suite around observable command behavior.
       command, race lane, and supported/unsupported status.
 - [ ] Verify selected files with `go list` and intentional unsupported combinations.
 - [ ] Smoke-test at least one critical flow from the final artifact.
+- [ ] Stop before benchmarking or profiling and route that work to
+      `go-performance-testing`.
 
 **Reference:** `../references/cli-testing/checklist.md`
 

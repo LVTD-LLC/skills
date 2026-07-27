@@ -4,7 +4,7 @@ description: Design and review adaptive Go CLI terminal experiences with explici
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go CLI Terminal Experience
   category: Go
   tags: go,golang,cli,terminal,tty,accessibility,agents
@@ -52,3 +52,7 @@ and 10, and Ricardo Gerardi, *Powerful Command-Line Applications in Go*
 
 Verify current APIs against https://pkg.go.dev/golang.org/x/term,
 https://no-color.org/, and the selected terminal UI framework.
+
+Renderer lifecycle and backpressure guidance also incorporates transformed
+material from Inanc Gumus, *Go by Example: Programmer's Guide to Idiomatic and
+Testable Programs* (Manning, 2025), Chapters 6-7.

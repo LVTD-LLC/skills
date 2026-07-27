@@ -113,6 +113,19 @@ Add fuzzing or platform CI where input parsing or OS behavior warrants it.
 - Use deadlines for network and child-process tests so failures terminate.
 - Do not call `t.Parallel()` when tests share global replacements or process state.
 - Test adapters separately when multiple implementations satisfy one interface.
+- Use `Errorf` when later assertions remain safe; use `Fatalf` only when the
+  current test or subtest cannot continue.
+- Include the triggering input and `got, want` values in failures.
+- Treat each table row as a subtest when independent execution and `-run`
+  selection add value.
+- Do not use `T.Setenv` or change the process working directory beneath a
+  parallel test or parallel ancestor.
+- Distinguish `-parallel` test-binary scheduling from `-p` package concurrency.
+- Use coverage to locate unexercised statements, not to claim correctness.
+- Route benchmark and profiling work to `go-performance-testing`.
+- Apply the production migration path in real SQL-adapter tests.
+- Use `httptest.NewRequest` for inbound handlers and a `RoundTripper` fake for
+  outbound client behavior.
 
 ## Exceptions
 

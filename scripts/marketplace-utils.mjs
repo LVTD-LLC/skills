@@ -50,12 +50,12 @@ const MARKETPLACE_PLUGIN_GROUPS = [
   },
   {
     name: "golang",
-    displayName: "Go CLI Engineering",
+    displayName: "Go Engineering",
     category: "Coding",
     taskLabel:
-      "Go command-line interface design, testing, Cobra applications, subprocess control, and distribution",
+      "Go API and CLI design, testing, concurrency, HTTP, SQL storage, subprocess control, and distribution",
     description:
-      "Go CLI engineering guidance for designing command contracts, testing command behavior, building Cobra and Viper applications, supervising external processes, and shipping reproducible cross-platform releases.",
+      "Go engineering guidance for idiomatic APIs, command contracts, testing and profiling, concurrency pipelines, HTTP clients and servers, SQL-backed CLIs, Cobra applications, subprocess supervision, and reproducible releases.",
     iconFile: "icons8-golang.svg",
     tags: [
       "go",
@@ -64,6 +64,10 @@ const MARKETPLACE_PLUGIN_GROUPS = [
       "cobra",
       "viper",
       "testing",
+      "performance",
+      "concurrency",
+      "http",
+      "sql",
       "subprocess",
       "cross-compilation",
       "distribution",

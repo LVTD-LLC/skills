@@ -4,6 +4,7 @@
 
 - Wrap with operation context and `%w`; inspect with `errors.Is` and `errors.As`.
 - Do not match error strings when a typed or sentinel cause is available.
+- Use `errors.Is` and `errors.As` for joined as well as linear error chains.
 - Include a next action when the user can recover.
 - Distinguish cancellation, deadline, validation, authentication, authorization,
   conflict, transport, protocol, and internal failures.
@@ -16,6 +17,10 @@
 - Send logs away from structured result stdout.
 - Redact at creation and at sink boundaries.
 - Do not log request bodies, tokens, cookies, passwords, or full environment maps.
+- Use contextual logging methods when request-scoped metadata is required.
+- Check handler `Enabled` before expensive enrichment.
+- Clone retained `slog.Record` values and copy retained attribute slices.
+- Preserve `WithAttrs` and `WithGroup` semantics in custom handlers.
 
 ## Diagnostics
 

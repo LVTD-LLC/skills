@@ -25,6 +25,8 @@ Define a predictable, scriptable contract before implementing a Go command.
 - [ ] List success results and expected failure classes.
 - [ ] Identify human, script, and agent consumers.
 - [ ] Decide whether output compatibility is a public promise.
+- [ ] Choose standard `flag`, Cobra/pflag, or another parser and document its grammar.
+- [ ] Decide whether flags may follow operands and how `--` behaves.
 
 **Ask:** "What must a caller know without reading the source?"
 

@@ -21,6 +21,20 @@ breaking callers.
 `slog` supports structured records, levels, attributes, handlers, and contextual
 logging. Choose keys deliberately and avoid dumping arbitrary structs.
 
+A `slog.Handler` decorator must preserve the `Enabled`, `Handle`, `WithAttrs`,
+and `WithGroup` contracts. Check levels before expensive attribute work. Clone a
+record before retaining or modifying shared state, and copy retained attribute
+slices. Go 1.26 adds `slog.NewMultiHandler`; verify the module's minimum Go
+version before relying on it.
+
+Error chains can be trees after `errors.Join` or multiple wrapping operands.
+Prefer `errors.Is` and `errors.As`; a manual `errors.Unwrap` loop sees only the
+single-error form.
+
+Context-derived correlation IDs are request metadata, not arbitrary
+configuration. Use typed keys, validate shape, and control cardinality and
+redaction before adding them to every record.
+
 ## Diagnostic Bundles
 
 A bundle is a curated support artifact, not a filesystem or environment dump.

@@ -4,7 +4,7 @@ description: Design and review recoverable Go CLI errors, exit semantics, struct
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go CLI Errors and Observability
   category: Go
   tags: go,golang,cli,errors,observability,logging,diagnostics
@@ -46,6 +46,11 @@ diagnose them. Keep internal detail out of the normal user contract.
 Guidance is transformed and paraphrased from Marian Montagnino,
 *Building Modern CLI Applications in Go* (Packt, 2023), especially Chapter 9,
 and Ricardo Gerardi, *Powerful Command-Line Applications in Go* (2021).
+
+Handler composition, context correlation, and joined-error guidance also
+incorporates transformed material from Inanc Gumus, *Go by Example:
+Programmer's Guide to Idiomatic and Testable Programs* (Manning, 2025),
+Chapter 9.
 
 Verify current logging APIs against https://pkg.go.dev/log/slog and error APIs
 against the current Go standard library documentation.

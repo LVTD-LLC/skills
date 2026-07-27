@@ -47,6 +47,33 @@ tests := []struct {
 Prefer named fields and descriptive row names. Capture the range variable safely
 when supporting older Go versions or when parallelizing subtests.
 
+## Pattern: Parallel Subtest Group
+
+Build immutable shared fixtures in the parent and allocate mutable resources
+inside each subtest before calling `t.Parallel`. Do not use process-global
+environment or working-directory mutations. Mark the parent parallel only when
+the whole group may overlap other top-level tests.
+
+## Pattern: Concurrent Lifecycle Test
+
+Inject work functions and coordinate them with barrier channels. Assert maximum
+active work, cancellation, early consumer exit, channel closure, and completion
+without asserting incidental schedule order. Run the exercised path under the
+race detector.
+
+## Pattern: Parser Harness
+
+Construct fresh parser options and a fresh `FlagSet` or command tree. Capture
+parser diagnostics separately. Cover `--`, missing and extra operands, defaults,
+help, malformed custom values, and dependency calls.
+
+## Pattern: Real SQL Adapter
+
+Create an isolated database, apply production migrations, exercise the concrete
+adapter, and clean up. Use unique files, databases, or schemas under
+`t.Parallel`. An in-memory fake remains valuable for consumers but cannot prove
+SQL syntax, constraints, driver codes, transactions, or pooling.
+
 ## Pattern: Fixture Builder with Owned Cleanup
 
 Create mutable test resources independently for each test.

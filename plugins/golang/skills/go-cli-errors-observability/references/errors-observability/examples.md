@@ -1,5 +1,20 @@
 # Errors and Observability Examples
 
+## Joined Error Classification
+
+```go
+err := errors.Join(flushErr, closeErr)
+if errors.Is(err, context.Canceled) {
+	// Preserve cancellation policy even when cleanup also failed.
+}
+var pathErr *os.PathError
+if errors.As(err, &pathErr) {
+	// Add safe path-operation context without parsing prose.
+}
+```
+
+Do not walk only `errors.Unwrap() error`; joined errors use a multi-error tree.
+
 ## Typed Classification
 
 ```go

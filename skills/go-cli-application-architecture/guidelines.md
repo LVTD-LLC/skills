@@ -15,6 +15,10 @@
 | Interfaces package imports everything | `references/application-architecture/knowledge.md` |
 | Config reload mutates shared globals | `references/application-architecture/rules.md` |
 | Repository abstraction has dozens of methods | `references/application-architecture/examples.md` |
+| Public package API is difficult to evolve | Use `go-idiomatic-api-design` |
+| HTTP handlers own domain behavior | Use this skill, then `go-http-server-applications` |
+| SQL pool and transactions have unclear owners | Use this skill, then `go-cli-sql-storage` |
+| Application exposes internal worker channels | Use this skill, then `go-concurrency-pipelines` |
 
 ## Decision
 

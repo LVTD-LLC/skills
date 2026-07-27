@@ -66,6 +66,15 @@ Use when designing or reviewing a Go command's public interface.
 - [ ] Secret input cannot leak through arguments, history, logs, or diagnostics.
 - [ ] Progress and terminal state are cleaned up on every return path.
 
+## Parser Grammar
+
+- [ ] The chosen parser and its operand/flag ordering are documented.
+- [ ] `--`, repeated flags, missing values, and extra operands are tested.
+- [ ] Help exits successfully and is distinct from invalid usage.
+- [ ] Custom values reject malformed input without partial mutation.
+- [ ] Conversion, single-value validation, and cross-field validation are separate.
+- [ ] Parser and process layers do not print duplicate diagnostics.
+
 ## Portability
 
 - [ ] Paths use `filepath` and platform-aware directories.

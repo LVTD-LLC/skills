@@ -62,6 +62,34 @@ func TestParseLimit(t *testing.T) {
 }
 ```
 
+## Parser Subtests with Fresh State
+
+```go
+func TestParse(t *testing.T) {
+	tests := []struct {
+		name string
+		args []string
+		want options
+		err  error
+	}{
+		{"help", []string{"-h"}, options{}, flag.ErrHelp},
+		{"operand", []string{"input.txt"}, options{input: "input.txt"}, nil},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			var stderr bytes.Buffer
+			got, err := parse(tt.args, &stderr)
+			if !errors.Is(err, tt.err) {
+				t.Fatalf("parse(%q) error = %v, want %v", tt.args, err, tt.err)
+			}
+			if diff := cmp.Diff(tt.want, got); diff != "" {
+				t.Fatalf("parse(%q) mismatch (-want +got):\n%s", tt.args, diff)
+			}
+		})
+	}
+}
+```
+
 ## Temporary Filesystem Helper
 
 ```go

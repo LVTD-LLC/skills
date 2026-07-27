@@ -96,6 +96,13 @@ Two complementary seams are useful:
 Construct a fresh tree per test. Global command variables, global Viper state,
 and direct process exits cause test leakage and make parallel tests unsafe.
 
+## Parser Boundary
+
+Standard `flag.FlagSet` grammar does not describe Cobra/pflag behavior.
+Interspersed flags, `--`, positional validators, custom values, help, and error
+output must be verified against the pinned Cobra and pflag versions. Keep
+framework parsing diagnostics separate from application error presentation.
+
 ## Historical and Version-Sensitive Material
 
 The source uses Cobra v1.1.3-era generator commands, generated `init` functions,

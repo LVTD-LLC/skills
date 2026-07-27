@@ -90,6 +90,12 @@ tests.
     errors, and exit mapping.
 34. **Cover repeated execution.** A command tree should behave consistently
     when invoked more than once in the same process.
+35. **Do not import standard `flag` assumptions.** Verify pflag interspersed
+    parsing, `--`, repeated values, and positional validators.
+36. **Keep custom values transactional.** Rejected input must not leave partial
+    mutation, and defaults must render correctly.
+37. **Test help and diagnostics deliberately.** Assert the selected Cobra
+    output methods and usage policy against the pinned version.
 
 ## Historical API Verification
 

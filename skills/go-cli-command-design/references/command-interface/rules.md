@@ -100,6 +100,24 @@ Actionable rules for implementing predictable, composable Go commands.
     - Propagate context cancellation through effects.
     - Treat a normal downstream broken pipe as pipeline completion, not a crash.
 
+## Parser Contract
+
+18. **Choose and document the parsing grammar.**
+    - State whether flags may appear after operands.
+    - Test `--`, repeated flags, missing values, and extra operands.
+    - Do not copy standard `flag` behavior into Cobra/pflag guidance.
+
+19. **Separate conversion and validation.**
+    - Parse text into typed values without partial mutation on failure.
+    - Validate individual values, then conflicts and cross-field invariants.
+    - Parse documented decimal values with decimal semantics rather than
+      surprising base inference.
+
+20. **Treat help as success.**
+    - Detect `flag.ErrHelp` separately from invalid usage.
+    - Avoid printing the same parser diagnostic at multiple layers.
+    - Keep usage policy at the command boundary.
+
 ## Quick Reference
 
 | Concern | Do | Don't |
@@ -120,3 +138,5 @@ Derived and paraphrased from:
   Tool,” “Handling Multiple Command-Line Options,” “Display Command-Line Tool
   Usage,” “Increasing Flexibility with Environment Variables,” and “Capturing
   Input from STDIN” (normalized lines 1012–2699).
+- *Go by Example: Programmer's Guide to Idiomatic and Testable Programs*,
+  Chapter 4, normalized lines 8752–11420.

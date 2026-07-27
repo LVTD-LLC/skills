@@ -14,6 +14,7 @@ Use this routing guide for external commands, pipelines, cancellation, and signa
 |---|---|
 | Design an external-command boundary | `references/process-control/knowledge.md`, `references/process-control/rules.md` |
 | Implement execution or a pipeline | `references/process-control/examples.md`, `references/process-control/patterns.md` |
+| Implement an in-process channel pipeline | Use `go-concurrency-pipelines` |
 | Add timeout, cancellation, or signal handling | `references/process-control/patterns.md`, `references/process-control/rules.md` |
 | Review process cleanup and failure handling | `references/process-control/checklist.md` |
 
@@ -40,7 +41,8 @@ Use this routing guide for external commands, pipelines, cancellation, and signa
 ```text
 What boundary are you controlling?
 ├─ One direct command → rules.md + examples.md
-├─ Pipeline or streaming I/O → patterns.md + examples.md
+├─ OS process pipeline or pipe I/O → patterns.md + examples.md
+├─ In-process goroutine/channel pipeline → go-concurrency-pipelines
 ├─ Timeout, cancellation, or signal → patterns.md + checklist.md
 └─ Diagnosing a leak or hang → checklist.md
    └─ Need lifecycle rationale → knowledge.md

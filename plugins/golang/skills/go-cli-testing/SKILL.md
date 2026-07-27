@@ -4,7 +4,7 @@ description: Design, implement, stabilize, and review Go CLI tests across fresh 
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   displayName: Go CLI Testing
   category: Go
   tags: go,golang,cli,testing,table-tests,integration-tests,subprocess
@@ -25,6 +25,7 @@ mutable resource and reserve executable tests for process-level semantics.
 6. Gate live or platform-specific tests and make their changes reversible.
 7. Run standard, race, tagged, and relevant platform checks.
 8. Execute every supported build profile and smoke-test final artifacts.
+9. Interpret coverage gaps without treating execution as behavioral proof.
 
 ## Read Next
 
@@ -35,6 +36,7 @@ mutable resource and reserve executable tests for process-level semantics.
 | Add subprocess, HTTP, repository, or integration tests | `references/cli-testing/patterns.md` |
 | Review coverage, isolation, or flakiness | `references/cli-testing/checklist.md` |
 | Choose the right test boundary | `references/cli-testing/knowledge.md` |
+| Benchmark or profile performance | Use `go-performance-testing` |
 
 ## Guardrails
 
@@ -60,3 +62,8 @@ current Go documentation before implementation.
 Fresh command-tree, HTTP fake, configuration, and build-profile guidance also
 incorporates transformed material from Marian Montagnino, *Building Modern CLI
 Applications in Go* (Packt, 2023), especially Chapters 4, 6, and 11.
+
+Subtest, coverage, parser, concurrency, HTTP server, and SQL adapter guidance
+also incorporates transformed material from Inanc Gumus, *Go by Example:
+Programmer's Guide to Idiomatic and Testable Programs* (Manning, 2025),
+Chapters 2-10.

@@ -16,6 +16,10 @@ Use this file to route a CLI testing task to the smallest useful reference set.
 | Write unit or table-driven tests | `references/cli-testing/examples.md`, `references/cli-testing/patterns.md` |
 | Test subprocesses or local integrations | `references/cli-testing/patterns.md`, `references/cli-testing/rules.md` |
 | Review test quality and coverage | `references/cli-testing/checklist.md` |
+| Benchmark, profile, or compare performance | Use `go-performance-testing` |
+| Test inbound HTTP lifecycle | Use `go-http-server-applications` |
+| Test SQL adapter behavior | `references/cli-testing/patterns.md`, then `go-cli-sql-storage` |
+| Test goroutine lifecycle and backpressure | `references/cli-testing/patterns.md`, then `go-concurrency-pipelines` |
 
 ## By Code Element
 
@@ -42,6 +46,9 @@ What test boundary is involved?
 ├─ Pure command behavior → examples.md + rules.md
 ├─ Repeated cases or test fixtures → patterns.md
 ├─ Process, filesystem, environment, or network → patterns.md + checklist.md
+├─ Performance benchmark or profile → go-performance-testing
+├─ Inbound HTTP semantics → go-http-server-applications
+├─ SQL driver, migration, or transaction semantics → go-cli-sql-storage
 └─ Reviewing the suite
    ├─ Need acceptance criteria → checklist.md
    └─ Need rationale → knowledge.md

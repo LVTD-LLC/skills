@@ -63,6 +63,19 @@ do not want to repeat. Treat them as configuration, not as hidden commands.
 - Resolve environment values once near the process boundary.
 - Pass the resulting configuration into application code.
 
+## Standard Flag Grammar
+
+A dedicated `flag.FlagSet` with `flag.ContinueOnError` gives reusable code
+control over diagnostics and errors. Standard `flag` parsing stops at the first
+non-flag operand; flags after that operand remain positional input. `--`
+explicitly ends flag parsing. This grammar differs from Cobra/pflag and must be
+documented and tested rather than assumed.
+
+Treat conversion, validation of one value, and validation across values as
+separate concerns. A custom `flag.Value` must not leave partially mutated state
+after rejecting input. Requested help is represented by `flag.ErrHelp` and is a
+successful user action even though parsing returns an error sentinel.
+
 ## Output and Exit Status
 
 Successful, machine-consumable results belong on stdout. Errors belong on
@@ -97,3 +110,5 @@ Derived and paraphrased from:
   Tool,” “Handling Multiple Command-Line Options,” “Display Command-Line Tool
   Usage,” “Increasing Flexibility with Environment Variables,” and “Capturing
   Input from STDIN” (normalized lines 994–2699).
+- *Go by Example: Programmer's Guide to Idiomatic and Testable Programs*,
+  Chapter 4, “Command-line interfaces” (normalized lines 8752–11420).

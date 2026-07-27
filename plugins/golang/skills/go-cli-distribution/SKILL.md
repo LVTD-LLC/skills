@@ -4,7 +4,7 @@ description: Prepare reproducible Go CLI artifacts across operating systems and 
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   displayName: Go CLI Distribution
   category: Go
   tags: go,golang,cli,distribution,cross-compilation,release,cgo
@@ -63,3 +63,7 @@ current Go build documentation.
 Portable directory, profile-matrix, and artifact-handoff guidance also
 incorporates transformed material from Marian Montagnino, *Building Modern CLI
 Applications in Go* (Packt, 2023), especially Chapters 7 and 12-14.
+
+Embedded-schema and SQL-driver packaging guidance also incorporates transformed
+material from Inanc Gumus, *Go by Example: Programmer's Guide to Idiomatic and
+Testable Programs* (Manning, 2025), Chapter 10.

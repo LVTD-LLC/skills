@@ -115,6 +115,18 @@ Stop and redesign if:
 - test code leaves a package-level command function replaced;
 - ordinary `go test ./...` contacts the internet or launches desktop UI.
 
+## Coverage, Parallelism, and Specialized Boundaries
+
+- [ ] Coverage scope is named and covered paths contain meaningful assertions.
+- [ ] Each parallel test owns files, ports, databases, fixtures, and mutable state.
+- [ ] Parallel tests do not mutate environment or working directory globally.
+- [ ] Race results are described as applying to the exercised workload.
+- [ ] Parser tests cover help, `--`, operand ordering, defaults, and diagnostics.
+- [ ] Streaming HTTP tests cover early EOF, partial body, oversize, close, and cancellation.
+- [ ] Concurrency tests cover early stop, blocked downstream, closure, and limits.
+- [ ] SQL adapter tests apply production migrations and use the real driver.
+- [ ] Benchmarks and profiles are routed to `go-performance-testing`.
+
 ## Quick Reference
 
 | Aspect | Ideal | Acceptable | Red flag |

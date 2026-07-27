@@ -19,6 +19,25 @@ Define a narrow interface in or near the consuming package. This keeps the seam
 shaped by the caller's need and lets concrete types satisfy it implicitly.
 Concrete adapters need not declare or own every interface they may satisfy.
 
+Discover interfaces from a concrete substitution need. Keep the provider
+concrete and let separate consumers define narrow views. A standard-library
+extension point such as `http.RoundTripper` can be an adapter seam without
+becoming the application's domain port.
+
+## Dependency Bundles and Lifecycles
+
+A command runner may accept one dependency bundle at its construction boundary,
+while internal helpers should receive only what they need. Do not pass a broad
+service locator through every layer.
+
+The composition root owns long-lived clients, transports, pools, listeners,
+and cleanup. Record who constructs, shares, reloads, and closes each resource.
+For SQL, the root owns `*sql.DB`; the use case owns transaction boundaries.
+
+CLI and HTTP are peer outer adapters around the same application service. An
+HTTP executable owns listener and server lifecycle; detailed inbound semantics
+belong to `go-http-server-applications`.
+
 ## Configuration vs State
 
 Configuration describes how the process should run and is normally validated

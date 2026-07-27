@@ -2,6 +2,29 @@
 
 Compact, original examples of testable command boundaries and predictable input.
 
+## Help and Operand Cardinality
+
+```go
+func parse(args []string, stderr io.Writer) (options, error) {
+	fs := flag.NewFlagSet("tool", flag.ContinueOnError)
+	fs.SetOutput(stderr)
+
+	var opts options
+	fs.StringVar(&opts.format, "format", "text", "output format")
+	if err := fs.Parse(args); err != nil {
+		return options{}, err
+	}
+	if fs.NArg() != 1 {
+		return options{}, fmt.Errorf("expected exactly one input")
+	}
+	opts.input = fs.Arg(0)
+	return opts, nil
+}
+```
+
+The process boundary maps `flag.ErrHelp` to success and other parse or
+cardinality failures to invalid usage.
+
 ## Thin Process Boundary
 
 ```go

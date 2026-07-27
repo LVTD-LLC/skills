@@ -4,7 +4,7 @@ description: Execute and supervise external programs safely from Go CLIs with ex
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   displayName: Go CLI Process Control
   category: Go
   tags: go,golang,cli,os-exec,subprocess,signals,cancellation
@@ -61,3 +61,7 @@ https://pkg.go.dev/os/signal, including `Cmd.Cancel`, `WaitDelay`, and
 Failure taxonomy, pipe ordering, and platform-adapter guidance also incorporates
 transformed material from Marian Montagnino, *Building Modern CLI Applications
 in Go* (Packt, 2023), especially Chapter 6.
+
+In-process cancellation boundary guidance also incorporates transformed
+material from Inanc Gumus, *Go by Example: Programmer's Guide to Idiomatic and
+Testable Programs* (Manning, 2025), Chapters 6-7.

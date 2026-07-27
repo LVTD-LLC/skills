@@ -4,7 +4,7 @@ description: Design, implement, test, and review resilient Go HTTP client bounda
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go HTTP Client Resilience
   category: Go
   tags: go,golang,http,client,resilience,retries,api
@@ -20,7 +20,7 @@ Retry only when both the failure and the operation are safe.
 1. Define operation semantics, total deadline, idempotency, and response limits.
 2. Reuse a configured client and transport; propagate context into every request.
 3. Construct URLs, headers, authentication, and bodies without secret leakage.
-4. classify transport, timeout, status, protocol, and decode failures.
+4. Classify transport, timeout, status, protocol, and decode failures.
 5. Add bounded retries with jitter only for safe transient cases.
 6. Drain or close bodies correctly and bound all reads.
 7. Test with a function-backed transport and focused integration server.
@@ -47,6 +47,10 @@ Retry only when both the failure and the operation are safe.
 Guidance is transformed and paraphrased from Marian Montagnino,
 *Building Modern CLI Applications in Go* (Packt, 2023), especially Chapter 6,
 and Ricardo Gerardi, *Powerful Command-Line Applications in Go* (2021).
+
+Streaming, transport-pool, and HTTP test guidance also incorporates transformed
+material from Inanc Gumus, *Go by Example: Programmer's Guide to Idiomatic and
+Testable Programs* (Manning, 2025), Chapter 7.
 
 Verify behavior against https://pkg.go.dev/net/http and current API-specific
 rate-limit, pagination, and idempotency documentation.

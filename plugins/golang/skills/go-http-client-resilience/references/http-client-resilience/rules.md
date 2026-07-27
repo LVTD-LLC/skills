@@ -15,7 +15,11 @@
 - Treat pagination cursors as opaque. If an API returns an absolute next URL,
   require the expected scheme and origin before attaching credentials.
 - Close every response body and bound reads with a known limit.
+- Bound drains by bytes and the caller's time budget.
+- Stream large success bodies when materialization is unnecessary.
 - Check status before decoding the success schema.
+- Validate required response media types and reject trailing JSON when the
+  protocol promises one document.
 - Parse bounded structured error responses; fall back to sanitized status context.
 
 ## Retries
@@ -34,3 +38,6 @@
 - Test cancellation, oversized bodies, retry exhaustion, `Retry-After`, and body closure.
 - Test a malicious cross-origin next link, repeated cursor, empty page with a
   next cursor, page/record caps, and cancellation between pages.
+- Clone a reviewed baseline transport and set pool-wide plus per-host limits
+  from expected concurrency.
+- Ensure fan-out and retries share one total admission budget.

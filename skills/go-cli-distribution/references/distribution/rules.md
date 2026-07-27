@@ -108,6 +108,16 @@ intentionally reduced profiles.
 
 ## Source Distribution Rules
 
+### SQL-backed artifacts
+
+- Embed schema or migration assets when the CLI must initialize storage without
+  adjacent source files, but keep versioning and coordination in a migration system.
+- Treat CGO-dependent drivers as an artifact and cross-compilation constraint,
+  not as categorically wrong.
+- Document native libraries, static or dynamic linking, supported targets, and
+  database-driver configuration.
+- Smoke-test the built artifact creating or upgrading an isolated database.
+
 17. **Publish installable, versioned module source.**
     - Keep command packages under stable module paths.
     - Tag releases semantically and document the supported Go version.

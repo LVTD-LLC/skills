@@ -1,5 +1,23 @@
 # Application Architecture Examples
 
+## Inject an Effect Without a Test-Only Switch
+
+```go
+type Dependencies struct {
+	Upload func(context.Context, Artifact) error
+}
+
+func run(ctx context.Context, deps Dependencies, artifact Artifact) error {
+	if err := deps.Upload(ctx, artifact); err != nil {
+		return fmt.Errorf("upload artifact: %w", err)
+	}
+	return nil
+}
+```
+
+The test records calls through the function. A product-level `--dry-run` may
+still exist, but it is not required merely to make the operation testable.
+
 ## Thin Command Adapter
 
 ```go

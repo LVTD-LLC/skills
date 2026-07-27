@@ -8,6 +8,10 @@
 4. [ ] Define the smallest consumer-owned interfaces needed for difficult effects.
 5. [ ] Choose packages based on cohesive ownership and allowed imports.
 6. [ ] Build dependencies in one composition root with explicit lifecycle cleanup.
+   - Record each dependency's owner, sharing model, cleanup, and test seam.
+   - Separate SQL pool ownership from use-case transaction ownership.
+   - Choose a domain client, narrow operation interface, or concrete
+     `*http.Client` deliberately.
 7. [ ] Define a bootstrap path so help, version, completion, output mode, and
        config-location flags do not require full config or remote dependencies.
 8. [ ] Separate validated configuration from mutable application state.
