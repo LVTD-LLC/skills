@@ -88,6 +88,16 @@ defaults → file → environment → explicit flags → validate → Options
 - Keep secret-bearing values out of diagnostics and generated docs.
 - Test precedence collisions, missing files, malformed values, and zero values.
 
+## Pattern: Validate-Then-Swap Configuration
+
+Load bytes from a local, buffered, or remote source into a new typed value.
+Apply precedence, validate the whole candidate, then publish it through an
+atomic pointer or locked owner. On failure, retain last-known-good state. The
+owner starts and stops watchers and rebuilds dependent resources explicitly.
+
+Use this only when live reload has concrete value; prefer immutable startup
+configuration for most short-lived CLIs.
+
 ## Pattern: Root-Level Error Policy
 
 ### Intent

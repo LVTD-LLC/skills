@@ -80,6 +80,26 @@ Actionable rules for implementing predictable, composable Go commands.
     - Run smoke tests on the target OS; cross-compilation alone is insufficient.
     - Verify static-link assumptions when cgo or native dependencies are present.
 
+## Naming and Interaction Modes
+
+15. **Follow established command vocabulary.**
+    - Prefer lowercase command and long-flag names and conventional flags such
+      as `--help`, `--version`, `--quiet`, and `--output`.
+    - Add aliases only for compatibility or proven common usage.
+
+16. **Make output and interaction modes explicit.**
+    - Define human, plain, and structured output separately.
+    - Let explicit flags override environment and TTY-derived defaults.
+    - Detect stdin, stdout, and stderr capabilities independently.
+    - Honor `NO_COLOR` and never rely on color alone.
+
+17. **Keep automation noninteractive and bounded.**
+    - Never prompt or animate in structured or declared noninteractive mode.
+    - Send progress to stderr only in compatible human mode.
+    - Keep secrets out of argv, logs, errors, and diagnostic bundles.
+    - Propagate context cancellation through effects.
+    - Treat a normal downstream broken pipe as pipeline completion, not a crash.
+
 ## Quick Reference
 
 | Concern | Do | Don't |

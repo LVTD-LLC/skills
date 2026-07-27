@@ -10,6 +10,7 @@ Use this checklist when implementing platform variants or reviewing a release.
       have been applied to the toolchain’s raw target list.
 - [ ] Unsupported targets fail clearly or are excluded intentionally.
 - [ ] Release profiles and their build tags are documented.
+- [ ] Config, cache, data, and temporary paths use platform-aware locations.
 
 ## Platform Implementation
 
@@ -38,6 +39,8 @@ Use this checklist when implementing platform variants or reviewing a release.
 - [ ] `go list -f '{{.GoFiles}} {{.CgoFiles}}'` matches each release profile.
 - [ ] Default, optional-feature, and minimal/container profiles compile.
 - [ ] Unit tests run for every supported tag profile.
+- [ ] Every supported target/profile combination has an artifact smoke plan.
+- [ ] No build tag is treated as authentication or authorization.
 - [ ] No profile selects duplicate definitions or omits required definitions.
 - [ ] Local-only `replace` directives are absent from released module source.
 
@@ -68,6 +71,9 @@ Use this checklist when implementing platform variants or reviewing a release.
 - [ ] Checksums were verified after upload.
 - [ ] Signing or provenance meets the release policy.
 - [ ] Artifact names and metadata map back to the source revision.
+- [ ] Snapshot output proves the intended target/profile artifact contract.
+- [ ] The tagged release job is the single owner that builds final bytes.
+- [ ] Downstream channels consume its recorded digests rather than rebuilding.
 - [ ] Re-running the release from the same inputs was compared for equivalence.
 - [ ] Current signing/provenance commands were verified against the 2026 release
       platform rather than inferred from the book.

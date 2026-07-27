@@ -30,6 +30,8 @@ Use when implementing or reviewing a Go CLI that runs external programs.
 - [ ] Exit-zero domain failures are parsed and tested.
 - [ ] Output write failures are not silently ignored.
 - [ ] Error identity is tested with `errors.Is` or `errors.As`.
+- [ ] Manual stdout/stderr pipes are drained concurrently.
+- [ ] Pipe readers and `Wait` cannot deadlock each other.
 
 ## Context and Timeout
 
@@ -60,6 +62,8 @@ Use when implementing or reviewing a Go CLI that runs external programs.
 - [ ] Active children, goroutines, files, and temporary state are cleaned up.
 - [ ] Interrupted work returns a stable non-zero result.
 - [ ] A second-signal or forced-exit policy is defined for stuck cleanup.
+- [ ] Platform-specific process-group and signal behavior lives behind an adapter.
+- [ ] Windows termination and descendant behavior receive target tests.
 
 ## Tests
 
@@ -75,6 +79,8 @@ Use when implementing or reviewing a Go CLI that runs external programs.
 - [ ] Test cleanup is registered immediately and is safe to repeat.
 - [ ] Fakes are injected per test; mutable global hooks are restored.
 - [ ] Tests that mutate process-global state are not parallelized.
+- [ ] Lookup, start, exit, cancellation, timeout, and cleanup are distinct cases.
+- [ ] No diagnostic treats `Cmd.String()` as a replayable command.
 
 ## Red Flags
 

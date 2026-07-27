@@ -1,10 +1,10 @@
 ---
 name: go-cli-process-control
-description: Execute and supervise external programs safely from Go CLIs with explicit arguments, working directories, environments, streams, exit handling, pipelines, contexts, timeouts, signals, descendant cleanup, runner seams, and lifecycle tests. Use when wrapping a command, diagnosing hangs or orphan processes, or implementing cancellable CLI workflows.
+description: Execute and supervise external programs safely from Go CLIs with explicit arguments, typed failure classification, working directories, environments, bounded streams, deadlock-safe pipes, contexts, timeouts, signals, platform adapters, descendant cleanup, runner seams, and lifecycle tests. Use when wrapping a command, diagnosing start or exit failures, hangs, deadlocks, or orphan processes, or implementing cancellable cross-platform CLI workflows.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go CLI Process Control
   category: Go
   tags: go,golang,cli,os-exec,subprocess,signals,cancellation
@@ -42,6 +42,8 @@ propagate cancellation, and clean up every process, pipe, and temporary resource
 - Do not treat `Start` as success; inspect the terminal result.
 - Do not assume context cancellation terminates an entire process tree.
 - Close owned pipes and wait for every started process.
+- Distinguish lookup, start, exit, timeout, cancellation, and cleanup failures.
+- Treat `Cmd.String()` as diagnostic text, never shell-safe replay or secret-safe output.
 - Avoid mutable package-level command hooks in concurrent tests.
 
 ## Source Notes
@@ -55,3 +57,7 @@ Book: https://pragprog.com/titles/rggo/powerful-command-line-applications-in-go/
 Verify current behavior against https://pkg.go.dev/os/exec and
 https://pkg.go.dev/os/signal, including `Cmd.Cancel`, `WaitDelay`, and
 `signal.NotifyContext`.
+
+Failure taxonomy, pipe ordering, and platform-adapter guidance also incorporates
+transformed material from Marian Montagnino, *Building Modern CLI Applications
+in Go* (Packt, 2023), especially Chapter 6.

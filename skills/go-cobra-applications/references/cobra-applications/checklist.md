@@ -13,6 +13,7 @@ Use when implementing or reviewing a Cobra command-line application.
 - [ ] Local flags stay local.
 - [ ] Persistent flags are relevant to every inheriting descendant.
 - [ ] Shorthand flags do not collide within inherited scopes.
+- [ ] Typo-suggestion behavior is intentional and tested.
 
 ## Application Boundary
 
@@ -36,6 +37,12 @@ Use when implementing or reviewing a Cobra command-line application.
 - [ ] Secrets are not exposed in arguments, help, logs, errors, or generated
       docs.
 - [ ] Missing optional config and malformed config have distinct behavior.
+- [ ] Local, buffered, or remote sources enter through a loader boundary.
+- [ ] Configuration is not used as mutable application storage.
+- [ ] Reload validates before atomic swap and retains last-known-good state.
+- [ ] Watchers and replaced clients have explicit cleanup.
+- [ ] Each operation captures one immutable settings/client snapshot.
+- [ ] Replaced clients retire only after in-flight operations finish.
 
 ## Errors and Streams
 
@@ -62,6 +69,8 @@ Use when implementing or reviewing a Cobra command-line application.
 - [ ] Temporary state uses test-owned directories.
 - [ ] At least one integration test covers a representative command sequence.
 - [ ] OS exit codes are tested at the process boundary when part of the contract.
+- [ ] Reload tests cover valid update, invalid retention, cancellation, and cleanup.
+- [ ] An in-flight reload race test proves an operation cannot mix snapshots.
 
 ## Completion and Documentation
 

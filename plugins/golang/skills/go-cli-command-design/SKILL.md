@@ -1,10 +1,10 @@
 ---
 name: go-cli-command-design
-description: Design and review predictable Go command-line interfaces with explicit flags, operands, stdin, environment precedence, stdout and stderr contracts, help, errors, exit codes, dependency injection, and platform behavior. Use when creating a Go CLI, changing its public command contract, making command code testable, or reviewing script and agent compatibility.
+description: Design and review predictable Go command-line interfaces with canonical names and flags; explicit inputs and precedence; human, plain, and structured output; safe prompting; stdout and stderr contracts; help; errors; exit codes; cancellation; dependency injection; and platform behavior. Use when creating a Go CLI, changing its public command contract, making command code testable, or reviewing compatibility for people, scripts, AI agents, and CI.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go CLI Command Design
   category: Go
   tags: go,golang,cli,command-design,flags,streams,portability
@@ -25,6 +25,7 @@ Keep results pipeable, failures diagnosable, and process-global state at the edg
 5. Return errors from command logic and map exit codes at the process boundary.
 6. Inject streams, configuration, and effects behind a small testable runner.
 7. Verify help, invalid usage, operational failures, and supported target behavior.
+8. Verify noninteractive, color-disabled, canceled, and short-reading pipe behavior.
 
 ## Read Next
 
@@ -41,6 +42,8 @@ Keep results pipeable, failures diagnosable, and process-global state at the edg
 - Do not read stdin unless the documented invocation requires it.
 - Do not call `os.Exit` below the outer process boundary.
 - Treat structured output, exact text, and exit codes as APIs when automation relies on them.
+- Never prompt, animate, or emit ANSI sequences in structured or noninteractive mode.
+- Treat closed downstream pipes as normal pipeline termination when appropriate.
 - Cross-compilation does not replace target-level smoke testing.
 
 ## Source Notes
@@ -48,6 +51,10 @@ Keep results pipeable, failures diagnosable, and process-global state at the edg
 Guidance is transformed and paraphrased from Ricardo Gerardi,
 *Powerful Command-Line Applications in Go* (Pragmatic Bookshelf, 2021),
 especially Chapters 1-2. Examples are original adaptations.
+
+Modern interaction, cancellation, and output-mode guidance also incorporates
+transformed material from Marian Montagnino, *Building Modern CLI Applications
+in Go* (Packt, 2023), especially Chapters 1, 5, 8, and 10.
 
 Book: https://pragprog.com/titles/rggo/powerful-command-line-applications-in-go/
 

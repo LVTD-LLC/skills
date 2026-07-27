@@ -18,6 +18,9 @@ Use when implementing or reviewing tests for a Go command-line application.
 - [ ] Parsed arguments and configuration are passed explicitly.
 - [ ] stdin, stdout, and stderr can be injected.
 - [ ] Filesystem, clock, process, HTTP, and repository dependencies have narrow seams.
+- [ ] Every case constructs a fresh command tree.
+- [ ] Every case receives its own typed configuration and dependency bundle.
+- [ ] Tests assert the `Execute` error as well as stdout and stderr.
 
 ## CLI Contract
 
@@ -65,6 +68,8 @@ Use when implementing or reviewing tests for a Go command-line application.
 - [ ] Response bodies and test servers are closed.
 - [ ] Unreachable, malformed, empty, and error responses are covered.
 - [ ] Clients and servers have timeouts.
+- [ ] Function-backed transports are used when real HTTP semantics are unnecessary.
+- [ ] Fake responses have status, headers, request, and a non-nil closable body.
 
 ## Repositories and Databases
 
@@ -94,6 +99,8 @@ Use when implementing or reviewing tests for a Go command-line application.
 - [ ] `go test -count=1 -tags=integration ./...` in the approved environment
 - [ ] Relevant OS and architecture jobs run in CI
 - [ ] Repeated local runs pass independently and in shuffled order
+- [ ] Every supported build-tag or capability profile compiles and runs tests.
+- [ ] Final archived or installed artifact behavior receives a smoke test.
 
 ## Red Flags
 

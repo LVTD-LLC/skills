@@ -115,17 +115,17 @@ termination signal therefore cancels active work instead of abandoning it.
 
 ```go
 type Runner interface {
-	Run(ctx context.Context, dir, name string, args ...string) error
+	Run(ctx context.Context, spec CommandSpec) (Result, error)
 }
 
 type ExecRunner struct{}
 
-func (ExecRunner) Run(
-	ctx context.Context, dir, name string, args ...string,
-) error {
-	cmd := exec.CommandContext(ctx, name, args...)
-	cmd.Dir = dir
-	return cmd.Run()
+func (ExecRunner) Run(ctx context.Context, spec CommandSpec) (Result, error) {
+	cmd := exec.CommandContext(ctx, spec.Name, spec.Args...)
+	cmd.Dir, cmd.Stdin = spec.Dir, spec.Stdin
+	cmd.Stdout, cmd.Stderr = spec.Stdout, spec.Stderr
+	err := cmd.Run()
+	return classifyProcessResult(err)
 }
 ```
 
@@ -136,15 +136,17 @@ state.
 type fakeRunner struct {
 	gotName string
 	gotArgs []string
+	stdout  string
+	stderr  string
 	err     error
 }
 
-func (f *fakeRunner) Run(
-	_ context.Context, _ string, name string, args ...string,
-) error {
-	f.gotName = name
-	f.gotArgs = append([]string(nil), args...)
-	return f.err
+func (f *fakeRunner) Run(_ context.Context, spec CommandSpec) (Result, error) {
+	f.gotName = spec.Name
+	f.gotArgs = append([]string(nil), spec.Args...)
+	_, _ = io.WriteString(spec.Stdout, f.stdout)
+	_, _ = io.WriteString(spec.Stderr, f.stderr)
+	return Result{}, f.err
 }
 ```
 

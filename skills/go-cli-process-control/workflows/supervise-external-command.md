@@ -47,6 +47,9 @@ Run a child process with deliberate arguments, output, cancellation, and cleanup
 - [ ] Inspect nonzero exits structurally and retain relevant stderr.
 - [ ] Parse output-defined success or failure explicitly.
 - [ ] Wrap causes while redacting secrets.
+- [ ] Classify lookup, start, exit, cancellation, timeout, and cleanup separately.
+- [ ] Coordinate concurrent pipe readers with `Wait`.
+- [ ] Never use `Cmd.String()` as a replay or escaping mechanism.
 
 **Reference:** `../references/process-control/rules.md`
 
@@ -70,6 +73,8 @@ Run a child process with deliberate arguments, output, cancellation, and cleanup
 - [ ] Prefer `signal.NotifyContext` for context-driven shutdown.
 - [ ] Call the returned stop function.
 - [ ] Stop scheduling work, wait for active work, then return a deliberate status.
+- [ ] Select a platform adapter for signals, process groups, and descendant cleanup.
+- [ ] Define and test equivalent Windows behavior.
 
 **Reference:** `../references/process-control/patterns.md`
 

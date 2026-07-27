@@ -100,6 +100,25 @@ Use these rules when a Go CLI starts, connects, cancels, or tests subprocesses.
       output-defined failures, timeout, caller cancellation, signal shutdown,
       partial pipeline execution, and cleanup.
 
+## Failure Classification and Platform Behavior
+
+18. **Classify process failures by lifecycle stage.**
+    - Distinguish lookup, start, nonzero `*exec.ExitError`, cancellation,
+      deadline, signal termination, and cleanup failure.
+    - Preserve bounded redacted stderr where capture makes it available.
+
+19. **Coordinate manual pipe readers with `Wait`.**
+    - Consume `StdoutPipe` and `StderrPipe` concurrently.
+    - Finish reads before or in coordination with `Wait`; do not call `Run`
+      after taking manual pipe ownership.
+    - Avoid waiting before readers drain a chatty child.
+
+20. **Isolate platform process semantics.**
+    - Put signal, process-group, executable, and descendant behavior behind
+      build-constrained adapters with a stable contract.
+    - Verify Windows cancellation separately from Unix signal behavior.
+    - Treat `Cmd.String()` as diagnostics only, not replayable shell syntax.
+
 ## Exceptions
 
 - A tiny one-shot internal tool may stream directly to `os.Stdout` and

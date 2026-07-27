@@ -26,6 +26,7 @@ Create a fresh, testable Cobra tree with typed application boundaries and predic
 - [ ] Define `Use`, descriptions, argument validation, examples, and aliases together.
 - [ ] Keep a bare root inert unless one default action is unmistakable.
 - [ ] Scope local and persistent flags narrowly and avoid shorthand collisions.
+- [ ] Decide whether typo suggestions help humans without destabilizing automation.
 
 **Reference:** `../references/cobra-applications/rules.md`
 
@@ -60,6 +61,10 @@ Create a fresh, testable Cobra tree with typed application boundaries and predic
 - [ ] Distinguish unset from explicit zero values.
 - [ ] Validate semantic ranges and secret handling.
 - [ ] Pass a typed validated configuration inward.
+- [ ] Put local, buffered, and remote sources behind one loader boundary.
+- [ ] Keep mutable application state outside configuration.
+- [ ] If reloading, validate then atomically swap while retaining last-known-good
+      state and owning watcher/client cleanup.
 
 **Reference:** `../references/cobra-applications/rules.md`
 

@@ -45,6 +45,10 @@ Use when designing or reviewing a Go command's public interface.
 - [ ] Requested help goes to stdout; invalid-usage help and diagnostics go to stderr.
 - [ ] stdin fallback cannot unexpectedly block an interactive invocation.
 - [ ] Read and write errors are checked.
+- [ ] Human, plain, and structured modes have documented stream contracts.
+- [ ] stdin, stdout, and stderr terminal capabilities are considered independently.
+- [ ] Plain and structured output contain no ANSI escapes or progress frames.
+- [ ] `NO_COLOR` and explicit color policy have defined precedence.
 
 ## Errors and Exit Codes
 
@@ -53,6 +57,14 @@ Use when designing or reviewing a Go command's public interface.
 - [ ] Error messages say what failed and preserve the underlying cause.
 - [ ] Expected user errors do not include noisy stack traces by default.
 - [ ] Tests assert stderr and exit behavior separately from stdout.
+- [ ] Cancellation and short-reading pipe behavior are intentional and tested.
+
+## Interaction
+
+- [ ] Noninteractive mode never prompts or waits on stdin unexpectedly.
+- [ ] Prompt defaults and destructive confirmation behavior are explicit.
+- [ ] Secret input cannot leak through arguments, history, logs, or diagnostics.
+- [ ] Progress and terminal state are cleaned up on every return path.
 
 ## Portability
 

@@ -45,40 +45,50 @@ tests.
     timeout, path, or concurrency value is valid.
 17. **Do not log secrets.** Mark sensitive inputs, avoid defaults that expose
     them in help, and prefer secure sources over command-line arguments.
+18. **Treat configuration sources as inputs, not shared state.**
+    - Put file, buffered, and remote sources behind an explicit loader.
+    - Keep mutable user or application records in a dedicated store.
+19. **Reload by validating then swapping.**
+    - Parse and validate a complete candidate before publishing it atomically.
+    - Retain last-known-good state when reload fails.
+    - Own watcher shutdown and dependent-client replacement explicitly.
+    - Capture one immutable settings/client snapshot at command start; do not
+      mix base URLs, credentials, cursors, or retry policies within one operation.
+    - Retire replaced clients only after in-flight users release the old snapshot.
 
 ## Errors and Output
 
-18. **Use error-returning handlers.** Return failures with operation context.
-19. **Choose exit codes centrally.** Map typed errors to stable exit codes at
+20. **Use error-returning handlers.** Return failures with operation context.
+21. **Choose exit codes centrally.** Map typed errors to stable exit codes at
     the entry point.
-20. **Route streams consistently.** Results go to stdout; diagnostics and
+22. **Route streams consistently.** Results go to stdout; diagnostics and
     progress go to stderr.
-21. **Silence usage selectively.** Show it for syntax problems, not for network,
+23. **Silence usage selectively.** Show it for syntax problems, not for network,
     filesystem, or application failures.
-22. **Check write errors.** Rendering can fail when output is piped.
+24. **Check write errors.** Rendering can fail when output is piped.
 
 ## Completion and Documentation
 
-23. **Generate from the real tree.** Completion and docs must use the same
+25. **Generate from the real tree.** Completion and docs must use the same
     constructor and metadata as runtime commands.
-24. **Support declared shells deliberately.** Do not label a Bash-only command
+26. **Support declared shells deliberately.** Do not label a Bash-only command
     as generic completion.
-25. **Keep completion safe.** No mutations, prompts, or expensive unbounded
+27. **Keep completion safe.** No mutations, prompts, or expensive unbounded
     calls in completion callbacks.
-26. **Make generated docs reproducible.** Pin dependency versions and review
+28. **Make generated docs reproducible.** Pin dependency versions and review
     generated diffs.
 
 ## Testing
 
-27. **Build a fresh root per test.**
-28. **Capture command streams.** Do not replace process-global stdout or stderr.
-29. **Test both seams.** Unit-test application actions and integration-test
+29. **Build a fresh root per test.**
+30. **Capture command streams.** Do not replace process-global stdout or stderr.
+31. **Test both seams.** Unit-test application actions and integration-test
     parsing, validation, flag inheritance, config precedence, errors, and help.
-30. **Use isolated temporary state.** Prefer test-owned temporary directories
+32. **Use isolated temporary state.** Prefer test-owned temporary directories
     and automatic cleanup.
-31. **Assert behavior, not framework internals.** Test output, calls, state,
+33. **Assert behavior, not framework internals.** Test output, calls, state,
     errors, and exit mapping.
-32. **Cover repeated execution.** A command tree should behave consistently
+34. **Cover repeated execution.** A command tree should behave consistently
     when invoked more than once in the same process.
 
 ## Historical API Verification

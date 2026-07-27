@@ -26,63 +26,79 @@ Actionable rules for portable, reproducible, and verifiable Go CLI releases.
      environments (`special`, `prod2`).
    - Make variants mutually exclusive and collectively complete.
    - **Go 1.26 check:** verify constraint syntax in current `go/build` docs.
+   - Treat tags as code-selection capabilities, never runtime access control.
+
+5. **Use portable application directories.**
+   - Resolve config and cache roots through current platform-aware APIs.
+   - Keep config, cache, data, and temporary files semantically distinct.
+   - Test first-run creation, permissions, migration, and cleanup on each target.
 
 ## Build Rules
 
-5. **Make every build input explicit.**
+6. **Make every build input explicit.**
    - Pin the Go version, dependencies, target, tags, CGO mode, linker flags, and
      source revision.
    - Build into deterministic target-specific paths.
    - Avoid relying on a developer’s persistent `go env` settings.
 
-6. **Do not assume `CGO_ENABLED=0` is a universal static-build switch.**
+7. **Do not assume `CGO_ENABLED=0` is a universal static-build switch.**
    - Confirm all dependencies support CGO-disabled builds.
    - Inspect linkage and execute smoke tests in the minimum target environment.
    - With CGO enabled, provision a target C compiler and target libraries.
    - **Go 1.26 check:** verify link and stdlib behavior for the chosen flags.
 
-7. **Derive the matrix instead of hard-coding remembered exclusions.**
+8. **Derive the matrix instead of hard-coding remembered exclusions.**
    - Start with current toolchain support.
    - Overlay dependency and product constraints.
    - Keep the resulting matrix in version control and CI.
 
-8. **Inject release metadata deliberately.**
+9. **Inject release metadata deliberately.**
    - Prefer VCS/build information available from the Go toolchain when adequate.
    - If using `-ldflags -X`, target a stable variable and test the version output.
    - Do not strip debug data until the debugging trade-off is accepted.
 
 ## Verification Rules
 
-9. **Inspect selection, compile, and run.**
+Treat every supported capability profile as part of the target matrix. Compile,
+test, and artifact-smoke each supported combination, including the default and
+intentionally reduced profiles.
+
+10. **Inspect selection, compile, and run.**
    - Use `go list` to inspect `GoFiles`, `CgoFiles`, and ignored files by profile.
    - Run unit tests for every build-tag profile.
    - Execute each released target natively, in CI runners, or in a documented
      emulator; compilation alone is insufficient.
 
-10. **Test the artifact, not only the source checkout.**
+11. **Test the artifact, not only the source checkout.**
     - Exercise `--help`, `--version`, representative commands, exit codes,
       stdout/stderr separation, signals, and configuration discovery.
     - Check archive extraction and executable permissions.
 
-11. **Publish integrity metadata beside artifacts.**
+12. **Publish integrity metadata beside artifacts.**
     - Generate cryptographic checksums from final, immutable files.
     - Sign artifacts or provenance when the release policy requires it.
     - Verify checksums after upload or registry publication.
     - **Current-tooling check:** confirm supported signing/provenance commands
       against the selected 2026 release platform.
 
+13. **Define the final artifact handoff.**
+    - Before tagging, snapshot-test the names, targets, profiles, and contents.
+    - Let the protected tagged release job build the final bytes exactly once.
+    - Record URL/name, digest, target, profile, and source revision after publication.
+    - Package-manager automation must promote these bytes, never rebuild the version.
+
 ## Container Rules
 
-12. **Use a multistage build and pin every base image.**
+14. **Use a multistage build and pin every base image.**
     - Pin the builder toolchain and final image by version and preferably digest.
     - Copy only the executable and its required runtime data.
     - Never use the book’s Go 1.15 or `latest` tags in a current release.
 
-13. **Choose `scratch` only after proving self-containment.**
+15. **Choose `scratch` only after proving self-containment.**
     - Account for CA roots, timezone data, user lookup, DNS, and writable paths.
     - Use a minimal or distroless runtime if any of those are required.
 
-14. **Run containers with least privilege.**
+16. **Run containers with least privilege.**
     - Use a non-root UID, a deliberate working directory, and explicit writable
       mounts.
     - Prefer exec-form `ENTRYPOINT`/`CMD` so the CLI receives signals.
@@ -92,7 +108,7 @@ Actionable rules for portable, reproducible, and verifiable Go CLI releases.
 
 ## Source Distribution Rules
 
-15. **Publish installable, versioned module source.**
+17. **Publish installable, versioned module source.**
     - Keep command packages under stable module paths.
     - Tag releases semantically and document the supported Go version.
     - Tell users to install a fixed version:
@@ -104,7 +120,7 @@ Actionable rules for portable, reproducible, and verifiable Go CLI releases.
     - **Historical warning:** do not recommend the book’s `go get` executable
       installation flow; verify current `go install` behavior with Go 1.26.
 
-16. **Ship the build contract with the source.**
+18. **Ship the build contract with the source.**
     - Document tags, CGO/native prerequisites, generated files, and release
       commands.
     - Ensure a clean checkout can build without local `replace` directives.

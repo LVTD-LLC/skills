@@ -1,10 +1,10 @@
 ---
 name: go-cli-testing
-description: Design, implement, stabilize, and review Go CLI tests across pure command logic, table-driven cases, streams, files, environment, HTTP, repositories, subprocesses, integration tags, race checks, and artifact-level behavior. Use when adding command tests, diagnosing flaky Go tests, choosing test boundaries, or verifying agent-facing CLI contracts.
+description: Design, implement, stabilize, and review Go CLI tests across fresh command trees, pure logic, table-driven cases, streams, typed configuration, files, environment, function-backed HTTP fakes, repositories, subprocesses, capability profiles, race checks, and artifact behavior. Use when adding command tests, diagnosing flaky Go tests, choosing test boundaries, or verifying human-, agent-, and CI-facing CLI contracts.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go CLI Testing
   category: Go
   tags: go,golang,cli,testing,table-tests,integration-tests,subprocess
@@ -24,6 +24,7 @@ mutable resource and reserve executable tests for process-level semantics.
 5. Assert stdout, stderr, exit behavior, and errors according to the public contract.
 6. Gate live or platform-specific tests and make their changes reversible.
 7. Run standard, race, tagged, and relevant platform checks.
+8. Execute every supported build profile and smoke-test final artifacts.
 
 ## Read Next
 
@@ -42,6 +43,8 @@ mutable resource and reserve executable tests for process-level semantics.
 - Replace timing sleeps with synchronization, deadlines, or fake clocks.
 - Inspect wrapped errors structurally unless exact diagnostics are contractual.
 - Prefer one valuable executable flow over many slow end-to-end tests.
+- Construct a fresh command tree and typed configuration for every test.
+- Assert both `Execute` errors and stream output.
 
 ## Source Notes
 
@@ -53,3 +56,7 @@ Book: https://pragprog.com/titles/rggo/powerful-command-line-applications-in-go/
 
 Modern test APIs should be verified against https://pkg.go.dev/testing and the
 current Go documentation before implementation.
+
+Fresh command-tree, HTTP fake, configuration, and build-profile guidance also
+incorporates transformed material from Marian Montagnino, *Building Modern CLI
+Applications in Go* (Packt, 2023), especially Chapters 4, 6, and 11.

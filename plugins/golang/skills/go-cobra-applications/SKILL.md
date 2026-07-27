@@ -1,10 +1,10 @@
 ---
 name: go-cobra-applications
-description: Build, refactor, test, and review Cobra-based Go applications with intentional command trees, fresh constructors, typed business boundaries, scoped flags, Viper configuration precedence, context propagation, stable errors and streams, shell completion, and generated documentation. Use for Cobra or Viper CLI architecture and implementation.
+description: Build, refactor, test, and review Cobra-based Go applications with intentional command trees, fresh constructors, suggestions, typed boundaries, scoped flags, local or remote configuration, explicit precedence, safe live reload, context propagation, stable streams, shell completion, and generated documentation. Use for Cobra or Viper CLI architecture and implementation.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go Cobra Applications
   category: Go
   tags: go,golang,cli,cobra,viper,command-tree,configuration
@@ -41,6 +41,8 @@ per execution and translate CLI state into typed application calls.
 - Avoid mutable package-global commands and `init`-driven application wiring.
 - Domain packages must not import Cobra or Viper.
 - Use persistent flags only when descendants genuinely share the option.
+- Treat configuration as validated runtime policy, not mutable application storage.
+- Validate reload candidates and atomically publish only last-known-good state.
 - Show usage for syntax errors, not routine operational failures.
 - Verify generator, completion, docs, and configuration APIs against pinned versions.
 
@@ -54,3 +56,7 @@ Book: https://pragprog.com/titles/rggo/powerful-command-line-applications-in-go/
 
 The book's 2021 generator flow is historical. Verify current APIs and tooling
 against https://cobra.dev/ and https://github.com/spf13/viper before use.
+
+Suggestion, remote configuration, and live-reload guidance also incorporates
+transformed material from Marian Montagnino, *Building Modern CLI Applications
+in Go* (Packt, 2023), especially Chapter 4.

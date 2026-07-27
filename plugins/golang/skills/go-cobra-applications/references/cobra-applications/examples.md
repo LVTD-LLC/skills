@@ -109,7 +109,7 @@ Build a new root inside each test. This captures output without mutating
 ```go
 func Resolve(base Options, env map[string]string, flagSet bool, flag string) Options {
 	out := base
-	if v := env["FORGE_PROFILE"]; v != "" {
+	if v, ok := env["FORGE_PROFILE"]; ok {
 		out.Profile = v
 	}
 	if flagSet {

@@ -90,6 +90,20 @@ go test -count=1 -tags=integration ./...
 
 Add fuzzing or platform CI where input parsing or OS behavior warrants it.
 
+### 13. Reconstruct framework and configuration state per test
+
+- Call the real root command factory for each case; never reuse an executed tree.
+- Build a typed configuration value per test and pass it through dependencies.
+- Avoid shared Viper instances, package-level flag state, and singleton clients.
+- Assert the returned `Execute` error, stdout, stderr, and dependency calls.
+
+### 14. Treat build profiles as a matrix
+
+- Compile and test every supported build-tag or capability combination.
+- Test safe behavior when a capability is disabled.
+- Never treat a build tag as authentication or authorization.
+- Smoke-test the final archived binary, not only packages.
+
 ## Guidelines
 
 - Prefer one high-value end-to-end flow over many slow binary tests.

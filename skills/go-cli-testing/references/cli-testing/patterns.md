@@ -142,6 +142,24 @@ Guard the helper with an environment variable, pass an unambiguous separator
 before simulated arguments, set timeouts, and restore any injected command
 factory. Never run these tests in parallel while sharing a package variable.
 
+```go
+func TestHelperProcess(t *testing.T) {
+	if os.Getenv("GO_HELPER_PROCESS") != "1" {
+		return
+	}
+	args := argsAfter(os.Args, "--")
+	runScriptedHelper(args, os.Stdout, os.Stderr) // may call os.Exit
+}
+
+cmd := exec.CommandContext(ctx, os.Args[0],
+	"-test.run=TestHelperProcess", "--", "stderr=warning", "exit=7")
+cmd.Env = append(os.Environ(), "GO_HELPER_PROCESS=1")
+```
+
+The parent must assert stdout, stderr, `*exec.ExitError`, cancellation or signal
+synchronization, and eventual process completion. Give the helper an explicit
+protocol and a hard deadline.
+
 ## Pattern: Layered Contract Verification
 
 Use fast local tests continuously and a small live suite to detect external API
@@ -175,6 +193,30 @@ func repositoryContract(t *testing.T, open func(*testing.T) Repository) {
 
 Prefer an explicit conformance function over mutually exclusive test files when
 all backends can run cheaply in one invocation.
+
+## Pattern: Function-Backed HTTP Transport
+
+Use a small function type implementing `http.RoundTripper` to inspect a request
+and return an exact response without a live server. Include a non-nil closable
+body. Prefer `httptest.Server` when redirects, streaming, TLS, or routing matter.
+
+## Pattern: Fresh Command Factory
+
+Construct the root tree, streams, typed settings, and fakes inside each case.
+Set arguments and call `ExecuteContext`; assert error plus both streams.
+
+## Pattern: Capability Profile Matrix
+
+Represent supported build tags as a version-controlled table:
+
+| Profile | Tags | Selected files | Test command | Artifact | Smoke command | Support |
+|---|---|---|---|---|---|---|
+| default | none | inspected with `go list` | `go test ./...` | standard | `tool version` | supported |
+| debug | `debug` | inspected with `go list` | `go test -tags=debug ./...` | debug | protected debug probe | internal |
+
+Include intentional unsupported combinations and the expected compile failure.
+Add race lanes where behavior or concurrency differs. Run an artifact smoke test
+for every supported combination.
 
 ## Pattern Selection Guide
 

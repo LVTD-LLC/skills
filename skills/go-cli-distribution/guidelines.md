@@ -44,7 +44,7 @@ What are you shipping?
 │  ├─ Pure Go → examples.md + checklist.md
 │  └─ CGO involved → knowledge.md + patterns.md
 ├─ Platform-specific source → rules.md + examples.md
-└─ Release automation or install docs → patterns.md + checklist.md
+└─ Publishing, CI credentials, Homebrew, or recovery → $go-cli-release-automation
 ```
 
 ## File Index

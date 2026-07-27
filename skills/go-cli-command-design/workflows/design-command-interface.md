@@ -50,6 +50,9 @@ Define a predictable, scriptable contract before implementing a Go command.
 - [ ] Choose stable exit-code classes at the process boundary.
 - [ ] Return errors from command logic so cleanup still runs.
 - [ ] Specify usage behavior separately from operational failures.
+- [ ] Define human, plain, and structured output and interaction behavior.
+- [ ] Define explicit flags, `NO_COLOR`, and per-stream terminal precedence.
+- [ ] Define cancellation and downstream broken-pipe behavior.
 
 **Reference:** `../references/command-interface/rules.md`
 
@@ -72,6 +75,8 @@ Define a predictable, scriptable contract before implementing a Go command.
 - [ ] Verify exact stdout, stderr, and exit status where compatibility matters.
 - [ ] Check paths, terminals, executable names, and signals per target OS.
 - [ ] Review the completed command against the checklist.
+- [ ] Test noninteractive execution, redirection, structured parsing, and interrupt.
+- [ ] Assert plain and structured output contain no ANSI control sequences.
 
 **Reference:** `../references/command-interface/checklist.md`
 

@@ -26,6 +26,8 @@ Build, package, and verify versioned Go CLI artifacts for a declared target matr
 - [ ] Overlay dependency, CGO, OS-feature, and product constraints.
 - [ ] Record exact targets and build profiles in version control.
 - [ ] Define how every released target will be executed for verification.
+- [ ] Include supported capability/build-tag profiles in the matrix.
+- [ ] Reject any design that uses a tag as runtime access control.
 
 **Reference:** `../references/distribution/rules.md`
 
@@ -59,6 +61,7 @@ Build, package, and verify versioned Go CLI artifacts for a declared target matr
 - [ ] Execute each target natively or in the declared emulator.
 - [ ] Smoke-test help, version, representative commands, streams, exit codes, and signals.
 - [ ] Inspect linkage and minimum-environment requirements.
+- [ ] Verify platform config, cache, data, and temporary directory behavior.
 
 **Reference:** `../references/distribution/checklist.md`
 
@@ -67,9 +70,10 @@ Build, package, and verify versioned Go CLI artifacts for a declared target matr
 **Goal:** Produce immutable, installable release files.
 
 - [ ] Create consistently named archives with executable permissions intact.
-- [ ] Generate checksums after packaging.
-- [ ] Sign artifacts or provenance when policy requires it.
-- [ ] Verify checksums after upload.
+- [ ] Generate and verify checksums for the local snapshot.
+- [ ] Confirm the tagged release job will build final bytes exactly once, then
+      generate signing/provenance and post-publication checksum verification.
+- [ ] Define the handoff manifest: artifact name, target, profile, digest, and revision.
 
 **Reference:** `../references/distribution/rules.md`
 

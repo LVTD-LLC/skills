@@ -8,14 +8,21 @@ Separate declarative command data from the mechanism that starts processes.
 
 ```go
 type CommandSpec struct {
-	Name string
-	Args []string
-	Dir  string
-	Env  []string
+	Name   string
+	Args   []string
+	Dir    string
+	Env    []string
+	Stdin  io.Reader
+	Stdout io.Writer
+	Stderr io.Writer
+}
+
+type Result struct {
+	ExitCode int
 }
 
 type Runner interface {
-	Run(context.Context, CommandSpec) error
+	Run(context.Context, CommandSpec) (Result, error)
 }
 ```
 
@@ -25,7 +32,7 @@ commands without launching them.
 Benefits:
 
 - Centralized environment, stream, timeout, and error policy.
-- Fakes record exact argv and working directory.
+- Fakes record argv and directory and can write controlled stdout and stderr.
 
 Consideration: expose only options the application needs; mirroring every
 `exec.Cmd` field produces a leaky abstraction.
@@ -89,7 +96,7 @@ Prefer a tested reusable limiter or streaming parser in production. Use direct
 
 ## Pattern: Context-Owned Process
 
-Tie a child process to the same lifecycle as the CLI operation.
+Tie the immediate child process to the same lifecycle as the CLI operation.
 
 ```go
 func execute(ctx context.Context, spec CommandSpec) error {
@@ -108,6 +115,9 @@ func execute(ctx context.Context, spec CommandSpec) error {
 ```
 
 Use for commands that can block on network, locks, user input, or large work.
+`exec.CommandContext` does not guarantee descendant cleanup. When the child can
+spawn descendants, combine this with a platform adapter for process groups on
+Unix and Job Objects or an equivalent owned-tree mechanism on Windows.
 
 ## Pattern: Native Process Pipeline
 
