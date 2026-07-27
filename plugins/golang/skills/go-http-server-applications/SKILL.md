@@ -4,7 +4,7 @@ description: Design, build, test, and review production Go HTTP servers covering
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go HTTP Server Applications
   category: Go
   tags: go,golang,http,server,middleware,httptest
@@ -50,6 +50,10 @@ make startup and shutdown part of the tested application contract.
 Guidance is transformed and paraphrased from Inanc Gumus, *Go by Example:
 Programmer's Guide to Idiomatic and Testable Programs* (Manning, 2025),
 Chapters 8-9. Examples are original.
+
+Terminal-response control-flow and timeout guidance also incorporates
+transformed material from Teiva Harsanyi, *100 Go Mistakes and How to Avoid
+Them* (Manning, 2022), Chapter 10.
 
 Book: https://www.manning.com/books/go-by-example
 

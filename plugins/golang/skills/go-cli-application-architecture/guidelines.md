@@ -5,6 +5,7 @@
 | Task | Workflow |
 |---|---|
 | Design a new CLI or untangle an existing one | `workflows/design-application-boundaries.md` |
+| Review files, pools, bodies, timers, or background tasks | `workflows/review-resource-lifecycle.md` |
 
 ## By Symptom
 
@@ -19,6 +20,8 @@
 | HTTP handlers own domain behavior | Use this skill, then `go-http-server-applications` |
 | SQL pool and transactions have unclear owners | Use this skill, then `go-cli-sql-storage` |
 | Application exposes internal worker channels | Use this skill, then `go-concurrency-pipelines` |
+| Slice, map, range, or Unicode semantics are unclear | Use `go-language-correctness` |
+| A boundary is changing only for speed | Establish evidence with `go-performance-testing` first |
 
 ## Decision
 
@@ -38,3 +41,4 @@ Does code describe CLI syntax or rendering?
 | `references/application-architecture/knowledge.md` | Layers and dependency direction |
 | `references/application-architecture/rules.md` | Package and construction rules |
 | `references/application-architecture/examples.md` | Practical Go patterns |
+| `workflows/review-resource-lifecycle.md` | Ownership, cleanup, and partial-startup review |

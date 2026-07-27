@@ -33,3 +33,27 @@
 - Collect one intrusive profile type at a time when interactions matter.
 - Inspect top, graph, and source views before changing code.
 - Validate the hypothesis with a fresh benchmark after the change.
+- Protect profiles and traces as potentially sensitive artifacts.
+- Prefer a bounded ordinary trace for one-shot CLIs; reserve flight recording
+  for supported long-lived processes and delayed-onset failures.
+
+## Runtime and Compiler
+
+- Do not encode cache-line width or struct alignment as portable facts.
+- Prefer ownership changes and per-worker reduction over manual padding.
+- Do not treat every reported escape as a defect.
+- Do not rely on inliner budgets, generated instructions, or conversion elision
+  across toolchains and targets.
+- Do not use `sync.Pool` as a cache, resource owner, or secret-bearing store.
+- Reject oversized pooled buffers and reset state before reuse.
+- Reduce allocations before changing `GOGC` or `GOMEMLIMIT`.
+- Treat `GOMEMLIMIT` as soft runtime-managed memory and leave container headroom.
+- Check the pinned runtime before prescribing container CPU helpers.
+- Measure concurrency under the deployment cgroup and supported architectures.
+
+## PGO
+
+- Compare the final PGO artifact with a matching `-pgo=off` build.
+- Record profile workload, revision, digest, main package, and privacy classification.
+- Use separate profiles/build decisions for distinct main packages when necessary.
+- Re-profile after optimization and reject representative workload regressions.

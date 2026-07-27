@@ -45,3 +45,28 @@ For heap profiles, name the question explicitly:
 go tool pprof -sample_index=alloc_space -top mem.out
 go tool pprof -sample_index=inuse_space -top mem.out
 ```
+
+## Scoped Escape Evidence
+
+```text
+go test -run=^$ -bench=BenchmarkParse -gcflags=all=-m=2 ./parser 2> escape.txt
+```
+
+Use this after allocation evidence identifies a material path. Diagnostic text
+and thresholds are not stable APIs.
+
+## PGO Artifact Comparison
+
+```text
+go build -pgo=off -o tool-no-pgo ./cmd/tool
+go build -pgo=default.pgo -o tool-pgo ./cmd/tool
+```
+
+Run the same representative artifact workload against both binaries, preserve
+the selected profile digest, and re-profile the chosen build.
+
+## GC and Memory-Limit Matrix
+
+Compare a small, predeclared set of `GOGC` and `GOMEMLIMIT` configurations under
+the deployment memory limit. Record latency, throughput, GC CPU, live heap, and
+peak process memory; do not optimize one metric in isolation.

@@ -34,9 +34,27 @@ The composition root owns long-lived clients, transports, pools, listeners,
 and cleanup. Record who constructs, shares, reloads, and closes each resource.
 For SQL, the root owns `*sql.DB`; the use case owns transaction boundaries.
 
+Classify each acquired value as an **owner**, **borrower**, or explicit
+**transfer**. The owner defines cleanup on normal, error, cancellation, and
+partial-startup paths. Close in reverse dependency order. Decide whether close,
+flush, sync, or shutdown errors are material and how they combine with a
+primary failure.
+
+Reader-based cores should borrow `io.Reader`/`io.Writer` values and leave path
+opening and ownership at adapters. A core must not close borrowed stdin,
+stdout, or caller-provided streams.
+
 CLI and HTTP are peer outer adapters around the same application service. An
 HTTP executable owns listener and server lifecycle; detailed inbound semantics
 belong to `go-http-server-applications`.
+
+## Explicit Initialization
+
+Keep fallible network, database, filesystem, and configuration work in an
+explicit composition path. `init` cannot return an error and makes startup
+order and test isolation harder to control. Reserve it for narrow,
+side-effect-free registration only when package loading is the intended
+contract; never depend on lexical filename order for correctness.
 
 ## Configuration vs State
 

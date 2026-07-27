@@ -9,6 +9,10 @@
 - Keep artifact names deterministic across releases.
 - Give each capability profile a unique build ID, binary/archive name, and
   publication policy. Prevent default/debug collisions.
+- When PGO is selected, preserve its mode, main package, workload provenance,
+  and profile digest beside toolchain, source revision, and build flags.
+- Release automation transports the approved PGO input unchanged; selection
+  and performance proof belong to `go-performance-testing`.
 
 ## CI Security
 

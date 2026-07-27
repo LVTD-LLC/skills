@@ -48,6 +48,9 @@ Use when implementing or reviewing tests for a Go command-line application.
 - [ ] Golden values omit or normalize timestamps, random IDs, and absolute paths.
 - [ ] Golden updates require an explicit flag and review.
 - [ ] Failed setup stops the test before mutation or assertions.
+- [ ] Package-wide `TestMain` is used only when per-test ownership is impractical.
+- [ ] `TestMain` preserves `m.Run()` status and always performs teardown.
+- [ ] Exported contracts have deliberate external-package coverage.
 
 ## Processes
 
@@ -99,6 +102,9 @@ Use when implementing or reviewing tests for a Go command-line application.
 - [ ] `go test -count=1 -tags=integration ./...` in the approved environment
 - [ ] Relevant OS and architecture jobs run in CI
 - [ ] Repeated local runs pass independently and in shuffled order
+- [ ] The shuffle seed is retained in CI output and can be replayed.
+- [ ] Normal, short, integration, race, shuffle, and supported build-profile
+      lanes are explicit.
 - [ ] Every supported build-tag or capability profile compiles and runs tests.
 - [ ] Final archived or installed artifact behavior receives a smoke test.
 
@@ -114,6 +120,14 @@ Stop and redesign if:
 - sleeps are used as synchronization instead of events, contexts, or eventual checks;
 - test code leaves a package-level command function replaced;
 - ordinary `go test ./...` contacts the internet or launches desktop UI.
+
+## Streams and Async Behavior
+
+- [ ] Reader contracts are exercised with fragmented, failing, or timed-out input.
+- [ ] Writer contracts cover partial or truncated output when material.
+- [ ] Asynchronous tests use barriers, controlled clocks, or version-gated
+      `testing/synctest` rather than arbitrary sleeps.
+- [ ] Every goroutine joins before its test returns.
 
 ## Coverage, Parallelism, and Specialized Boundaries
 

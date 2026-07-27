@@ -4,7 +4,7 @@ description: Design, implement, test, and review resilient Go HTTP client bounda
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   displayName: Go HTTP Client Resilience
   category: Go
   tags: go,golang,http,client,resilience,retries,api
@@ -51,6 +51,10 @@ and Ricardo Gerardi, *Powerful Command-Line Applications in Go* (2021).
 Streaming, transport-pool, and HTTP test guidance also incorporates transformed
 material from Inanc Gumus, *Go by Example: Programmer's Guide to Idiomatic and
 Testable Programs* (Manning, 2025), Chapter 7.
+
+Body ownership and client-timeout guidance also incorporates transformed
+material from Teiva Harsanyi, *100 Go Mistakes and How to Avoid Them* (Manning,
+2022), Chapter 10.
 
 Verify behavior against https://pkg.go.dev/net/http and current API-specific
 rate-limit, pagination, and idempotency documentation.

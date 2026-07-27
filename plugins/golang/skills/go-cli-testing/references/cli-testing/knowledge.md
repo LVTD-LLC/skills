@@ -77,6 +77,16 @@ command needs. A function field can be enough for a single operation.
 
 ## Test Layers
 
+Classify each test on three independent axes:
+
+1. dependency boundary: unit, local integration, or live contract;
+2. execution cost: normal or skipped under `testing.Short`;
+3. capability/build profile: default or explicit build constraints.
+
+Combining these axes keeps expensive tests visible without making build tags a
+substitute for runtime cost or dependency classification. Every build profile
+must map to an actual CI lane.
+
 ### Unit
 
 Fast, deterministic tests of functions and action handlers. Use table tests for
@@ -131,6 +141,16 @@ paths; a clean run is bounded evidence.
 
 Performance benchmarks, allocation measurement, profiles, and statistical
 comparison belong to `go-performance-testing`.
+
+For modules declaring Go 1.22 or newer, loop variables declared by a loop are
+new per iteration. Older language versions and assignment to predeclared loop
+variables retain shared-variable behavior. Determine this from the module or
+file language version, not only the installed toolchain.
+
+External `_test` packages prove exported behavior from a consumer's view.
+Same-package tests remain useful for justified internal invariants. Prefer
+per-test setup and `t.Cleanup`; reserve `TestMain` for expensive package-wide
+fixtures whose safe sharing is explicit.
 
 ## Specialized Boundaries
 

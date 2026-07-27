@@ -9,6 +9,7 @@ Load only the files needed for the decision at hand.
 | Create a package API | `references/api-design/rules.md` | `references/api-design/examples.md` |
 | Review an exported change | `workflows/review-public-api.md` | `references/api-design/knowledge.md` |
 | Introduce an interface | `references/api-design/rules.md` | `references/api-design/examples.md` |
+| Review embedding, receivers, generics, or functional options | `workflows/review-public-api.md` | `references/api-design/knowledge.md` |
 | Diagnose compatibility risk | `references/api-design/knowledge.md` | `workflows/review-public-api.md` |
 | Change an API to improve performance | This skill, then `go-performance-testing` | `references/api-design/knowledge.md` |
 | Write public examples | `references/api-design/examples.md` | `references/api-design/rules.md` |
@@ -22,6 +23,8 @@ Load only the files needed for the decision at hand.
 | Callers mutate internal state | `references/api-design/knowledge.md` |
 | A zero value panics or misbehaves | `references/api-design/knowledge.md` |
 | A small change breaks many consumers | `workflows/review-public-api.md` |
+| Interface compares non-nil on a success path | `references/api-design/knowledge.md`, `references/api-design/examples.md` |
+| Slice, map, range, numeric, or Unicode invariant is unclear | Use `go-language-correctness` |
 
 ## Boundary
 

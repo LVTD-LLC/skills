@@ -1,7 +1,7 @@
 {
   "name": "golang",
   "version": "0.3.0",
-  "description": "Go engineering guidance for idiomatic APIs, command contracts, testing and profiling, concurrency pipelines, HTTP clients and servers, SQL-backed CLIs, Cobra applications, subprocess supervision, and reproducible releases.",
+  "description": "Go engineering guidance for language correctness, idiomatic APIs, command contracts, testing and profiling, concurrency, HTTP clients and servers, SQL-backed CLIs, Cobra applications, subprocess supervision, and reproducible releases.",
   "author": {
     "name": "LVTD",
     "url": "https://github.com/LVTD-LLC"
@@ -16,6 +16,7 @@
     "cobra",
     "viper",
     "testing",
+    "correctness",
     "performance",
     "concurrency",
     "http",
@@ -37,6 +38,7 @@
     "go-http-client-resilience",
     "go-http-server-applications",
     "go-idiomatic-api-design",
+    "go-language-correctness",
     "go-performance-testing",
     "architecture",
     "packages",
@@ -80,6 +82,10 @@
     "api-design",
     "interfaces",
     "compatibility",
+    "code-review",
+    "slices",
+    "maps",
+    "unicode",
     "benchmarks",
     "profiling",
     "pprof"

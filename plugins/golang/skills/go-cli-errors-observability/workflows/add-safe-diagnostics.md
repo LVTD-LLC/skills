@@ -16,6 +16,15 @@
 9. [ ] Make upload a separate cancellable action with a visible destination.
 10. [ ] Test seeded secrets never appear in the artifact or logs.
 
+## Profiles and Traces
+
+- [ ] Let `go-performance-testing` choose the profile or trace that answers the question.
+- [ ] Require explicit opt-in and bound duration, bytes, and collection overhead.
+- [ ] Write binary artifacts to a restrictive exclusive file, never stdout.
+- [ ] Treat flight recordings and experimental leak profiles under the same
+      consent, preview, retention, and upload policy.
+- [ ] Remove partial captures after cancellation or failure.
+
 ## Exit Criteria
 
 - [ ] Every collected field has a stated diagnostic purpose.

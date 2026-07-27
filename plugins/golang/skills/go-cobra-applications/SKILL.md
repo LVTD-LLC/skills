@@ -4,7 +4,7 @@ description: Build, refactor, test, and review Cobra-based Go applications with 
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
   displayName: Go Cobra Applications
   category: Go
   tags: go,golang,cli,cobra,viper,command-tree,configuration

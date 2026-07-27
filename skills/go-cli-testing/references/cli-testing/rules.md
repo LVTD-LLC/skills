@@ -67,6 +67,10 @@ Opt-in tests that require a live API, installed command, desktop notification,
 specific OS, or destructive operation. State prerequisites clearly and skip
 with a reason when they are absent.
 
+- Use environment-gated `t.Skip` when visibility of the skipped test matters.
+- Use `testing.Short()` for expensive tests regardless of dependency category.
+- Require every build constraint to map to a named CI lane.
+
 ### 11. Make live tests uniquely identifiable and reversible
 
 Generate a unique resource name, record the created identifier, verify identity
@@ -118,6 +122,13 @@ Add fuzzing or platform CI where input parsing or OS behavior warrants it.
 - Include the triggering input and `got, want` values in failures.
 - Treat each table row as a subtest when independent execution and `-run`
   selection add value.
+- Check the language version before adding `tc := tc`; it is redundant for
+  variables declared by loops under Go 1.22+ semantics.
+- Preserve and replay the seed printed by a failed `-shuffle` run.
+- Prefer external-package tests for exported contracts and same-package tests
+  only for justified internal invariants.
+- Reserve `TestMain` for expensive package-wide fixtures and preserve the
+  `m.Run()` exit code through teardown.
 - Do not use `T.Setenv` or change the process working directory beneath a
   parallel test or parallel ancestor.
 - Distinguish `-parallel` test-binary scheduling from `-p` package concurrency.
@@ -149,6 +160,7 @@ Add fuzzing or platform CI where input parsing or OS behavior warrants it.
 | HTTP | `httptest`, assert request and response |
 | Integration | Explicit tag, unique data, no cache |
 | Concurrency | Race test; avoid shared globals |
+| Language invariants | Discover with `go-language-correctness`, prove here |
 
 ## Source Traceability
 

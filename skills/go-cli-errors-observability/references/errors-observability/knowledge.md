@@ -31,6 +31,22 @@ Error chains can be trees after `errors.Join` or multiple wrapping operands.
 Prefer `errors.Is` and `errors.As`; a manual `errors.Unwrap` loop sees only the
 single-error form.
 
+## Error Ownership and Cleanup
+
+Each failure should have one terminal owner. Intermediate layers add stable
+operation context and return; the process boundary classifies, renders, logs,
+and maps the exit status. Logging and returning at every layer duplicates
+evidence and obscures the original failure.
+
+When work fails and cleanup also fails, preserve the primary error while
+retaining material close, flush, wait, or shutdown evidence. `errors.Join` can
+represent both while keeping `errors.Is` and `errors.As` useful. Do not join
+routine or ignorable cleanup noise.
+
+Panic represents a violated invariant or unrecoverable programmer defect, not
+ordinary CLI control flow. Recover only at a boundary that can restore a valid
+state, record safe evidence, and choose a deliberate failure contract.
+
 Context-derived correlation IDs are request metadata, not arbitrary
 configuration. Use typed keys, validate shape, and control cardinality and
 redaction before adding them to every record.

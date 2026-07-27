@@ -1,10 +1,10 @@
 ---
 name: go-performance-testing
-description: Design, run, compare, and interpret Go benchmarks and profiles using representative workloads, testing.B, B.Loop, subbenchmarks, allocation metrics, repeated samples, benchstat, pprof, execution traces, and profile-guided optimization evidence. Use when investigating Go latency, throughput, CPU, memory, allocations, contention, performance regressions, or optimization claims.
+description: Design, run, compare, and interpret Go performance evidence using benchmarks, B.Loop, benchstat, pprof, traces, escape analysis, cache locality, false sharing, sync.Pool, GC limits, container CPU behavior, and PGO. Use when investigating Go latency, throughput, CPU, memory, allocations, contention, runtime behavior, performance regressions, or optimization claims.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go Performance Testing
   category: Go
   tags: go,golang,benchmarks,profiling,pprof,performance
@@ -32,6 +32,7 @@ specific hypothesis.
 |---|---|
 | Benchmark a function or package | `guidelines.md`, `workflows/benchmark-code.md` |
 | Investigate a regression | `workflows/investigate-performance.md` |
+| Evaluate profile-guided optimization | `workflows/evaluate-pgo.md` |
 | Choose benchmark and profile controls | `references/performance-testing/rules.md` |
 | Interpret metrics and profiles | `references/performance-testing/knowledge.md` |
 | Review benchmark patterns | `references/performance-testing/examples.md` |
@@ -44,12 +45,18 @@ specific hypothesis.
 - Name the profile sample type and distinguish flat from cumulative cost.
 - Prefer `B.Loop` only when the pinned Go version supports it.
 - Keep production profile endpoints protected and operationally controlled.
+- Do not encode cache-line size, escape output, or inliner budgets as portable facts.
+- Do not use `sync.Pool` as a cache or resource owner.
 
 ## Source Notes
 
 Guidance is transformed and paraphrased from Inanc Gumus, *Go by Example:
 Programmer's Guide to Idiomatic and Testable Programs* (Manning, 2025),
 especially Chapter 3. Examples are original.
+
+Diagnostics, locality, allocation, GC, and container guidance also incorporates
+transformed material from Teiva Harsanyi, *100 Go Mistakes and How to Avoid
+Them* (Manning, 2022), Chapter 12.
 
 Book: https://www.manning.com/books/go-by-example
 

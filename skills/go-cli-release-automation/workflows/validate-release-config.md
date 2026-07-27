@@ -8,6 +8,8 @@
 6. [ ] Test every supported target/profile artifact natively or with a documented emulator.
 7. [ ] Review tag triggers, full-SHA action pins, permissions, environments, and secret flow.
 8. [ ] Install every publishable artifact and run version/help/smoke commands.
+9. [ ] If PGO is enabled, verify the profile digest, main package, originating
+       workload, and selected mode match the approved performance evidence.
 
 ## Exit Criteria
 

@@ -4,7 +4,7 @@ description: Design and review predictable Go command-line interfaces with canon
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
   displayName: Go CLI Command Design
   category: Go
   tags: go,golang,cli,command-design,flags,streams,portability

@@ -47,3 +47,12 @@ writes. A versioned database filename can be safer for a reconstructible cache.
 `Scanner` must handle documented source types and copy driver-owned byte slices
 before retention. `driver.Valuer` must return an allowed value and must not
 panic. Its errors are wrapped and remain inspectable with `errors.Is`.
+
+Nullable columns require an explicit domain decision: `sql.Null[T]`, a
+compatible concrete nullable type, a pointer where absence is meaningful, or a
+query that normalizes null. Do not let scan behavior decide the contract
+accidentally.
+
+Parameterized execution—not manually preparing every statement—is the SQL
+injection boundary. Drivers may prepare internally. Prepare explicitly for
+reuse or driver-specific lifecycle reasons, then close the statement owner.

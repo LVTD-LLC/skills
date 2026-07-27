@@ -34,6 +34,7 @@ Use this file to load only the command-design references needed for the task.
 | Errors and normal output are mixed | `references/command-interface/knowledge.md`, `references/command-interface/checklist.md` |
 | Behavior differs across terminals or operating systems | `references/command-interface/rules.md`, `references/command-interface/checklist.md` |
 | Usage, exit behavior, or defaults are unclear | `references/command-interface/knowledge.md`, `references/command-interface/rules.md` |
+| Numeric width, overflow, aliasing, range, or Unicode semantics are unclear | Use `go-language-correctness` |
 
 ## Decision Tree
 

@@ -10,10 +10,15 @@
 - Use context-aware database methods.
 - Close `Rows`, inspect `Rows.Err`, and handle scan failures.
 - Remember that `QueryRowContext` reports errors at `Scan`.
+- Close a newly opened pool when startup ping, configuration, or migration fails.
+- Map nullable columns deliberately and gate `sql.Null[T]` on the supported Go version.
+- Close explicitly prepared statements according to their owner.
 
 ## SQL Safety
 
 - Parameterize values.
+- Do not claim explicit `Prepare` is required for injection safety; parameters
+  are the boundary and drivers may prepare internally.
 - Allowlist dynamic identifiers and sort directions.
 - Keep DSNs, credentials, and sensitive arguments out of errors and logs.
 - Map documented driver codes to stable domain errors inside the adapter.
@@ -35,6 +40,7 @@
 - Apply the production migration path to the real test database.
 - Give every parallel test unique database, file, or schema state.
 - Test constraints, no rows, conversion errors, commit, rollback, and cancellation.
+- Test nullable scans, `Rows.Err`, statement cleanup, and failed-startup pool cleanup.
 - Test pool pressure and transaction behavior with deadlines.
 - Run built-binary multi-process tests for shared SQLite files.
 - Test interrupted migration, checksum mismatch, newer-schema rejection, and restart.

@@ -1,10 +1,10 @@
 ---
 name: go-idiomatic-api-design
-description: Design and review stable, idiomatic Go package APIs covering package naming, exported declarations, documentation, zero values, method sets, concrete types, consumer-owned interfaces, standard interfaces, errors, compatibility, and executable examples. Use when creating a reusable Go package, reviewing its public surface, evolving an exported API, or deciding between concrete types, functions, methods, fields, and interfaces.
+description: Design and review stable, idiomatic Go package APIs covering naming, exported declarations, embedding, receivers, typed-nil interfaces, generics, functional options, method sets, errors, wire contracts, compatibility, and examples. Use when creating a reusable Go package, reviewing its public surface, evolving an exported API, or choosing concrete types, functions, methods, fields, interfaces, or type parameters.
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go Idiomatic API Design
   category: Go
   tags: go,golang,api-design,packages,interfaces,compatibility
@@ -22,9 +22,10 @@ surface that preserves invariants and can evolve without needless interfaces.
 3. Keep packages cohesive and names clear without package-name stutter.
 4. Prefer concrete provider APIs; define narrow interfaces at consumers.
 5. Decide zero-value, mutation, copying, concurrency, and error contracts.
-6. Integrate standard interfaces only when their semantics truly match.
-7. Prove the public surface with external tests and executable examples.
-8. Review the change for accidental compatibility commitments.
+6. Review embedding, receiver method sets, typed nils, generics, and option conflicts.
+7. Integrate standard interfaces only when their semantics truly match.
+8. Prove the public surface with external tests and executable examples.
+9. Review the change for accidental compatibility commitments.
 
 ## Read Next
 
@@ -42,6 +43,8 @@ surface that preserves invariants and can evolve without needless interfaces.
 - Do not accept an interface before a real consumer requires substitution.
 - Do not use a standard interface when its conventional semantics are surprising.
 - Do not claim conformance assertions prove behavior.
+- Do not embed a public type unless every promoted behavior is intentional.
+- Do not return a typed nil pointer through an interface success path.
 - Check the module's Go language version before giving version-sensitive advice.
 
 ## Source Notes
@@ -49,6 +52,10 @@ surface that preserves invariants and can evolve without needless interfaces.
 Guidance is transformed and paraphrased from Inanc Gumus, *Go by Example:
 Programmer's Guide to Idiomatic and Testable Programs* (Manning, 2025),
 especially Chapters 1, 2, 5, 9, and 10. Examples are original.
+
+Embedding, receivers, generics, functional options, and typed-nil guidance also
+incorporates transformed material from Teiva Harsanyi, *100 Go Mistakes and
+How to Avoid Them* (Manning, 2022), Chapters 2 and 6.
 
 Book: https://www.manning.com/books/go-by-example
 

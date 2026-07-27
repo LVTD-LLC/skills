@@ -4,7 +4,7 @@ description: Design, implement, test, and ship SQL-backed persistence for Go CLI
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go CLI SQL Storage
   category: Go
   tags: go,golang,cli,sql,database,storage
@@ -52,6 +52,10 @@ driver behavior, migrations, and sensitive connection details inside adapters.
 Guidance is transformed and paraphrased from Inanc Gumus, *Go by Example:
 Programmer's Guide to Idiomatic and Testable Programs* (Manning, 2025),
 Chapter 10. Examples are original.
+
+Nullable values, row lifecycle, and pool guidance also incorporates transformed
+material from Teiva Harsanyi, *100 Go Mistakes and How to Avoid Them* (Manning,
+2022), Chapter 10.
 
 Book: https://www.manning.com/books/go-by-example
 

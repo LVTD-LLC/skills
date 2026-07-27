@@ -5,8 +5,10 @@
 3. Assert bounds, result contract, and completion independently.
 4. Exercise cancellation before admission, during work, and during result delivery.
 5. Exercise downstream early stop and worker failure.
-6. Run repeated tests and the race detector.
-7. Investigate leaked or blocked goroutines rather than extending timeouts.
+6. Exercise simultaneously ready select cases plus nil and closed-channel transitions.
+7. Exercise shared map/slice aliasing, copied-lock checks, and terminal state after cancellation.
+8. Run repeated tests, vetting, and the race detector.
+9. Investigate leaked or blocked goroutines rather than extending timeouts.
 
 ## Exit Criteria
 

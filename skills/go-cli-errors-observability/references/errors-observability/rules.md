@@ -9,6 +9,12 @@
 - Distinguish cancellation, deadline, validation, authentication, authorization,
   conflict, transport, protocol, and internal failures.
 - Centralize exit mapping and keep `os.Exit` at the process boundary.
+- Assign one terminal owner to log, render, and map a returned failure.
+- At intermediate layers, add context and return; do not log and return.
+- Preserve a primary error plus material cleanup failure with an inspectable
+  wrapper or `errors.Join`.
+- Use panic only for violated invariants; recover only at an intentional boundary
+  that can restore valid state and preserve evidence.
 
 ## Logs
 
@@ -36,3 +42,4 @@
 - Test redaction with representative secret shapes.
 - Confirm debug mode cannot alter structured stdout.
 - Confirm profiling endpoints are disabled by default and inaccessible remotely.
+- Test joined primary/cleanup failures and verify both identities remain inspectable.

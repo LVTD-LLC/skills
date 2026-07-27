@@ -7,6 +7,7 @@ Use this file to route a CLI testing task to the smallest useful reference set.
 | Task | Workflow |
 |---|---|
 | Build, stabilize, or review a complete command test suite | `workflows/test-cli-command.md` |
+| Remove sleeps or diagnose nondeterministic tests | `workflows/stabilize-flaky-test.md` |
 
 ## By Task
 
@@ -36,6 +37,8 @@ Use this file to route a CLI testing task to the smallest useful reference set.
 |---|---|
 | Tests mutate globals or fail in parallel | `references/cli-testing/rules.md`, `references/cli-testing/patterns.md` |
 | Tests sleep or intermittently time out | `references/cli-testing/patterns.md`, `references/cli-testing/checklist.md` |
+| Stream parser fails only on fragmented input | `references/cli-testing/patterns.md`, then `go-language-correctness` |
+| Overflow, aliasing, range, or Unicode case is unclear | Use `go-language-correctness`, then this skill |
 | Assertions mirror implementation details | `references/cli-testing/knowledge.md`, `references/cli-testing/checklist.md` |
 | External tools or services make tests unreliable | `references/cli-testing/patterns.md`, `references/cli-testing/rules.md` |
 
@@ -63,6 +66,7 @@ What test boundary is involved?
 | `references/cli-testing/examples.md` | Original command and test examples |
 | `references/cli-testing/patterns.md` | Reusable test doubles, helpers, subprocess, and integration patterns |
 | `references/cli-testing/checklist.md` | Implementation and review checklist |
+| `workflows/stabilize-flaky-test.md` | Deterministic async and time-testing workflow |
 
 ## Common Combinations
 

@@ -80,7 +80,9 @@ Build a layered, isolated test suite around observable command behavior.
 **Goal:** Verify that the suite detects races and terminates predictably.
 
 - [ ] Run `go test ./...`.
+- [ ] Run the explicit normal and `-short` lanes.
 - [ ] Run `go test -race ./...`.
+- [ ] Run `go test -shuffle=on` and preserve any reported failure seed.
 - [ ] Review coverage scope and assertion quality after correctness tests exist.
 - [ ] Run tagged integration profiles uncached when applicable.
 - [ ] Replace sleeps with synchronization, deadlines, or fake clocks.
@@ -119,3 +121,4 @@ Build a layered, isolated test suite around observable command behavior.
 - [ ] Tests do not depend on developer data or mutable shared infrastructure.
 - [ ] Failures have bounded execution time and actionable evidence.
 - [ ] Required standard, race, and integration profiles pass.
+- [ ] Every build constraint maps to an executed CI lane.

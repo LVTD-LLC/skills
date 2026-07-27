@@ -34,6 +34,7 @@ Use this file to route Cobra and Viper application work to focused references.
 | Configuration precedence is surprising | `references/cobra-applications/knowledge.md`, `references/cobra-applications/rules.md` |
 | Tests cannot isolate command output or arguments | `references/cobra-applications/examples.md`, `references/cobra-applications/patterns.md` |
 | Generated setup differs from current Cobra tooling | `references/cobra-applications/rules.md`, `references/cobra-applications/checklist.md` |
+| Parsed value may narrow, overflow, alias, or mishandle Unicode | Use `go-language-correctness` after Cobra binding |
 
 ## Decision Tree
 

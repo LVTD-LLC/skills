@@ -245,6 +245,29 @@ Include intentional unsupported combinations and the expected compile failure.
 Add race lanes where behavior or concurrency differs. Run an artifact smoke test
 for every supported combination.
 
+## Pattern: Deterministic Asynchronous Test
+
+Prefer an observable barrier or completion channel over sleeping. Bound every
+wait with a deadline so a broken test terminates. Inject a per-instance clock
+when time is part of application behavior.
+
+For Go 1.25+ projects, consider `testing/synctest` when goroutines and timers
+form a self-contained test bubble. Do not assume external network I/O becomes
+durably blocked inside that bubble; use ordinary dependency seams for external
+effects.
+
+## Pattern: Adversarial Stream
+
+Use `testing/iotest` to exercise stream contracts:
+
+- `iotest.TestReader` for a custom reader implementation;
+- `OneByteReader` and `HalfReader` for fragmented reads;
+- `ErrReader` and `TimeoutReader` for failures;
+- `TruncateWriter` for partial output.
+
+Fragmentation is not a blanket reason to retry. Retryability must be part of
+the production stream contract.
+
 ## Pattern Selection Guide
 
 | Situation | Pattern |
@@ -258,6 +281,8 @@ for every supported combination.
 | Must exercise `exec.Cmd` | Helper Process |
 | Remote API may drift | Layered Contract Verification |
 | Multiple repositories | Backend Conformance Suite |
+| Sleep-based asynchronous test | Deterministic Asynchronous Test |
+| Parser assumes full reads or writes | Adversarial Stream |
 
 ## Source Traceability
 

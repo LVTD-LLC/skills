@@ -18,6 +18,13 @@
   inject the effect unless dry-run is a real user-facing capability.
 - Record lifecycle ownership for HTTP transports, SQL pools, listeners, timers,
   watchers, and background goroutines.
+- Classify resources as owned, borrowed, or transferred; never close a borrowed
+  stream or handle.
+- Cover normal, error, cancellation, and partial-startup cleanup paths.
+- Close in reverse dependency order and define whether cleanup failures are material.
+- Keep fallible I/O, global clients, and order-dependent construction out of `init`.
+- Give detached background work bounded admission, an independent deadline,
+  an error sink, shutdown ownership, and a join path.
 
 ## Configuration
 
@@ -38,3 +45,5 @@
 - Prefer synchronous application APIs; expose channels only when streaming is
   part of the caller contract.
 - Document ordering, partial-result, and cancellation behavior for concurrent operations.
+- Route numeric, slice, map, range, and Unicode correctness to
+  `go-language-correctness`.

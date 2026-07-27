@@ -4,7 +4,7 @@ description: Prepare reproducible Go CLI artifacts across operating systems and 
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
   displayName: Go CLI Distribution
   category: Go
   tags: go,golang,cli,distribution,cross-compilation,release,cgo

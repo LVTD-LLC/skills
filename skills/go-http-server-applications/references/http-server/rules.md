@@ -5,6 +5,8 @@
 - Construct a dedicated mux and inject handler dependencies.
 - Validate methods, route values, media types, and request semantics explicitly.
 - Map stable domain errors at the HTTP edge.
+- Return immediately after `http.Error` or any other terminal response helper;
+  do not continue into mutation or a success response.
 - Keep middleware ordering documented in request and response directions.
 
 ## Input and Output
@@ -26,12 +28,16 @@
 - For streaming responses, use one writer goroutine, bounded result buffering,
   explicit framing, and `ResponseController` deadlines or flushing where supported.
 - Define how a committed stream reports terminal errors and partial success.
+- Use `http.TimeoutHandler` only when buffered response semantics are acceptable;
+  it is unsuitable for streaming. Distinguish handler deadlines from server
+  header, read, write, and idle timeouts.
 
 ## Testing
 
 - Use `httptest.NewRequest` for inbound handler requests.
 - Prefer `ResponseRecorder.Result()` for final status and headers.
 - Test exact routes, method mismatches, implicit status, middleware order, and limits.
+- Test that terminal error responses return before downstream mutation or success output.
 - Use `httptest.Server` when wire-level client/server behavior matters.
 - Test client disconnect, slow readers, flush failure, partial streams, and
   shutdown before and after response commitment.

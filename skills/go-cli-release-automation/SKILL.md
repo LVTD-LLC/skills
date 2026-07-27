@@ -4,7 +4,7 @@ description: Design, implement, and review secure Go CLI release automation with
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   displayName: Go CLI Release Automation
   category: Go
   tags: go,golang,cli,release,ci,goreleaser,homebrew

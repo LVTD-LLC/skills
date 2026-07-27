@@ -48,3 +48,32 @@ func ExampleParseMode() {
 
 Avoid network access, current time, random map order, and process exits in
 examples.
+
+## Named Field Instead of Accidental Embedding
+
+```go
+type Service struct {
+    client *http.Client
+}
+```
+
+Embedding `*http.Client` would promote its methods into `Service`'s public
+surface. Use a named field unless that complete promoted contract is intended.
+
+## Avoid a Typed-Nil Error
+
+```go
+func validate(input string) error {
+    var problem *ValidationError
+    if input == "" {
+        problem = &ValidationError{Field: "input"}
+    }
+    if problem != nil {
+        return problem
+    }
+    return nil
+}
+```
+
+Returning `problem` unconditionally would convert a nil pointer into a non-nil
+interface value.

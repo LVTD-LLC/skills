@@ -37,3 +37,35 @@ Profile-guided optimization needs representative CPU profiles. Production
 profiles are preferable; a representative CLI workload can substitute when
 production collection is impossible. Narrow microbenchmarks are usually poor
 PGO inputs.
+
+Treat the selected profile as a versioned build input. Compare the final
+artifact against `-pgo=off`, record profile provenance and digest, and
+re-profile the optimized binary. Representative whole-program CLI workloads
+are usually better inputs than narrow microbenchmarks.
+
+## Locality, Escape, and Allocation
+
+Cache locality and false sharing depend on target architecture and workload.
+Prefer compact hot data and per-worker local reduction before guessed padding.
+Measure final artifacts on supported targets rather than encoding a remembered
+cache-line width.
+
+Escape analysis describes a compiler decision for the current build. Use
+scoped compiler diagnostics after allocation evidence identifies a material
+cost. Reduce avoidable allocation before introducing `sync.Pool`; a pool is
+temporary scratch reuse, not a cache, ownership system, or retention guarantee.
+
+## Runtime and Containers
+
+Tune GC only after measuring allocation rate, live heap, latency, and CPU.
+`GOMEMLIMIT` is a soft limit on runtime-managed memory, not RSS or a container
+hard cap, so retain headroom.
+
+Go 1.25+ can choose container-aware `GOMAXPROCS` defaults on Linux. Check the
+pinned runtime and explicit environment or API overrides before adding a
+third-party adjustment. Measure worker counts under the deployment CPU quota.
+
+Use `runtime/trace.FlightRecorder` only when the minimum Go version supports it
+and preceding events in a long-lived agent or daemon matter. The Go 1.26
+goroutine-leak profile is experimental and build-gated; it cannot identify
+every long-lived goroutine.

@@ -14,6 +14,8 @@
 - Set authentication as late as practical and redact it everywhere.
 - Treat pagination cursors as opaque. If an API returns an absolute next URL,
   require the expected scheme and origin before attaching credentials.
+- Register response-body cleanup immediately after every successful `Do`, on
+  success and non-success status paths.
 - Close every response body and bound reads with a known limit.
 - Bound drains by bytes and the caller's time budget.
 - Stream large success bodies when materialization is unnecessary.
@@ -40,4 +42,6 @@
   next cursor, page/record caps, and cancellation between pages.
 - Clone a reviewed baseline transport and set pool-wide plus per-host limits
   from expected concurrency.
+- Remember that `Client.Timeout` covers redirects and response-body reading.
+- Clone `http.DefaultTransport` before customization; do not mutate shared defaults.
 - Ensure fan-out and retries share one total admission budget.

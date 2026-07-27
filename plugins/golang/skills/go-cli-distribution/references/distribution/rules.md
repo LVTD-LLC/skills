@@ -40,6 +40,9 @@ Actionable rules for portable, reproducible, and verifiable Go CLI releases.
      source revision.
    - Build into deterministic target-specific paths.
    - Avoid relying on a developer’s persistent `go env` settings.
+   - When using PGO, record mode, profile digest, originating workload, main
+     package, and the exact profile used for released bytes.
+   - Do not apply one profile to unrelated command binaries by accident.
 
 7. **Do not assume `CGO_ENABLED=0` is a universal static-build switch.**
    - Confirm all dependencies support CGO-disabled builds.
@@ -73,6 +76,8 @@ intentionally reduced profiles.
     - Exercise `--help`, `--version`, representative commands, exit codes,
       stdout/stderr separation, signals, and configuration discovery.
     - Check archive extraction and executable permissions.
+    - Compare and smoke-test selected PGO artifacts on supported targets; route
+      performance interpretation to `go-performance-testing`.
 
 12. **Publish integrity metadata beside artifacts.**
     - Generate cryptographic checksums from final, immutable files.
@@ -105,6 +110,8 @@ intentionally reduced profiles.
     - Scan the final image and test it with the intended runtime flags.
     - **Current-tooling check:** verify Docker/Podman syntax and base-image
       behavior against current upstream documentation.
+    - Declare intended CPU and memory limits and test the final image under
+      them; runtime tuning remains owned by `go-performance-testing`.
 
 ## Source Distribution Rules
 

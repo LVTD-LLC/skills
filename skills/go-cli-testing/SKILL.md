@@ -4,7 +4,7 @@ description: Design, implement, stabilize, and review Go CLI tests across fresh 
 license: MIT
 compatibility: Codex, Claude Code, and other Agent Skills-compatible clients.
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
   displayName: Go CLI Testing
   category: Go
   tags: go,golang,cli,testing,table-tests,integration-tests,subprocess
@@ -32,6 +32,7 @@ mutable resource and reserve executable tests for process-level semantics.
 | Task | Load |
 |---|---|
 | Build or overhaul a CLI test suite | `guidelines.md`, `workflows/test-cli-command.md` |
+| Stabilize a flaky asynchronous test | `workflows/stabilize-flaky-test.md` |
 | Write focused command tests | `references/cli-testing/rules.md`, `references/cli-testing/examples.md` |
 | Add subprocess, HTTP, repository, or integration tests | `references/cli-testing/patterns.md` |
 | Review coverage, isolation, or flakiness | `references/cli-testing/checklist.md` |
@@ -43,6 +44,8 @@ mutable resource and reserve executable tests for process-level semantics.
 - Do not mutate developer data or depend on fixed temporary paths and ports.
 - Do not run parallel tests that replace process-global state.
 - Replace timing sleeps with synchronization, deadlines, or fake clocks.
+- Use `testing/synctest` only when the minimum Go version supports it and the
+  behavior fits an isolated bubble.
 - Inspect wrapped errors structurally unless exact diagnostics are contractual.
 - Prefer one valuable executable flow over many slow end-to-end tests.
 - Construct a fresh command tree and typed configuration for every test.
@@ -67,3 +70,8 @@ Subtest, coverage, parser, concurrency, HTTP server, and SQL adapter guidance
 also incorporates transformed material from Inanc Gumus, *Go by Example:
 Programmer's Guide to Idiomatic and Testable Programs* (Manning, 2025),
 Chapters 2-10.
+
+Test categorization, race/shuffle execution, deterministic time, `iotest`, and
+benchmark-correctness guidance also incorporates transformed material from
+Teiva Harsanyi, *100 Go Mistakes and How to Avoid Them* (Manning, 2022),
+Chapter 11.

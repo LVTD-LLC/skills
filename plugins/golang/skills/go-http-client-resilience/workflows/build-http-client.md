@@ -13,11 +13,14 @@
 - [ ] Inject a reusable client or `Doer`.
 - [ ] Build URLs safely and attach context.
 - [ ] Configure transport and redirect policy.
+- [ ] Treat `Client.Timeout` as a total redirect-and-body-reading budget.
 - [ ] Clone a reviewed transport baseline and set pool limits from expected load.
 
 ### 3. Classify Responses
 
-- [ ] Close every body and bound every read.
+- [ ] Register body cleanup immediately after each successful `Do`, before
+      status-specific branches.
+- [ ] Close every body and bound every read or drain.
 - [ ] Separate success, status, decode, transport, timeout, and cancellation failures.
 - [ ] Preserve request IDs and safe operation context.
 
