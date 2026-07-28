@@ -49,6 +49,33 @@ const MARKETPLACE_PLUGIN_GROUPS = [
     matches: (skill) => skill.name === "calibredb",
   },
   {
+    name: "golang",
+    displayName: "Go Engineering",
+    category: "Coding",
+    taskLabel:
+      "Go API and CLI design, language correctness, testing, concurrency, HTTP, SQL storage, subprocess control, and distribution",
+    description:
+      "Go engineering guidance for language correctness, idiomatic APIs, command contracts, testing and profiling, concurrency, HTTP clients and servers, SQL-backed CLIs, Cobra applications, subprocess supervision, and reproducible releases.",
+    iconFile: "icons8-golang.svg",
+    tags: [
+      "go",
+      "golang",
+      "cli",
+      "cobra",
+      "viper",
+      "testing",
+      "correctness",
+      "performance",
+      "concurrency",
+      "http",
+      "sql",
+      "subprocess",
+      "cross-compilation",
+      "distribution",
+    ],
+    matches: (skill) => hasSkillTag(skill, "golang") || skill.name.startsWith("go-"),
+  },
+  {
     name: "game-design",
     displayName: "Game Design",
     category: "Game Development",
