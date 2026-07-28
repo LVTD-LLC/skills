@@ -63,7 +63,7 @@ Use when designing or reviewing a Go command's public interface.
 
 - [ ] Noninteractive mode never prompts or waits on stdin unexpectedly.
 - [ ] Prompt defaults and destructive confirmation behavior are explicit.
-- [ ] Secret input cannot leak through arguments, history, logs, or diagnostics.
+- [ ] Sensitive credentials cannot leak through arguments, history, logs, or diagnostics.
 - [ ] Progress and terminal state are cleaned up on every return path.
 
 ## Parser Grammar

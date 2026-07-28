@@ -21,7 +21,7 @@
 
 - State prompt defaults and make destructive confirmation opt-in.
 - Read secrets from a terminal, protected file descriptor, or environment only
-  when the exposure tradeoff is documented; prefer terminal secret input.
+  when the exposure tradeoff is documented; prefer hidden terminal entry.
 - Restore terminal state on success, error, panic boundary, and cancellation.
 - Stop tickers, goroutines, and render loops before returning.
 - Give input, rendering, and background work one shared cancellation tree.

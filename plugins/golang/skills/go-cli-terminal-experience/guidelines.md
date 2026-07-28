@@ -7,7 +7,7 @@ Load only the files needed for the current task.
 | Task | Workflow |
 |---|---|
 | Define human, plain, and structured behavior | `workflows/design-output-modes.md` |
-| Add prompts, progress, color, or secret input | `workflows/add-safe-interaction.md` |
+| Add prompts, progress, color, or sensitive credential entry | `workflows/add-safe-interaction.md` |
 | Build a full-screen terminal application | `workflows/build-terminal-dashboard.md` |
 
 ## By Problem

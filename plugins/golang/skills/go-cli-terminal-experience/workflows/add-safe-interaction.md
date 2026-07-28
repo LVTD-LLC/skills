@@ -1,6 +1,6 @@
 # Add Safe Interaction Workflow
 
-Add prompts, progress, color, or secret input without breaking automation.
+Add prompts, progress, color, or sensitive credential entry without breaking automation.
 
 ## Steps
 
